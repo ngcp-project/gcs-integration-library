@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+import pika
 
 
 class CommandsRabbitMQ:
