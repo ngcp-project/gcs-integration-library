@@ -1,8 +1,8 @@
 # Make sure you are at the 
 
-if [ $PYTHONPATH == "C:\\" ]; then
+if [ -z $PYTHONPATH ]; then
     echo 'Your PYTHONPATH is not configured yet. Configuring...'
-    export PYTHONPATH="$PWD";echo $PYTHONPATH
+    export $PYTHONPATH="$PWD";echo $PYTHONPATH
     echo 'Your PYTHONPATH is now properly configured!'
 else
     echo $PYTHONPATH
