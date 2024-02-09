@@ -1,3 +1,4 @@
+from datetime import datetime
 from Telemetry import NATS
 from Types import Telemetry
 import asyncio
@@ -24,7 +25,9 @@ async def main():
             latitude=30,
             longitude=60
         ),
-        vehicleStatus=Telemetry.Status.IN_USE
+        vehicleStatus=Telemetry.Status.IN_USE,
+        lastUpdated=datetime.now()
+        
     )
     await test.publish_NATS("foo",tel)
 

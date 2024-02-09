@@ -32,12 +32,12 @@ class TelemetryNATS:
                         'roll': tel.roll, 
                         'altitude': tel.altitude, 
                         'batteryLife': tel.batteryLife, 
-                        'lastUpdated': time.time(), 
-                        'currentPosition': tel.currentCoordinate, 
-                        'vehicleStatus': tel.vehicleStatus}
+                        'lastUpdated': tel.lastUpdated, 
+                        'currentPosition': str(tel.currentCoordinate), 
+                        'vehicleStatus': str(tel.vehicleStatus)}
         
         #Turning vehicle_data into a json
-        jsondata = json.dumps(vehicle_data)
+        jsondata = json.dumps(vehicle_data, default=str)
         
         #Sending the data
         await self.nc.publish(node_name, bytes(jsondata,encoding='utf-8'))
