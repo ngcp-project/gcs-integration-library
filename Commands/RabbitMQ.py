@@ -11,21 +11,15 @@ class CommandsRabbitMQ:
 
     def setup_rabbitmq(self):
         try:
-            credentials = pika.PlainCredentials(
-                self.rabbitMQCredentials['username'],
-                self.rabbitMQCredentials['password']
-            )
             parameters = pika.ConnectionParameters(
                 'localhost',  # Use 'localhost' since RabbitMQ is running in a Docker container
-                5672,  # Default RabbitMQ port inside the Docker container
-                '/',
-                credentials
             )
             self.connection = pika.BlockingConnection(parameters)
             self.channel = self.connection.channel()
         except Exception as e:
             print(f"Exception during RabbitMQ setup: {e}")
-
+    # A method that allows the vehicle to subscribe to one queue 
+    # that deals with all commands
     def subscribe_all(self, callback_function):
         try:
             if self.channel is None:
@@ -48,29 +42,24 @@ class CommandsRabbitMQ:
         except Exception as e:
             print(f"Exception during subscription: {e}")
 
+    # A method that allows the vehicle to subscribe to one specific function only. 
     def subscribe(self, topic, callback_function):
-        try:
-            if self.channel is None:
-                raise Exception("Channel is not initialized.")
+        if self.channel is None:
+            raise Exception("Channel is not initialized.")
 
-            self.channel.queue_declare(queue=topic)
-            self.channel.queue_bind(exchange='commands_exchange', queue=topic)
+        self.channel.queue_declare(queue=topic)
+        self.channel.queue_bind(exchange='commands_exchange', queue=topic)
 
-            self.channel.basic_consume(
-                queue=topic,
-                on_message_callback=callback_function,
-                auto_ack=True
-            )
+        self.channel.basic_consume(
+            queue=topic,
+            on_message_callback=callback_function,
+            auto_ack=True
+        )
 
-            print(f"[*] Waiting for messages on {topic}. To exit press CTRL+C")
+        print(f"[*] Waiting for messages on {topic}. To exit press CTRL+C")
 
-            self.channel.start_consuming()
-        except Exception as e:
-            print(f"Exception during subscription to {topic}: {e}")
+        self.channel.start_consuming()
 
     def close_connection(self):
-        try:
-            if self.connection:
-                self.connection.close()
-        except Exception as e:
-            print(f"Exception while closing connection: {e}")
+        if self.connection:
+            self.connection.close()
