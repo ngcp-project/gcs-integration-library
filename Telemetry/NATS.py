@@ -2,7 +2,6 @@ import datetime
 import os
 import asyncio
 import time
-import aioconsole
 import json
 
 import nats
@@ -12,7 +11,7 @@ from nats.errors import TimeoutError
 class TelemetryNATS:
         
     #Creating the object
-    async def __init__(self):      
+    def __init__(self):      
         self.nc = None    
         
     async def setup_NATS(self):
@@ -22,22 +21,24 @@ class TelemetryNATS:
         self.nc = await nats.connect(servers=servers)
         
     #Function to run the telemetry connection.
-    async def publish_NATS(self,node_name,speed, pitch, yaw, roll, altitude, batteryLife, currentPosition, vehicleStatus):
+    #node_name -> name of the node the pub/sub is connecting to
+    #tel -> the class object created using the DataClass Types
+    async def publish_NATS(self,node_name, tel):
 
         #Creating the vehicle data dictionary
-        vehicle_data = {'speed': speed, 
-                        'pitch': pitch, 
-                        'yaw': yaw, 
-                        'roll': roll, 
-                        'altitude': altitude, 
-                        'batteryLife': batteryLife, 
+        vehicle_data = {'speed': tel.speed, 
+                        'pitch': tel.pitch, 
+                        'yaw': tel.yaw, 
+                        'roll': tel.roll, 
+                        'altitude': tel.altitude, 
+                        'batteryLife': tel.batteryLife, 
                         'lastUpdated': time.time(), 
-                        'currentPosition': currentPosition, 
-                        'vehicleStatus': vehicleStatus}
+                        'currentPosition': tel.currentCoordinate, 
+                        'vehicleStatus': tel.vehicleStatus}
         
         #Turning vehicle_data into a json
         jsondata = json.dumps(vehicle_data)
-        print
+        
         #Sending the data
         await self.nc.publish(node_name, bytes(jsondata,encoding='utf-8'))
         time.sleep(2)

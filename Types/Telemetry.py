@@ -21,7 +21,6 @@ class Telemetry:
     batteryLife: float
     currentCoordinate: Coordinate
     vehicleStatus: Status
-    lastUpdated: datetime
     
     def to_dict(self) -> dict[str, Any]:
         obj = {
@@ -33,7 +32,6 @@ class Telemetry:
             'batteryLife':self.batteryLife,
             'currentCoordinate': vars(self.currentCoordinate),
             'vehicleStatus': self.vehicleStatus.value,
-            'lastUpdated': self.lastUpdated.timestamp(),
         }
         return obj
 

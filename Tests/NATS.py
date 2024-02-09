@@ -1,32 +1,32 @@
-from ..Telemetry.NATS import *
-from ..Types.Telemetry import *
+from Telemetry import NATS
+from Types import Telemetry
 import asyncio
+
+from Types.Geolocation import Coordinate
 
 async def main():
     
     #Initializing Object
-    test = TelemetryNATS()
+    test = NATS.TelemetryNATS()
     
     #Setting Up the Connection
     await test.setup_NATS()
     
-    #Publishing Vehicle Data
-    while True:   
-        #Updating the class Data
-        tel = Telemetry(
-            pitch=6.0,
-            yaw=0.2,
-            roll=1.2,
-            speed=1.0,
-            altitude=5.0,
-            batteryLife=1.2,
-            currentCoordinate=Coordinate(
-                latitude=30,
-                longitude=60
-            ),
-            vehicleStatus=Status.IN_USE
-        )
-        await test.publish_NATS("foo",tel.pitch,tel.yaw,tel.roll,)
+    #Updating the class Data
+    tel = Telemetry.Telemetry(
+        pitch=6.0,
+        yaw=0.2,
+        roll=1.2,
+        speed=1.0,
+        altitude=5.0,
+        batteryLife=1.2,
+        currentCoordinate=Coordinate(
+            latitude=30,
+            longitude=60
+        ),
+        vehicleStatus=Telemetry.Status.IN_USE
+    )
+    await test.publish_NATS("foo",tel)
 
 
         
