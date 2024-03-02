@@ -21,6 +21,7 @@ class Telemetry:
     batteryLife: float
     currentCoordinate: Coordinate
     lastUpdated: datetime
+    
     # heading? (degrees NWSE of where vedhicle is heading)
     # ground/airspeed
     
