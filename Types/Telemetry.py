@@ -20,20 +20,20 @@ class Telemetry:
     altitude: float
     batteryLife: float
     currentCoordinate: Coordinate
-    vehicleStatus: Status
     lastUpdated: datetime
+    # heading? (degrees NWSE of where vedhicle is heading)
+    # ground/airspeed
     
     def to_dict(self) -> dict[str, Any]:
         obj = {
             'pitch': self.pitch,
             'yaw': self.yaw,
-            'roll':self.roll,
-            'speed':self.speed,
+            'roll': self.roll,
+            'speed': self.speed,
             'altitude': self.altitude,
-            'batteryLife':self.batteryLife,
+            'batteryLife': self.batteryLife,
             'currentCoordinate': vars(self.currentCoordinate),
-            'vehicleStatus': self.vehicleStatus.value,
-            'lastUpdated': self.lastUpdated.timestamp(),
+            'lastUpdated': self.lastUpdated.timestamp()
         }
         return obj
 
