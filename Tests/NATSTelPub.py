@@ -1,5 +1,6 @@
 from datetime import datetime
-from Telemetry import NATS
+from Telemetry import NATS_Pub
+from Commands import NATSSub
 from Types import Telemetry
 import asyncio
 
@@ -7,11 +8,11 @@ from Types.Geolocation import Coordinate
 
 async def main():
     
-    #Initializing Object
-    test = NATS.TelemetryNATS()
+    #Initializing Objects
+    testPub = NATS_Pub.TelemetryNATS()
     
     #Setting Up the Connection
-    await test.setup_NATS()
+    await testPub.setup_NATS("foo")
     
     #Updating the class Data
     tel = Telemetry.Telemetry(
@@ -29,10 +30,12 @@ async def main():
         lastUpdated=datetime.now()
         
     )
-    await test.publish_NATS("foo",tel)
+    
+    #Sending the Data.
+    testPub.publish_NATS(tel)
 
 
-        
+
 
 
 #Using ASYNCIO to run main

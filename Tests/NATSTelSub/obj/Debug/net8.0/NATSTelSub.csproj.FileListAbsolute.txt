@@ -1,0 +1,15 @@
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Tests\NATSTelSub\obj\Debug\net8.0\NATSTelSub.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Tests\NATSTelSub\obj\Debug\net8.0\NATSTelSub.AssemblyInfoInputs.cache
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Tests\NATSTelSub\obj\Debug\net8.0\NATSTelSub.AssemblyInfo.cs
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Tests\NATSTelSub\obj\Debug\net8.0\NATSTelSub.csproj.CoreCompileInputs.cache
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Tests\NATSTelSub\obj\Debug\net8.0\NATSTelSub.sourcelink.json
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Tests\NATSTelSub\bin\Debug\net8.0\NATSTelSub.exe
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Tests\NATSTelSub\bin\Debug\net8.0\NATSTelSub.deps.json
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Tests\NATSTelSub\bin\Debug\net8.0\NATSTelSub.runtimeconfig.json
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Tests\NATSTelSub\bin\Debug\net8.0\NATSTelSub.dll
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Tests\NATSTelSub\bin\Debug\net8.0\NATSTelSub.pdb
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Tests\NATSTelSub\obj\Debug\net8.0\NATSTelSub.dll
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Tests\NATSTelSub\obj\Debug\net8.0\refint\NATSTelSub.dll
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Tests\NATSTelSub\obj\Debug\net8.0\NATSTelSub.pdb
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Tests\NATSTelSub\obj\Debug\net8.0\NATSTelSub.genruntimeconfig.cache
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Tests\NATSTelSub\obj\Debug\net8.0\ref\NATSTelSub.dll

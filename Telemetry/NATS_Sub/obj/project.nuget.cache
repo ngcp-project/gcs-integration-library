@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "dgSpecHash": "/sDfgGgKkSHc9BqN3D+v1lyne0HXtchrkP25hoWf1EwSi+rAcgWUFqWqmvy76mdT/HqFrzsCjqknoQwWSM4AQQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\oldri\\Desktop\\ngcp2023\\gcs-integration-library\\Telemetry\\NATS_Sub\\NATS_Sub.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\oldri\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
+    "C:\\Users\\oldri\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\oldri\\.nuget\\packages\\microsoft.extensions.configuration.binder\\8.0.0\\microsoft.extensions.configuration.binder.8.0.0.nupkg.sha512",
+    "C:\\Users\\oldri\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\oldri\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\oldri\\.nuget\\packages\\microsoft.extensions.logging\\8.0.0\\microsoft.extensions.logging.8.0.0.nupkg.sha512",
+    "C:\\Users\\oldri\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\oldri\\.nuget\\packages\\microsoft.extensions.logging.configuration\\8.0.0\\microsoft.extensions.logging.configuration.8.0.0.nupkg.sha512",
+    "C:\\Users\\oldri\\.nuget\\packages\\microsoft.extensions.logging.console\\8.0.0\\microsoft.extensions.logging.console.8.0.0.nupkg.sha512",
+    "C:\\Users\\oldri\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "C:\\Users\\oldri\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\8.0.0\\microsoft.extensions.options.configurationextensions.8.0.0.nupkg.sha512",
+    "C:\\Users\\oldri\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\oldri\\.nuget\\packages\\nats.client\\1.1.1\\nats.client.1.1.1.nupkg.sha512",
+    "C:\\Users\\oldri\\.nuget\\packages\\nats.client.core\\2.0.2\\nats.client.core.2.0.2.nupkg.sha512",
+    "C:\\Users\\oldri\\.nuget\\packages\\nats.client.serializers.json\\2.0.2\\nats.client.serializers.json.2.0.2.nupkg.sha512",
+    "C:\\Users\\oldri\\.nuget\\packages\\system.io.hashing\\6.0.1\\system.io.hashing.6.0.1.nupkg.sha512",
+    "C:\\Users\\oldri\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\oldri\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -12,18 +12,21 @@ class TelemetryNATS:
         
     #Creating the object
     def __init__(self):      
-        self.nc = None    
-        
-    async def setup_NATS(self):
+        self.connection = None 
+        self.node_name = None
+   
+    #Setting up the connection
+    async def setup_NATS(self,node_name):
         #Setting up the new connection
         servers = os.environ.get("NATS_URL", "nats://localhost:4222").split(",")
         #Connecting to the server
-        self.nc = await nats.connect(servers=servers)
+        self.connection = await nats.connect(servers=servers,)
+        self.node_name = node_name
         
     #Function to run the telemetry connection.
     #node_name -> name of the node the pub/sub is connecting to
     #tel -> the class object created using the DataClass Types
-    async def publish_NATS(self,node_name, tel):
+    async def publish_NATS(self, tel):
 
         #Creating the vehicle data dictionary
         vehicle_data = {'speed': tel.speed, 
@@ -40,5 +43,5 @@ class TelemetryNATS:
         jsondata = json.dumps(vehicle_data, default=str)
         
         #Sending the data
-        await self.nc.publish(node_name, bytes(jsondata,encoding='utf-8'))
-        time.sleep(2)
+        await self.connection.publish(self.node_name, bytes(jsondata,encoding='utf-8'))
+        time.sleep(2)     
