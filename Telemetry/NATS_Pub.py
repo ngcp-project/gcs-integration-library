@@ -19,8 +19,11 @@ class TelemetryNATS:
     #Setting up the connection
     async def setup_NATS(self,node_name):
         print("Attempting to connect...")
+
         #Setting up the new connection
-        servers = os.environ.get("NATS_URL", "nats://localhost:42221").split(",")
+        #servers = os.environ.get("NATS_URL", "nats://localhost:4222").split(",")
+        servers = os.environ.get("NATS_URL", "nats://127.0.0.1:4222").split(",")
+
 
         #Connecting to the server
         self.connection = await nats.connect(servers=servers,)
