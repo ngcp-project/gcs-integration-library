@@ -21,8 +21,6 @@ class TelemetryNATS:
         print("Attempting to connect...")
 
         #Setting up the new connection
-        #servers = os.environ.get("NATS_URL", "nats://localhost:4222").split(",")
-        #servers = os.environ.get("NATS_URL", "nats://127.0.0.1:4222").split(",")
         servers = os.environ.get("NATS_URL", "nats://" + ipv4 + ":4222").split(",")
 
 
