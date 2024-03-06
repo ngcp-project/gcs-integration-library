@@ -13,7 +13,7 @@ namespace NATSTelemetrySub{
             if (natsUrl == null)
             {
                 //natsUrl = "nats://127.0.0.1:4222";
-                natsUrl = ipv4 + ":4222";
+                natsUrl = "nats://" + ipv4 + ":4222";
                 
             }
 
