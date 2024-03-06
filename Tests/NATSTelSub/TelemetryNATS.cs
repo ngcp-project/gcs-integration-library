@@ -12,7 +12,7 @@ namespace NATSTelemetrySub{
             //Using a set one if not existenet, MUST EXPOSE THE PORT USING DOCKER
             if (natsUrl == null)
             {
-                natsUrl = "nats://127.0.0.1:4222";
+                natsUrl = "nats://" + ipv4 + ":4222";
             }
 
             //Creating new connection factory
