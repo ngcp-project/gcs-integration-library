@@ -1,0 +1,6 @@
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Telemetry\NATS_Sub\obj\Debug\net8.0\NATS_Sub.csproj.AssemblyReference.cache
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Telemetry\NATS_Sub\obj\Debug\net8.0\NATS_Sub.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Telemetry\NATS_Sub\obj\Debug\net8.0\NATS_Sub.AssemblyInfoInputs.cache
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Telemetry\NATS_Sub\obj\Debug\net8.0\NATS_Sub.AssemblyInfo.cs
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Telemetry\NATS_Sub\obj\Debug\net8.0\NATS_Sub.csproj.CoreCompileInputs.cache
+C:\Users\oldri\Desktop\ngcp2023\gcs-integration-library\Telemetry\NATS_Sub\obj\Debug\net8.0\NATS_Sub.sourcelink.json
