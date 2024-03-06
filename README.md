@@ -19,7 +19,7 @@
 
 **Functions**  
 - __setup_NATS(node_name, ipv4)__  
-  - node_name (String): Name of the publisher you are publishing to (ex: "uav")
+  - node_name (String): Name of the node you are publishing to (ex: "uav")
   - ipv4 (String): ipv4 address of the computer **<u>you are sending TO</u>** (the subscriber, not the computer you are running the python script on) (Ex: "192.168.1.100")
 
 - __publish_NATS(tel)__
@@ -54,3 +54,31 @@
               };
   - Returns the telemetry object as a json in String format and will terminate by typing "exit"
 
+## **__Commands__** 
+
+### *C# (.net) (Publisher)*  
+- CommandsNATS publisher = new CommandsNATS();  
+  - Initalizes the publisher
+
+**Class Initalization**  
+- __NATS_Pub.TelemetryNATS()__ 
+  - Used for initialzing the Publisher System  
+
+**Functions**  
+- __setup_NATS(node_name, ipv4)__  
+  - node_name (String): Name of the node you are publishing to (ex: "uav")
+  - ipv4 (String): ipv4 address of the computer **<u>you are sending TO</u>** (the subscriber, not the computer you are running the python script on) (Ex: "192.168.1.100")
+
+- __publish_NATS(command)__
+  - command (String): Parameter that will be sent to the subscriber  
+
+### *Python (Subscriber)*  
+
+**Class Initalization** 
+- testSub = NATS_Sub.CommandsNATS()
+  - Used to initalize the subscriber  
+
+**Functions**
+
+- __publish_NATS(string node_name)__  
+  - node_name (String): Name of the node that you are subscribing to. Must be the same as the publisher.
