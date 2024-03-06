@@ -21,7 +21,8 @@ class TelemetryNATS:
         print("Attempting to connect...")
 
         #Setting up the new connection
-        servers = os.environ.get("NATS_URL", "nats://" + ipv4 + ":4222").split(",")
+        nats_server = "nats://" + ipv4 + ":4222"
+        servers = os.environ.get("NATS_URL", nats_server).split(",")
 
         #Connecting to the server
         self.connection = await nats.connect(servers=servers,)
