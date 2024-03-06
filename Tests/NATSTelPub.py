@@ -14,7 +14,7 @@ async def main():
     testPub = NATS_Pub.TelemetryNATS()
     
     #Setting Up the Connection
-    await testPub.setup_NATS("foo")
+    await testPub.setup_NATS("foo","10.110.246.119")
 
     #Updating the class Data
     tel = Telemetry.Telemetry(

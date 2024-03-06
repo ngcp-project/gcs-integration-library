@@ -4,7 +4,7 @@ using NATS.Client;
 
 namespace NATSTelemetrySub{
     public class TelemetryNATS{
-        public static void setup_NATS(String node_name){
+        public static void setup_NATS(String node_name, string ipv4){
 
             //Use if want to setup as an environment variable
             string natsUrl = Environment.GetEnvironmentVariable("NATS_URL");
@@ -12,7 +12,9 @@ namespace NATSTelemetrySub{
             //Using a set one if not existenet, MUST EXPOSE THE PORT USING DOCKER
             if (natsUrl == null)
             {
-                natsUrl = "nats://127.0.0.1:4222";
+                //natsUrl = "nats://127.0.0.1:4222";
+                natsUrl = ipv4 + ":4222";
+                
             }
 
             //Creating new connection factory
@@ -35,7 +37,7 @@ namespace NATSTelemetrySub{
                 };
 
                 //Creating the Subscriber
-                IAsyncSubscription subAsync = c.SubscribeAsync("foo", handler);
+                IAsyncSubscription subAsync = c.SubscribeAsync("node_name", handler);
                 Console.WriteLine(subAsync);
                 //Using a while loop to keep the programming running whilst subAsync recieves messages
                 while (true){
