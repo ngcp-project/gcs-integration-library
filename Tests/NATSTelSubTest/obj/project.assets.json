@@ -48,11 +48,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CSProjects\\gcs-integration-library\\Tests\\NATSTelSub\\NATSTelSub.csproj",
+      "projectUniqueName": "D:\\CSProjects\\gcs-integration-library\\Tests\\NATSTelSubTest\\NATSTelSub.csproj",
       "projectName": "NATSTelSub",
-      "projectPath": "D:\\CSProjects\\gcs-integration-library\\Tests\\NATSTelSub\\NATSTelSub.csproj",
+      "projectPath": "D:\\CSProjects\\gcs-integration-library\\Tests\\NATSTelSubTest\\NATSTelSub.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\CSProjects\\gcs-integration-library\\Tests\\NATSTelSub\\obj\\",
+      "outputPath": "D:\\CSProjects\\gcs-integration-library\\Tests\\NATSTelSubTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"

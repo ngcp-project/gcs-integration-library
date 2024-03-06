@@ -4,7 +4,7 @@ using NATS.Client;
 
 namespace NATSTelemetrySub{
     public class TelemetryNATS{
-        public static void setup_NATS(String node_name, string ipv4){
+        public static void setup_NATS(string node_name, string ipv4){
 
             //Use if want to setup as an environment variable
             string natsUrl = Environment.GetEnvironmentVariable("NATS_URL");

@@ -27,6 +27,8 @@ class TelemetryNATS:
         self.connection = await nats.connect(servers=servers,)
         self.node_name = node_name
         self.subscriber = await self.connection.subscribe(node_name) #Used to wait for the next message before sending another
+
+        print("Succesfully Connected to: " + str(servers))
         
     #Function to run the telemetry connection.
     #node_name -> name of the node the pub/sub is connecting to
