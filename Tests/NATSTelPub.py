@@ -1,6 +1,6 @@
 from datetime import datetime
 from Telemetry import NATS_Pub
-from Commands import NATSSub
+from Commands import NATS_Sub
 from Types import Telemetry
 import asyncio
 import time
