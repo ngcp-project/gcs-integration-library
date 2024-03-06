@@ -3,6 +3,8 @@ from Telemetry import NATS_Pub
 from Commands import NATSSub
 from Types import Telemetry
 import asyncio
+import time
+import sys
 
 from Types.Geolocation import Coordinate
 
@@ -13,7 +15,7 @@ async def main():
     
     #Setting Up the Connection
     await testPub.setup_NATS("foo")
-    
+
     #Updating the class Data
     tel = Telemetry.Telemetry(
         pitch=6.0,
@@ -32,7 +34,11 @@ async def main():
     )
     
     #Sending the Data.
-    testPub.publish_NATS(tel)
+    print("Running")
+    while (True):
+        await testPub.publish_NATS(tel)
+        time.sleep(5)
+    
 
 
 

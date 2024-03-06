@@ -981,19 +981,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\oldri\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\oldri\\Desktop\\ngcp2023\\gcs-integration-library\\Telemetry\\NATS_Sub\\NATS_Sub.csproj",
+      "projectUniqueName": "D:\\CSProjects\\gcs-integration-library\\Telemetry\\NATS_Sub\\NATS_Sub.csproj",
       "projectName": "NATS_Sub",
-      "projectPath": "C:\\Users\\oldri\\Desktop\\ngcp2023\\gcs-integration-library\\Telemetry\\NATS_Sub\\NATS_Sub.csproj",
-      "packagesPath": "C:\\Users\\oldri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\oldri\\Desktop\\ngcp2023\\gcs-integration-library\\Telemetry\\NATS_Sub\\obj\\",
+      "projectPath": "D:\\CSProjects\\gcs-integration-library\\Telemetry\\NATS_Sub\\NATS_Sub.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "D:\\CSProjects\\gcs-integration-library\\Telemetry\\NATS_Sub\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\oldri\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1011,6 +1011,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -1046,7 +1051,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

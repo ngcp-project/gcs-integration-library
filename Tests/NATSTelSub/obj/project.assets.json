@@ -1,26 +1,61 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "NATS.Client/1.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NATS.Client.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/NATS.Client.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "NATS.Client/1.1.3": {
+      "sha512": "nUW7mQtU377zBFLpTtTByO7NXOfr68V4nzgUHmp5jXOWaRWTWu9pc9Ie3I6TWLvj5jQMQnmH5ZpHelPOosoMag==",
+      "type": "package",
+      "path": "nats.client/1.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/NATS.Client.dll",
+        "lib/net46/NATS.Client.xml",
+        "lib/netstandard1.6/NATS.Client.dll",
+        "lib/netstandard1.6/NATS.Client.xml",
+        "lib/netstandard2.0/NATS.Client.dll",
+        "lib/netstandard2.0/NATS.Client.xml",
+        "nats.client.1.1.3.nupkg.sha512",
+        "nats.client.nuspec",
+        "package-icon.png"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "NATS.Client >= 1.1.3"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\oldri\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\oldri\\Desktop\\ngcp2023\\gcs-integration-library\\Tests\\NATSTelSub\\NATSTelSub.csproj",
+      "projectUniqueName": "D:\\CSProjects\\gcs-integration-library\\Tests\\NATSTelSub\\NATSTelSub.csproj",
       "projectName": "NATSTelSub",
-      "projectPath": "C:\\Users\\oldri\\Desktop\\ngcp2023\\gcs-integration-library\\Tests\\NATSTelSub\\NATSTelSub.csproj",
-      "packagesPath": "C:\\Users\\oldri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\oldri\\Desktop\\ngcp2023\\gcs-integration-library\\Tests\\NATSTelSub\\obj\\",
+      "projectPath": "D:\\CSProjects\\gcs-integration-library\\Tests\\NATSTelSub\\NATSTelSub.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "D:\\CSProjects\\gcs-integration-library\\Tests\\NATSTelSub\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\oldri\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -38,11 +73,22 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
+        "dependencies": {
+          "NATS.Client": {
+            "target": "Package",
+            "version": "[1.1.3, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -59,7 +105,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
