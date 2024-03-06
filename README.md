@@ -18,11 +18,11 @@
   - Used for initialzing the Publisher System
 
 **Functions**  
-- setup_NATS(node_name, ipv4)  
+- __setup_NATS(node_name, ipv4)__  
   - node_name (String): Name of the publisher you are publishing to (ex: "uav")
   - ipv4 (String): ipv4 address of the computer **<u>you are sending TO</u>** (the subscriber, not the computer you are running the python script on) (Ex: "192.168.1.100")
 
-- publish_NATS(tel)
+- __publish_NATS(tel)__
   - tel (Telemetry from Types): Telemtery object from the types directory  
     (Ex:  
     tel = Telemetry.Telemetry(  
@@ -43,7 +43,14 @@
 ### *C# (.net) (Subscriber)*  
 
 **Class Initalization/Functions**  
-- TelemetryNATS.setup_NATS(node_name)  
+- __TelemetryNATS.setup_NATS(node_name, messageCallback)__  
   - node_name (String): Name of the subscriber you are subscribing to. Must be the same name as the publisher (ex: "uav")
-  - Returns the telemetry object as a json in String format
+  - messageCallback: this specific line of code you must include to recieve the json
+    ```//This Line of code is NOT included in the TelemetryNATS C# library but muse be used to return the values from the call
+              Action<string> messageCallback = (message) =>
+              {
+                  Console.WriteLine("Received message: " + message);
+                  // You can perform any logic here using message
+              };
+  - Returns the telemetry object as a json in String format and will terminate by typing "exit"
 
