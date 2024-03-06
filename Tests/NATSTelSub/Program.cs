@@ -11,9 +11,9 @@ namespace NATS_Sub_Test
     {
         static void Main(string[] args)
         {
-            string node_name = "foo";
+            
             Console.WriteLine("Running");
-            TelemetryNATS.setup_NATS(node_name);
+            TelemetryNATS.setup_NATS("foo", "127.0.0.1");
 
         }
     }
