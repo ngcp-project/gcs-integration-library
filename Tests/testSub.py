@@ -1,4 +1,4 @@
-from Telemetry.RabbitMQ import TelemetryRabbitMQ
+from Telemetry.TelemPub import TelemetryRabbitMQ
 from Types.Telemetry import Status, Telemetry
 from Types.Geolocation import Coordinate
 from datetime import datetime
