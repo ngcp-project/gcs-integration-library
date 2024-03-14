@@ -1,4 +1,12 @@
+# Pycache files
+__pycache__/
+
+# Virtual environment files
 venv/
 env/
 .venv/
-__pycache__/
+
+
+# Library build files
+build/
+dist/
