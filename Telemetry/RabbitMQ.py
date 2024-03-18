@@ -1,10 +1,9 @@
-import pika, sys, json
-from Types.Telemetry import Status, Telemetry
-from Types.Geolocation import Coordinate
-from datetime import datetime
-import time
+import pika, json
+from Types.Telemetry import Telemetry
+
+
 class TelemetryRabbitMQ:
-    def __init__(self, vehicleName: str,  hostname: str):
+    def __init__(self, vehicleName: str, hostname: str):
         self.vehicleName = vehicleName.lower()
         self.connection = None
         self.channel = None
@@ -16,8 +15,7 @@ class TelemetryRabbitMQ:
         #     'localhost'  # Use 'localhost' since RabbitMQ is running in a Docker container
         # )
         # Create the connection using pika.BlockingConnection
-        self.connection = pika.BlockingConnection(pika.ConnectionParameters(
-            hostname))
+        self.connection = pika.BlockingConnection(pika.ConnectionParameters(hostname))
         # Declare a queue on the channel
         self.channel = self.connection.channel()
         #name of the queue is set to vehicle name
@@ -27,9 +25,8 @@ class TelemetryRabbitMQ:
     # Publishing messages to RabbitMQ. 
     def publish(self, data: Telemetry): #(sel, data =(as in) telemetry data)
         if self.channel is None:
-            raise Exception("Channel is not initialized.")
+            raise Exception("RabbitMQ telemetry channel is not initialized!")
         
-        exchange_name = self.vehicleName    
         # self.channel.exchange_declare(exchange='', exchange_type='topic')
         # # Convert objects into json strings(not all are convertible, may
         # need to create a dict of data before serializing to json)
@@ -50,25 +47,5 @@ class TelemetryRabbitMQ:
 
 
     def close_connection(self):
-        if self.connection:
-            self.connection.close()
-    
-if __name__ == "__main__":
-    # vehicle_name = input("Enter vehicle name: ")
-    telemetry = TelemetryRabbitMQ("eru", "192.168.0.101")
-    coordinate = Coordinate(latitude=37.7749, longitude=-122.4194)
-    while True:
-        data = Telemetry(
-        pitch=10.5,
-        yaw=20.3,
-        roll=5.8,
-        speed=45.2,
-        altitude=1000.0,
-        batteryLife=80.5,
-        currentCoordinate=coordinate,
-        vehicleStatus=Status.IN_USE,
-        lastUpdated=datetime.now()
-        )
-        telemetry.publish(data)
-        time.sleep(10)
+        if self.connection: self.connection.close()
 
