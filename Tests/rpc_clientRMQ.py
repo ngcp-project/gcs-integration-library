@@ -1,7 +1,10 @@
+# GCS
 #!/usr/bin/env python
 import pika
 import uuid
+import time
 
+flag_count =0
 
 class FibonacciRpcClient(object):
 
@@ -28,8 +31,14 @@ class FibonacciRpcClient(object):
             self.response = body
 
     def call(self, n):
+        global last_call
+        global flag_count
+        flag_count = 0
+        last_call = time.time()
+        
         self.response = None
         self.corr_id = str(uuid.uuid4())
+        
         self.channel.basic_publish(
             exchange='',
             routing_key='rpc_queue',
@@ -38,13 +47,26 @@ class FibonacciRpcClient(object):
                 correlation_id=self.corr_id,
             ),
             body=str(n))
-        while self.response is None:
-            self.connection.process_data_events(time_limit=None)
-        return int(self.response)
+        
+        while self.response is None:  
+            self.connection.process_data_events(time_limit=3)
+            if time.time() - last_call > 3:  # Check if 3 seconds have elapsed
+                flag_count += 1
+                print(f"Flag(s) raised: {flag_count}")
+                last_call = time.time()
+                if flag_count == 3:
+                    print("[x] Vehicle is missing [x]")
+                    return "Vehicle is missing"
+
+        return str(self.response)
 
 
 fibonacci_rpc = FibonacciRpcClient()
 
-print(" [x] Requesting fib(30)")
+print(" [x] Sending commands to Vehicles")
 response = fibonacci_rpc.call(30)
-print(f" [.] Got {response}")
+print("Response:", response)
+
+
+    
+
