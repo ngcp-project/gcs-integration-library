@@ -1,30 +1,48 @@
 # Vehicle
 import pika 
 import time
+import json
+from Types.Commands import Commands
+from Types.Geolocation import Coordinate, Polygon
 
 connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
 channel = connection.channel(0)
 
 channel.queue_declare(queue='rpc_queue')
 
-def fib(n):
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
-    else:
-        time.sleep(7)
-        return "Got It :D"
+def isManual(isManual:bool):
+    print(f"Manual is:{isManual}")
+    
+def target(target:Coordinate):
+    print(f"Target Coordinate is:{target}")
+    
+def searchArea(searchArea:Polygon):
+    print(f"Search Area is:{searchArea}")
+    
+def subscribe_all(commands_data) -> str:
+    command_dict = json.loads(commands_data)
+    
+    is_manual = command_dict['isManual']
+    target_latitude = command_dict['target']['latitude']
+    target_longitude = command_dict['target']['longitude']
+    
+    searchArea_polygon = command_dict['searchArea']
+    searchArea_polygon_list = [(coord['latitude'], coord['longitude']) for coord in searchArea_polygon]
+    
+    
+    coordinate01 = Coordinate(target_latitude, target_longitude)
+    isManual(is_manual)
+    target(coordinate01)
+    searchArea(searchArea_polygon_list)
+    
+    return f"[.] Vehicle received commands from GCS and Answer: {commands_data}"
 
-# Callback for basic consume
-# 
 def on_request(ch, method, props, body):
     
-    n = int(body)
+    commands = body
     
-    # print(f" [.] fib({n})")
-    print("[.] Vehicle received commands from GCS")
-    response = fib(n)
+    response = subscribe_all(commands)
+    # print(f"[.] Vehicle received commands from GCS: {commands}")
     
     ch.basic_publish(exchange='', routing_key=props.reply_to, 
                      properties=pika.BasicProperties(correlation_id=props.correlation_id),
@@ -34,6 +52,5 @@ def on_request(ch, method, props, body):
 
 channel.basic_qos(prefetch_count=1)
 channel.basic_consume(queue='rpc_queue', on_message_callback=on_request)
-
 print(" [x] Awaiting GCS RPC requests")
 channel.start_consuming()

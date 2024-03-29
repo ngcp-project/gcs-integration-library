@@ -3,7 +3,7 @@ from Types.Geolocation import Coordinate, Polygon
 from typing import Any
 
 
-@dataclass
+@dataclass(repr=False)
 class Commands:
     # islocalIp: str
     isManual: bool
@@ -14,7 +14,7 @@ class Commands:
         obj = {
             'isManual': self.isManual,
             'target': vars(self.target),
-            'searchArea':self.searchArea.to_dict()
+            'searchArea':vars(self.searchArea),
         }
         return obj
     

@@ -1,10 +1,16 @@
 from dataclasses import dataclass
-from typing import List
+from typing import List, Any
 
 @dataclass
 class Coordinate:
     latitude: float
     longitude: float
+    def to_dict(self) -> dict:
+        obj = {
+            'latitude' : self.latitude,
+            'longitude' : self.longitude,
+        }
+        return obj
 
 
 @dataclass
