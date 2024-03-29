@@ -67,21 +67,15 @@ gcs_rpc = FibonacciRpcClient()
 print(f" [x] Start sending commands to Vehicles")
 coordinates_01 = Coordinate(latitude = 35.35, longitude =  60.35)
 coordinates_02 = Coordinate(latitude = 40.35, longitude =  50.35)
-coordinates_03 = Coordinate(latitude = 8.35, longitude =  50.35)
 
-polygon_coord = [coordinates_02, coordinates_03] 
-polygon = Polygon(polygon_coord)
+polygon = Polygon(coordinates_02)
 data = Commands( 
     isManual=True,
     target=coordinates_01,
-    searchArea=polygon
+    searchArea=coordinates_02
 )
-# Convert Commands object to dictionary using to_dict() method
-data_dict = data.to_dict()
 
-# Convert Coordinate objects inside the dictionary to JSON serializable format
-data_dict['searchArea'] = [coord.to_dict() for coord in data_dict['searchArea']] 
-response = gcs_rpc.call(data_dict)
+response = gcs_rpc.call(data)
 print(f"Response: {response}")
 
 

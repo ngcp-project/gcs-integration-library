@@ -26,14 +26,14 @@ def subscribe_all(commands_data) -> str:
     target_latitude = command_dict['target']['latitude']
     target_longitude = command_dict['target']['longitude']
     
-    searchArea_polygon = command_dict['searchArea']
-    searchArea_polygon_list = [(coord['latitude'], coord['longitude']) for coord in searchArea_polygon]
-    
+    searchArea_latitude = command_dict['searchArea']['latitude']
+    searchArea_longitude = command_dict['searchArea']['longitude']
     
     coordinate01 = Coordinate(target_latitude, target_longitude)
+    coordinate02 = Coordinate(searchArea_latitude, searchArea_longitude)
     isManual(is_manual)
     target(coordinate01)
-    searchArea(searchArea_polygon_list)
+    searchArea(coordinate02)
     
     return f"[.] Vehicle received commands from GCS and Answer: {commands_data}"
 
