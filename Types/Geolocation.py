@@ -18,7 +18,8 @@ class Polygon:
     coordinates: list[Coordinate]
     def to_dict(self) -> dict:
         return {
-            'coordinates': [vars(coord) for coord in self.coordinates]
+            # 'coordinates': [vars(coord) for coord in self.coordinates]
+             'coordinates': [coord.to_dict() for coord in self.coordinates]
         }
     
 

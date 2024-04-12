@@ -20,6 +20,7 @@ def searchArea(searchArea:Polygon):
     print(f"Search Area is:{searchArea}")
     
 def subscribe_all(commands_data) -> str:
+    time.sleep(2)
     command_dict = json.loads(commands_data)
     
     is_manual = command_dict['isManual']
