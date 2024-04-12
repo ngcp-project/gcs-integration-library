@@ -140,10 +140,6 @@ class FibonacciRpcClient(object):
         while self.response is None: 
             self.connection.process_data_events(time_limit=3)
             if time.time() - last_call > 3:  # Check if 3 seconds have elapsed
-                # flag_count += 1
-                # print(f"Flag(s) raised: {flag_count}")
-                # last_call = time.time()
-                # if flag_count == 1:
                 print("[x] Vehicle is missing [x]")
                 return "Vehicle is missing"
         return str(self.response)
