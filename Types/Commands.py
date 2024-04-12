@@ -10,12 +10,13 @@ class Commands:
     target: Coordinate
     searchArea: Polygon
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> dict[str, Any]:
         obj = {
             'isManual': self.isManual,
-            'target': vars(self.target),
-            'searchArea':vars(self.searchArea),
+            'target': self.target.to_dict(),
+            'searchArea': self.searchArea.to_dict(),
         }
         return obj
+
     
     

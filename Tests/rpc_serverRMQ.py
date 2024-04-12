@@ -20,21 +20,28 @@ def searchArea(searchArea:Polygon):
     print(f"Search Area is:{searchArea}")
     
 def subscribe_all(commands_data) -> str:
-    time.sleep(2)
     command_dict = json.loads(commands_data)
     
     is_manual = command_dict['isManual']
     target_latitude = command_dict['target']['latitude']
     target_longitude = command_dict['target']['longitude']
     
-    searchArea_latitude = command_dict['searchArea']['latitude']
-    searchArea_longitude = command_dict['searchArea']['longitude']
     
-    coordinate01 = Coordinate(target_latitude, target_longitude)
-    coordinate02 = Coordinate(searchArea_latitude, searchArea_longitude)
+    # searchArea_latitude = command_dict['searchArea']['latitude']
+    # searchArea_longitude = command_dict['searchArea']['longitude']
+    search_area_coordinates = command_dict['searchArea']['coordinates']
+    search_area_coordinates_list = []
+    for coor_dict in search_area_coordinates:
+        search_area_latitude = coor_dict['latitude']
+        search_area_longitude = coor_dict['longitude']
+        search_area_coordinates_list.append(Coordinate(latitude=search_area_latitude, longitude=search_area_longitude))
+        
+    
+    targetCoordinate = Coordinate(target_latitude, target_longitude)
+    search_area = Polygon(coordinates=search_area_coordinates_list)
     isManual(is_manual)
-    target(coordinate01)
-    searchArea(coordinate02)
+    target(targetCoordinate)
+    searchArea(search_area)
     
     return f"[.] Vehicle received commands from GCS and Answer: {commands_data}"
 
