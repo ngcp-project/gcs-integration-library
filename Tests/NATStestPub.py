@@ -11,10 +11,10 @@ from Types.Geolocation import Coordinate
 async def main():
     
     #Initializing Objects
-    testPub = TelemetryNATS("uav","uav")
+    testPub = TelemetryNATS("Unmmaned Aerial Vehicle","uav") #1st paramater: vehicle name | 2nd parameter: name of node you are subscribing to.
     
     #Setting Up the Connection
-    await testPub.setup_NATS("localhost")
+    await testPub.setup_NATS("10.110.224.250") #IP address is whatever computer you are sending to
     
     #Sending the Data.
     print("Running")

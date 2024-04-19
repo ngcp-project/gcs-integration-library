@@ -8,11 +8,12 @@ class TelemetryNATS:
         
     #Creating the object
     #@params: vehicle_name = name of the vehicle | node_name = name of the node you are publishing to
-    def __init__(self, vehicle_name: str, node_name: str):      
+    def __init__(self, vehicle_name: str, node_name: str, ipv4: str):      
         self.connection = None 
         self.node_name = node_name
         self.subscriber = None
         self.vehicle_name = vehicle_name.lower()
+        self.setup_NATS(self,ipv4)
    
     #Setting up the connection
     #@params: ipv4 = ip address of the SUBSCRIBER
