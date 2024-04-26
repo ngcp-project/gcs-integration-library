@@ -4,10 +4,7 @@ from setuptools import setup, find_packages
 def requirements() -> list[str]:
     with open('requirements.txt', 'r') as file:
         dependencies = file.read().split('\n')
-        return [
-            req for req in dependencies 
-            if req != ""
-        ]
+        return [ req for req in dependencies if req != ""]
 
 
 if __name__ == '__main__':
@@ -21,3 +18,5 @@ if __name__ == '__main__':
         packages=find_packages(include=("Commands", "Telemetry", "Tests", "Types")),
         install_requires=requirements(),
     )
+
+
