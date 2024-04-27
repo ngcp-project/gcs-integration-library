@@ -9,7 +9,7 @@ class Coordinate:
 
 @dataclass
 class Polygon:
-    coordinates: list[Coordinate]
+    coordinates: List[Coordinate]
     def to_dict(self) -> dict:
         return {
             'coordinates': [vars(coord) for coord in self.coordinates]

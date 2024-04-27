@@ -4,7 +4,7 @@ from Types.Telemetry import Telemetry
 from Types.Geolocation import Coordinate
 import time
 
-tel = TelemetryRabbitMQ("", "")
+tel = TelemetryRabbitMQ("ERU", "localhost")
 
 data = Telemetry(
     pitch=160,
