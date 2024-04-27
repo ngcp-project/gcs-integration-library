@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime
 from enum import Enum
-from typing import Any
+from typing import Dict
 
 from Types.Geolocation import Coordinate
 
@@ -16,7 +16,7 @@ class Telemetry:
     currentCoordinate: Coordinate
     lastUpdated: datetime
     
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         obj = {
             'pitch': self.pitch,
             'yaw': self.yaw,
