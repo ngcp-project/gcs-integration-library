@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from Types.Geolocation import Coordinate, Polygon
-from typing import Any
+from typing import Dict
 
 
 @dataclass
@@ -10,7 +10,7 @@ class Commands:
     target: Coordinate
     searchArea: Polygon
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> Dict:
         obj = {
             'isManual': self.isManual,
             'target': vars(self.target),
