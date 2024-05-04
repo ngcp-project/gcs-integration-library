@@ -1,9 +1,12 @@
-import pika 
+from Tests import rpc_serverRMQ
+from Tests.rpc_serverRMQ import CommandsRabbitMQ
 
-connection = pika.BlockingConnection(pika.ConnectionParameters(host="192.168.0.101"))
-channel=connection.channel()
-vehicleName = "eru"
-channel.queue_declare(queue=f"telemetry_{vehicleName}")
-channel.basic_publish(exchange='', routing_key=f"telemetry_{vehicleName}", body='working now?')
-print("did send it")
-connection.close()
+vehicle = CommandsRabbitMQ("ERU")
+def callback(channel, method, prop, body):
+    print("Callback in Main received data from GCS")
+    print(body)
+try:
+    vehicle.subscribe_all(callback)
+except KeyboardInterrupt:
+    print(" [*] Exiting. Closing connection.")
+    vehicle.close_connection()
