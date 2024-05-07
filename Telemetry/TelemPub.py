@@ -58,18 +58,22 @@ class TelemetryRabbitMQ:
 if __name__ == "__main__":
     # vehicle_name = input("Enter vehicle name: ")
     telemetry = TelemetryRabbitMQ("eru", "192.168.0.101")
-    coordinate = Coordinate(latitude=37.7749, longitude=-122.4194)
+    current_coordinate = Coordinate(latitude=37.7749, longitude=-122.4194)
+    vehicleSearch_coordinate = Coordinate(latitude=1.0, longitude=2.0)
     while True:
         data = Telemetry(
-        pitch=10.5,
-        yaw=20.3,
-        roll=5.8,
-        speed=45.2,
-        altitude=1000.0,
-        batteryLife=80.5,
-        currentCoordinate=coordinate,
-        vehicleStatus=Status.IN_USE,
-        lastUpdated=datetime.now()
+            localIP="12.12.12.12",
+            pitch=10.5,
+            yaw=20.3,
+            roll=5.8,
+            speed=45.2,
+            altitude=1000.0,
+            batteryLife=80.5,
+            currentCoordinate=current_coordinate,
+            vehicleStatus=Status.IN_USE,
+            lastUpdated=datetime.now(),
+            fireFound=False,
+            vehicleSearch=vehicleSearch_coordinate
         )
         telemetry.publish(data)
         time.sleep(10)

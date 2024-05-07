@@ -5,7 +5,11 @@ import uuid
 import time
 import json
 from Types.Commands import Commands
+from Types.CommandsEnum import CommandsEnum
 from Types.Geolocation import Coordinate, Polygon
+
+global last_call
+
 
 class GCSRabbitMQ(object):
 
@@ -48,7 +52,7 @@ class GCSRabbitMQ(object):
                 correlation_id=self.corr_id,
             ),
             body=message)
-        print(f" [x] The following commands to Vehicles: {message}")
+        print(f" [x] The following commands to Vehicles: \n\t {message}\n")
         while self.response is None: 
             time.sleep(1)  # Delay for better visualization, remove in production
             self.connection.process_data_events(time_limit=3)
@@ -75,8 +79,5 @@ data = Commands(
 )
 
 response = gcs_rpc.call(data)
-print(f"Response: {response}")
-
-
-    
+print(f"{response}")
 

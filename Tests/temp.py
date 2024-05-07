@@ -1,5 +1,5 @@
-from Tests import rpc_serverRMQ
-from Tests.rpc_serverRMQ import CommandsRabbitMQ
+from Commands import Commands_Vehicles
+from Commands.Commands_Vehicles import CommandsRabbitMQ
 
 vehicle = CommandsRabbitMQ("ERU")
 def callback(channel, method, prop, body):
