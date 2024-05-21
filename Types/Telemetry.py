@@ -1,15 +1,9 @@
 from dataclasses import dataclass
 from datetime import datetime
 from enum import Enum
-from typing import Any
+from typing import Any, Dict
 
 from Types.Geolocation import Coordinate
-
-class Status(Enum):
-    IN_USE = "In Use"
-    STANDBY = "Standby"
-    EMERGENCY= "Emergency"
-
 
 @dataclass(repr=False)
 class Telemetry:
@@ -20,10 +14,9 @@ class Telemetry:
     altitude: float
     batteryLife: float
     currentCoordinate: Coordinate
-    vehicleStatus: Status
     lastUpdated: datetime
     
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> Dict[str, Any]:
         obj = {
             'pitch': self.pitch,
             'yaw': self.yaw,
@@ -32,7 +25,6 @@ class Telemetry:
             'altitude': self.altitude,
             'batteryLife':self.batteryLife,
             'currentCoordinate': vars(self.currentCoordinate),
-            'vehicleStatus': self.vehicleStatus.value,
             'lastUpdated': self.lastUpdated.timestamp(),
         }
         return obj
