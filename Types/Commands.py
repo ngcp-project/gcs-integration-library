@@ -1,11 +1,11 @@
 from dataclasses import dataclass
 from Types.Geolocation import Coordinate, Polygon
-from typing import Dict
+from enum import Enum, auto
+from typing import Any
 
 
 @dataclass(repr=False)
 class Commands:
-    # islocalIp: str
     isManual: bool
     target: Coordinate
     searchArea: Polygon
@@ -17,6 +17,3 @@ class Commands:
             'searchArea': self.searchArea.to_dict(),
         }
         return obj
-
-    
-    
