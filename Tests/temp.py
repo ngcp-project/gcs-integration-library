@@ -1,5 +1,5 @@
-from Commands import Commands_Vehicles
-from Commands.Commands_Vehicles import CommandsRabbitMQ
+from Commands import RabbitMQ
+from Commands.RabbitMQ import CommandsRabbitMQ
 
 vehicle = CommandsRabbitMQ("ERU")
 def callback(channel, method, prop, body):

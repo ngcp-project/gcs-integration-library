@@ -1,41 +1,58 @@
-# Vehicle
-
 import pika 
 import time
 import json
 from Types.Commands import Commands
 from Types.CommandsEnum import CommandsEnum
 from Types.Geolocation import Coordinate, Polygon
+
         
 class CommandsRabbitMQ:
     # Initialize vehicle information
-    def __init__(self, vehicleName: str):
+    def __init__(self, vehicleName: str, commandName):
         self.vehicleName = vehicleName.lower()
+        self.commandName = commandName
         self.connection = None
         self.channel = None
-        self.setup_rabbitmq()
+        self.setup_rabbitmq(vehicleName, commandName)
         
     # Setting up RabbitMQ Server for Vehicles    
-    def setup_rabbitmq(self):
+    def setup_rabbitmq(self, vehicleName, commandName):
         self.connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
-        self.channel = self.connection.channel(0)
-        self.channel.queue_declare(queue='rpc_queue')
+        self.channel = self.connection.channel()
+        queue_name = f"{vehicleName.lower()}_command_{commandName}"
+        self.channel.queue_declare(queue=queue_name)
+        print(f"queue_name in setup {queue_name}")
 
     """
     isManual(isManual: bool)
     
+    emergencyStop(emergencyStop : bool)
+    
     taregt(target: Coordinate)
     
     searchArea(searchArea: Polygon)
+    
+    keepIn(keepIn: Polygon)
+    
+    keepOut(keepOut: Polygon)
     """
     def isManual(self, isManual: bool):
         print(f"Manual is: {isManual}")
+    
+    def emergencyStop(self, emergencyStop: bool):
+        print(f"Emergency Stop is: {emergencyStop}")
         
     def target(self, target: Coordinate):
         print(f"Target Coordinate is: {target}")
         
     def searchArea(self, searchArea: Polygon):
         print(f"Search Area is: {searchArea}")
+        
+    def keepIn(self, keepIn: Polygon):
+        print(f"Keep in Coordinate is: {keepIn}")
+    
+    def keepOut(self, keepOut: Polygon):
+        print(f"Keep out Coordinate is: {keepOut}")
     
     """
     subscribe(self, topic: str, callback_function)
@@ -44,12 +61,15 @@ class CommandsRabbitMQ:
     -Calls handle_command() function to handle the single given command.
     
     """
-    def subscribe(self, topic: str, callback_function) -> str:
+    def subscribe(self, commandName, vehicleName: str, topic: str, callback_function) -> str:
+        print("Enter Subscribe")
+        queue_name = f"{vehicleName.lower()}_command_{commandName}"
+        self.channel.queue_declare(queue=queue_name)
         def callback(ch, method, props, body):
             commands = json.loads(body)
             callback_function(ch, method, props, commands)
-            self.handle_command(topic, commands, ch, props, method)
-        self.channel.basic_consume(queue='rpc_queue', on_message_callback=callback, auto_ack=False)
+            self.handle_command(vehicleName, topic, commands, ch, props, method)
+        self.channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=False)
         self.channel.start_consuming()
     
     """
@@ -59,11 +79,15 @@ class CommandsRabbitMQ:
     -Calls handle_all_commands() function to handle the given command.
     
     """
-    def subscribe_all(self, callback_function) -> str:
-        def callback(ch, method, props, body):
+    def subscribe_all(self, vehicleName: str, callback_function) -> str:
+        command_types = ["manual", "emergency", "target", "search", "keepIn", "keepOut"]
+        for command_type in command_types:
+            queue_name = f"{self.vehicleName.lower()}_commands_{command_type}"
+            self.channel.queue_declare(queue=queue_name)
+        def callback(ch, vehicleName: str, method, props, body):
             commands = json.loads(body)
             callback_function(ch, method, props, commands)
-            self.handle_all_commands(commands, ch, props, method)
+            self.handle_all_commands(vehicleName, commands, ch, props, method)
         self.channel.basic_consume(queue='rpc_queue', on_message_callback=callback, auto_ack=False)
         self.channel.start_consuming()
 
@@ -74,19 +98,28 @@ class CommandsRabbitMQ:
     - It determines which command function to call based on given topic.
     
     """
-    def handle_command(self, topic, command_dict, ch, props, method):
+    def handle_command(self, vehicleName, topic, command_dict, ch, props, method):
+        print("Enter handle_command")
         if self.channel is None:
             raise Exception("Channel is not initialized.")
         
         command_type = topic
         print(f"====== Commands Types ======> {command_type.upper()}")
+        
+        print(f"====== Vehicle Name ======> {vehicleName.upper()}")
 
         if command_type == CommandsEnum.MANUAL_MODE.value:
             self.isManual(command_dict["isManual"])
         elif command_type == CommandsEnum.TARGET.value:
             self.target(command_dict["target"])
+        elif command_type == CommandsEnum.EMERGENCY_STOP.value:
+            self.target(command_dict["emergencyStop"])
         elif command_type == CommandsEnum.SEARCH_AREA.value:
             self.searchArea(command_dict["searchArea"])
+        elif command_type == CommandsEnum.KEEP_IN.value:
+            self.target(command_dict["keepIn"])
+        elif command_type == CommandsEnum.KEEP_OUT.value:
+            self.target(command_dict["keepOut"])
             
         # time.sleep(4)
         response = {f"[.] Vehicle received commands from GCS with data:{command_dict}"}
@@ -105,15 +138,17 @@ class CommandsRabbitMQ:
     destined functions.
     
     """
-    def handle_all_commands(self, command_dict, ch, props, method): 
+    def handle_all_commands(self, vehicleName, command_dict, ch, props, method): 
           
         print("Enter handle_all_commands")
+        print(f"====== Vehicle Name ======> {vehicleName.upper()}")
         if self.channel is None:
             raise Exception("Channel is not initialized.")
         
         command_type = command_dict.get("isManual")
             
         is_manual = command_dict['isManual']
+        emergency_stop = command_dict['emergencyStop']
         target_latitude = command_dict['target']['latitude']
         target_longitude = command_dict['target']['longitude']
         
@@ -123,13 +158,33 @@ class CommandsRabbitMQ:
             search_area_latitude = coor_dict['latitude']
             search_area_longitude = coor_dict['longitude']
             search_area_coordinates_list.append(Coordinate(latitude=search_area_latitude, longitude=search_area_longitude))
+        
+        keep_in_coordinates = command_dict['keepIn']['coordinates']
+        keep_in_coordinates_list = []
+        for coor_dict in keep_in_coordinates:
+            keep_in_latitude = coor_dict['latitude']
+            keep_in_longitude = coor_dict['longitude']
+            keep_in_coordinates_list.append(Coordinate(latitude=keep_in_latitude, longitude=keep_in_longitude))
+        
+        keep_out_coordinates = command_dict['keepOut']['coordinates']
+        keep_out_coordinates_list = []
+        for coor_dict in keep_out_coordinates:
+            keep_out_latitude = coor_dict['latitude']
+            keep_out_longitude = coor_dict['longitude']
+            keep_out_coordinates_list.append(Coordinate(latitude=keep_out_latitude, longitude=keep_out_longitude))
                     
         targetCoordinate = Coordinate(target_latitude, target_longitude)
         search_area = Polygon(coordinates=search_area_coordinates_list)
+        keep_in = Polygon(coordinates=keep_in_coordinates_list)
+        keep_out = Polygon(coordinates=keep_out_coordinates_list)
+        
         
         self.isManual(is_manual)
+        self.emergencyStop(emergency_stop)
         self.target(targetCoordinate)
         self.searchArea(search_area)
+        self.keepIn(keep_in)
+        self.keepOut(keep_out)
         
         # time.sleep(4)
         response = {f"[.] Vehicle received commands from GCS with data:\n\t{command_dict}\n"}
@@ -144,14 +199,19 @@ class CommandsRabbitMQ:
             self.connection.close()       
             
 if __name__=="__main__":
-    vehicle = CommandsRabbitMQ("ERU")
+    
+    # vehicleName = input("Enter vehicle name: ").strip()
+    vehicleName = "eru"
+    command_name = CommandsEnum.MANUAL_MODE
+    vehicle = CommandsRabbitMQ(vehicleName, command_name)
+    
+    print("Vehicle side")
+    
     def callback(channel, method, prop, body):
         pass
     try:
-        vehicle.subscribe(CommandsEnum.TARGET.value, callback)
-        # vehicle.subscribe_all(callback)
+        vehicle.subscribe(command_name, vehicleName, CommandsEnum.MANUAL_MODE.value, callback)
+        # vehicle.subscribe_all(vehicleName, callback)
     except KeyboardInterrupt:
         print(" [*] Exiting. Closing connection.")
         vehicle.close_connection()
-
-

@@ -1,2 +1,11 @@
-/env
+# Pycache files
 __pycache__/
+
+# Virtual environment files
+venv/
+env/
+.venv/
+
+
+# Library build files
+build/
