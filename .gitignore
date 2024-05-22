@@ -1,12 +1,1 @@
 __pycache__/
-
-# Virtual environment files
-venv/
-env/
-.venv/
-
-
-# Library build files
-build/
-
-integration.egg-info/

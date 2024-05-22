@@ -1,12 +1,20 @@
 Metadata-Version: 2.1
 Name: integration
 Version: 0.1.0
-Summary: UNKNOWN
 Home-page: https://github.com/Northrop-Grumman-Collaboration-Project/gcs-integration-library
 Author: NGCP - Ground Control Station
-License: UNKNOWN
-Platform: UNKNOWN
 License-File: LICENSE
-
-UNKNOWN
-
+Requires-Dist: asyncio==3.4.3
+Requires-Dist: blinker==1.7.0
+Requires-Dist: click==8.1.7
+Requires-Dist: colorama==0.4.6
+Requires-Dist: Flask==3.0.0
+Requires-Dist: iniconfig==2.0.0
+Requires-Dist: itsdangerous==2.1.2
+Requires-Dist: Jinja2==3.1.2
+Requires-Dist: MarkupSafe==2.1.3
+Requires-Dist: packaging==23.2
+Requires-Dist: pika==1.3.2
+Requires-Dist: pluggy==1.3.0
+Requires-Dist: pytest==7.4.3
+Requires-Dist: Werkzeug==3.0.1
