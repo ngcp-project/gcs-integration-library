@@ -18,44 +18,24 @@ If you are on Powershell, set up the python environment by:
 * **Run Docker container** using this command: `docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.12-management`
 
 ### For Vehicle to Subscribe to Commands from the GCS
-**Subscribe to ALL Commands**
-* In your folder, make sure to follow this template: (e.g test.py)
-```
-from Commands.Commands_Vehicles import CommandsRabbitMQ
-from Types.CommandsEnum import CommandsEnum
-
-def main():
-  # Choose your vehicle name, ERU is used as an example
-    vehicle = CommandsRabbitMQ("ERU")
-
-    def callback(channel, method, prop, body):
-        pass
-    try:
-        # Subscribing to all commands
-        vehicle.subscribe_all(callback)
-    except KeyboardInterrupt:
-        print(" [*] Exiting. Closing connection.")
-        vehicle.close_connection()
-# Executing the main function
-if __name__ == "__main__":
-    main()
-```
-
 **Subscribe to one command at a time**
-* In your folder, make sure to follow this template: (e.g test.py)
+* In your folder, make sure to follow this template: (e.g test.py). In this example, the vehicle ERU is subscribing to the Manual Mode command from the GCS.
 ```
-from Commands.Commands_Vehicles import CommandsRabbitMQ
+from Commands.RabbitMQ import CommandsRabbitMQ
 from Types.CommandsEnum import CommandsEnum
 
-def main():
-  # Choose your vehicle name, ERU is used as an example
-    vehicle = CommandsRabbitMQ("ERU")
-
+def main() :
+    # vehicleName = input("Enter vehicle name: ").strip()
+    vehicleName = "eru"
+    command_name = CommandsEnum.MANUAL_MODE
+    vehicle = CommandsRabbitMQ(vehicleName, command_name)
+    
+    print("Vehicle side")
+    
     def callback(channel, method, prop, body):
         pass
     try:
-        # Subscribing to one command. (e.g Target Coordinate)
-        vehicle.subscribe(CommandsEnum.TARGET.value, callback)
+        vehicle.subscribe(command_name, vehicleName, CommandsEnum.MANUAL_MODE.value, callback)
     except KeyboardInterrupt:
         print(" [*] Exiting. Closing connection.")
         vehicle.close_connection()
@@ -66,19 +46,49 @@ if __name__ == "__main__":
 
 #### In the GCS side, data is passed as the below: (e.g is from Commands/Commands_GCS.py)
 ```
-coordinates_01 = Coordinate(latitude = 35.35, longitude =  60.35)
+gcs_rpc = GCSRabbitMQ()
 
-coordinates_02 = Coordinate(latitude = 40.35, longitude =  50.35)
-coordinates_03 = Coordinate(latitude = 44.35, longitude =  55.35)
+print(" [x] Start sending commands to Vehicles")
+coordinates_01 = Coordinate(latitude=35.35, longitude=60.35)
+coordinates_02 = Coordinate(latitude=40.35, longitude=50.35)
+coordinates_03 = Coordinate(latitude=44.35, longitude=55.35)
 search_area_coordinates = [coordinates_02, coordinates_03]
+search_area_list = Polygon(coordinates=search_area_coordinates)
 
-search_area_list = Polygon(coordinates =  search_area_coordinates)
+coordinates_04 = Coordinate(latitude=40.35, longitude=50.35)
+coordinates_05 = Coordinate(latitude=44.35, longitude=55.35)
+keep_in_coordinates = [coordinates_04, coordinates_05]
+keep_in_list = Polygon(coordinates=keep_in_coordinates)
 
-data = Commands( 
+coordinates_06 = Coordinate(latitude=40.35, longitude=50.35)
+coordinates_07 = Coordinate(latitude=44.35, longitude=55.35)
+keep_out_coordinates = [coordinates_06, coordinates_07]
+keep_out_list = Polygon(coordinates=keep_out_coordinates)
+
+data_eru = Commands(
     isManual=True,
+    emergencyStop=False,
     target=coordinates_01,
-    searchArea=search_area_list
+    searchArea=search_area_list,
+    keepIn=keep_in_list,
+    keepOut=keep_out_list
 )
+
+command_type = CommandsEnum.MANUAL_MODE
+response_eru = gcs_rpc.call("eru", command_type, data_eru)
+print(f"Command is: {data_eru.isManual}")
+print(f"Response from ERU: {response_eru}")
+```
+* If the command is Keep_In or Keep_Out, all the vehicles that are available on the scene will be subscribing to the same command.
+```
+command_type = CommandsEnum.KEEP_IN
+
+ ### For Keep_In, Keep_Out Zone:
+if command_type == CommandsEnum.KEEP_IN:
+    for vehicle_name in vehicles_list:
+        gcs_rpc_vehicle = GCSRabbitMQ(vehicle_name)
+        response = gcs_rpc_vehicle.call(vehicle_name, command_type, data)
+        print(f"\nResponse from {vehicle_name.upper()}: {response}")
 ```
 
 ****

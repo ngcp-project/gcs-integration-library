@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import List
+from typing import List, Dict
 
 @dataclass
 class Coordinate:
@@ -9,11 +9,10 @@ class Coordinate:
 
 @dataclass
 class Polygon:
-    coordinates: list[Coordinate]
-    def to_dict(self) -> dict:
+    coordinates: List[Coordinate]
+    def to_dict(self) -> Dict:
         return {
             'coordinates': [vars(coord) for coord in self.coordinates]
         }
     
-
 

@@ -1,7 +1,7 @@
 # Vehicles
 
 import pika, sys, json
-from Types.Telemetry import Status, Telemetry
+from Types.Telemetry import Telemetry
 from Types.Geolocation import Coordinate
 from datetime import datetime
 import time
@@ -70,7 +70,6 @@ if __name__ == "__main__":
             altitude=1000.0,
             batteryLife=80.5,
             currentCoordinate=current_coordinate,
-            vehicleStatus=Status.IN_USE,
             lastUpdated=datetime.now(),
             fireFound=False,
             vehicleSearch=vehicleSearch_coordinate

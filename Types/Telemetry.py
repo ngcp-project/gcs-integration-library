@@ -15,10 +15,9 @@ class Telemetry:
     altitude: float
     batteryLife: float
     currentPosition: Coordinate
-    vehicleStatus: Status
     lastUpdated: datetime
     fireFound: bool
-    vehicleSearch: Coordinate
+    fireCoordinate: Coordinate
     
     def to_dict(self) -> Dict[str, Any]:
         obj = {
@@ -30,10 +29,9 @@ class Telemetry:
             'altitude': self.altitude,
             'batteryLife':self.batteryLife,
             'currentCoordinate': vars(self.currentPosition),
-            'vehicleStatus': self.vehicleStatus.value,
             'lastUpdated': self.lastUpdated.timestamp(),
             'fireFound': self.fireFound,
-            'vehicleSearch': vars(self.vehicleSearch)
+            'fireCoordinate': vars(self.fireCoordinate)
         }
         return obj
 

@@ -98,37 +98,30 @@ class CommandsRabbitMQ:
     
     """
     def handle_command(self, vehicleName, topic, command_dict, ch, props, method):
+        print("Enter handle_command")
         if self.channel is None:
             raise Exception("Channel is not initialized.")
         
         command_type = topic
-        response = ''
-
         print(f"====== Commands Types ======> {command_type.upper()}")
         
         print(f"====== Vehicle Name ======> {vehicleName.upper()}")
 
         if command_type == CommandsEnum.MANUAL_MODE.value:
             self.isManual(command_dict["isManual"])
-            response = {f"[.] Vehicle received commands from GCS with data: {command_type} = {command_dict["isManual"]}"}
         elif command_type == CommandsEnum.TARGET.value:
             self.target(command_dict["target"])
-            response = {f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict["target"]}"}
         elif command_type == CommandsEnum.EMERGENCY_STOP.value:
             self.emergencyStop(command_dict["emergencyStop"])
-            response = {f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict["emergencyStop"]}"}
         elif command_type == CommandsEnum.SEARCH_AREA.value:
             self.searchArea(command_dict["searchArea"])
-            response = {f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict["seachArea"]}"}
         elif command_type == CommandsEnum.KEEP_IN.value:
             self.keepIn(command_dict["keepIn"])
-            response = {f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict["keepIn"]}"}
         elif command_type == CommandsEnum.KEEP_OUT.value:
             self.keepOut(command_dict["keepOut"])
-            response = {f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict["keepOut"]}"}
-
+            
         # time.sleep(4)
-        
+        response = {f"[.] Vehicle received commands from GCS with data:{command_dict}"}
         ch.basic_publish(exchange='', routing_key=props.reply_to, 
                         properties=pika.BasicProperties(correlation_id=props.correlation_id),
                         body=str(response))
@@ -207,7 +200,7 @@ class CommandsRabbitMQ:
 if __name__=="__main__":
     
     # vehicleName = input("Enter vehicle name: ").strip()
-    vehicleName = "eru"
+    vehicleName = "mra"
     # command_name = CommandsEnum.MANUAL_MODE
     command_name = CommandsEnum.KEEP_IN
     vehicle = CommandsRabbitMQ(vehicleName, command_name)
