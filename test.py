@@ -1,4 +1,4 @@
-from Commands.Commands_Vehicles import CommandsRabbitMQ
+from Commands.RabbitMQ import CommandsRabbitMQ
 from Types.CommandsEnum import CommandsEnum
 
 def main():
