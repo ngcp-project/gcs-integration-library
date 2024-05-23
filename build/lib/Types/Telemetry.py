@@ -31,7 +31,7 @@ class Telemetry:
             'currentCoordinate': vars(self.currentPosition),
             'lastUpdated': self.lastUpdated.timestamp(),
             'fireFound': self.fireFound,
-            'fireCoordinate': vars(self.vehicleSearch)
+            'fireCoordinate': vars(self.fireCoordinate)
         }
         return obj
 

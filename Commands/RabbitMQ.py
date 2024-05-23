@@ -1,24 +1,25 @@
-import pika 
+import pika
 import time
 import json
 from Types.Commands import Commands
 from Types.CommandsEnum import CommandsEnum
 from Types.Geolocation import Coordinate, Polygon
-        
+
 class CommandsRabbitMQ:
     # Initialize vehicle information
-    def __init__(self, vehicleName: str, commandName):
+    def __init__(self, vehicleName: str, commandName, ipAddress: str):
         self.vehicleName = vehicleName.lower()
         self.commandName = commandName
+        self.ipAddress = ipAddress
         self.connection = None
         self.channel = None
-        self.setup_rabbitmq(vehicleName, commandName)
+        self.setup_rabbitmq()
         
     # Setting up RabbitMQ Server for Vehicles    
-    def setup_rabbitmq(self, vehicleName, commandName):
-        self.connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
+    def setup_rabbitmq(self):
+        self.connection = pika.BlockingConnection(pika.ConnectionParameters(host=self.ipAddress))
         self.channel = self.connection.channel()
-        queue_name = f"{vehicleName.lower()}_command_{commandName}"
+        queue_name = f"{self.vehicleName}_command_{self.commandName.value}"
         self.channel.queue_declare(queue=queue_name)
         print(f"queue_name in setup {queue_name}")
 
@@ -27,7 +28,7 @@ class CommandsRabbitMQ:
     
     emergencyStop(emergencyStop : bool)
     
-    taregt(target: Coordinate)
+    target(target: Coordinate)
     
     searchArea(searchArea: Polygon)
     
@@ -56,38 +57,31 @@ class CommandsRabbitMQ:
     """
     subscribe(self, topic: str, callback_function)
     
-    -Function to subcribe to only one topic from the given commands from GCS.
+    -Function to subscribe to only one topic from the given commands from GCS.
     -Calls handle_command() function to handle the single given command.
     
     """
-    def subscribe(self, commandName, vehicleName: str, topic: str, callback_function) -> str:
+    def subscribe(self, topic: str, callback_function) -> str:
         print("Enter Subscribe")
-        queue_name = f"{vehicleName.lower()}_command_{commandName}"
+        queue_name = f"{self.vehicleName}_command_{self.commandName.value}"
         self.channel.queue_declare(queue=queue_name)
-        def callback(ch, method, props, body):
-            commands = json.loads(body)
-            callback_function(ch, method, props, commands)
-            self.handle_command(vehicleName, topic, commands, ch, props, method)
-        self.channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=False)
-        self.channel.start_consuming()
+        self.channel.basic_consume(queue=queue_name, on_message_callback=callback_function, auto_ack=False)
     
     """
     subscribe_all(self, callback_function)
     
-    - Function to subcribe to all the commands given from the GCS.
+    - Function to subscribe to all the commands given from the GCS.
     -Calls handle_all_commands() function to handle the given command.
     
     """
-    def subscribe_all(self, vehicleName: str, callback_function) -> str:
-        command_types = ["manual", "emergency", "target", "search", "keepIn", "keepOut"]
+    def subscribe_all(self, callback_function) -> str:
+        command_types = ["manual", "emergency", "target", "searchArea", "keepIn", "keepOut"]
         for command_type in command_types:
-            queue_name = f"{self.vehicleName.lower()}_commands_{command_type}"
+            queue_name = f"{self.vehicleName}_commands_{command_type}"
             self.channel.queue_declare(queue=queue_name)
-        def callback(ch, vehicleName: str, method, props, body):
-            commands = json.loads(body)
-            callback_function(ch, method, props, commands)
-            self.handle_all_commands(vehicleName, commands, ch, props, method)
-        self.channel.basic_consume(queue='rpc_queue', on_message_callback=callback, auto_ack=False)
+            self.channel.basic_consume(queue=queue_name, on_message_callback=callback_function, auto_ack=False)
+
+    def start_consuming(self):
         self.channel.start_consuming()
 
     """
@@ -97,125 +91,58 @@ class CommandsRabbitMQ:
     - It determines which command function to call based on given topic.
     
     """
-    def handle_command(self, vehicleName, topic, command_dict, ch, props, method):
+    def handle_command(self, channel, method, props, body):
         if self.channel is None:
             raise Exception("Channel is not initialized.")
         
-        command_type = topic
+        command_dict = json.loads(body)
+        command_type = self.commandName.value
         response = ''
 
-        print(f"====== Commands Types ======> {command_type.upper()}")
+        print(f"====== Commands Types ======> {command_type}")
         
-        print(f"====== Vehicle Name ======> {vehicleName.upper()}")
+        print(f"====== Vehicle Name ======> {self.vehicleName.upper()}")
 
-        if command_type == CommandsEnum.MANUAL_MODE.value:
+        if command_type == CommandsEnum.manual.value:
             self.isManual(command_dict["isManual"])
-            response = {f"[.] Vehicle received commands from GCS with data: {command_type} = {command_dict["isManual"]}"}
-        elif command_type == CommandsEnum.TARGET.value:
+            response = f"[.] Vehicle received commands from GCS with data: {command_type} = {command_dict['isManual']}"
+        elif command_type == CommandsEnum.target.value:
             self.target(command_dict["target"])
-            response = {f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict["target"]}"}
-        elif command_type == CommandsEnum.EMERGENCY_STOP.value:
+            response = f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict['target']}"
+        elif command_type == CommandsEnum.emergency.value:
             self.emergencyStop(command_dict["emergencyStop"])
-            response = {f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict["emergencyStop"]}"}
-        elif command_type == CommandsEnum.SEARCH_AREA.value:
+            response = f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict['emergencyStop']}"
+        elif command_type == CommandsEnum.search.value:
             self.searchArea(command_dict["searchArea"])
-            response = {f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict["seachArea"]}"}
-        elif command_type == CommandsEnum.KEEP_IN.value:
+            response = f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict['searchArea']}"
+        elif command_type == CommandsEnum.keepIn.value:
             self.keepIn(command_dict["keepIn"])
-            response = {f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict["keepIn"]}"}
-        elif command_type == CommandsEnum.KEEP_OUT.value:
+            response = f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict['keepIn']}"
+        elif command_type == CommandsEnum.keepOut.value:
             self.keepOut(command_dict["keepOut"])
-            response = {f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict["keepOut"]}"}
+            response = f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict['keepOut']}"
 
-        # time.sleep(4)
-        
-        ch.basic_publish(exchange='', routing_key=props.reply_to, 
-                        properties=pika.BasicProperties(correlation_id=props.correlation_id),
-                        body=str(response))
-        # Use the delivery tag from the method argument for acknowledgment
-        ch.basic_ack(delivery_tag=method.delivery_tag)
-        last_call = time.time() 
-        
-    """
-    handle_all_command(self, command_dict, ch, props, method):
-    
-    - Function to handle the data given from command.
-    - It parses the given data in json format and passes those data to 
-    destined functions.
-    
-    """
-    def handle_all_commands(self, vehicleName, command_dict, ch, props, method): 
-          
-        print("Enter handle_all_commands")
-        print(f"====== Vehicle Name ======> {vehicleName.upper()}")
-        if self.channel is None:
-            raise Exception("Channel is not initialized.")
-        
-        command_type = command_dict.get("isManual")
-            
-        is_manual = command_dict['isManual']
-        emergency_stop = command_dict['emergencyStop']
-        target_latitude = command_dict['target']['latitude']
-        target_longitude = command_dict['target']['longitude']
-        
-        search_area_coordinates = command_dict['searchArea']['coordinates']
-        search_area_coordinates_list = []
-        for coor_dict in search_area_coordinates:
-            search_area_latitude = coor_dict['latitude']
-            search_area_longitude = coor_dict['longitude']
-            search_area_coordinates_list.append(Coordinate(latitude=search_area_latitude, longitude=search_area_longitude))
-        
-        keep_in_coordinates = command_dict['keepIn']['coordinates']
-        keep_in_coordinates_list = []
-        for coor_dict in keep_in_coordinates:
-            keep_in_latitude = coor_dict['latitude']
-            keep_in_longitude = coor_dict['longitude']
-            keep_in_coordinates_list.append(Coordinate(latitude=keep_in_latitude, longitude=keep_in_longitude))
-        
-        keep_out_coordinates = command_dict['keepOut']['coordinates']
-        keep_out_coordinates_list = []
-        for coor_dict in keep_out_coordinates:
-            keep_out_latitude = coor_dict['latitude']
-            keep_out_longitude = coor_dict['longitude']
-            keep_out_coordinates_list.append(Coordinate(latitude=keep_out_latitude, longitude=keep_out_longitude))
-                    
-        targetCoordinate = Coordinate(target_latitude, target_longitude)
-        search_area = Polygon(coordinates=search_area_coordinates_list)
-        keep_in = Polygon(coordinates=keep_in_coordinates_list)
-        keep_out = Polygon(coordinates=keep_out_coordinates_list)
-        
-        
-        self.isManual(is_manual)
-        self.emergencyStop(emergency_stop)
-        self.target(targetCoordinate)
-        self.searchArea(search_area)
-        self.keepIn(keep_in)
-        self.keepOut(keep_out)
-        
-        # time.sleep(4)
-        response = {f"[.] Vehicle received commands from GCS with data:\n\t{command_dict}\n"}
-        ch.basic_publish(exchange='', routing_key=props.reply_to, 
-                        properties=pika.BasicProperties(correlation_id=props.correlation_id),
-                        body=str(response))
-        ch.basic_ack(delivery_tag=method.delivery_tag)
-        last_call = time.time() 
+        channel.basic_publish(exchange='', routing_key=props.reply_to, 
+                              properties=pika.BasicProperties(correlation_id=props.correlation_id),
+                              body=str(response))
+        channel.basic_ack(delivery_tag=method.delivery_tag)
         
     def close_connection(self):
         if self.connection:
             self.connection.close()       
             
-if __name__=="__main__":
-    
-    # vehicleName = input("Enter vehicle name: ").strip()
+if __name__ == "__main__":
     vehicleName = "eru"
-    # command_name = CommandsEnum.MANUAL_MODE
-    command_name = CommandsEnum.KEEP_IN
-    vehicle = CommandsRabbitMQ(vehicleName, command_name)
+    command_name = CommandsEnum.keepIn
+    ip_address = "192.168.1.100"  # Replace with the actual GCS IP address
+    vehicle = CommandsRabbitMQ(vehicleName, command_name, ip_address)
     
-    def callback(channel, method, prop, body):
-        pass
+    def callback(ch, method, props, body):
+        vehicle.handle_command(ch, method, props, body)
+    
     try:
-        vehicle.subscribe(command_name, vehicleName, CommandsEnum.KEEP_IN.value, callback)
+        vehicle.subscribe(command_name.value, callback)
+        vehicle.start_consuming()
     except KeyboardInterrupt:
         print(" [*] Exiting. Closing connection.")
         vehicle.close_connection()

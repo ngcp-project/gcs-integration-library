@@ -4,7 +4,6 @@ setup.py
 Commands/Commands_GCS.py
 Commands/RabbitMQ.py
 Commands/__init__.py
-Commands/test01.py
 Telemetry/RabbitMQ.py
 Telemetry/Telemetry_GCS.py
 Telemetry/__init__.py
