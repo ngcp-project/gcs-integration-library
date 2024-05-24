@@ -57,7 +57,7 @@ class CommandsRabbitMQ:
     -Calls handle_command() function to handle the single given command.
     
     """
-    def subscribe(self, commandName: CommandsEnum, callback_function: function) -> str:
+    def subscribe(self, commandName: CommandsEnum, callback_function) -> str:
         print("Enter Subscribe")
         queue_name = f"{self.vehicleName.lower()}_command_{commandName}"
         self.channel.queue_declare(queue=queue_name)
