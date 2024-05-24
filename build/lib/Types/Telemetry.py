@@ -32,14 +32,14 @@ class Telemetry:
             'speed':self.speed,
             'altitude': self.altitude,
             'batteryLife':self.batteryLife,
-            'currentCoordinate': vars(self.currentPosition),
+            'currentPosition': vars(self.currentPosition),
             'vehicleStatus': str(self.vehicleStatus),
             'lastUpdated': self.lastUpdated.timestamp(),
             'fireFound': self.fireFound,
             'vehicleSearch': vars(self.vehicleSearch),
-            'lastUpdated': self.lastUpdated.timestamp(),
+            'lastUpdated': self.lastUpdated.timestamp() * 1000,
             'fireFound': self.fireFound,
-            'fireCoordinate': vars(self.vehicleSearch)
+            'fireCoordinates': vars(self.fireCoordinate)
         }
         return obj
 
