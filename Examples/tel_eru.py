@@ -1,7 +1,7 @@
 from Telemetry.RabbitMQ import TelemetryRabbitMQ
 from Types.Telemetry import Telemetry
 from Types.Geolocation import Coordinate
-import socket, random, datetime
+import socket, random, datetime, time
 
 vehicle = TelemetryRabbitMQ("ERU", "localhost")
 deviceIp = socket.gethostbyname(socket.gethostname())
@@ -25,7 +25,7 @@ tel = Telemetry(
     currentPosition=Coordinate(latitude=latitude,longitude=longitude),
     altitude=altitude,
     batteryLife=batteryLife,
-    vehicleStatus="In Use",
+    vehicleStatus=0,
     fireFound=False,
     fireCoordinate=fireCoordinate,
     vehicleSearch=fireCoordinate,
@@ -33,10 +33,10 @@ tel = Telemetry(
     lastUpdated=datetime.datetime.now()
 )
 
-def randPM(i: int): return -1*i if random.randint(0,1) else i
+def randPM(i: int): return -1*i if random.randint(0,2) else i
 def randPMAbsolute(i: int): return -1*i if (random.randint(0,1) and altitude-(i*-1) > 0) else i
 
-loop_counter = 10000
+loop_counter = 2000
 
 
 if __name__ == '__main__':
@@ -53,7 +53,7 @@ if __name__ == '__main__':
 
             tel.altitude += randPMAbsolute(0.01)
             tel.speed += randPMAbsolute(1)
-            tel.batteryLife -= 0.0001*random.randint(0,1)
+            tel.batteryLife -= 0.0000001*random.randint(0,1)
 
             if loop_counter < 0 and loop_counter > -100: 
                 tel.fireFound = True
@@ -61,6 +61,9 @@ if __name__ == '__main__':
                 tel.fireCoordinate.latitude += randPM(0.000001)
                 tel.vehicleSearch.longitude += randPM(0.000002)
                 tel.vehicleSearch.latitude += randPM(0.000001)
+
+            tel.lastUpdated = datetime.datetime.now()
+            time.sleep(0.01)
 
     except Exception as e:
         print(e)
