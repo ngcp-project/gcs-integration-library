@@ -1,7 +1,7 @@
 # Vehicles
 
 import pika, sys, json
-from Types.Telemetry import Status, Telemetry
+from Types.Telemetry import Telemetry
 from Types.Geolocation import Coordinate
 from datetime import datetime
 import time
