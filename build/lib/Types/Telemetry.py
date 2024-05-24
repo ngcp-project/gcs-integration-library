@@ -15,10 +15,6 @@ class Telemetry:
     altitude: float
     batteryLife: float
     currentPosition: Coordinate
-    vehicleStatus: Any
-    lastUpdated: datetime
-    fireFound: bool
-    vehicleSearch: Coordinate
     lastUpdated: datetime
     fireFound: bool
     fireCoordinate: Coordinate
@@ -33,11 +29,7 @@ class Telemetry:
             'altitude': self.altitude,
             'batteryLife':self.batteryLife,
             'currentPosition': vars(self.currentPosition),
-            'vehicleStatus': str(self.vehicleStatus),
             'lastUpdated': self.lastUpdated.timestamp(),
-            'fireFound': self.fireFound,
-            'vehicleSearch': vars(self.vehicleSearch),
-            'lastUpdated': self.lastUpdated.timestamp() * 1000,
             'fireFound': self.fireFound,
             'fireCoordinates': vars(self.fireCoordinate)
         }
