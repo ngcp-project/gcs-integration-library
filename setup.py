@@ -15,8 +15,6 @@ if __name__ == '__main__':
         version="0.1.0",
         author="NGCP - Ground Control Station",
         url="https://github.com/Northrop-Grumman-Collaboration-Project/gcs-integration-library",
-        packages=find_packages(include=("Commands", "Telemetry", "Tests", "Types")),
+        packages=find_packages(include=("Commands", "Telemetry", "Types")),
         install_requires=requirements(),
     )
-
-
