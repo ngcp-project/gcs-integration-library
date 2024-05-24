@@ -33,7 +33,7 @@ class Telemetry:
             'altitude': self.altitude,
             'batteryLife':self.batteryLife,
             'currentCoordinate': vars(self.currentPosition),
-            'vehicleStatus': self.vehicleStatus.value,
+            'vehicleStatus': str(self.vehicleStatus),
             'lastUpdated': self.lastUpdated.timestamp(),
             'fireFound': self.fireFound,
             'vehicleSearch': vars(self.vehicleSearch),
