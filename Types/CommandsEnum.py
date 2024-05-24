@@ -8,7 +8,7 @@ from typing import Any
 class CommandsEnum(Enum):
     MANUAL_MODE = "manual"
     TARGET = "target"
-    SEARCH_AREA = "search_area"
-    EMERGENCY_STOP = "emergency_stop"
-    KEEP_IN = "keep_in"
-    KEEP_OUT = "keep_out"
+    SEARCH_AREA = "search"
+    EMERGENCY_STOP = "emergency"
+    KEEP_IN = "keepIn"
+    KEEP_OUT = "keepOut"

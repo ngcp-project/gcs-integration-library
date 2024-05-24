@@ -3,12 +3,8 @@ README.md
 setup.py
 Commands/Commands_GCS.py
 Commands/RabbitMQ.py
-<<<<<<< HEAD
 Commands/RabbitMQ_backup.py
-=======
->>>>>>> 10ac9f9ced53dc25ffe59d6c7220daff3c5acd67
 Commands/__init__.py
-Commands/test01.py
 Telemetry/RabbitMQ.py
 Telemetry/Telemetry_GCS.py
 Telemetry/__init__.py
@@ -26,5 +22,3 @@ integration.egg-info/SOURCES.txt
 integration.egg-info/dependency_links.txt
 integration.egg-info/requires.txt
 integration.egg-info/top_level.txt
-tests/testComm.py
-tests/testSub.py
