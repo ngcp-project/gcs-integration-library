@@ -20,9 +20,10 @@ class TelemetrySubscriber:
         self.channel.exchange_declare(exchange=self.vehicleName, exchange_type='topic')
         
         result = self.channel.queue_declare('', exclusive=True)
-        self.queue_name = result.method.queue
+        # self.queue_name = result.method.queue
+        self.queue_name = f"telemetry_{self.vehicleName}"
 
-        binding_key = 'telemetry'
+        self.binding_key = 'telemetry'
         # if not binding_keys:
         #     sys.stderr.write("Usage: %s [binding_key]...\n" % sys.argv[0])
         #     sys.exit(1)
@@ -46,7 +47,7 @@ class TelemetrySubscriber:
 # Example usage:
 if __name__ == "__main__":
     # Replace 'ERU' with your vehicle name and 'telemetry.sensor1' with your desired binding key
-    subscriber = TelemetrySubscriber(vehicleName="ERU", binding_key="telemetry")
+    subscriber = TelemetrySubscriber(vehicleName="eru", binding_key='telemetry')
 
     try:
         subscriber.start_consuming()

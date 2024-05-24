@@ -31,7 +31,7 @@ class GCSRabbitMQ:
         last_call = time.time()
         message = json.dumps(data.to_dict())
         # command_name = data
-        queue_name = f"{vehicleName.lower()}_command_{command_type}"
+        queue_name = f"{vehicleName.lower()}_command_{command_type.value}"
 
         # print(f"====== queue_name here: {queue_name}=====")
 

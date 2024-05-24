@@ -29,7 +29,7 @@ class Telemetry:
             'altitude': self.altitude,
             'batteryLife':self.batteryLife,
             'currentPosition': vars(self.currentPosition),
-            'lastUpdated': self.lastUpdated.timestamp(),
+            'lastUpdated': int(self.lastUpdated.timestamp()*1000),
             'fireFound': self.fireFound,
             'fireCoordinates': vars(self.fireCoordinate)
         }

@@ -59,7 +59,7 @@ class CommandsRabbitMQ:
     """
     def subscribe(self, commandName: CommandsEnum, callback_function) -> str:
         print("Enter Subscribe")
-        queue_name = f"{self.vehicleName.lower()}_command_{commandName}"
+        queue_name = f"{self.vehicleName.lower()}_command_{commandName.value}"
         self.channel.queue_declare(queue=queue_name)
         
         def callback(ch, method, props, body):
@@ -67,7 +67,7 @@ class CommandsRabbitMQ:
             callback_function(json.loads(body))
             self.handle_command(msg, commandName.value, ch, props, method)
         
-        self.channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=True)
+        self.channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=False)
         # self.channel.start_consuming()
     
     """

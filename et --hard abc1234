@@ -1,0 +1,30 @@
+[33m4d83dd9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcommand-ip[m[33m, [m[1;31morigin/command-ip[m[33m)[m HEAD@{0}: checkout: moving from Truc2 to command-ip
+[33m10ac9f9[m[33m ([m[1;32mTruc2[m[33m)[m HEAD@{1}: checkout: moving from command-ip to Truc2
+[33m4d83dd9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcommand-ip[m[33m, [m[1;31morigin/command-ip[m[33m)[m HEAD@{2}: commit: IP Adress added
+[33m10ac9f9[m[33m ([m[1;32mTruc2[m[33m)[m HEAD@{3}: reset: moving to HEAD~1
+[33madd59f4[m HEAD@{4}: commit: IP address added
+[33m10ac9f9[m[33m ([m[1;32mTruc2[m[33m)[m HEAD@{5}: checkout: moving from Truc2 to command-ip
+[33m10ac9f9[m[33m ([m[1;32mTruc2[m[33m)[m HEAD@{6}: commit: Update Command for Vehicles
+[33mb71cc0e[m HEAD@{7}: reset: moving to HEAD~1
+[33ma1d3825[m HEAD@{8}: commit: Update Command for Vehicles
+[33mb71cc0e[m HEAD@{9}: commit: Update Command for Vehicles
+[33m5d2edcf[m HEAD@{10}: commit (merge): Merge branch 'Truc2' of https://github.com/Northrop-Grumman-Collaboration-Project/gcs-integration-library into Truc2
+[33m36fc500[m HEAD@{11}: commit: File renaming and name convention
+[33m421b33a[m HEAD@{12}: commit: Commands RPC for subscribe and subscribe_all
+[33m5e8b31a[m HEAD@{13}: commit: Commands Telemetry Add 01
+[33m26acf55[m HEAD@{14}: commit: Polygon Coordinate List fixed
+[33m924a4fb[m HEAD@{15}: commit: Fixing Connection Flag Logic
+[33m05caf86[m HEAD@{16}: commit: Fixing Connection Flag Logic
+[33m0204fce[m HEAD@{17}: commit: Fixing Connection Flag Logic
+[33md9cce77[m HEAD@{18}: commit: RPC Commands Edit 02
+[33mb4f5bae[m HEAD@{19}: commit: RPC Commands Edit
+[33maa75e86[m HEAD@{20}: commit: RPC file modified
+[33m1f438b3[m HEAD@{21}: checkout: moving from integration-library-builder to Truc2
+[33m5bd1093[m[33m ([m[1;32mintegration-library-builder[m[33m)[m HEAD@{22}: reset: moving to HEAD
+[33m5bd1093[m[33m ([m[1;32mintegration-library-builder[m[33m)[m HEAD@{23}: checkout: moving from Truc2 to integration-library-builder
+[33m1f438b3[m HEAD@{24}: reset: moving to HEAD
+[33m1f438b3[m HEAD@{25}: commit: Update Telem Sub/Pub and RPC
+[33m2aa3b88[m HEAD@{26}: commit: Initial testing for Telemetry passed
+[33mf956057[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{27}: checkout: moving from master to Truc2
+[33mf956057[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{28}: commit (merge): Merge branch 'main' of https://github.com/Northrop-Grumman-Collaboration-Project/gcs-integration-library
+[33med3c3c6[m HEAD@{29}: commit (initial): Initial testing is passed

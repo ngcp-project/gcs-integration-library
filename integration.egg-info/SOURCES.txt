@@ -22,3 +22,5 @@ integration.egg-info/SOURCES.txt
 integration.egg-info/dependency_links.txt
 integration.egg-info/requires.txt
 integration.egg-info/top_level.txt
+tests/testComm.py
+tests/testSub.py
