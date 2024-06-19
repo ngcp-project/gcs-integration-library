@@ -10,12 +10,12 @@ If you are on Powershell, set up the python environment by:
 **Before running your code**
 * Make sure you are at the root dir.
 * Open a powershell terminal within VSCode and use the command `python -m venv .venv` to create a virtual environment. 
-* To activate, run this command `.\venv\Scripts\Activate.ps1`
+* To activate, run this command `.\venv\Scripts\Activate`
 * If that command give you errors, run this command instead:
 `.\venv\Scripts\activate.bat`
-* Set up your python path: `$env:PYTHONPATH = "$PWD"` (trouble-shooting)
+* Set up your python path: `$env:PYTHONPATH = "$PWD"` (trouble-shooting) at the home directory. (For example, my directory is `\Desktop\NGCP\gcs-integration-library\`)
 * To check if your PYTHONPATH has been set up correctly, run this command: `echo $PYTHONPATH` and it should prints your current home directory path. 
-* **Run Docker container** using this command: `docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.12-management`
+* **Run Docker container** using this command on a separate terminal: `docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.12-management`
 
 ### For Vehicle to Subscribe to Commands from the GCS
 **Subscribe to one command at a time**
