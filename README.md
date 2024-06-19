@@ -9,7 +9,7 @@ If you are on Powershell, set up the python environment by:
 
 **Before running your code**
 * Make sure you are at the root dir.
-* Open a powershell terminal within VSCode and use the command `python -m venv .venv` to create a virtual environment. 
+* Open a powershell terminal within VSCode and use the command `python -m venv venv` to create a virtual environment. 
 * To activate, run this command `.\venv\Scripts\Activate`
 * If that command give you errors, run this command instead:
 `.\venv\Scripts\activate.bat`
