@@ -134,7 +134,7 @@ class CommandsRabbitMQ:
 if __name__ == "__main__":
     vehicleName = "eru"
     command_name = CommandsEnum.keepIn
-    ip_address = "192.168.1.100"  # Replace with the actual GCS IP address
+    ip_address = "localhost"  # Replace with the actual GCS IP address
     vehicle = CommandsRabbitMQ(vehicleName, command_name, ip_address)
     
     def callback(ch, method, props, body):

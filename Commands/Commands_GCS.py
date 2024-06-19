@@ -74,12 +74,17 @@ data = Commands(
     keepOut=keep_out_list
 )
 
+vehicle_name = "eru"
 command_type = CommandsEnum.keepIn
-ip_address = "192.168.1.100"  # Replace with the actual GCS IP address
+ip_address = "localhost"  # Replace with the actual GCS IP address
+
+gcs_rpc_vehicle = GCSRabbitMQ(vehicle_name, ip_address)
+response = gcs_rpc_vehicle.call(command_type, data)
+print(f"\nResponse from {vehicle_name.upper()}: {response}")
 
 ### For Keep_In, Keep_Out Zone:
-if command_type == CommandsEnum.keepIn:
-    for vehicle_name in vehicles_list:
-        gcs_rpc_vehicle = GCSRabbitMQ(vehicle_name, ip_address)
-        response = gcs_rpc_vehicle.call(command_type, data)
-        print(f"\nResponse from {vehicle_name.upper()}: {response}")
+# if command_type == CommandsEnum.keepIn:
+#     for vehicle_name in vehicles_list:
+#         gcs_rpc_vehicle = GCSRabbitMQ(vehicle_name, ip_address)
+#         response = gcs_rpc_vehicle.call(command_type, data)
+#         print(f"\nResponse from {vehicle_name.upper()}: {response}")
