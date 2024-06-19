@@ -30,7 +30,6 @@ class TelemetryRabbitMQ:
     def publish(self, data: Telemetry): #(sel, data =(as in) telemetry data)
         if self.channel is None:
             raise Exception("Channel is not initialized.")
-        
         exchange_name = self.vehicleName    
         # self.channel.exchange_declare(exchange='', exchange_type='topic')
         # # Convert objects into json strings(not all are convertible, may
@@ -57,8 +56,10 @@ class TelemetryRabbitMQ:
     
 if __name__ == "__main__":
     # vehicle_name = input("Enter vehicle name: ")
-    telemetry = TelemetryRabbitMQ("eru", "192.168.0.101")
+    telemetry = TelemetryRabbitMQ("eru", "localhost")
     current_coordinate = Coordinate(latitude=37.7749, longitude=-122.4194)
+    fire_coordinate = Coordinate(latitude=37.7759, longitude=-122.4194)
+
     vehicleSearch_coordinate = Coordinate(latitude=1.0, longitude=2.0)
     while True:
         data = Telemetry(
@@ -69,10 +70,10 @@ if __name__ == "__main__":
             speed=45.2,
             altitude=1000.0,
             batteryLife=80.5,
-            currentCoordinate=current_coordinate,
+            currentPosition=current_coordinate,
             lastUpdated=datetime.now(),
             fireFound=False,
-            vehicleSearch=vehicleSearch_coordinate
+            fireCoordinate=fire_coordinate
         )
         telemetry.publish(data)
         time.sleep(10)

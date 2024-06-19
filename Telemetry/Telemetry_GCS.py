@@ -20,17 +20,17 @@ class TelemetrySubscriber:
         self.channel.exchange_declare(exchange=self.vehicleName, exchange_type='topic')
         
         result = self.channel.queue_declare('', exclusive=True)
-        self.queue_name = result.method.queue
+        queue_name = f"telemetry_{self.vehicleName.lower()}"
 
-        binding_key = 'telemetry'
+        self.binding_key = 'telemetry'
         # if not binding_keys:
         #     sys.stderr.write("Usage: %s [binding_key]...\n" % sys.argv[0])
         #     sys.exit(1)
-        self.channel.queue_bind(exchange=self.vehicleName, queue=self.queue_name, routing_key=self.binding_key)
+        self.channel.queue_bind(exchange=self.vehicleName, queue=queue_name, routing_key=self.binding_key)
 
         print(f" [*] Waiting for telemetry data for {self.vehicleName}. To exit press CTRL+C")
 
-        self.channel.basic_consume(queue=self.queue_name, on_message_callback=self.callback, auto_ack=True)
+        self.channel.basic_consume(queue=queue_name, on_message_callback=self.callback, auto_ack=True)
 
     def callback(self, ch, method, properties, body):
         telemetry_data = body
