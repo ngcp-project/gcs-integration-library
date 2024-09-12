@@ -1,10 +1,11 @@
 # GCS
 
-import pika, sys, json
+
 # from Types.Telemetry import Status, Telemetry
 # from Types.Geolocation import Coordinate
-from datetime import datetime
-import time
+
+import pika
+
 
 class TelemetrySubscriber:
     def __init__(self, vehicleName, binding_key):
@@ -15,14 +16,14 @@ class TelemetrySubscriber:
         self.setup_rabbitmq()
 
     def setup_rabbitmq(self):
-        self.connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+        self.connection = pika.BlockingConnection(pika.ConnectionParameters("localhost"))
         self.channel = self.connection.channel()
-        self.channel.exchange_declare(exchange=self.vehicleName, exchange_type='topic')
-        
-        result = self.channel.queue_declare('', exclusive=True)
+        self.channel.exchange_declare(exchange=self.vehicleName, exchange_type="topic")
+
+        result = self.channel.queue_declare("", exclusive=True)
         queue_name = f"telemetry_{self.vehicleName.lower()}"
 
-        self.binding_key = 'telemetry'
+        self.binding_key = "telemetry"
         # if not binding_keys:
         #     sys.stderr.write("Usage: %s [binding_key]...\n" % sys.argv[0])
         #     sys.exit(1)
@@ -38,10 +39,11 @@ class TelemetrySubscriber:
 
     def start_consuming(self):
         self.channel.start_consuming()
-        
+
     def close_connection(self):
         if self.connection:
             self.connection.close()
+
 
 # Example usage:
 if __name__ == "__main__":

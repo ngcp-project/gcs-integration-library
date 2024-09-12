@@ -1,0 +1,26 @@
+[tool.ruff]
+
+exclude = [
+    ".eggs",
+    ".vscode",
+    "build",
+    "dist",
+    "docs",
+    "integration.egg-info",
+    ".gitignore",
+    ".git"
+]
+
+line-length = 120
+indent-width = 4
+
+target-version = "py311" # Python 3.11
+
+lint.select = ["E", "W", "F", "C", "I"]
+lint.ignore = ["D211", "D213", "ANN101", "E501"]  # Include ANN101 to avoid the conflict
+
+
+[tool.ruff.format]
+
+quote-style = "double"
+line-ending = "auto"

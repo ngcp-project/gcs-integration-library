@@ -1,21 +1,24 @@
 # Dummy GCS
 #!/usr/bin/env python
-import pika
-import uuid
-import time
 import json
+import time
+import uuid
+
+import pika
+
 from Types.Commands import Commands
 from Types.CommandsEnum import CommandsEnum
 from Types.Geolocation import Coordinate, Polygon
 
-vehicles_list = ['eru', 'mra', 'fra', 'mea']
+vehicles_list = ["eru", "mra", "fra", "mea"]
+
 
 class GCSRabbitMQ:
     def __init__(self, vehicleName, ipAddress):
         self.connection = pika.BlockingConnection(pika.ConnectionParameters(host=ipAddress))
         self.channel = self.connection.channel()
         self.vehicleName = vehicleName
-        result = self.channel.queue_declare(queue='', exclusive=True)
+        result = self.channel.queue_declare(queue="", exclusive=True)
         self.callback_queue = result.method.queue
 
         self.channel.basic_consume(queue=self.callback_queue, on_message_callback=self.on_response, auto_ack=True)
@@ -34,10 +37,10 @@ class GCSRabbitMQ:
         queue_name = f"{self.vehicleName}_command_{command_type.value}"
 
         self.channel.basic_publish(
-            exchange='',
+            exchange="",
             routing_key=queue_name,
             properties=pika.BasicProperties(reply_to=self.callback_queue, correlation_id=self.corr_id),
-            body=message
+            body=message,
         )
         print(f" [x] Sent commands to {self.vehicleName}")
         while self.response is None:
@@ -71,7 +74,7 @@ data = Commands(
     target=coordinates_01,
     searchArea=search_area_list,
     keepIn=keep_in_list,
-    keepOut=keep_out_list
+    keepOut=keep_out_list,
 )
 
 vehicle_name = "eru"

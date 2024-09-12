@@ -1,7 +1,5 @@
 from dataclasses import dataclass
-from Types.Geolocation import Coordinate, Polygon
-from enum import Enum, auto
-from typing import Any
+from enum import Enum
 
 
 @dataclass(repr=False)
