@@ -1,0 +1,29 @@
+[tool.ruff]
+
+target-version = "py311"
+
+lint.select = ["E", "F", "C90", "Q", "S", "UP", "I", "A", "W"] # took out N
+lint.ignore = ["N999", "E501", "W191"] 
+# N999:  Enforces module names to be in snake_case
+# E501:  Rule for limiting lines to not be greater than 88.
+# W191:  Rule for stopping tab indentations.
+
+# Specify files or directories to exclude from linting (optional).
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    ".venv",
+    "venv",
+    "*.egg-info",
+    "test.py",
+    "Tests/",
+    "Examples/",
+    ".eggs/"
+]
+
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "tab"

@@ -1,8 +1,9 @@
-from datetime import datetime
-from Telemetry.RabbitMQ import TelemetryRabbitMQ
-from Types.Telemetry import Telemetry
-from Types.Geolocation import Coordinate
 import time
+from datetime import datetime
+
+from Telemetry.RabbitMQ import TelemetryRabbitMQ
+from Types.Geolocation import Coordinate
+from Types.Telemetry import Telemetry
 
 tel = TelemetryRabbitMQ("ERU", "localhost")
 
@@ -14,7 +15,7 @@ data = Telemetry(
     altitude=0.0,
     batteryLife=0.45,
     currentCoordinate=Coordinate(latitude=34.15, longitude=101.45),
-    lastUpdated=datetime.now()
+    lastUpdated=datetime.now(),
 )
 
 while True:

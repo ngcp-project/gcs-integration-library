@@ -1,8 +1,6 @@
-from .terminalwriter import get_terminal_width
-from .terminalwriter import TerminalWriter
-
+from .terminalwriter import TerminalWriter, get_terminal_width
 
 __all__ = [
-    "TerminalWriter",
-    "get_terminal_width",
+	"TerminalWriter",
+	"get_terminal_width",
 ]
