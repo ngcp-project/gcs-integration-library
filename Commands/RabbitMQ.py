@@ -24,20 +24,6 @@ class CommandsRabbitMQ:
         self.channel.queue_declare(queue=queue_name)
         print(f"queue_name in setup {queue_name}")
 
-    """
-    isManual(isManual: bool)
-
-    emergencyStop(emergencyStop : bool)
-
-    target(target: Coordinate)
-
-    searchArea(searchArea: Polygon)
-
-    keepIn(keepIn: Polygon)
-
-    keepOut(keepOut: Polygon)
-    """
-
     def isManual(self, isManual: bool):
         print(f"Manual is: {isManual}")
 
@@ -56,29 +42,21 @@ class CommandsRabbitMQ:
     def keepOut(self, keepOut: Polygon):
         print(f"Keep out Coordinate is: {keepOut}")
 
-    """
-    subscribe(self, topic: str, callback_function)
-
-    -Function to subscribe to only one topic from the given commands from GCS.
-    -Calls handle_command() function to handle the single given command.
-
-    """
-
     def subscribe(self, topic: str, callback_function) -> str:
+        """
+        - Function to subscribe to only one topic from the given commands from GCS.
+        - Calls handle_command() function to handle the single given command.
+        """
         print("Enter Subscribe")
         queue_name = f"{self.vehicleName}_command_{self.commandName.value}"
         self.channel.queue_declare(queue=queue_name)
         self.channel.basic_consume(queue=queue_name, on_message_callback=callback_function, auto_ack=False)
 
-    """
-    subscribe_all(self, callback_function)
-
-    - Function to subscribe to all the commands given from the GCS.
-    - Calls handle_all_commands() function to handle the given command.
-
-    """
-
     def subscribe_all(self, callback_function) -> str:
+        """
+        - Function to subscribe to all the commands given from the GCS.
+        - Calls handle_all_commands() function to handle the given command.
+        """
         command_types = ["manual", "emergency", "target", "searchArea", "keepIn", "keepOut"]
         for command_type in command_types:
             queue_name = f"{self.vehicleName}_commands_{command_type}"
@@ -88,15 +66,11 @@ class CommandsRabbitMQ:
     def start_consuming(self):
         self.channel.start_consuming()
 
-    """
-    handle_command(self, topic, command_dict, ch, props, method):
-
-    - Function to handle the data given from command and its topic.
-    - It determines which command function to call based on given topic.
-
-    """
-
     def handle_command(self, channel, method, props, body):
+        """
+        - Function to handle the data given from command and its topic.
+        - It determines which command function to call based on given topic.
+        """
         if self.channel is None:
             raise Exception("Channel is not initialized.")
 
@@ -108,26 +82,27 @@ class CommandsRabbitMQ:
 
         print(f"====== Vehicle Name ======> {self.vehicleName.upper()}")
 
-        if command_type == CommandsEnum.manual.value:
-            self.isManual(command_dict["isManual"])
-            response = f"[.] Vehicle received commands from GCS with data: {command_type} = {command_dict['isManual']}"
-        elif command_type == CommandsEnum.target.value:
-            self.target(command_dict["target"])
-            response = f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict['target']}"
-        elif command_type == CommandsEnum.emergency.value:
-            self.emergencyStop(command_dict["emergencyStop"])
-            response = (
-                f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict['emergencyStop']}"
-            )
-        elif command_type == CommandsEnum.search.value:
-            self.searchArea(command_dict["searchArea"])
-            response = f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict['searchArea']}"
-        elif command_type == CommandsEnum.keepIn.value:
-            self.keepIn(command_dict["keepIn"])
-            response = f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict['keepIn']}"
-        elif command_type == CommandsEnum.keepOut.value:
-            self.keepOut(command_dict["keepOut"])
-            response = f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict['keepOut']}"
+        match(command_type):
+            case CommandsEnum.manual.value:
+                self.isManual(command_dict["isManual"])
+                response = f"[.] Vehicle received commands from GCS with data: {command_type} = {command_dict['isManual']}"
+            case CommandsEnum.target.value:
+                self.target(command_dict["target"])
+                response = f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict['target']}"
+            case CommandsEnum.emergency.value:
+                self.emergencyStop(command_dict["emergencyStop"])
+                response = (
+                    f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict['emergencyStop']}"
+                )
+            case CommandsEnum.search.value:
+                self.searchArea(command_dict["searchArea"])
+                response = f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict['searchArea']}"
+            case CommandsEnum.keepIn.value:
+                self.keepIn(command_dict["keepIn"])
+                response = f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict['keepIn']}"
+            case CommandsEnum.keepOut.value:
+                self.keepOut(command_dict["keepOut"])
+                response = f"[.] Vehicle received commands from GCS with data:{command_type} = {command_dict['keepOut']}"
 
         channel.basic_publish(
             exchange="",

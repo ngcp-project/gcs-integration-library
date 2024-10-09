@@ -19,7 +19,7 @@ def main():
 
         # Simulate sending a command
         command_data = Commands(isManual=1, target=coordinate, searchArea=coordinate_list)
-        print(command_data.to_dict())
+        # print(command_data.to_dict())
 
     except KeyboardInterrupt:
         print("Exiting. Closing connection.")

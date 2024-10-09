@@ -43,47 +43,51 @@ class GCSRabbitMQ:
             body=message,
         )
         print(f" [x] Sent commands to {self.vehicleName}")
+        attempts = 1
         while self.response is None:
             self.connection.process_data_events(time_limit=1)
+            print(f"Attempt {attempts}: Connecting...")
             if time.time() - last_call > 3:
                 print(f"[x] Vehicle {self.vehicleName} is missing [x]")
                 return "Vehicle is missing"
+            attempts += 1
         return str(self.response)
 
+if __name__ == "__main__":
 
-print(" [x] Start sending commands to Vehicles")
-coordinates_01 = Coordinate(latitude=35.35, longitude=60.35)
-coordinates_02 = Coordinate(latitude=40.35, longitude=50.35)
-coordinates_03 = Coordinate(latitude=44.35, longitude=55.35)
-search_area_coordinates = [coordinates_02, coordinates_03]
-search_area_list = Polygon(coordinates=search_area_coordinates)
+    print(" [x] Start sending commands to Vehicles")
+    coordinates_01 = Coordinate(latitude=35.35, longitude=60.35)
+    coordinates_02 = Coordinate(latitude=40.35, longitude=50.35)
+    coordinates_03 = Coordinate(latitude=44.35, longitude=55.35)
+    search_area_coordinates = [coordinates_02, coordinates_03]
+    search_area_list = Polygon(coordinates=search_area_coordinates)
 
-coordinates_04 = Coordinate(latitude=40.35, longitude=50.35)
-coordinates_05 = Coordinate(latitude=44.35, longitude=55.35)
-keep_in_coordinates = [coordinates_04, coordinates_05]
-keep_in_list = Polygon(coordinates=keep_in_coordinates)
+    coordinates_04 = Coordinate(latitude=40.35, longitude=50.35)
+    coordinates_05 = Coordinate(latitude=44.35, longitude=55.35)
+    keep_in_coordinates = [coordinates_04, coordinates_05]
+    keep_in_list = Polygon(coordinates=keep_in_coordinates)
 
-coordinates_06 = Coordinate(latitude=40.35, longitude=50.35)
-coordinates_07 = Coordinate(latitude=44.35, longitude=55.35)
-keep_out_coordinates = [coordinates_06, coordinates_07]
-keep_out_list = Polygon(coordinates=keep_out_coordinates)
+    coordinates_06 = Coordinate(latitude=40.35, longitude=50.35)
+    coordinates_07 = Coordinate(latitude=44.35, longitude=55.35)
+    keep_out_coordinates = [coordinates_06, coordinates_07]
+    keep_out_list = Polygon(coordinates=keep_out_coordinates)
 
-data = Commands(
-    isManual=True,
-    emergencyStop=False,
-    target=coordinates_01,
-    searchArea=search_area_list,
-    keepIn=keep_in_list,
-    keepOut=keep_out_list,
-)
+    data = Commands(
+        isManual=True,
+        emergencyStop=False,
+        target=coordinates_01,
+        searchArea=search_area_list,
+        keepIn=keep_in_list,
+        keepOut=keep_out_list,
+    )
 
-vehicle_name = "eru"
-command_type = CommandsEnum.keepIn
-ip_address = "localhost"  # Replace with the actual GCS IP address
+    vehicle_name = "eru"
+    command_type = CommandsEnum.keepIn
+    ip_address = "localhost"  # Replace with the actual GCS IP address
 
-gcs_rpc_vehicle = GCSRabbitMQ(vehicle_name, ip_address)
-response = gcs_rpc_vehicle.call(command_type, data)
-print(f"\nResponse from {vehicle_name.upper()}: {response}")
+    gcs_rpc_vehicle = GCSRabbitMQ(vehicle_name, ip_address)
+    response = gcs_rpc_vehicle.call(command_type, data)
+    print(f"\nResponse from {vehicle_name.upper()}: {response}")
 
 ### For Keep_In, Keep_Out Zone:
 # if command_type == CommandsEnum.keepIn:
