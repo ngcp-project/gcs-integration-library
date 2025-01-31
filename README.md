@@ -1,20 +1,27 @@
 # GCS Vehicle Integration Library
 Make sure to do `pip install pika` to be able to run this library
 
-If you are on Powershell, set up the python environment by: 
-
 **Check Dependencies:**
 
-*  make sure you have RabbitMQ installed: [Install RabbitMQ](https://www.rabbitmq.com/download.html)
+*  Make sure you have RabbitMQ installed: [Install RabbitMQ](https://www.rabbitmq.com/download.html)
+
+* Make sure you have docker desktop installed: 
+
+*  Make sure you have python installed by checking `python3 --version` or `py --version` or `python --version`.
 
 **Before running your code**
 * Make sure you are at the root dir.
+
+#### For Window Users
 * Open a powershell terminal within VSCode and use the command `python -m venv .venv` to create a virtual environment. 
 * To activate, run this command `.\venv\Scripts\Activate.ps1`
+* Set up your python path: `export PYTHONPATH="$PWD"` (trouble-shooting)
+#### For Mac Users
 * If that command give you errors, run this command instead:
 `.\venv\Scripts\activate.bat`
 * Set up your python path: `$env:PYTHONPATH = "$PWD"` (trouble-shooting)
 * To check if your PYTHONPATH has been set up correctly, run this command: `echo $PYTHONPATH` and it should prints your current home directory path. 
+
 * **Run Docker container** using this command: `docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.12-management`
 
 ### For Vehicle to Subscribe to Commands from the GCS
