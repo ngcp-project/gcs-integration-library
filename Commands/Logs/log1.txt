@@ -1,0 +1,8 @@
+2025-02-21 14:34:51,918: Log 1
+
+2025-02-21 14:34:51,918: Attempting to open serial XBee connection.
+2025-02-21 14:34:51,918: Attempting to open serial XBee connection.
+2025-02-21 14:34:51,918: Error opening serial port: [Errno 2] could not open port /dev/cu.usbserial-D30DWZL5: [Errno 2] No such file or directory: '/dev/cu.usbserial-D30DWZL5'
+2025-02-21 14:34:51,918: Error opening serial port: [Errno 2] could not open port /dev/cu.usbserial-D30DWZL5: [Errno 2] No such file or directory: '/dev/cu.usbserial-D30DWZL5'
+2025-02-21 14:34:51,918: Serial port is already closed.
+2025-02-21 14:34:51,918: Serial port is already closed.
