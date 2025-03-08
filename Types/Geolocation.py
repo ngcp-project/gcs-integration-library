@@ -3,8 +3,15 @@ from typing import List, Dict
 
 @dataclass
 class Coordinate:
-    latitude: float
-    longitude: float
+    def __init__(self, latitude, longitude):
+        self.latitude = latitude
+        self.longitude = longitude
+    
+    def to_dict(self) -> Dict[str, float]:
+        return {
+            "latitude": self.latitude, 
+            "longitude": self.longitude
+        }
 
 
 @dataclass

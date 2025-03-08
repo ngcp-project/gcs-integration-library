@@ -5,8 +5,14 @@ import pika, sys, json
 # from Types.Geolocation import Coordinate
 from datetime import datetime
 import time
+from Types.Telemetry import Telemetry, RequestCoordinates, StatusEnum
+from Types.Geolocation import Coordinate
+from Types.Communication import MessageType, Message
+from Types.Commands import Commands
+
 
 class TelemetrySubscriber:
+    queue_name = ""
     def __init__(self, vehicleName, binding_key):
         self.vehicleName = vehicleName
         self.binding_key = binding_key
@@ -29,13 +35,14 @@ class TelemetrySubscriber:
         #     sys.exit(1)
         self.channel.queue_bind(exchange=self.vehicleName, queue=self.queue_name, routing_key=self.binding_key)
 
-        print(f" [*] Waiting for telemetry data for {self.vehicleName}. To exit press CTRL+C")
+        print(f" [*] Waiting for telemetry data for {self.vehicleName.capitalize()}. To exit press CTRL+C")
 
         self.channel.basic_consume(queue=self.queue_name, on_message_callback=self.callback, auto_ack=True)
 
     def callback(self, ch, method, properties, body):
-        telemetry_data = body
-        print(f"Received telemetry data for {self.vehicleName}: {telemetry_data}")
+        data = json.loads(body)
+        telemetry_data = json.dumps(data, indent=4)
+        print(f"Received telemetry data for {self.vehicleName.capitalize()}: \n{telemetry_data}")
 
     def start_consuming(self):
         self.channel.start_consuming()
@@ -43,6 +50,7 @@ class TelemetrySubscriber:
     def close_connection(self):
         if self.connection:
             self.connection.close()
+            
 
 # Example usage:
 if __name__ == "__main__":

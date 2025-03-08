@@ -23,5 +23,6 @@ class Commands:
             'keepIn': self.keepIn.to_dict(),
             'keepOut': self.keepOut.to_dict()
         }
+        return obj
     
     

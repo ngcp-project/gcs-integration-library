@@ -1,8 +1,9 @@
 # Vehicles
 
 import pika, sys, json
-from Types.Telemetry import Telemetry
+from Types.Telemetry import Telemetry, RequestCoordinates, StatusEnum
 from Types.Geolocation import Coordinate
+from Types.Communication import MessageType, Message
 from datetime import datetime
 import time
 class TelemetryRabbitMQ:
@@ -35,7 +36,10 @@ class TelemetryRabbitMQ:
         # self.channel.exchange_declare(exchange='', exchange_type='topic')
         # # Convert objects into json strings(not all are convertible, may
         # need to create a dict of data before serializing to json)
-        message = json.dumps(data.to_dict())
+        if hasattr(data, 'to_dict'):
+            message = json.dumps(data.to_dict(), indent=4)  # For objects with to_dict
+        else:
+            message = json.dumps(data, indent=4)
         self.channel.basic_publish(
             # need to change exchange type to 'topic', not default
             exchange='',
@@ -46,7 +50,7 @@ class TelemetryRabbitMQ:
             body=message  # Encode the message as bytes before sending. 
             # might not need to encode the message. 
         )
-        print(f"Published message for {self.vehicleName}: {message}")
+        print(f"Published message for {self.vehicleName.capitalize()}: {message}")
         # except Exception as e:
         #     print(f"Exception during message publishing: {e}")
 
@@ -60,8 +64,12 @@ if __name__ == "__main__":
     telemetry = TelemetryRabbitMQ("eru", "localhost")
     current_coordinate = Coordinate(latitude=37.7749, longitude=-122.4194)
     vehicleSearch_coordinate = Coordinate(latitude=1.0, longitude=2.0)
+    request_location = Coordinate(latitude=45.8484, longitude=100.4194)
+    request_coordinates = RequestCoordinates(requestLocation=request_location, requestDescription="package")
+    message_type = MessageType(dataType="telemetry", messageType="data")
+    
     while True:
-        data = Telemetry(
+        tel_data = Telemetry(
             localIP="12.12.12.12",
             pitch=10.5,
             yaw=20.3,
@@ -72,8 +80,9 @@ if __name__ == "__main__":
             currentPosition=current_coordinate,
             lastUpdated=datetime.now(),
             fireFound=False,
-            fireCoordinate=vehicleSearch_coordinate
+            requestCoord=request_coordinates
         )
-        telemetry.publish(data)
+        transmit_data = Message(vehicleId=1, messageType=message_type, telemetryData=tel_data)
+        telemetry.publish(transmit_data)
         time.sleep(10)
 
