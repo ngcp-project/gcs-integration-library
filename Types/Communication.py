@@ -7,8 +7,8 @@ from Types.CommandsEnum import CommandsEnum
 
 @dataclass
 class MessageType:
-    dataType: str
-    messageType: str
+    dataType: str = ""
+    messageType: str = ""
     
     def to_dict(self) -> Dict:
         return {
@@ -18,7 +18,7 @@ class MessageType:
 
 @dataclass
 class Message:
-    vehicleId: Optional[int]
+    vehicleId: int = None
     messageType: MessageType
     telemetryData: Optional[Telemetry] = None
     commandsData: Optional[Commands] = None

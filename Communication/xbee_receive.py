@@ -55,13 +55,19 @@ def parse_data(data: Message):
     # parse to determine if this data is 1. Telemetry or 2. Commands
     if(vehicle_name != ""):
         # Case 1. Telemtry:
-        if(data.messageType == "Telemetry"):
+        if(data.messageType == "telemetry"):
             #NOTE!: Need to change the "localhost" here
             telemetry = RabbitMQ.TelemetryRabbitMQ(vehicle_name, "localhost") 
             telemetry.publish(data.telemetryData)
         #case 2. Commands. Expecting ACK msg
-        elif(data.messageType == "Commands"):
+        elif(data.messageType == "commands"):
             #NOTE!: Work with Ethan
+            # ack msg recv or not 
+            # declare disconnection
+            command = rabbitmq.commanderabbitmq()
+            comamnds.publish() #include disconnection status
+            
+            
             return
     else:
         print("\nERROR: Error reading Vehicle Name\n")

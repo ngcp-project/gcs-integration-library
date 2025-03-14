@@ -34,14 +34,13 @@ def send_tel(xbee: XBee) :
     ping_received.clear()
     current_coordinate = Coordinate(latitude=37.7749, longitude=-122.4194)
     request_location = Coordinate(latitude=45.8484, longitude=100.4194)
-    request_coordinates = RequestCoordinates(requestLocation=request_location, requestDescription="package")
-    message_type = MessageType(dataType="telemetry", messageType="data")
+    request_coordinates = RequestCoordinates(messageFlag=1, requestLocation=request_location)
+    message_type = MessageType(dataType="data", messageType="telemetry")
 
     try:
         while True:
             try: 
                 tel_data = Telemetry(
-                    localIP="12.12.12.12",
                     pitch=10.5,
                     yaw=20.3,
                     roll=5.8,
@@ -50,10 +49,9 @@ def send_tel(xbee: XBee) :
                     batteryLife=80.5,
                     currentPosition=current_coordinate,
                     lastUpdated=datetime.now(),
-                    fireFound=False,
                     requestCoord=request_coordinates
                 )
-                transmit_data = Message(messageType=message_type, telemetryData=tel_data)
+                transmit_data = Message(vehicleId = 0, messageType=message_type, telemetryData=tel_data)
                 xbee.transmit_data(json.dumps(transmit_data.to_dict()))
                 
                 if not ping_received.wait(1): 
