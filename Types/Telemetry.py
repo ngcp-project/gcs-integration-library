@@ -4,61 +4,47 @@ from enum import Enum
 from typing import Any, Dict, Optional
 
 from Types.Geolocation import Coordinate
-
-@dataclass(repr=False)
-class StatusEnum(Enum):
-    SAFE = 1
-    NOT_SAFE = 0
     
-@dataclass(repr=False)
 class RequestCoordinates:
-    messageFlag: Optional[int] # 1 = Package, 2 = Patient
-    requestLocation: Optional[Coordinate] = None
-    patientSecured: Optional[StatusEnum] = field(default_factory=lambda: StatusEnum.NOT_SAFE)
-    
-    def to_dict(self) -> Dict[str, Any]:
-        return {
-            "messageFlag": self.messageFlag,
-            "requestLocation": self.requestLocation.to_dict() if self.requestLocation else None,
-            "patientSecured": self.patientSecured if self.messageFlag == 2 else None
-        }
+    def __init__(self, request_location: Optional[Coordinate] = None,
+                 patient_secured: Optional[int] = 1,
+                 message_flag: Optional[int] = None):
+        self.rL = request_location  # Request Location
+        self.pS = patient_secured  # 1 for YES, 0 for NO
+        self.mF = message_flag  # 1 = Package, 2 = Patient
 
-@dataclass(repr=False)
+    def to_dict(self) -> Dict[str, Any]:
+        data = {"mF": self.mF, "rL": self.rL.to_dict() if self.rL else None}
+        if self.mF == 2 and self.pS is not None:
+            data["pS"] = self.pS  # Only include `patientSecured` if it's relevant
+        return data
+
+
 class Telemetry:
-    pitch: float = 0.0
-    yaw: float = 0.0
-    roll: float = 0.0
-    speed: float = 0.0
-    altitude: float = 0.0
-    batteryLife: float = 0.0
-    currentPosition: Coordinate = None
-    lastUpdated: datetime = None
-    vehicleStatus: int = 0
-    requestCoord: Optional[RequestCoordinates] = None
-    
-    def send_telemetry(self): pass
-    
+    def __init__(self, speed: float = 0.0, pitch: float = 0.0, yaw: float = 0.0,
+                 roll: float = 0.0, alt: float = 0.0, battery_life: float = 0.0,
+                 current_position: Optional[Coordinate] = None, last_updated: Optional[datetime] = None,
+                 vehicle_status: int = 0, request_coord: Optional[RequestCoordinates] = None):
+        self.s = int(speed)  # Convert to integer if possible
+        self.p = int(pitch)
+        self.y = int(yaw)
+        self.r = int(roll)
+        self.a = int(alt)
+        self.bL = int(battery_life)
+        self.cP = current_position  # Current Position
+        self.lU = int(last_updated.timestamp()) if last_updated else None  # Store as UNIX timestamp
+        self.vS = vehicle_status  # Vehicle Status
+        self.rC = request_coord  # Request Coordinates
+
     def to_dict(self) -> Dict[str, Any]:
-        obj = {
-            'pitch': self.pitch,
-            'yaw': self.yaw,
-            'roll':self.roll,
-            'speed':self.speed,
-            'altitude': self.altitude,
-            'batteryLife':self.batteryLife,
-            'currentPosition': vars(self.currentPosition),
-            'lastUpdated': int(self.lastUpdated.timestamp()*1000) if self.lastUpdated else None,
-            'requestCoord': self.requestCoord.to_dict() if self.requestCoord else None
+        data = {
+            "s": self.s, "p": self.p, "y": self.y, "r": self.r, "a": self.a, "bL": self.bL,
+            "cP": self.cP.to_dict() if self.cP else None, "lU": self.lU, "vS": self.vS,
+            "rC": self.rC.to_dict() if self.rC else None
         }
-        return obj
+        return {k: v for k, v in data.items() if v is not None}  # Remove `None` values
 
 
-# ON RUST SIDE
-
-# queue listening for commands ack message from vehicle to GCS
-{
-    "connectionStatus": 1 # for connected, 0 for disconnected
-}
 
 
 

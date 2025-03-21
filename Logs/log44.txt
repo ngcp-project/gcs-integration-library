@@ -1,0 +1,12 @@
+2025-03-16 22:53:37,423: Log 44
+
+2025-03-16 22:53:37,436: Attempting to open serial XBee connection.
+2025-03-16 22:53:37,437: Attempting to open serial XBee connection.
+2025-03-16 22:53:37,491: Serial port opened.
+2025-03-16 22:53:37,491: Serial port opened.
+2025-03-16 22:53:37,491: Transmitting data: bytearray(b'~\x00\x8a\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00{"vId":0,"dT":1,"tD":{"s":45,"p":10,"y":20,"r":5,"a":1000,"bL":80,"cP":{"lat":37.7749,"lon":-122.4194},"lU":1742190817,"vS":0}}\xbf') to 0000000000000000
+2025-03-16 22:53:37,491: Transmitting data: bytearray(b'~\x00\x8a\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00{"vId":0,"dT":1,"tD":{"s":45,"p":10,"y":20,"r":5,"a":1000,"bL":80,"cP":{"lat":37.7749,"lon":-122.4194},"lU":1742190817,"vS":0}}\xbf') to 0000000000000000
+2025-03-16 22:53:42,492: Attempting to close serial XBee connection.
+2025-03-16 22:53:42,492: Attempting to close serial XBee connection.
+2025-03-16 22:53:42,603: Serial port closed.
+2025-03-16 22:53:42,603: Serial port closed.

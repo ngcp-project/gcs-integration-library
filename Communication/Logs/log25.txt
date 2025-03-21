@@ -1,0 +1,8 @@
+2025-03-14 15:53:56,854: Log 25
+
+2025-03-14 15:53:56,879: Attempting to open serial XBee connection.
+2025-03-14 15:53:56,879: Attempting to open serial XBee connection.
+2025-03-14 15:53:56,940: Serial port opened.
+2025-03-14 15:53:56,940: Serial port opened.
+2025-03-14 15:53:56,940: Transmitting data: {"vehicleId": 0, "messageType": {"dataType": "data", "messageType": "telemetry"}, "telemetryData": {"pitch": 10.5, "yaw": 20.3, "roll": 5.8, "speed": 45.2, "altitude": 1000.0, "batteryLife": 80.5, "currentPosition": {"latitude": 37.7749, "longitude": -122.4194}, "lastUpdated": 1741992836940, "requestCoord": {"messageFlag": 1, "requestLocation": {"latitude": 45.8484, "longitude": 100.4194}, "patientSecured": null}}, "commandsData": null} to 0000000000000000
+2025-03-14 15:53:56,952: Transmitting data: {"vehicleId": 0, "messageType": {"dataType": "data", "messageType": "telemetry"}, "telemetryData": {"pitch": 10.5, "yaw": 20.3, "roll": 5.8, "speed": 45.2, "altitude": 1000.0, "batteryLife": 80.5, "currentPosition": {"latitude": 37.7749, "longitude": -122.4194}, "lastUpdated": 1741992836940, "requestCoord": {"messageFlag": 1, "requestLocation": {"latitude": 45.8484, "longitude": 100.4194}, "patientSecured": null}}, "commandsData": null} to 0000000000000000

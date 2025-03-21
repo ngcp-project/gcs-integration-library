@@ -1,0 +1,18 @@
+2025-03-17 22:34:13,853: Log 165
+
+2025-03-17 22:34:13,853: LOGGER CREATED By XBee.py
+2025-03-17 22:34:13,853: LOGGER CREATED By XBee.py
+2025-03-17 22:34:13,853: port: COM4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-17 22:34:13,853: port: COM4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-17 22:34:13,853: Attempting to open serial XBee connection.
+2025-03-17 22:34:13,853: Attempting to open serial XBee connection.
+2025-03-17 22:34:14,403: Serial port opened.
+2025-03-17 22:34:14,403: Serial port opened.
+2025-03-17 22:34:14,403: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa1B\xd6\x05\xd9g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-17 22:34:14,403: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa1B\xd6\x05\xd9g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-17 22:34:14,403: Encoded data: 7e 00 4d 00 01 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a1 42 d6 05 d9 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 b2 
+2025-03-17 22:34:14,403: Encoded data: 7e 00 4d 00 01 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a1 42 d6 05 d9 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 b2 
+2025-03-17 22:34:14,403: Attempting to close serial XBee connection.
+2025-03-17 22:34:14,403: Attempting to close serial XBee connection.
+2025-03-17 22:34:14,530: Serial port closed.
+2025-03-17 22:34:14,530: Serial port closed.

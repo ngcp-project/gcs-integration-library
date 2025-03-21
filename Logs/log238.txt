@@ -1,0 +1,10 @@
+2025-03-19 15:43:28,483: Log 238
+
+2025-03-19 15:43:28,483: LOGGER CREATED By XBee.py
+2025-03-19 15:43:28,483: LOGGER CREATED By XBee.py
+2025-03-19 15:43:28,483: port: COM4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-19 15:43:28,483: port: COM4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-19 15:43:28,483: Attempting to open serial XBee connection.
+2025-03-19 15:43:28,483: Attempting to open serial XBee connection.
+2025-03-19 15:43:29,038: Serial port opened.
+2025-03-19 15:43:29,038: Serial port opened.

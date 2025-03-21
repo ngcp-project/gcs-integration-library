@@ -1,0 +1,225 @@
+2025-03-18 13:30:36,531: Log 183
+
+2025-03-18 13:30:36,531: LOGGER CREATED By XBee.py
+2025-03-18 13:30:36,531: LOGGER CREATED By XBee.py
+2025-03-18 13:30:36,531: port: COM3, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-18 13:30:36,531: port: COM3, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-18 13:30:36,531: Attempting to open serial XBee connection.
+2025-03-18 13:30:36,531: Attempting to open serial XBee connection.
+2025-03-18 13:30:37,078: Serial port opened.
+2025-03-18 13:30:37,078: Serial port opened.
+2025-03-18 13:30:39,091: Receiving data:
+2025-03-18 13:30:39,091: Receiving data:
+2025-03-18 13:30:39,091: 81 00 00 15 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a1 42 ef d7 d9 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40
+2025-03-18 13:30:39,091: 81 00 00 15 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a1 42 ef d7 d9 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40
+2025-03-18 13:30:39,091: Received payload. RSSI: -21, Decoded message: Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=80.5, Last Updated=1742329839, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=1, Message Location=(45.8484, 100.4194))
+2025-03-18 13:30:39,091: Received payload. RSSI: -21, Decoded message: Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=80.5, Last Updated=1742329839, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=1, Message Location=(45.8484, 100.4194))
+2025-03-18 13:30:39,091: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -21, Options: 0, Data: b'\x81\x00\x00\x15\x00\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa1B\xef\xd7\xd9g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@'
+2025-03-18 13:30:39,091: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -21, Options: 0, Data: b'\x81\x00\x00\x15\x00\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa1B\xef\xd7\xd9g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@'
+2025-03-18 13:30:39,091: Using SelectPoller
+2025-03-18 13:30:39,097: Created default connection workflow <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x0000018EE9B1AD50>
+2025-03-18 13:30:39,097: Starting AMQP Connection workflow asynchronously.
+2025-03-18 13:30:39,097: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x0000018EE986FF40> with deadline=74737.046 and callback=functools.partial(<bound method AMQPConnectionWorkflow._start_new_cycle_async of <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x0000018EE9B1AD50>>, first=True); now=74737.046; delay=0
+2025-03-18 13:30:39,098: Beginning a new AMQP connection workflow cycle; attempts remaining after this: 0
+2025-03-18 13:30:39,098: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x0000018EE9B1AD70> with deadline=74737.046 and callback=<bound method AMQPConnectionWorkflow._try_next_config_async of <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x0000018EE9B1AD50>>; now=74737.046; delay=0
+2025-03-18 13:30:39,098: _try_next_config_async: 'localhost':5672
+2025-03-18 13:30:39,146: process_timeouts: invoking callback=<bound method _AddressResolver._dispatch_result of <pika.adapters.utils.selector_ioloop_adapter._AddressResolver object at 0x0000018EE9B1AE10>>
+2025-03-18 13:30:39,146: add_callback_threadsafe: added callback=<bound method _AddressResolver._dispatch_result of <pika.adapters.utils.selector_ioloop_adapter._AddressResolver object at 0x0000018EE9B1AE10>>
+2025-03-18 13:30:39,146: Invoking asynchronous getaddrinfo() completion callback; host='localhost'
+2025-03-18 13:30:39,146: getaddrinfo returned 2 records
+2025-03-18 13:30:39,146: Attempting to connect using address record (<AddressFamily.AF_INET6: 23>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0))
+2025-03-18 13:30:39,146: Pika version 1.3.2 connecting to ('::1', 5672, 0, 0)
+2025-03-18 13:30:39,146: add_callback_threadsafe: added callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x0000018EE99D4E90>>
+2025-03-18 13:30:39,146: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x0000018EE9B1B1C0> with deadline=74747.093 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x0000018EE99D6000>>; now=74737.093; delay=10.0
+2025-03-18 13:30:39,146: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x0000018EE9B1B640> with deadline=74752.093 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x0000018EE99D6000>>; now=74737.093; delay=15.0
+2025-03-18 13:30:39,146: process_timeouts: invoking callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x0000018EE99D4E90>>
+2025-03-18 13:30:39,146: SelectorIOServicesAdapter.set_writer(664, <bound method _AsyncSocketConnector._on_writable of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x0000018EE99D4E90>>)
+2025-03-18 13:30:39,146: set_writer(664, _) added handler Wr
+2025-03-18 13:30:39,146: Connection-establishment is in progress for <socket.socket fd=664, family=23, type=1, proto=6, laddr=('::1', 58275, 0, 0), raddr=('::1', 5672, 0, 0)>.
+2025-03-18 13:30:39,146: Socket connected: <socket.socket fd=664, family=23, type=1, proto=6, laddr=('::1', 58275, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-03-18 13:30:39,146: _AsyncSocketConnector._report_completion(None); <socket.socket fd=664, family=23, type=1, proto=6, laddr=('::1', 58275, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-03-18 13:30:39,146: SelectorIOServicesAdapter.remove_writer(664)
+2025-03-18 13:30:39,146: remove_writer(664) removed handler
+2025-03-18 13:30:39,146: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x0000018EE9B1B1C0> with deadline=74747.093 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x0000018EE99D6000>>
+2025-03-18 13:30:39,146: TCP connection to broker established: <socket.socket fd=664, family=23, type=1, proto=6, laddr=('::1', 58275, 0, 0), raddr=('::1', 5672, 0, 0)>.
+2025-03-18 13:30:39,146: _AsyncStreamConnector.start(); <socket.socket fd=664, family=23, type=1, proto=6, laddr=('::1', 58275, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-03-18 13:30:39,146: add_callback_threadsafe: added callback=<bound method _AsyncStreamConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncStreamConnector object at 0x0000018EE9B1B1A0>>
+2025-03-18 13:30:39,146: process_timeouts: invoking callback=<bound method _AsyncStreamConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncStreamConnector object at 0x0000018EE9B1B1A0>>
+2025-03-18 13:30:39,146: _AsyncStreamConnector._start_async(); <socket.socket fd=664, family=23, type=1, proto=6, laddr=('::1', 58275, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-03-18 13:30:39,146: _AsyncStreamConnector._linkup()
+2025-03-18 13:30:39,146: New Connection state: CLOSED (prev=CLOSED)
+2025-03-18 13:30:39,150: Added: {'callback': <bound method Connection._on_connection_start of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-18 13:30:39,150: Added: {'callback': <bound method Connection._on_connection_close_from_broker of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-18 13:30:39,150: Added: {'callback': <bound method Connection._default_on_connection_error of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-18 13:30:39,150: New Connection state: INIT (prev=CLOSED)
+2025-03-18 13:30:39,150: Using external connection workflow.
+2025-03-18 13:30:39,150: _AsyncTransportBase.__init__: <socket.socket fd=664, family=23, type=1, proto=6, laddr=('::1', 58275, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-03-18 13:30:39,150: SelectorIOServicesAdapter.set_reader(664, <bound method _AsyncPlaintextTransport._on_socket_readable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE97AB1A0>>)
+2025-03-18 13:30:39,150: set_reader(664, _) added handler Rd
+2025-03-18 13:30:39,150: _linkup(): created transport <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE97AB1A0>
+2025-03-18 13:30:39,150: New Connection state: PROTOCOL (prev=INIT)
+2025-03-18 13:30:39,150: SelectorIOServicesAdapter.set_writer(664, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE97AB1A0>>)
+2025-03-18 13:30:39,150: set_writer(664, _) updated handler RdWr
+2025-03-18 13:30:39,150: Turned on writability watcher: <socket.socket fd=664, family=23, type=1, proto=6, laddr=('::1', 58275, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-03-18 13:30:39,150: _linkup(): introduced transport to protocol <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE97AB1A0>; _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE97AB1A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-18 13:30:39,150: _AsyncStreamConnector._report_completion((<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE97AB1A0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE97AB1A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>)); <socket.socket fd=664, family=23, type=1, proto=6, laddr=('::1', 58275, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-03-18 13:30:39,150: Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE97AB1A0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE97AB1A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
+2025-03-18 13:30:39,150: Removing callback #0: {'callback': <bound method Connection._default_on_connection_error of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE97AB1A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-18 13:30:39,150: Added: {'callback': <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x0000018EE99D6000>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-18 13:30:39,150: Added: {'callback': <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x0000018EE99D6000>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-18 13:30:39,150: _AsyncStreamConnector._cleanup(False)
+2025-03-18 13:30:39,150: SelectorIOServicesAdapter.remove_writer(664)
+2025-03-18 13:30:39,150: remove_writer(664) updated handler Rd
+2025-03-18 13:30:39,150: Turned off writability watcher: <socket.socket fd=664, family=23, type=1, proto=6, laddr=('::1', 58275, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-03-18 13:30:39,152: Processing 0:Connection.Start
+2025-03-18 13:30:39,152: Processing use of oneshot callback
+2025-03-18 13:30:39,152: 0 registered uses left
+2025-03-18 13:30:39,152: Removing callback #0: {'callback': <bound method Connection._on_connection_start of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE97AB1A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-18 13:30:39,152: Calling <bound method Connection._on_connection_start of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE97AB1A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.Start"
+2025-03-18 13:30:39,152: New Connection state: START (prev=PROTOCOL)
+2025-03-18 13:30:39,152: Added: {'callback': <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE97AB1A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-18 13:30:39,152: SelectorIOServicesAdapter.set_writer(664, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE97AB1A0>>)
+2025-03-18 13:30:39,152: set_writer(664, _) updated handler RdWr
+2025-03-18 13:30:39,152: Turned on writability watcher: <socket.socket fd=664, family=23, type=1, proto=6, laddr=('::1', 58275, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-03-18 13:30:39,152: Recv would block on <socket.socket fd=664, family=23, type=1, proto=6, laddr=('::1', 58275, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-03-18 13:30:39,152: SelectorIOServicesAdapter.remove_writer(664)
+2025-03-18 13:30:39,152: remove_writer(664) updated handler Rd
+2025-03-18 13:30:39,152: Turned off writability watcher: <socket.socket fd=664, family=23, type=1, proto=6, laddr=('::1', 58275, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-03-18 13:30:39,152: Processing 0:Connection.Close
+2025-03-18 13:30:39,152: Processing use of oneshot callback
+2025-03-18 13:30:39,152: 0 registered uses left
+2025-03-18 13:30:39,152: Removing callback #0: {'callback': <bound method Connection._on_connection_close_from_broker of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE97AB1A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-18 13:30:39,152: Calling <bound method Connection._on_connection_close_from_broker of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE97AB1A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.Close"
+2025-03-18 13:30:39,152: _on_connection_close_from_broker: frame=<METHOD(['channel_number=0', 'frame_type=1', "method=<Connection.Close(['class_id=0', 'method_id=0', 'reply_code=403', 'reply_text=ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'])>"])>
+2025-03-18 13:30:39,152: Aborting transport connection: state=1; <socket.socket fd=664, family=23, type=1, proto=6, laddr=('::1', 58275, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-03-18 13:30:39,152: _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=664, family=23, type=1, proto=6, laddr=('::1', 58275, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-03-18 13:30:39,152: Deactivating transport: state=1; <socket.socket fd=664, family=23, type=1, proto=6, laddr=('::1', 58275, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-03-18 13:30:39,152: SelectorIOServicesAdapter.remove_reader(664)
+2025-03-18 13:30:39,152: remove_reader(664) removed handler
+2025-03-18 13:30:39,152: SelectorIOServicesAdapter.remove_writer(664)
+2025-03-18 13:30:39,152: remove_writer(664) neither was set.
+2025-03-18 13:30:39,152: add_callback_threadsafe: added callback=functools.partial(<bound method _AsyncTransportBase._connection_lost_notify_async of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE97AB1A0>>, None)
+2025-03-18 13:30:39,152: Leaving Plaintext consumer due to inactive state: state=3; <socket.socket fd=664, family=23, type=1, proto=6, laddr=('::1', 58275, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-03-18 13:30:39,152: process_timeouts: invoking callback=functools.partial(<bound method _AsyncTransportBase._connection_lost_notify_async of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE97AB1A0>>, None)
+2025-03-18 13:30:39,152: Concluding transport shutdown: state=3; error=None
+2025-03-18 13:30:39,152: connection_lost: None
+2025-03-18 13:30:39,152: AMQP stack terminated, failed to connect, or aborted: opened=False, error-arg=None; pending-error=ConnectionClosedByBroker: (403) 'ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'
+2025-03-18 13:30:39,152: Connection closed while authenticating indicating a probable authentication error
+2025-03-18 13:30:39,152: New Connection state: CLOSED (prev=START)
+2025-03-18 13:30:39,152: Connection setup terminated due to ProbableAuthenticationError: Client was disconnected at a connection stage indicating a probable authentication error: ("ConnectionClosedByBroker: (403) 'ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'",)
+2025-03-18 13:30:39,152: Processing 0:_on_connection_error
+2025-03-18 13:30:39,152: Calling <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x0000018EE99D6000>> for "0:_on_connection_error"
+2025-03-18 13:30:39,152: AMQPConnector: AMQP handshake attempt completed; state=3; error=ProbableAuthenticationError: Client was disconnected at a connection stage indicating a probable authentication error: ("ConnectionClosedByBroker: (403) 'ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'",); 'localhost'/(<AddressFamily.AF_INET6: 23>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0))
+2025-03-18 13:30:39,152: AMQPConnector: AMQP connection handshake failed for 'localhost'/(<AddressFamily.AF_INET6: 23>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0)): ProbableAuthenticationError: Client was disconnected at a connection stage indicating a probable authentication error: ("ConnectionClosedByBroker: (403) 'ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'",)
+2025-03-18 13:30:39,152: AMQPConnector - reporting failure: AMQPConnectorAMQPHandshakeError: ProbableAuthenticationError: Client was disconnected at a connection stage indicating a probable authentication error: ("ConnectionClosedByBroker: (403) 'ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'",)
+2025-03-18 13:30:39,152: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x0000018EE9B1B640> with deadline=74752.093 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x0000018EE99D6000>>
+2025-03-18 13:30:39,152: Connection attempt completed with AMQPConnectorAMQPHandshakeError: ProbableAuthenticationError: Client was disconnected at a connection stage indicating a probable authentication error: ("ConnectionClosedByBroker: (403) 'ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'",)
+2025-03-18 13:30:39,152: Attempting to connect using address record (<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 5672))
+2025-03-18 13:30:39,152: Pika version 1.3.2 connecting to ('127.0.0.1', 5672)
+2025-03-18 13:30:39,152: add_callback_threadsafe: added callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x0000018EE9B1B080>>
+2025-03-18 13:30:39,152: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x0000018EE9B1ADD0> with deadline=74747.093 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x0000018EE96792E0>>; now=74737.093; delay=10.0
+2025-03-18 13:30:39,152: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x0000018EE9B1B4F0> with deadline=74752.093 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x0000018EE96792E0>>; now=74737.093; delay=15.0
+2025-03-18 13:30:39,152: New Connection state: CLOSED (prev=CLOSED)
+2025-03-18 13:30:39,152: Added: {'callback': <bound method Connection._on_connection_start of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-18 13:30:39,152: Added: {'callback': <bound method Connection._on_connection_close_from_broker of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-18 13:30:39,152: Closing transport socket and unlinking: state=3; <socket.socket fd=664, family=23, type=1, proto=6, laddr=('::1', 58275, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-03-18 13:30:39,152: process_timeouts: invoking callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x0000018EE9B1B080>>
+2025-03-18 13:30:39,152: SelectorIOServicesAdapter.set_writer(1172, <bound method _AsyncSocketConnector._on_writable of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x0000018EE9B1B080>>)
+2025-03-18 13:30:39,157: set_writer(1172, _) added handler Wr
+2025-03-18 13:30:39,157: Connection-establishment is in progress for <socket.socket fd=1172, family=2, type=1, proto=6, laddr=('127.0.0.1', 58276), raddr=('127.0.0.1', 5672)>.
+2025-03-18 13:30:39,157: Socket connected: <socket.socket fd=1172, family=2, type=1, proto=6, laddr=('127.0.0.1', 58276), raddr=('127.0.0.1', 5672)>
+2025-03-18 13:30:39,157: _AsyncSocketConnector._report_completion(None); <socket.socket fd=1172, family=2, type=1, proto=6, laddr=('127.0.0.1', 58276), raddr=('127.0.0.1', 5672)>
+2025-03-18 13:30:39,157: SelectorIOServicesAdapter.remove_writer(1172)
+2025-03-18 13:30:39,157: remove_writer(1172) removed handler
+2025-03-18 13:30:39,157: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x0000018EE9B1ADD0> with deadline=74747.093 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x0000018EE96792E0>>
+2025-03-18 13:30:39,157: TCP connection to broker established: <socket.socket fd=1172, family=2, type=1, proto=6, laddr=('127.0.0.1', 58276), raddr=('127.0.0.1', 5672)>.
+2025-03-18 13:30:39,157: _AsyncStreamConnector.start(); <socket.socket fd=1172, family=2, type=1, proto=6, laddr=('127.0.0.1', 58276), raddr=('127.0.0.1', 5672)>
+2025-03-18 13:30:39,157: add_callback_threadsafe: added callback=<bound method _AsyncStreamConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncStreamConnector object at 0x0000018EE9A994F0>>
+2025-03-18 13:30:39,157: process_timeouts: invoking callback=<bound method _AsyncStreamConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncStreamConnector object at 0x0000018EE9A994F0>>
+2025-03-18 13:30:39,157: _AsyncStreamConnector._start_async(); <socket.socket fd=1172, family=2, type=1, proto=6, laddr=('127.0.0.1', 58276), raddr=('127.0.0.1', 5672)>
+2025-03-18 13:30:39,157: _AsyncStreamConnector._linkup()
+2025-03-18 13:30:39,157: New Connection state: CLOSED (prev=CLOSED)
+2025-03-18 13:30:39,157: Added: {'callback': <bound method Connection._on_connection_start of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-18 13:30:39,157: Added: {'callback': <bound method Connection._on_connection_close_from_broker of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-18 13:30:39,157: Added: {'callback': <bound method Connection._default_on_connection_error of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-18 13:30:39,158: New Connection state: INIT (prev=CLOSED)
+2025-03-18 13:30:39,158: Using external connection workflow.
+2025-03-18 13:30:39,158: _AsyncTransportBase.__init__: <socket.socket fd=1172, family=2, type=1, proto=6, laddr=('127.0.0.1', 58276), raddr=('127.0.0.1', 5672)>
+2025-03-18 13:30:39,158: SelectorIOServicesAdapter.set_reader(1172, <bound method _AsyncPlaintextTransport._on_socket_readable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE9B1B0B0>>)
+2025-03-18 13:30:39,158: set_reader(1172, _) added handler Rd
+2025-03-18 13:30:39,158: _linkup(): created transport <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE9B1B0B0>
+2025-03-18 13:30:39,158: New Connection state: PROTOCOL (prev=INIT)
+2025-03-18 13:30:39,158: SelectorIOServicesAdapter.set_writer(1172, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE9B1B0B0>>)
+2025-03-18 13:30:39,158: set_writer(1172, _) updated handler RdWr
+2025-03-18 13:30:39,158: Turned on writability watcher: <socket.socket fd=1172, family=2, type=1, proto=6, laddr=('127.0.0.1', 58276), raddr=('127.0.0.1', 5672)>
+2025-03-18 13:30:39,158: _linkup(): introduced transport to protocol <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE9B1B0B0>; _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE9B1B0B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-18 13:30:39,158: _AsyncStreamConnector._report_completion((<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE9B1B0B0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE9B1B0B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>)); <socket.socket fd=1172, family=2, type=1, proto=6, laddr=('127.0.0.1', 58276), raddr=('127.0.0.1', 5672)>
+2025-03-18 13:30:39,158: Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE9B1B0B0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE9B1B0B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
+2025-03-18 13:30:39,158: Removing callback #0: {'callback': <bound method Connection._default_on_connection_error of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE9B1B0B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-18 13:30:39,158: Added: {'callback': <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x0000018EE96792E0>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-18 13:30:39,158: Added: {'callback': <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x0000018EE96792E0>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-18 13:30:39,158: _AsyncStreamConnector._cleanup(False)
+2025-03-18 13:30:39,158: SelectorIOServicesAdapter.remove_writer(1172)
+2025-03-18 13:30:39,158: remove_writer(1172) updated handler Rd
+2025-03-18 13:30:39,158: Turned off writability watcher: <socket.socket fd=1172, family=2, type=1, proto=6, laddr=('127.0.0.1', 58276), raddr=('127.0.0.1', 5672)>
+2025-03-18 13:30:39,160: Processing 0:Connection.Start
+2025-03-18 13:30:39,160: Processing use of oneshot callback
+2025-03-18 13:30:39,160: 0 registered uses left
+2025-03-18 13:30:39,160: Removing callback #0: {'callback': <bound method Connection._on_connection_start of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE9B1B0B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-18 13:30:39,160: Calling <bound method Connection._on_connection_start of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE9B1B0B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.Start"
+2025-03-18 13:30:39,160: New Connection state: START (prev=PROTOCOL)
+2025-03-18 13:30:39,160: Added: {'callback': <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE9B1B0B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-18 13:30:39,160: SelectorIOServicesAdapter.set_writer(1172, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE9B1B0B0>>)
+2025-03-18 13:30:39,160: set_writer(1172, _) updated handler RdWr
+2025-03-18 13:30:39,160: Turned on writability watcher: <socket.socket fd=1172, family=2, type=1, proto=6, laddr=('127.0.0.1', 58276), raddr=('127.0.0.1', 5672)>
+2025-03-18 13:30:39,160: Recv would block on <socket.socket fd=1172, family=2, type=1, proto=6, laddr=('127.0.0.1', 58276), raddr=('127.0.0.1', 5672)>
+2025-03-18 13:30:39,160: SelectorIOServicesAdapter.remove_writer(1172)
+2025-03-18 13:30:39,160: remove_writer(1172) updated handler Rd
+2025-03-18 13:30:39,160: Turned off writability watcher: <socket.socket fd=1172, family=2, type=1, proto=6, laddr=('127.0.0.1', 58276), raddr=('127.0.0.1', 5672)>
+2025-03-18 13:30:39,161: Processing 0:Connection.Close
+2025-03-18 13:30:39,161: Processing use of oneshot callback
+2025-03-18 13:30:39,161: 0 registered uses left
+2025-03-18 13:30:39,161: Removing callback #0: {'callback': <bound method Connection._on_connection_close_from_broker of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE9B1B0B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-18 13:30:39,162: Calling <bound method Connection._on_connection_close_from_broker of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE9B1B0B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.Close"
+2025-03-18 13:30:39,162: _on_connection_close_from_broker: frame=<METHOD(['channel_number=0', 'frame_type=1', "method=<Connection.Close(['class_id=0', 'method_id=0', 'reply_code=403', 'reply_text=ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'])>"])>
+2025-03-18 13:30:39,162: Aborting transport connection: state=1; <socket.socket fd=1172, family=2, type=1, proto=6, laddr=('127.0.0.1', 58276), raddr=('127.0.0.1', 5672)>
+2025-03-18 13:30:39,162: _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=1172, family=2, type=1, proto=6, laddr=('127.0.0.1', 58276), raddr=('127.0.0.1', 5672)>
+2025-03-18 13:30:39,162: Deactivating transport: state=1; <socket.socket fd=1172, family=2, type=1, proto=6, laddr=('127.0.0.1', 58276), raddr=('127.0.0.1', 5672)>
+2025-03-18 13:30:39,162: SelectorIOServicesAdapter.remove_reader(1172)
+2025-03-18 13:30:39,162: remove_reader(1172) removed handler
+2025-03-18 13:30:39,162: SelectorIOServicesAdapter.remove_writer(1172)
+2025-03-18 13:30:39,162: remove_writer(1172) neither was set.
+2025-03-18 13:30:39,162: add_callback_threadsafe: added callback=functools.partial(<bound method _AsyncTransportBase._connection_lost_notify_async of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE9B1B0B0>>, None)
+2025-03-18 13:30:39,162: Leaving Plaintext consumer due to inactive state: state=3; <socket.socket fd=1172, family=2, type=1, proto=6, laddr=('127.0.0.1', 58276), raddr=('127.0.0.1', 5672)>
+2025-03-18 13:30:39,162: process_timeouts: invoking callback=functools.partial(<bound method _AsyncTransportBase._connection_lost_notify_async of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x0000018EE9B1B0B0>>, None)
+2025-03-18 13:30:39,162: Concluding transport shutdown: state=3; error=None
+2025-03-18 13:30:39,162: connection_lost: None
+2025-03-18 13:30:39,162: AMQP stack terminated, failed to connect, or aborted: opened=False, error-arg=None; pending-error=ConnectionClosedByBroker: (403) 'ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'
+2025-03-18 13:30:39,162: Connection closed while authenticating indicating a probable authentication error
+2025-03-18 13:30:39,162: New Connection state: CLOSED (prev=START)
+2025-03-18 13:30:39,162: Connection setup terminated due to ProbableAuthenticationError: Client was disconnected at a connection stage indicating a probable authentication error: ("ConnectionClosedByBroker: (403) 'ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'",)
+2025-03-18 13:30:39,162: Processing 0:_on_connection_error
+2025-03-18 13:30:39,163: Calling <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x0000018EE96792E0>> for "0:_on_connection_error"
+2025-03-18 13:30:39,163: AMQPConnector: AMQP handshake attempt completed; state=3; error=ProbableAuthenticationError: Client was disconnected at a connection stage indicating a probable authentication error: ("ConnectionClosedByBroker: (403) 'ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'",); 'localhost'/(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 5672))
+2025-03-18 13:30:39,163: AMQPConnector: AMQP connection handshake failed for 'localhost'/(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 5672)): ProbableAuthenticationError: Client was disconnected at a connection stage indicating a probable authentication error: ("ConnectionClosedByBroker: (403) 'ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'",)
+2025-03-18 13:30:39,163: AMQPConnector - reporting failure: AMQPConnectorAMQPHandshakeError: ProbableAuthenticationError: Client was disconnected at a connection stage indicating a probable authentication error: ("ConnectionClosedByBroker: (403) 'ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'",)
+2025-03-18 13:30:39,163: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x0000018EE9B1B4F0> with deadline=74752.093 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x0000018EE96792E0>>
+2025-03-18 13:30:39,163: Connection attempt completed with AMQPConnectorAMQPHandshakeError: ProbableAuthenticationError: Client was disconnected at a connection stage indicating a probable authentication error: ("ConnectionClosedByBroker: (403) 'ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'",)
+2025-03-18 13:30:39,163: _try_next_resolved_address: continuing with next config.
+2025-03-18 13:30:39,163: _try_next_config_async: starting a new cycle.
+2025-03-18 13:30:39,163: AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 2 exceptions in all; last exception - AMQPConnectorAMQPHandshakeError: ProbableAuthenticationError: Client was disconnected at a connection stage indicating a probable authentication error: ("ConnectionClosedByBroker: (403) 'ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'",); first exception - AMQPConnectorAMQPHandshakeError: ProbableAuthenticationError: Client was disconnected at a connection stage indicating a probable authentication error: ("ConnectionClosedByBroker: (403) 'ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'",).
+2025-03-18 13:30:39,163: AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 2 exceptions in all; last exception - AMQPConnectorAMQPHandshakeError: ProbableAuthenticationError: Client was disconnected at a connection stage indicating a probable authentication error: ("ConnectionClosedByBroker: (403) 'ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'",); first exception - AMQPConnectorAMQPHandshakeError: ProbableAuthenticationError: Client was disconnected at a connection stage indicating a probable authentication error: ("ConnectionClosedByBroker: (403) 'ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'",)
+2025-03-18 13:30:39,163: New Connection state: CLOSED (prev=CLOSED)
+2025-03-18 13:30:39,163: Added: {'callback': <bound method Connection._on_connection_start of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-18 13:30:39,163: Added: {'callback': <bound method Connection._on_connection_close_from_broker of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-18 13:30:39,163: Closing transport socket and unlinking: state=3; <socket.socket fd=1172, family=2, type=1, proto=6, laddr=('127.0.0.1', 58276), raddr=('127.0.0.1', 5672)>
+2025-03-18 13:30:39,163: Connection workflow failed: AMQPConnectionWorkflowFailed: 2 exceptions in all; last exception - AMQPConnectorAMQPHandshakeError: ProbableAuthenticationError: Client was disconnected at a connection stage indicating a probable authentication error: ("ConnectionClosedByBroker: (403) 'ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'",); first exception - AMQPConnectorAMQPHandshakeError: ProbableAuthenticationError: Client was disconnected at a connection stage indicating a probable authentication error: ("ConnectionClosedByBroker: (403) 'ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'",)
+2025-03-18 13:30:39,163: Error in _create_connection().
+Traceback (most recent call last):
+  File "C:\Users\nnttr\OneDrive\Desktop\NGCP\gcs-integration-library\.venv\Lib\site-packages\pika\adapters\blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.ProbableAuthenticationError: ConnectionClosedByBroker: (403) 'ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.'
+2025-03-18 13:30:39,176: Attempting to close serial XBee connection.
+2025-03-18 13:30:39,176: Attempting to close serial XBee connection.
+2025-03-18 13:30:39,301: Serial port closed.
+2025-03-18 13:30:39,301: Serial port closed.

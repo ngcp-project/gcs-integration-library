@@ -1,0 +1,14 @@
+2025-03-14 15:24:38,061: Log 9
+
+2025-03-14 15:24:38,094: Attempting to open serial XBee connection.
+2025-03-14 15:24:38,094: Attempting to open serial XBee connection.
+2025-03-14 15:24:38,150: Serial port opened.
+2025-03-14 15:24:38,150: Serial port opened.
+2025-03-14 15:24:38,151: Transmitting data: {"vehicleId": 0, "messageType": {"dataType": "data", "messageType": "telemetry"}, "telemetryData": {"pitch": 10.5, "yaw": 20.3, "roll": 5.8, "speed": 45.2, "altitude": 1000.0, "batteryLife": 80.5, "currentPosition": {"latitude": 37.7749, "longitude": -122.4194}, "lastUpdated": 1741991078151, "requestCoord": {"messageFlag": 1, "requestLocation": {"latitude": 45.8484, "longitude": 100.4194}, "patientSecured": null}}, "commandsData": null} to 0000000000000000
+2025-03-14 15:24:38,171: Transmitting data: {"vehicleId": 0, "messageType": {"dataType": "data", "messageType": "telemetry"}, "telemetryData": {"pitch": 10.5, "yaw": 20.3, "roll": 5.8, "speed": 45.2, "altitude": 1000.0, "batteryLife": 80.5, "currentPosition": {"latitude": 37.7749, "longitude": -122.4194}, "lastUpdated": 1741991078151, "requestCoord": {"messageFlag": 1, "requestLocation": {"latitude": 45.8484, "longitude": 100.4194}, "patientSecured": null}}, "commandsData": null} to 0000000000000000
+2025-03-14 15:24:38,252: Transmit status. ID: 1, Status: 116
+2025-03-14 15:24:38,252: Transmit status. ID: 1, Status: 116
+2025-03-14 15:24:42,177: Transmitting data: {"vehicleId": 0, "messageType": {"dataType": "data", "messageType": "telemetry"}, "telemetryData": {"pitch": 10.5, "yaw": 20.3, "roll": 5.8, "speed": 45.2, "altitude": 1000.0, "batteryLife": 80.5, "currentPosition": {"latitude": 37.7749, "longitude": -122.4194}, "lastUpdated": 1741991082176, "requestCoord": {"messageFlag": 1, "requestLocation": {"latitude": 45.8484, "longitude": 100.4194}, "patientSecured": null}}, "commandsData": null} to 0000000000000000
+2025-03-14 15:24:42,177: Transmitting data: {"vehicleId": 0, "messageType": {"dataType": "data", "messageType": "telemetry"}, "telemetryData": {"pitch": 10.5, "yaw": 20.3, "roll": 5.8, "speed": 45.2, "altitude": 1000.0, "batteryLife": 80.5, "currentPosition": {"latitude": 37.7749, "longitude": -122.4194}, "lastUpdated": 1741991082176, "requestCoord": {"messageFlag": 1, "requestLocation": {"latitude": 45.8484, "longitude": 100.4194}, "patientSecured": null}}, "commandsData": null} to 0000000000000000
+2025-03-14 15:24:42,213: Transmit status. ID: 2, Status: 116
+2025-03-14 15:24:42,213: Transmit status. ID: 2, Status: 116

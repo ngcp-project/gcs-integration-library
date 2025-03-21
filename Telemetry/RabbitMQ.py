@@ -1,12 +1,12 @@
 # Vehicles
 
 import pika, sys, json
-sys.path.append('Types')
-from Types.Telemetry import Telemetry, RequestCoordinates, StatusEnum
+from Types.Telemetry import Telemetry, RequestCoordinates
 from Types.Geolocation import Coordinate
-from Types.Communication import MessageType, Message
+from Types.Communication import Message
 from datetime import datetime
 import time
+
 
 class TelemetryRabbitMQ:
     def __init__(self, vehicleName: str,  hostname: str):
@@ -68,7 +68,6 @@ if __name__ == "__main__":
     vehicleSearch_coordinate = Coordinate(latitude=1.0, longitude=2.0)
     request_location = Coordinate(latitude=45.8484, longitude=100.4194)
     request_coordinates = RequestCoordinates(messageFlag=1, requestLocation=request_location)
-    message_type = MessageType(dataType="telemetry", messageType="data")
     
     while True:
         tel_data = Telemetry(
@@ -76,13 +75,13 @@ if __name__ == "__main__":
             yaw=20.3,
             roll=5.8,
             speed=45.2,
-            altitude=1000.0,
+            alt=1000.0,
             batteryLife=80.5,
             currentPosition=current_coordinate,
             lastUpdated=datetime.now(),
             requestCoord=request_coordinates
         )
-        transmit_data = Message(vehicleId=1, messageType=message_type, telemetryData=tel_data)
+        transmit_data = Message(vehId=1, type=1, telemetryData=tel_data)
         telemetry.publish(transmit_data)
         time.sleep(10)
 

@@ -1,0 +1,12 @@
+2025-03-17 21:48:47,655: Log 104
+
+2025-03-17 21:48:47,668: Attempting to open serial XBee connection.
+2025-03-17 21:48:47,668: Attempting to open serial XBee connection.
+2025-03-17 21:48:47,712: Serial port opened.
+2025-03-17 21:48:47,712: Serial port opened.
+2025-03-17 21:48:47,712: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa1B/\xfb\xd8g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-17 21:48:47,712: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa1B/\xfb\xd8g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-17 21:48:47,712: Attempting to close serial XBee connection.
+2025-03-17 21:48:47,712: Attempting to close serial XBee connection.
+2025-03-17 21:48:47,847: Serial port closed.
+2025-03-17 21:48:47,847: Serial port closed.

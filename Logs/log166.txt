@@ -1,0 +1,22 @@
+2025-03-17 22:35:00,915: Log 166
+
+2025-03-17 22:35:00,915: LOGGER CREATED By XBee.py
+2025-03-17 22:35:00,915: LOGGER CREATED By XBee.py
+2025-03-17 22:35:00,915: port: COM3, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-17 22:35:00,915: port: COM3, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-17 22:35:00,915: Attempting to open serial XBee connection.
+2025-03-17 22:35:00,915: Attempting to open serial XBee connection.
+2025-03-17 22:35:01,461: Serial port opened.
+2025-03-17 22:35:01,461: Serial port opened.
+2025-03-17 22:35:05,000: Receiving data:
+2025-03-17 22:35:05,000: Receiving data:
+2025-03-17 22:35:05,001: 81 00 00 0d 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a1 42 08 06 d9 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40
+2025-03-17 22:35:05,001: 81 00 00 0d 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a1 42 08 06 d9 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40
+2025-03-17 22:35:05,001: Received payload. RSSI: -13, Decoded message: Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=80.5, Last Updated=1742276104, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=1, Message Location=(45.8484, 100.4194))
+2025-03-17 22:35:05,001: Received payload. RSSI: -13, Decoded message: Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=80.5, Last Updated=1742276104, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=1, Message Location=(45.8484, 100.4194))
+2025-03-17 22:35:05,001: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -13, Options: 0, Data: b'\x81\x00\x00\r\x00\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa1B\x08\x06\xd9g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@'
+2025-03-17 22:35:05,001: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -13, Options: 0, Data: b'\x81\x00\x00\r\x00\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa1B\x08\x06\xd9g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@'
+2025-03-17 22:35:06,965: Attempting to close serial XBee connection.
+2025-03-17 22:35:06,965: Attempting to close serial XBee connection.
+2025-03-17 22:35:07,100: Serial port closed.
+2025-03-17 22:35:07,100: Serial port closed.

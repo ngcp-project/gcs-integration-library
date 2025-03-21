@@ -5,9 +5,9 @@ import pika, sys, json
 # from Types.Geolocation import Coordinate
 from datetime import datetime
 import time
-from Types.Telemetry import Telemetry, RequestCoordinates, StatusEnum
+from Types.Telemetry import Telemetry, RequestCoordinates
 from Types.Geolocation import Coordinate
-from Types.Communication import MessageType, Message
+from Types.Communication import  Message
 from Types.Commands import Commands
 
 
@@ -21,7 +21,7 @@ class TelemetrySubscriber:
         self.setup_rabbitmq()
 
     def setup_rabbitmq(self):
-        self.connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+        self.connection = pika.BlockingConnection(pika.ConnectionParameters('localhost')) #ipv4 addr of the other computer
         self.channel = self.connection.channel()
         self.channel.exchange_declare(exchange=self.vehicleName, exchange_type='topic')
         

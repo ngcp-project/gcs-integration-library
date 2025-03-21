@@ -1,0 +1,14 @@
+2025-03-16 23:17:41,250: Log 73
+
+2025-03-16 23:17:41,266: Attempting to open serial XBee connection.
+2025-03-16 23:17:41,267: Attempting to open serial XBee connection.
+2025-03-16 23:17:41,307: Serial port opened.
+2025-03-16 23:17:41,307: Serial port opened.
+2025-03-16 23:17:41,307: Transmitting data: {"vId":0,"dT":1,"seq":1742192261,"tD":{"s":45,"p":10,"y":20,"r":5,"a":1000,"bL":80,"cP":{"lat":37.7749,"lon":-122.4194},"lU":1742192261,"vS":0}} to 0000000000000000
+2025-03-16 23:17:41,307: Transmitting data: {"vId":0,"dT":1,"seq":1742192261,"tD":{"s":45,"p":10,"y":20,"r":5,"a":1000,"bL":80,"cP":{"lat":37.7749,"lon":-122.4194},"lU":1742192261,"vS":0}} to 0000000000000000
+2025-03-16 23:17:41,809: Transmitting data: {"vId":1,"dT":2,"seq":1742192261,"rC":{"mF":1,"rL":{"lat":45.8484,"lon":100.4194}}} to 0000000000000000
+2025-03-16 23:17:41,809: Transmitting data: {"vId":1,"dT":2,"seq":1742192261,"rC":{"mF":1,"rL":{"lat":45.8484,"lon":100.4194}}} to 0000000000000000
+2025-03-16 23:17:46,811: Attempting to close serial XBee connection.
+2025-03-16 23:17:46,811: Attempting to close serial XBee connection.
+2025-03-16 23:17:46,930: Serial port closed.
+2025-03-16 23:17:46,930: Serial port closed.

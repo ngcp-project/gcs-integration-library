@@ -1,0 +1,12 @@
+2025-03-16 22:42:49,498: Log 29
+
+2025-03-16 22:42:49,512: Attempting to open serial XBee connection.
+2025-03-16 22:42:49,513: Attempting to open serial XBee connection.
+2025-03-16 22:42:49,551: Serial port opened.
+2025-03-16 22:42:49,551: Serial port opened.
+2025-03-16 22:42:49,552: Transmitting data: bytearray(b'~\x00\x10\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00hello\xea') to 0000000000000000
+2025-03-16 22:42:49,552: Transmitting data: bytearray(b'~\x00\x10\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00hello\xea') to 0000000000000000
+2025-03-16 22:42:54,553: Attempting to close serial XBee connection.
+2025-03-16 22:42:54,553: Attempting to close serial XBee connection.
+2025-03-16 22:42:54,681: Serial port closed.
+2025-03-16 22:42:54,681: Serial port closed.

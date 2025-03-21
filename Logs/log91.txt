@@ -1,0 +1,10 @@
+2025-03-17 11:05:53,384: Log 91
+
+2025-03-17 11:05:53,384: LOGGER CREATED By XBee.py
+2025-03-17 11:05:53,384: LOGGER CREATED By XBee.py
+2025-03-17 11:05:53,384: port: COM4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-17 11:05:53,384: port: COM4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-17 11:05:53,384: Attempting to open serial XBee connection.
+2025-03-17 11:05:53,384: Attempting to open serial XBee connection.
+2025-03-17 11:05:53,384: Error opening serial port: could not open port 'COM4': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)
+2025-03-17 11:05:53,384: Error opening serial port: could not open port 'COM4': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)

@@ -1,0 +1,12 @@
+2025-03-17 21:57:36,920: Log 116
+
+2025-03-17 21:57:36,920: LOGGER CREATED By XBee.py
+2025-03-17 21:57:36,920: LOGGER CREATED By XBee.py
+2025-03-17 21:57:36,920: port: COM4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-17 21:57:36,920: port: COM4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-17 21:57:36,920: Attempting to open serial XBee connection.
+2025-03-17 21:57:36,920: Attempting to open serial XBee connection.
+2025-03-17 21:57:37,475: Serial port opened.
+2025-03-17 21:57:37,475: Serial port opened.
+2025-03-17 21:57:37,475: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa1BA\xfd\xd8g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-17 21:57:37,475: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa1BA\xfd\xd8g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
