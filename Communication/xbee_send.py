@@ -51,7 +51,7 @@ def send_tel(xbee: XBee):
     current_coordinate = (37.7749, -122.4194)  # SF Coordinates
     telemetry_data = Telemetry(
         speed=45.2, pitch=10.5, yaw=20.3, roll=5.8,
-        altitude=1000.0, battery_life=80.5, last_updated=int(datetime.now().timestamp()),
+        altitude=1000.0, battery_life=80, last_updated=int(datetime.now().timestamp()),
         current_latitude=current_coordinate[0], current_longitude=current_coordinate[1],
         vehicle_status=1, message_flag=1, message_lat=45.8484, message_lon=100.4194
     )
@@ -145,9 +145,11 @@ def main():
 
     # # thread_receive.join()
     # thread_send.join()
-    send_tel(xbee)
-    receive_ping = xbee.retrieve_data()
-    print("=======>\n", receive_ping)
+    while True:  
+        send_tel(xbee)
+        time.sleep(3)
+    # receive_ping = xbee.retrieve_data()
+    # print("=======>\n", receive_ping)
 
     xbee.close()
     print("[*] Sender XBee closed.")

@@ -44,7 +44,7 @@ def main():
             # xbee.transmit_data(ack_message.encode())
             # print(f"Sent Acknowledgment: {ack_message}")
 
-            time.sleep(0.1)  # Small delay to avoid excessive CPU usage
+            time.sleep(1)  # Small delay to avoid excessive CPU usage
     except KeyboardInterrupt:
         print("\n[*] Receiver interrupted by user.")
     except Exception as e:
