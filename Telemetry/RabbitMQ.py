@@ -39,7 +39,7 @@ class TelemetryRabbitMQ:
         # # Convert objects into json strings(not all are convertible, may
         # need to create a dict of data before serializing to json)
         if hasattr(data, 'to_dict'):
-            message = json.dumps(data.to_dict(), indent=4)  # For objects with to_dict
+            message = json.dumps(data.to_dict(), indent=4, default=str)  # For objects with to_dict
         else:
             message = json.dumps(data, indent=4)
         self.channel.basic_publish(
@@ -64,24 +64,28 @@ class TelemetryRabbitMQ:
 if __name__ == "__main__":
     # vehicle_name = input("Enter vehicle name: ")
     telemetry = TelemetryRabbitMQ("eru", "localhost")
-    current_coordinate = Coordinate(latitude=37.7749, longitude=-122.4194)
-    vehicleSearch_coordinate = Coordinate(latitude=1.0, longitude=2.0)
-    request_location = Coordinate(latitude=45.8484, longitude=100.4194)
-    request_coordinates = RequestCoordinates(messageFlag=1, requestLocation=request_location)
+    # current_coordinate = Coordinate(latitude=37.7749, longitude=-122.4194)
+    # vehicleSearch_coordinate = Coordinate(latitude=1.0, longitude=2.0)
+    # request_location = Coordinate(latitude=45.8484, longitude=100.4194)
+    # request_coordinates = RequestCoordinates(messageFlag=1, requestLocation=request_location)
     
     while True:
-        tel_data = Telemetry(
-            pitch=10.5,
-            yaw=20.3,
-            roll=5.8,
-            speed=45.2,
-            alt=1000.0,
-            batteryLife=80.5,
-            currentPosition=current_coordinate,
-            lastUpdated=datetime.now(),
-            requestCoord=request_coordinates
-        )
-        transmit_data = Message(vehId=1, type=1, telemetryData=tel_data)
-        telemetry.publish(transmit_data)
+        tel_data = {
+            "pitch":10.5,
+            "yaw":20.3,
+            "roll":5.8,
+            "speed":45.2,
+            "alt":1000.0,
+            "battery_life":80.5,
+            "current_latitude": 12.222,
+            "current_longitude":2333.22,
+            "lastUpdated":datetime.now().isoformat(),
+            "vehicle_status": 1,
+            "message_flag": 1,
+            "message_lat":22.22,
+            "message_lon":656.22
+        }
+        # transmit_data = Message(vehId=1, type=1, telemetryData=tel_data)
+        telemetry.publish(tel_data)
         time.sleep(10)
 
