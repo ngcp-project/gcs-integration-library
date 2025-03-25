@@ -3,6 +3,11 @@ import json
 import time
 import pika
 import serial
+import sys
+import os
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from Commands.CommandsStruct import Commands  # Import your shared Commands class
 
 # --- Configuration ---
 RABBITMQ_HOST = 'localhost'
@@ -13,13 +18,11 @@ ACK_QUEUE = 'command_acknowledgements'
 SERIAL_PORT = '/dev/cu.usbserial-D30DWZL4'  # Adjust as needed
 BAUD_RATE = 115200
 
-# Mapping of vehicle IDs to numeric codes:
-VEHICLE_CODE = {
-    "ERU": 0x01,
-    "MEA": 0x02,
-    "MRA": 0x03,
-    "FRA": 0x04,
-}
+# Expected size of the binary command packet (as defined in our Commands struct)
+EXPECTED_COMMAND_SIZE = 85
+
+# Mapping of vehicle string IDs to numeric codes
+VEHICLE_MAP = {"ERU": 0x01, "MEA": 0x02, "MRA": 0x03, "FRA": 0x04}
 
 # Open serial connection for XBee
 try:
@@ -34,9 +37,11 @@ def publish_ack(ack_message):
     connection = pika.BlockingConnection(pika.ConnectionParameters(host=RABBITMQ_HOST))
     channel = connection.channel()
     channel.queue_declare(queue=ACK_QUEUE, durable=True)
-    channel.basic_publish(exchange='',
-                          routing_key=ACK_QUEUE,
-                          body=json.dumps(ack_message))
+    channel.basic_publish(
+        exchange='',
+        routing_key=ACK_QUEUE,
+        body=json.dumps(ack_message)
+    )
     print("[GCS] Published ack:", ack_message)
     connection.close()
 
@@ -49,9 +54,7 @@ def process_command_message(ch, method, properties, body):
           "command_type": "EMERGENCY_STOP",
           "command_data": {"emergency": true}
       }
-    For emergency stop, we create a minimal 2-byte packet:
-      Byte 1: Command code (0x01)
-      Byte 2: Vehicle code (e.g., 0x01 for ERU)
+    For an emergency stop command, we construct a Commands object.
     """
     try:
         command_msg = json.loads(body.decode('utf-8'))
@@ -61,27 +64,40 @@ def process_command_message(ch, method, properties, body):
         ch.basic_ack(delivery_tag=method.delivery_tag)
         return
 
+    # Only handle emergency stop commands for now.
     if command_msg.get("command_type") != "EMERGENCY_STOP":
         print("[GCS] Unsupported command type; skipping.")
         ch.basic_ack(delivery_tag=method.delivery_tag)
         return
 
     vehicle_str = command_msg.get("vehicle_id", "")
-    if vehicle_str not in VEHICLE_CODE:
+    if vehicle_str not in VEHICLE_MAP:
         print(f"[GCS] Unknown vehicle_id: {vehicle_str}")
         ch.basic_ack(delivery_tag=method.delivery_tag)
         return
 
-    # Build the minimal command: first byte = 0x01 for emergency stop, second byte = vehicle code.
-    command_packet = bytes([0x01, VEHICLE_CODE[vehicle_str]])
-    print("[GCS] Sending minimal binary command over XBee:", command_packet.hex())
-
+    # Create a Commands object. For an emergency stop, we set emergency_stop True and default others.
+    cmd_obj = Commands(
+        vehicle_id=VEHICLE_MAP[vehicle_str],
+        emergency_stop=True,
+        autonomous_enabled=False,
+        mission_lat=0.0,
+        mission_lon=0.0,
+        keep_in_flag=0,
+        keep_in_coord1=(0.0, 0.0),
+        keep_in_coord2=(0.0, 0.0),
+        keep_out_flag=0,
+        keep_out_coord1=(0.0, 0.0),
+        keep_out_coord2=(0.0, 0.0)
+    )
+    binary_packet = cmd_obj.encode()
+    print("[GCS] Sending binary command over XBee:", binary_packet.hex())
     try:
-        ser.write(command_packet)
+        ser.write(binary_packet)
     except Exception as e:
         print("[GCS] Error sending command over serial:", e)
-
-    # Wait for ack (assume ack is a newline-terminated JSON string)
+    
+    # Wait for an acknowledgment from the vehicle (assumed to be a newline-terminated JSON string)
     start_time = time.time()
     ack_received = None
     while time.time() - start_time < 5:

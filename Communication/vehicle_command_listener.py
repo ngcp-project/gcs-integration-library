@@ -2,14 +2,24 @@
 import time
 import serial
 import json
+import sys
+import os
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from Commands.CommandsStruct import Commands  # Import the Commands class
 
 # --- Configuration ---
-SERIAL_PORT = '/dev/cu.usbserial-D30DWZKY'  # Adjust for your setup; each vehicle may have its own port
+SERIAL_PORT = '/dev/cu.usbserial-D30DWZKT'  # Adjust as needed for your setup
 BAUD_RATE = 115200
 
-# Set the vehicle's own identifier and corresponding code (e.g., "ERU" → 0x01)
+# Set the vehicle's own identifier as a numeric code.
+# For example, for "ERU", we assign 0x01.
 MY_VEHICLE_ID = "ERU"
-MY_VEHICLE_CODE = 0x01  # Update this accordingly
+MY_VEHICLE_CODE = 0x01
+
+# Expected size of the binary command packet, as defined in the Commands structure.
+EXPECTED_COMMAND_SIZE = 85
 
 try:
     ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=2)
@@ -19,39 +29,37 @@ except Exception as e:
     exit(1)
 
 def listen_for_commands():
-    print(f"[Vehicle {MY_VEHICLE_ID}] Listening for minimal binary commands on XBee...")
+    print(f"[Vehicle {MY_VEHICLE_ID}] Listening for binary commands on XBee...")
     while True:
-        waiting = ser.in_waiting
-        if waiting:
-            print(f"[Vehicle {MY_VEHICLE_ID}] Bytes waiting: {waiting}")
-        # Read exactly 2 bytes
-        data = ser.read(2)
-        if len(data) < 2:
-            continue  # Incomplete packet; keep reading.
-        command_code = data[0]
-        vehicle_code = data[1]
-        print(f"[Vehicle {MY_VEHICLE_ID}] Received raw command: {data.hex()}")
+        # Read exactly EXPECTED_COMMAND_SIZE bytes.
+        data = ser.read(EXPECTED_COMMAND_SIZE)
+        if len(data) < EXPECTED_COMMAND_SIZE:
+            continue  # Incomplete packet; try again.
+        try:
+            cmd_obj = Commands.decode(data)
+            if not cmd_obj:
+                print(f"[Vehicle {MY_VEHICLE_ID}] Failed to decode command packet.")
+                continue
+            print(f"[Vehicle {MY_VEHICLE_ID}] Decoded command: {cmd_obj}")
+        except Exception as e:
+            print(f"[Vehicle {MY_VEHICLE_ID}] Error decoding command: {e}")
+            continue
 
-        # Decode the command type (0x01 = emergency stop)
-        if command_code == 0x01:
-            cmd_type = "EMERGENCY_STOP"
+        # Check if the command is intended for this vehicle.
+        if cmd_obj.vehicle_id != MY_VEHICLE_CODE:
+            print(f"[Vehicle {MY_VEHICLE_ID}] Command not for me (received vehicle_id: {cmd_obj.vehicle_id}).")
+            ack = {"vehicle_id": MY_VEHICLE_ID, "command": "ignored", "status": "wrong_vehicle"}
         else:
-            cmd_type = f"UNKNOWN({command_code})"
-        print(f"[Vehicle {MY_VEHICLE_ID}] Decoded command: {cmd_type}, vehicle code: {vehicle_code:#04x}")
-
-        # Process the command only if it is intended for this vehicle.
-        if vehicle_code == MY_VEHICLE_CODE:
-            if command_code == 0x01:
+            # Process the command. For an emergency stop, we check the emergency_stop field.
+            if cmd_obj.emergency_stop:
                 print(f"[Vehicle {MY_VEHICLE_ID}] EMERGENCY_STOP activated!")
-                # Place your emergency stop logic here.
+                # Insert vehicle-specific emergency stop logic here.
                 ack = {"vehicle_id": MY_VEHICLE_ID, "command": "EMERGENCY_STOP", "status": "acknowledged"}
             else:
-                ack = {"vehicle_id": MY_VEHICLE_ID, "command": cmd_type, "status": "unknown_command"}
-        else:
-            print(f"[Vehicle {MY_VEHICLE_ID}] Command not for me (vehicle code mismatch).")
-            ack = {"vehicle_id": MY_VEHICLE_ID, "command": cmd_type, "status": "ignored"}
-
-        # Send acknowledgment as JSON (newline terminated for proper framing).
+                print(f"[Vehicle {MY_VEHICLE_ID}] Unknown command received.")
+                ack = {"vehicle_id": MY_VEHICLE_ID, "command": "unknown", "status": "ignored"}
+        
+        # Send acknowledgment as a JSON string (newline-terminated for proper framing).
         ack_message = json.dumps(ack)
         ser.write((ack_message + "\n").encode('utf-8'))
         print(f"[Vehicle {MY_VEHICLE_ID}] Sent ack: {ack}")
