@@ -3,10 +3,6 @@ import json
 import time
 import pika
 import serial
-import sys
-import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from Commands.CommandsStruct import Commands
 
 # --- Configuration ---
 RABBITMQ_HOST = 'localhost'
@@ -17,8 +13,13 @@ ACK_QUEUE = 'command_acknowledgements'
 SERIAL_PORT = '/dev/cu.usbserial-D30DWZL4'  # Adjust as needed
 BAUD_RATE = 115200
 
-# Expected size of the binary command message (in bytes)
-COMMAND_MSG_SIZE = 84
+# Mapping of vehicle IDs to numeric codes:
+VEHICLE_CODE = {
+    "ERU": 0x01,
+    "MEA": 0x02,
+    "MRA": 0x03,
+    "FRA": 0x04,
+}
 
 # Open serial connection for XBee
 try:
@@ -33,24 +34,24 @@ def publish_ack(ack_message):
     connection = pika.BlockingConnection(pika.ConnectionParameters(host=RABBITMQ_HOST))
     channel = connection.channel()
     channel.queue_declare(queue=ACK_QUEUE, durable=True)
-    channel.basic_publish(
-        exchange='',
-        routing_key=ACK_QUEUE,
-        body=json.dumps(ack_message)
-    )
+    channel.basic_publish(exchange='',
+                          routing_key=ACK_QUEUE,
+                          body=json.dumps(ack_message))
     print("[GCS] Published ack:", ack_message)
     connection.close()
 
 def process_command_message(ch, method, properties, body):
     """
     Process incoming command message from RabbitMQ.
-    Expected JSON format (published by the Tauri backend):
+    Expected JSON format:
       {
           "vehicle_id": "ERU",
           "command_type": "EMERGENCY_STOP",
           "command_data": {"emergency": true}
       }
-    We'll convert this JSON into a binary command message.
+    For emergency stop, we create a minimal 2-byte packet:
+      Byte 1: Command code (0x01)
+      Byte 2: Vehicle code (e.g., 0x01 for ERU)
     """
     try:
         command_msg = json.loads(body.decode('utf-8'))
@@ -60,37 +61,29 @@ def process_command_message(ch, method, properties, body):
         ch.basic_ack(delivery_tag=method.delivery_tag)
         return
 
-    # For now, we only handle EMERGENCY_STOP.
-    if command_msg.get("command_type") == "EMERGENCY_STOP":
-        # Create a binary command message for emergency stop.
-        cmd_obj = Commands(
-            emergency_stop=True,
-            autonomous_enabled=False,
-            mission_lat=0.0,
-            mission_lon=0.0,
-            keep_in_flag=0,
-            keep_in_coord1=(0.0, 0.0),
-            keep_in_coord2=(0.0, 0.0),
-            keep_out_flag=0,
-            keep_out_coord1=(0.0, 0.0),
-            keep_out_coord2=(0.0, 0.0)
-        )
-    else:
-        print("[GCS] Unsupported command type. Skipping.")
+    if command_msg.get("command_type") != "EMERGENCY_STOP":
+        print("[GCS] Unsupported command type; skipping.")
         ch.basic_ack(delivery_tag=method.delivery_tag)
         return
 
-    # Encode the command to binary.
-    outgoing_command = cmd_obj.encode()
-    print("[GCS] Sending binary command over XBee:", outgoing_command.hex())
+    vehicle_str = command_msg.get("vehicle_id", "")
+    if vehicle_str not in VEHICLE_CODE:
+        print(f"[GCS] Unknown vehicle_id: {vehicle_str}")
+        ch.basic_ack(delivery_tag=method.delivery_tag)
+        return
+
+    # Build the minimal command: first byte = 0x01 for emergency stop, second byte = vehicle code.
+    command_packet = bytes([0x01, VEHICLE_CODE[vehicle_str]])
+    print("[GCS] Sending minimal binary command over XBee:", command_packet.hex())
+
     try:
-        ser.write(outgoing_command)  # Write binary data
+        ser.write(command_packet)
     except Exception as e:
         print("[GCS] Error sending command over serial:", e)
 
+    # Wait for ack (assume ack is a newline-terminated JSON string)
     start_time = time.time()
     ack_received = None
-    # Wait for an ack (assuming ack is still sent as newline-terminated JSON)
     while time.time() - start_time < 5:
         if ser.in_waiting:
             line = ser.readline().decode('utf-8').strip()
@@ -102,11 +95,7 @@ def process_command_message(ch, method, properties, body):
                 except Exception as e:
                     print("[GCS] Error parsing ack:", e)
     if ack_received is None:
-        ack_received = {
-            "vehicle_id": command_msg.get("vehicle_id", ""),
-            "status": "no_ack",
-            "command": command_msg.get("command_type", "")
-        }
+        ack_received = {"vehicle_id": vehicle_str, "status": "no_ack", "command": "EMERGENCY_STOP"}
         print("[GCS] No ack received within timeout.")
 
     publish_ack(ack_received)
