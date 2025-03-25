@@ -60,19 +60,19 @@ def parse_pipe_separated_data(data):
     
     received_telemetry = data.data
     telemetry_dict = {
-        "Speed (m/s)": received_telemetry.speed,
-        "Pitch (°)": received_telemetry.pitch,
-        "Yaw (°)": received_telemetry.yaw,
-        "Roll (°)": received_telemetry.roll,
-        "Altitude (m)": received_telemetry.altitude,
-        "Battery Life (%)": received_telemetry.battery_life,
-        "Timestamp": received_telemetry.last_updated,
-        "Latitude": received_telemetry.current_latitude,
-        "Longitude": received_telemetry.current_longitude,
-        "Vehicle Status": received_telemetry.vehicle_status,
-        "Message Type": received_telemetry.message_flag,
-        "Message Latitude": received_telemetry.message_lat,
-        "Message Longitude": received_telemetry.message_lon,
+        "speed": received_telemetry.speed,
+        "pitch": received_telemetry.pitch,
+        "yaw": received_telemetry.yaw,
+        "roll": received_telemetry.roll,
+        "alt": received_telemetry.altitude,
+        "battery_life": received_telemetry.battery_life,
+        "lastUpdated": received_telemetry.last_updated,
+        "current_latitude": received_telemetry.current_latitude,
+        "current_longitude": received_telemetry.current_longitude,
+        "vehicle_status": received_telemetry.vehicle_status,
+        "message_flag": received_telemetry.message_flag,
+        "message_lat": received_telemetry.message_lat,
+        "message_lon": received_telemetry.message_lon,
     }
     
     for key, value in telemetry_dict.items():
