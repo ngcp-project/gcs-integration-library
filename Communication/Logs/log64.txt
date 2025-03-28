@@ -1,0 +1,18 @@
+2025-03-25 16:58:37,969: Log 64
+
+2025-03-25 16:58:37,969: LOGGER CREATED By XBee.py
+2025-03-25 16:58:37,969: LOGGER CREATED By XBee.py
+2025-03-25 16:58:37,969: port: /dev/cu.usbserial-D30DWZKT, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 16:58:37,969: port: /dev/cu.usbserial-D30DWZKT, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 16:58:37,969: Attempting to open serial XBee connection.
+2025-03-25 16:58:37,969: Attempting to open serial XBee connection.
+2025-03-25 16:58:38,501: Serial port opened.
+2025-03-25 16:58:38,502: Serial port opened.
+2025-03-25 16:58:46,041: Receiving data:
+2025-03-25 16:58:46,042: Receiving data:
+2025-03-25 16:58:46,042: 81 00 00 1b 00 01 01
+2025-03-25 16:58:46,042: 81 00 00 1b 00 01 01
+2025-03-25 16:58:46,042: Received payload. RSSI: -27, Decoded message: None
+2025-03-25 16:58:46,042: Received payload. RSSI: -27, Decoded message: None
+2025-03-25 16:58:46,042: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -27, Options: 0, Data: b'\x81\x00\x00\x1b\x00\x01\x01'
+2025-03-25 16:58:46,042: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -27, Options: 0, Data: b'\x81\x00\x00\x1b\x00\x01\x01'

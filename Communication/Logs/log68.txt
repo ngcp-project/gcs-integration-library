@@ -1,0 +1,22 @@
+2025-03-25 17:09:27,701: Log 68
+
+2025-03-25 17:09:27,701: LOGGER CREATED By XBee.py
+2025-03-25 17:09:27,701: LOGGER CREATED By XBee.py
+2025-03-25 17:09:27,701: port: /dev/cu.usbserial-D30DWZL4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 17:09:27,701: port: /dev/cu.usbserial-D30DWZL4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 17:09:27,701: Attempting to open serial XBee connection.
+2025-03-25 17:09:27,701: Attempting to open serial XBee connection.
+2025-03-25 17:09:28,232: Serial port opened.
+2025-03-25 17:09:28,232: Serial port opened.
+2025-03-25 17:09:28,232: Transmitting data: b'\x01\x01' to 0000000000000000
+2025-03-25 17:09:28,232: Transmitting data: b'\x01\x01' to 0000000000000000
+2025-03-25 17:09:28,232: Encoded data: 7e 00 0d 00 01 00 00 00 00 00 00 00 00 00 01 01 fc 
+2025-03-25 17:09:28,232: Encoded data: 7e 00 0d 00 01 00 00 00 00 00 00 00 00 00 01 01 fc 
+2025-03-25 17:09:28,243: Receiving data:
+2025-03-25 17:09:28,244: Receiving data:
+2025-03-25 17:09:28,244: 89 01 00
+2025-03-25 17:09:28,244: 89 01 00
+2025-03-25 17:09:28,244: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 0
+2025-03-25 17:09:28,244: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 0
+2025-03-25 17:09:28,355: Receiving data:
+2025-03-25 17:09:28,355: Receiving data:

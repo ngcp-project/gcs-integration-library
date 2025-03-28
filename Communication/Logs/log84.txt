@@ -1,0 +1,1102 @@
+2025-03-25 17:58:18,059: Log 84
+
+2025-03-25 17:58:18,059: LOGGER CREATED By XBee.py
+2025-03-25 17:58:18,059: LOGGER CREATED By XBee.py
+2025-03-25 17:58:18,059: port: /dev/cu.usbserial-D30DWZL4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 17:58:18,059: port: /dev/cu.usbserial-D30DWZL4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 17:58:18,059: Attempting to open serial XBee connection.
+2025-03-25 17:58:18,059: Attempting to open serial XBee connection.
+2025-03-25 17:58:18,591: Serial port opened.
+2025-03-25 17:58:18,592: Serial port opened.
+2025-03-25 17:58:18,592: Transmitting data: b'\x01\x01' to 0000000000000000
+2025-03-25 17:58:18,592: Transmitting data: b'\x01\x01' to 0000000000000000
+2025-03-25 17:58:18,592: Encoded data: 7e 00 0d 00 01 00 00 00 00 00 00 00 00 00 01 01 fc 
+2025-03-25 17:58:18,592: Encoded data: 7e 00 0d 00 01 00 00 00 00 00 00 00 00 00 01 01 fc 
+2025-03-25 17:58:18,603: Receiving data:
+2025-03-25 17:58:18,604: Receiving data:
+2025-03-25 17:58:18,604: 89 01 00
+2025-03-25 17:58:18,604: 89 01 00
+2025-03-25 17:58:18,604: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 0
+2025-03-25 17:58:18,604: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 0
+2025-03-25 17:58:18,679: Receiving data:
+2025-03-25 17:58:18,679: Receiving data:
+2025-03-25 17:58:18,694: 81 00 00 13 00 7b 22 76 65 68 69 63 6c 65 5f 69 64 22 3a 20 22 45 52 55 22 2c 20 22 63 6f 6d 6d 61 6e 64 22 3a 20 22 45 4d 45 52 47 45 4e 43 59 5f 53 54 4f 50 22 2c 20 22 73 74 61 74 75 73 22 3a 20 22 61 63 6b 6e 6f 77 6c 65 64 67 65 64 22 7d
+2025-03-25 17:58:18,694: 81 00 00 13 00 7b 22 76 65 68 69 63 6c 65 5f 69 64 22 3a 20 22 45 52 55 22 2c 20 22 63 6f 6d 6d 61 6e 64 22 3a 20 22 45 4d 45 52 47 45 4e 43 59 5f 53 54 4f 50 22 2c 20 22 73 74 61 74 75 73 22 3a 20 22 61 63 6b 6e 6f 77 6c 65 64 67 65 64 22 7d
+2025-03-25 17:58:18,694: Received payload. RSSI: -19, Decoded message: None
+2025-03-25 17:58:18,694: Received payload. RSSI: -19, Decoded message: None
+2025-03-25 17:58:18,694: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -19, Options: 0, Data: b'\x81\x00\x00\x13\x00{"vehicle_id": "ERU", "command": "EMERGENCY_STOP", "status": "acknowledged"}'
+2025-03-25 17:58:18,694: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -19, Options: 0, Data: b'\x81\x00\x00\x13\x00{"vehicle_id": "ERU", "command": "EMERGENCY_STOP", "status": "acknowledged"}'
+2025-03-25 17:58:23,593: Using KQueuePoller
+2025-03-25 17:58:23,594: Created default connection workflow <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x102d7b750>
+2025-03-25 17:58:23,594: Starting AMQP Connection workflow asynchronously.
+2025-03-25 17:58:23,594: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e164a0> with deadline=1138859.759304791 and callback=functools.partial(<bound method AMQPConnectionWorkflow._start_new_cycle_async of <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x102d7b750>>, first=True); now=1138859.759304791; delay=0
+2025-03-25 17:58:23,594: Beginning a new AMQP connection workflow cycle; attempts remaining after this: 0
+2025-03-25 17:58:23,594: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e164d0> with deadline=1138859.759409083 and callback=<bound method AMQPConnectionWorkflow._try_next_config_async of <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x102d7b750>>; now=1138859.759409083; delay=0
+2025-03-25 17:58:23,594: _try_next_config_async: 'localhost':5672
+2025-03-25 17:58:23,596: add_callback_threadsafe: added callback=<bound method _AddressResolver._dispatch_result of <pika.adapters.utils.selector_ioloop_adapter._AddressResolver object at 0x102d7b890>>
+2025-03-25 17:58:23,596: process_timeouts: invoking callback=<bound method _AddressResolver._dispatch_result of <pika.adapters.utils.selector_ioloop_adapter._AddressResolver object at 0x102d7b890>>
+2025-03-25 17:58:23,596: Invoking asynchronous getaddrinfo() completion callback; host='localhost'
+2025-03-25 17:58:23,596: getaddrinfo returned 2 records
+2025-03-25 17:58:23,596: Attempting to connect using address record (<AddressFamily.AF_INET6: 30>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0))
+2025-03-25 17:58:23,596: Pika version 1.3.2 connecting to ('::1', 5672, 0, 0)
+2025-03-25 17:58:23,596: add_callback_threadsafe: added callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x102d7bc50>>
+2025-03-25 17:58:23,596: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e16680> with deadline=1138869.76093025 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102d7bb10>>; now=1138859.76093025; delay=10.0
+2025-03-25 17:58:23,596: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e14bb0> with deadline=1138874.760944458 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102d7bb10>>; now=1138859.760944458; delay=15.0
+2025-03-25 17:58:23,596: process_timeouts: invoking callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x102d7bc50>>
+2025-03-25 17:58:23,596: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncSocketConnector._on_writable of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x102d7bc50>>)
+2025-03-25 17:58:23,596: set_writer(18, _) added handler Wr
+2025-03-25 17:58:23,596: Connection-establishment is in progress for <socket.socket fd=18, family=30, type=1, proto=6, laddr=('::1', 64507, 0, 0)>.
+2025-03-25 17:58:23,596: Socket failed to connect: <socket.socket fd=18, family=30, type=1, proto=6, laddr=('::1', 64507, 0, 0)>; error=61 (Connection refused)
+2025-03-25 17:58:23,596: _AsyncSocketConnector._report_completion(ConnectionRefusedError(61, 'Connection refused')); <socket.socket fd=18, family=30, type=1, proto=6, laddr=('::1', 64507, 0, 0)>
+2025-03-25 17:58:23,596: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:23,596: remove_writer(18) removed handler
+2025-03-25 17:58:23,596: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x102e16680> with deadline=1138869.76093025 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102d7bb10>>
+2025-03-25 17:58:23,596: TCP Connection attempt failed: ConnectionRefusedError(61, 'Connection refused'); dest=(<AddressFamily.AF_INET6: 30>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0))
+2025-03-25 17:58:23,596: AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(61, 'Connection refused')
+2025-03-25 17:58:23,596: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x102e14bb0> with deadline=1138874.760944458 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102d7bb10>>
+2025-03-25 17:58:23,596: Connection attempt completed with AMQPConnectorSocketConnectError: ConnectionRefusedError(61, 'Connection refused')
+2025-03-25 17:58:23,596: Attempting to connect using address record (<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 5672))
+2025-03-25 17:58:23,596: Pika version 1.3.2 connecting to ('127.0.0.1', 5672)
+2025-03-25 17:58:23,596: add_callback_threadsafe: added callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x102da9940>>
+2025-03-25 17:58:23,596: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e16620> with deadline=1138869.761369 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102da9ba0>>; now=1138859.761369; delay=10.0
+2025-03-25 17:58:23,596: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e164a0> with deadline=1138874.761387166 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102da9ba0>>; now=1138859.761387166; delay=15.0
+2025-03-25 17:58:23,596: process_timeouts: invoking callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x102da9940>>
+2025-03-25 17:58:23,596: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncSocketConnector._on_writable of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x102da9940>>)
+2025-03-25 17:58:23,596: set_writer(18, _) added handler Wr
+2025-03-25 17:58:23,596: Connection-establishment is in progress for <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508)>.
+2025-03-25 17:58:23,597: Socket connected: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,597: _AsyncSocketConnector._report_completion(None); <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,597: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:23,597: remove_writer(18) removed handler
+2025-03-25 17:58:23,597: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x102e16620> with deadline=1138869.761369 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102da9ba0>>
+2025-03-25 17:58:23,597: TCP connection to broker established: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>.
+2025-03-25 17:58:23,597: _AsyncStreamConnector.start(); <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,597: add_callback_threadsafe: added callback=<bound method _AsyncStreamConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncStreamConnector object at 0x102d7bc50>>
+2025-03-25 17:58:23,597: process_timeouts: invoking callback=<bound method _AsyncStreamConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncStreamConnector object at 0x102d7bc50>>
+2025-03-25 17:58:23,597: _AsyncStreamConnector._start_async(); <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,597: _AsyncStreamConnector._linkup()
+2025-03-25 17:58:23,597: New Connection state: CLOSED (prev=CLOSED)
+2025-03-25 17:58:23,597: Added: {'callback': <bound method Connection._on_connection_start of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:23,597: Added: {'callback': <bound method Connection._on_connection_close_from_broker of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:23,597: Added: {'callback': <bound method Connection._default_on_connection_error of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:23,597: New Connection state: INIT (prev=CLOSED)
+2025-03-25 17:58:23,597: Using external connection workflow.
+2025-03-25 17:58:23,597: _AsyncTransportBase.__init__: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,597: SelectorIOServicesAdapter.set_reader(18, <bound method _AsyncPlaintextTransport._on_socket_readable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0>>)
+2025-03-25 17:58:23,597: set_reader(18, _) added handler Rd
+2025-03-25 17:58:23,597: _linkup(): created transport <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0>
+2025-03-25 17:58:23,597: New Connection state: PROTOCOL (prev=INIT)
+2025-03-25 17:58:23,597: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0>>)
+2025-03-25 17:58:23,597: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:23,597: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,597: _linkup(): introduced transport to protocol <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0>; _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-25 17:58:23,597: _AsyncStreamConnector._report_completion((<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>)); <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,597: Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
+2025-03-25 17:58:23,597: Removing callback #0: {'callback': <bound method Connection._default_on_connection_error of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:23,597: Added: {'callback': <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102da9ba0>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:23,597: Added: {'callback': <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102da9ba0>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:23,597: _AsyncStreamConnector._cleanup(False)
+2025-03-25 17:58:23,597: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:23,597: remove_writer(18) updated handler Rd
+2025-03-25 17:58:23,597: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,600: Processing 0:Connection.Start
+2025-03-25 17:58:23,600: Processing use of oneshot callback
+2025-03-25 17:58:23,600: 0 registered uses left
+2025-03-25 17:58:23,600: Removing callback #0: {'callback': <bound method Connection._on_connection_start of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:23,600: Calling <bound method Connection._on_connection_start of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.Start"
+2025-03-25 17:58:23,600: New Connection state: START (prev=PROTOCOL)
+2025-03-25 17:58:23,600: Added: {'callback': <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:23,600: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0>>)
+2025-03-25 17:58:23,600: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:23,600: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,600: Recv would block on <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,600: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:23,600: remove_writer(18) updated handler Rd
+2025-03-25 17:58:23,600: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,601: Processing 0:Connection.Tune
+2025-03-25 17:58:23,601: Processing use of oneshot callback
+2025-03-25 17:58:23,601: 0 registered uses left
+2025-03-25 17:58:23,601: Removing callback #0: {'callback': <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:23,601: Calling <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.Tune"
+2025-03-25 17:58:23,601: New Connection state: TUNE (prev=START)
+2025-03-25 17:58:23,601: Creating a HeartbeatChecker: 60
+2025-03-25 17:58:23,601: timeout: 60.000000 send_interval: 30.000000 check_interval: 65.000000
+2025-03-25 17:58:23,601: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e14430> with deadline=1138889.765779125 and callback=<bound method HeartbeatChecker._send_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102d7bd90>>; now=1138859.765779125; delay=30.0
+2025-03-25 17:58:23,601: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e16920> with deadline=1138924.765791458 and callback=<bound method HeartbeatChecker._check_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102d7bd90>>; now=1138859.765791458; delay=65
+2025-03-25 17:58:23,601: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0>>)
+2025-03-25 17:58:23,601: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:23,601: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,601: Added: {'callback': <bound method Connection._on_connection_open_ok of <SelectConnection TUNE transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:23,601: Recv would block on <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,601: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:23,601: remove_writer(18) updated handler Rd
+2025-03-25 17:58:23,601: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,601: Processing 0:Connection.OpenOk
+2025-03-25 17:58:23,601: Processing use of oneshot callback
+2025-03-25 17:58:23,601: 0 registered uses left
+2025-03-25 17:58:23,601: Removing callback #0: {'callback': <bound method Connection._on_connection_open_ok of <SelectConnection TUNE transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:23,601: Calling <bound method Connection._on_connection_open_ok of <SelectConnection TUNE transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.OpenOk"
+2025-03-25 17:58:23,601: New Connection state: OPEN (prev=TUNE)
+2025-03-25 17:58:23,601: Processing 0:_on_connection_open_ok
+2025-03-25 17:58:23,601: Calling <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102da9ba0>> for "0:_on_connection_open_ok"
+2025-03-25 17:58:23,601: AMQPConnector: AMQP handshake attempt completed; state=3; error=None; 'localhost'/(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 5672))
+2025-03-25 17:58:23,601: AMQPConnector: AMQP connection established for 'localhost'/(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 5672)): <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-25 17:58:23,601: AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-25 17:58:23,601: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x102e164a0> with deadline=1138874.761387166 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102da9ba0>>
+2025-03-25 17:58:23,601: Connection attempt completed with <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-25 17:58:23,601: AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-25 17:58:23,601: Recv would block on <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,601: Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-25 17:58:23,601: Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e36400>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:23,601: Creating channel 1
+2025-03-25 17:58:23,601: Added: {'callback': <bound method Connection._on_channel_cleanup of <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': <Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:23,601: Added: {'callback': <bound method Channel._on_getempty of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:23,601: Added: {'callback': <bound method Channel._on_cancel of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:23,601: Added: {'callback': <bound method Channel._on_flow of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:23,601: Added: {'callback': <bound method Channel._on_close_from_broker of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:23,601: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0>>)
+2025-03-25 17:58:23,601: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:23,601: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,601: Entering blocking state on frame <Channel.Open(['out_of_band='])>; acceptable_replies=[<class 'pika.spec.Channel.OpenOk'>]
+2025-03-25 17:58:23,601: Adding on_synchronous_complete callback
+2025-03-25 17:58:23,601: Added: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:23,601: Adding passed-in RPC response callback
+2025-03-25 17:58:23,602: Added: {'callback': <bound method Channel._on_openok of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:23,602: Added: {'callback': <bound method BlockingChannel._on_consumer_cancelled_by_broker of <BlockingChannel impl=<Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:23,602: Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e3d180>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:23,602: Added: {'callback': <bound method BlockingChannel._on_channel_closed of <BlockingChannel impl=<Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>>, 'one_shot': False, 'only': <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'arguments': None}
+2025-03-25 17:58:23,602: Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e3d0c0>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:23,602: Created channel=1
+2025-03-25 17:58:23,602: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:23,602: remove_writer(18) updated handler Rd
+2025-03-25 17:58:23,602: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,602: Processing 1:Channel.OpenOk
+2025-03-25 17:58:23,602: Processing use of oneshot callback
+2025-03-25 17:58:23,602: 0 registered uses left
+2025-03-25 17:58:23,602: Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:23,602: Processing use of oneshot callback
+2025-03-25 17:58:23,602: 0 registered uses left
+2025-03-25 17:58:23,602: Removing callback #0: {'callback': <bound method Channel._on_openok of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:23,602: Calling <bound method Channel._on_synchronous_complete of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.OpenOk"
+2025-03-25 17:58:23,602: 0 blocked frames
+2025-03-25 17:58:23,602: Calling <bound method Channel._on_openok of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.OpenOk"
+2025-03-25 17:58:23,602: Recv would block on <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,602: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0>>)
+2025-03-25 17:58:23,602: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:23,602: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,602: Entering blocking state on frame <Queue.Declare(['arguments={}', 'auto_delete=False', 'durable=True', 'exclusive=False', 'nowait=False', 'passive=False', 'queue=command_acknowledgements', 'ticket=0'])>; acceptable_replies=[(<class 'pika.spec.Queue.DeclareOk'>, {'queue': 'command_acknowledgements'})]
+2025-03-25 17:58:23,602: Adding on_synchronous_complete callback
+2025-03-25 17:58:23,602: Added: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'command_acknowledgements'}, 'calls': 1}
+2025-03-25 17:58:23,602: Adding passed-in RPC response callback
+2025-03-25 17:58:23,602: Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e37c00>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'command_acknowledgements'}, 'calls': 1}
+2025-03-25 17:58:23,602: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:23,602: remove_writer(18) updated handler Rd
+2025-03-25 17:58:23,602: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,603: Processing 1:Queue.DeclareOk
+2025-03-25 17:58:23,603: Processing use of oneshot callback
+2025-03-25 17:58:23,603: 0 registered uses left
+2025-03-25 17:58:23,603: Comparing {'queue': 'command_acknowledgements'} to {'queue': 'command_acknowledgements'}
+2025-03-25 17:58:23,603: Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'command_acknowledgements'}, 'calls': 0}
+2025-03-25 17:58:23,603: Processing use of oneshot callback
+2025-03-25 17:58:23,603: 0 registered uses left
+2025-03-25 17:58:23,603: Comparing {'queue': 'command_acknowledgements'} to {'queue': 'command_acknowledgements'}
+2025-03-25 17:58:23,603: Removing callback #0: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e37c00>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'command_acknowledgements'}, 'calls': 0}
+2025-03-25 17:58:23,603: Calling <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Queue.DeclareOk"
+2025-03-25 17:58:23,603: 0 blocked frames
+2025-03-25 17:58:23,603: Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e37c00>> for "1:Queue.DeclareOk"
+2025-03-25 17:58:23,603: Recv would block on <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,603: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0>>)
+2025-03-25 17:58:23,603: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:23,603: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,603: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:23,603: remove_writer(18) updated handler Rd
+2025-03-25 17:58:23,603: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,603: Closing connection (200): Normal shutdown
+2025-03-25 17:58:23,603: Channel.close(200, Normal shutdown)
+2025-03-25 17:58:23,603: Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>
+2025-03-25 17:58:23,603: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0>>)
+2025-03-25 17:58:23,603: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:23,603: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,603: Entering blocking state on frame <Channel.Close(['class_id=0', 'method_id=0', 'reply_code=200', 'reply_text=Normal shutdown'])>; acceptable_replies=[<class 'pika.spec.Channel.CloseOk'>]
+2025-03-25 17:58:23,603: Adding on_synchronous_complete callback
+2025-03-25 17:58:23,603: Added: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:23,603: Adding passed-in RPC response callback
+2025-03-25 17:58:23,603: Added: {'callback': <bound method Channel._on_closeok of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:23,603: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:23,603: remove_writer(18) updated handler Rd
+2025-03-25 17:58:23,603: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,603: Processing 1:Channel.CloseOk
+2025-03-25 17:58:23,603: Processing use of oneshot callback
+2025-03-25 17:58:23,603: 0 registered uses left
+2025-03-25 17:58:23,603: Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:23,603: Processing use of oneshot callback
+2025-03-25 17:58:23,603: 0 registered uses left
+2025-03-25 17:58:23,603: Removing callback #0: {'callback': <bound method Channel._on_closeok of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:23,603: Calling <bound method Channel._on_synchronous_complete of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.CloseOk"
+2025-03-25 17:58:23,603: 0 blocked frames
+2025-03-25 17:58:23,603: Calling <bound method Channel._on_closeok of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.CloseOk"
+2025-03-25 17:58:23,603: Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>
+2025-03-25 17:58:23,603: Processing 1:_on_channel_close
+2025-03-25 17:58:23,603: Calling <bound method BlockingChannel._on_channel_closed of <BlockingChannel impl=<Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>> for "1:_on_channel_close"
+2025-03-25 17:58:23,603: _on_channel_closed: ChannelClosedByClient: (200) 'Normal shutdown'; <BlockingChannel impl=<Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>
+2025-03-25 17:58:23,603: Processing 1:_on_channel_cleanup
+2025-03-25 17:58:23,603: Processing use of oneshot callback
+2025-03-25 17:58:23,603: 0 registered uses left
+2025-03-25 17:58:23,604: Removing callback #0: {'callback': <bound method Connection._on_channel_cleanup of <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': <Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:23,604: Calling <bound method Connection._on_channel_cleanup of <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "1:_on_channel_cleanup"
+2025-03-25 17:58:23,604: Removed channel 1
+2025-03-25 17:58:23,604: Clearing out '1' from the stack
+2025-03-25 17:58:23,604: Recv would block on <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,604: New Connection state: CLOSING (prev=OPEN)
+2025-03-25 17:58:23,604: Closing connection (200): 'Normal shutdown'
+2025-03-25 17:58:23,604: Added: {'callback': <bound method Connection._on_connection_close_ok of <SelectConnection CLOSING transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:23,604: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0>>)
+2025-03-25 17:58:23,604: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:23,604: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,604: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:23,604: remove_writer(18) updated handler Rd
+2025-03-25 17:58:23,604: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,604: Processing 0:Connection.CloseOk
+2025-03-25 17:58:23,604: Processing use of oneshot callback
+2025-03-25 17:58:23,604: 0 registered uses left
+2025-03-25 17:58:23,604: Removing callback #0: {'callback': <bound method Connection._on_connection_close_ok of <SelectConnection CLOSING transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:23,604: Calling <bound method Connection._on_connection_close_ok of <SelectConnection CLOSING transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.CloseOk"
+2025-03-25 17:58:23,604: _on_connection_close_ok: frame=<METHOD(['channel_number=0', 'frame_type=1', 'method=<Connection.CloseOk>'])>
+2025-03-25 17:58:23,604: Removing timer for next heartbeat send interval
+2025-03-25 17:58:23,604: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x102e14430> with deadline=1138889.765779125 and callback=<bound method HeartbeatChecker._send_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102d7bd90>>
+2025-03-25 17:58:23,604: Removing timer for next heartbeat check interval
+2025-03-25 17:58:23,604: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x102e16920> with deadline=1138924.765791458 and callback=<bound method HeartbeatChecker._check_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102d7bd90>>
+2025-03-25 17:58:23,604: Aborting transport connection: state=1; <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,604: _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,604: Deactivating transport: state=1; <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,604: SelectorIOServicesAdapter.remove_reader(18)
+2025-03-25 17:58:23,604: remove_reader(18) removed handler
+2025-03-25 17:58:23,604: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:23,604: remove_writer(18) neither was set.
+2025-03-25 17:58:23,604: add_callback_threadsafe: added callback=functools.partial(<bound method _AsyncTransportBase._connection_lost_notify_async of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0>>, None)
+2025-03-25 17:58:23,604: Leaving Plaintext consumer due to inactive state: state=3; <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,604: process_timeouts: invoking callback=functools.partial(<bound method _AsyncTransportBase._connection_lost_notify_async of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102d7bed0>>, None)
+2025-03-25 17:58:23,604: Concluding transport shutdown: state=3; error=None
+2025-03-25 17:58:23,604: connection_lost: None
+2025-03-25 17:58:23,604: AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-25 17:58:23,604: New Connection state: CLOSED (prev=CLOSING)
+2025-03-25 17:58:23,604: Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-25 17:58:23,604: Processing 0:_on_connection_closed
+2025-03-25 17:58:23,604: Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e36400>> for "0:_on_connection_closed"
+2025-03-25 17:58:23,604: New Connection state: CLOSED (prev=CLOSED)
+2025-03-25 17:58:23,604: Added: {'callback': <bound method Connection._on_connection_start of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:23,604: Incremented callback reference counter: {'callback': <bound method Connection._on_connection_close_from_broker of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 2}
+2025-03-25 17:58:23,604: Closing transport socket and unlinking: state=3; <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64508), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,604: User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-25 17:58:23,604: Attempting to close serial XBee connection.
+2025-03-25 17:58:23,604: Attempting to close serial XBee connection.
+2025-03-25 17:58:23,612: Serial port closed.
+2025-03-25 17:58:23,612: Serial port closed.
+2025-03-25 17:58:23,612: SelectorIOServicesAdapter.set_writer(8, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0>>)
+2025-03-25 17:58:23,612: set_writer(8, _) updated handler RdWr
+2025-03-25 17:58:23,612: Turned on writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:23,612: SelectorIOServicesAdapter.remove_writer(8)
+2025-03-25 17:58:23,612: remove_writer(8) updated handler Rd
+2025-03-25 17:58:23,612: Turned off writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:27,702: Sending heartbeat frame
+2025-03-25 17:58:27,702: Sending heartbeat frame
+2025-03-25 17:58:27,702: SelectorIOServicesAdapter.set_writer(8, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0>>)
+2025-03-25 17:58:27,703: set_writer(8, _) updated handler RdWr
+2025-03-25 17:58:27,703: Turned on writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:27,703: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x1025ca320> with deadline=1138893.867891875 and callback=<bound method HeartbeatChecker._send_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102e18980>>; now=1138863.867891875; delay=30.0
+2025-03-25 17:58:27,703: SelectorIOServicesAdapter.remove_writer(8)
+2025-03-25 17:58:27,703: remove_writer(8) updated handler Rd
+2025-03-25 17:58:27,704: Turned off writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:27,704: Received heartbeat frame
+2025-03-25 17:58:27,704: Recv would block on <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:31,447: Recv would block on <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:31,447: Log 85
+
+2025-03-25 17:58:31,447: LOGGER CREATED By XBee.py
+2025-03-25 17:58:31,447: LOGGER CREATED By XBee.py
+2025-03-25 17:58:31,447: port: /dev/cu.usbserial-D30DWZL4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 17:58:31,447: port: /dev/cu.usbserial-D30DWZL4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 17:58:31,447: Attempting to open serial XBee connection.
+2025-03-25 17:58:31,447: Attempting to open serial XBee connection.
+2025-03-25 17:58:31,979: Serial port opened.
+2025-03-25 17:58:31,980: Serial port opened.
+2025-03-25 17:58:31,980: Transmitting data: b'\x01\x02' to 0000000000000000
+2025-03-25 17:58:31,980: Transmitting data: b'\x01\x02' to 0000000000000000
+2025-03-25 17:58:31,980: Encoded data: 7e 00 0d 00 01 00 00 00 00 00 00 00 00 00 01 02 fb 
+2025-03-25 17:58:31,980: Encoded data: 7e 00 0d 00 01 00 00 00 00 00 00 00 00 00 01 02 fb 
+2025-03-25 17:58:32,003: Receiving data:
+2025-03-25 17:58:32,003: Receiving data:
+2025-03-25 17:58:32,003: 89 01 00
+2025-03-25 17:58:32,003: 89 01 00
+2025-03-25 17:58:32,003: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 0
+2025-03-25 17:58:32,003: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 0
+2025-03-25 17:58:32,171: Receiving data:
+2025-03-25 17:58:32,171: Receiving data:
+2025-03-25 17:58:32,188: 81 00 00 12 00 7b 22 76 65 68 69 63 6c 65 5f 69 64 22 3a 20 22 45 52 55 22 2c 20 22 63 6f 6d 6d 61 6e 64 22 3a 20 22 45 4d 45 52 47 45 4e 43 59 5f 53 54 4f 50 22 2c 20 22 73 74 61 74 75 73 22 3a 20 22 69 67 6e 6f 72 65 64 22 7d
+2025-03-25 17:58:32,188: 81 00 00 12 00 7b 22 76 65 68 69 63 6c 65 5f 69 64 22 3a 20 22 45 52 55 22 2c 20 22 63 6f 6d 6d 61 6e 64 22 3a 20 22 45 4d 45 52 47 45 4e 43 59 5f 53 54 4f 50 22 2c 20 22 73 74 61 74 75 73 22 3a 20 22 69 67 6e 6f 72 65 64 22 7d
+2025-03-25 17:58:32,188: Received payload. RSSI: -18, Decoded message: None
+2025-03-25 17:58:32,188: Received payload. RSSI: -18, Decoded message: None
+2025-03-25 17:58:32,188: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -18, Options: 0, Data: b'\x81\x00\x00\x12\x00{"vehicle_id": "ERU", "command": "EMERGENCY_STOP", "status": "ignored"}'
+2025-03-25 17:58:32,188: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -18, Options: 0, Data: b'\x81\x00\x00\x12\x00{"vehicle_id": "ERU", "command": "EMERGENCY_STOP", "status": "ignored"}'
+2025-03-25 17:58:36,981: Using KQueuePoller
+2025-03-25 17:58:36,981: Created default connection workflow <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x102e482d0>
+2025-03-25 17:58:36,982: Starting AMQP Connection workflow asynchronously.
+2025-03-25 17:58:36,982: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e16770> with deadline=1138873.146751666 and callback=functools.partial(<bound method AMQPConnectionWorkflow._start_new_cycle_async of <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x102e482d0>>, first=True); now=1138873.146751666; delay=0
+2025-03-25 17:58:36,982: Beginning a new AMQP connection workflow cycle; attempts remaining after this: 0
+2025-03-25 17:58:36,982: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e16320> with deadline=1138873.146822083 and callback=<bound method AMQPConnectionWorkflow._try_next_config_async of <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x102e482d0>>; now=1138873.146822083; delay=0
+2025-03-25 17:58:36,982: _try_next_config_async: 'localhost':5672
+2025-03-25 17:58:36,983: add_callback_threadsafe: added callback=<bound method _AddressResolver._dispatch_result of <pika.adapters.utils.selector_ioloop_adapter._AddressResolver object at 0x102e48410>>
+2025-03-25 17:58:36,984: process_timeouts: invoking callback=<bound method _AddressResolver._dispatch_result of <pika.adapters.utils.selector_ioloop_adapter._AddressResolver object at 0x102e48410>>
+2025-03-25 17:58:36,984: Invoking asynchronous getaddrinfo() completion callback; host='localhost'
+2025-03-25 17:58:36,984: getaddrinfo returned 2 records
+2025-03-25 17:58:36,984: Attempting to connect using address record (<AddressFamily.AF_INET6: 30>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0))
+2025-03-25 17:58:36,984: Pika version 1.3.2 connecting to ('::1', 5672, 0, 0)
+2025-03-25 17:58:36,984: add_callback_threadsafe: added callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x102da96e0>>
+2025-03-25 17:58:36,984: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e14af0> with deadline=1138883.149041583 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102da9810>>; now=1138873.149041583; delay=10.0
+2025-03-25 17:58:36,984: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e16bc0> with deadline=1138888.149059958 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102da9810>>; now=1138873.149059958; delay=15.0
+2025-03-25 17:58:36,984: process_timeouts: invoking callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x102da96e0>>
+2025-03-25 17:58:36,984: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncSocketConnector._on_writable of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x102da96e0>>)
+2025-03-25 17:58:36,984: set_writer(18, _) added handler Wr
+2025-03-25 17:58:36,984: Connection-establishment is in progress for <socket.socket fd=18, family=30, type=1, proto=6, laddr=('::1', 64517, 0, 0)>.
+2025-03-25 17:58:36,984: Socket failed to connect: <socket.socket fd=18, family=30, type=1, proto=6, laddr=('::1', 64517, 0, 0)>; error=61 (Connection refused)
+2025-03-25 17:58:36,985: _AsyncSocketConnector._report_completion(ConnectionRefusedError(61, 'Connection refused')); <socket.socket fd=18, family=30, type=1, proto=6, laddr=('::1', 64517, 0, 0)>
+2025-03-25 17:58:36,985: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:36,985: remove_writer(18) removed handler
+2025-03-25 17:58:36,985: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x102e14af0> with deadline=1138883.149041583 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102da9810>>
+2025-03-25 17:58:36,985: TCP Connection attempt failed: ConnectionRefusedError(61, 'Connection refused'); dest=(<AddressFamily.AF_INET6: 30>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0))
+2025-03-25 17:58:36,985: AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(61, 'Connection refused')
+2025-03-25 17:58:36,985: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x102e16bc0> with deadline=1138888.149059958 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102da9810>>
+2025-03-25 17:58:36,985: Connection attempt completed with AMQPConnectorSocketConnectError: ConnectionRefusedError(61, 'Connection refused')
+2025-03-25 17:58:36,985: Attempting to connect using address record (<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 5672))
+2025-03-25 17:58:36,985: Pika version 1.3.2 connecting to ('127.0.0.1', 5672)
+2025-03-25 17:58:36,985: add_callback_threadsafe: added callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x102db20f0>>
+2025-03-25 17:58:36,985: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e16a40> with deadline=1138883.14987175 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102db2330>>; now=1138873.14987175; delay=10.0
+2025-03-25 17:58:36,985: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e16770> with deadline=1138888.149883291 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102db2330>>; now=1138873.149883291; delay=15.0
+2025-03-25 17:58:36,985: process_timeouts: invoking callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x102db20f0>>
+2025-03-25 17:58:36,985: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncSocketConnector._on_writable of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x102db20f0>>)
+2025-03-25 17:58:36,985: set_writer(18, _) added handler Wr
+2025-03-25 17:58:36,985: Connection-establishment is in progress for <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518)>.
+2025-03-25 17:58:36,985: Socket connected: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,985: _AsyncSocketConnector._report_completion(None); <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,985: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:36,985: remove_writer(18) removed handler
+2025-03-25 17:58:36,985: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x102e16a40> with deadline=1138883.14987175 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102db2330>>
+2025-03-25 17:58:36,985: TCP connection to broker established: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>.
+2025-03-25 17:58:36,985: _AsyncStreamConnector.start(); <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,985: add_callback_threadsafe: added callback=<bound method _AsyncStreamConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncStreamConnector object at 0x102e48410>>
+2025-03-25 17:58:36,985: process_timeouts: invoking callback=<bound method _AsyncStreamConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncStreamConnector object at 0x102e48410>>
+2025-03-25 17:58:36,985: _AsyncStreamConnector._start_async(); <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,985: _AsyncStreamConnector._linkup()
+2025-03-25 17:58:36,985: New Connection state: CLOSED (prev=CLOSED)
+2025-03-25 17:58:36,985: Added: {'callback': <bound method Connection._on_connection_start of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:36,985: Added: {'callback': <bound method Connection._on_connection_close_from_broker of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:36,985: Added: {'callback': <bound method Connection._default_on_connection_error of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:36,985: New Connection state: INIT (prev=CLOSED)
+2025-03-25 17:58:36,985: Using external connection workflow.
+2025-03-25 17:58:36,985: _AsyncTransportBase.__init__: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,985: SelectorIOServicesAdapter.set_reader(18, <bound method _AsyncPlaintextTransport._on_socket_readable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50>>)
+2025-03-25 17:58:36,985: set_reader(18, _) added handler Rd
+2025-03-25 17:58:36,985: _linkup(): created transport <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50>
+2025-03-25 17:58:36,985: New Connection state: PROTOCOL (prev=INIT)
+2025-03-25 17:58:36,985: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50>>)
+2025-03-25 17:58:36,985: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:36,985: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,985: _linkup(): introduced transport to protocol <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50>; _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-25 17:58:36,985: _AsyncStreamConnector._report_completion((<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>)); <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,985: Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
+2025-03-25 17:58:36,985: Removing callback #0: {'callback': <bound method Connection._default_on_connection_error of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:36,985: Added: {'callback': <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102db2330>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:36,985: Added: {'callback': <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102db2330>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:36,985: _AsyncStreamConnector._cleanup(False)
+2025-03-25 17:58:36,985: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:36,985: remove_writer(18) updated handler Rd
+2025-03-25 17:58:36,985: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,992: Processing 0:Connection.Start
+2025-03-25 17:58:36,992: Processing use of oneshot callback
+2025-03-25 17:58:36,992: 0 registered uses left
+2025-03-25 17:58:36,992: Removing callback #0: {'callback': <bound method Connection._on_connection_start of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:36,992: Calling <bound method Connection._on_connection_start of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.Start"
+2025-03-25 17:58:36,992: New Connection state: START (prev=PROTOCOL)
+2025-03-25 17:58:36,992: Added: {'callback': <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:36,992: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50>>)
+2025-03-25 17:58:36,992: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:36,992: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,992: Recv would block on <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,992: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:36,992: remove_writer(18) updated handler Rd
+2025-03-25 17:58:36,992: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,993: Processing 0:Connection.Tune
+2025-03-25 17:58:36,993: Processing use of oneshot callback
+2025-03-25 17:58:36,993: 0 registered uses left
+2025-03-25 17:58:36,993: Removing callback #0: {'callback': <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:36,993: Calling <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.Tune"
+2025-03-25 17:58:36,993: New Connection state: TUNE (prev=START)
+2025-03-25 17:58:36,993: Creating a HeartbeatChecker: 60
+2025-03-25 17:58:36,993: timeout: 60.000000 send_interval: 30.000000 check_interval: 65.000000
+2025-03-25 17:58:36,993: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e16cb0> with deadline=1138903.158003916 and callback=<bound method HeartbeatChecker._send_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102e48910>>; now=1138873.158003916; delay=30.0
+2025-03-25 17:58:36,993: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e17160> with deadline=1138938.1580165 and callback=<bound method HeartbeatChecker._check_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102e48910>>; now=1138873.1580165; delay=65
+2025-03-25 17:58:36,993: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50>>)
+2025-03-25 17:58:36,993: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:36,993: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,993: Added: {'callback': <bound method Connection._on_connection_open_ok of <SelectConnection TUNE transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:36,993: Recv would block on <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,993: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:36,993: remove_writer(18) updated handler Rd
+2025-03-25 17:58:36,993: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,995: Processing 0:Connection.OpenOk
+2025-03-25 17:58:36,995: Processing use of oneshot callback
+2025-03-25 17:58:36,995: 0 registered uses left
+2025-03-25 17:58:36,995: Removing callback #0: {'callback': <bound method Connection._on_connection_open_ok of <SelectConnection TUNE transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:36,995: Calling <bound method Connection._on_connection_open_ok of <SelectConnection TUNE transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.OpenOk"
+2025-03-25 17:58:36,995: New Connection state: OPEN (prev=TUNE)
+2025-03-25 17:58:36,995: Processing 0:_on_connection_open_ok
+2025-03-25 17:58:36,995: Calling <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102db2330>> for "0:_on_connection_open_ok"
+2025-03-25 17:58:36,995: AMQPConnector: AMQP handshake attempt completed; state=3; error=None; 'localhost'/(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 5672))
+2025-03-25 17:58:36,995: AMQPConnector: AMQP connection established for 'localhost'/(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 5672)): <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-25 17:58:36,995: AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-25 17:58:36,995: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x102e16770> with deadline=1138888.149883291 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102db2330>>
+2025-03-25 17:58:36,995: Connection attempt completed with <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-25 17:58:36,995: AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-25 17:58:36,995: Recv would block on <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,995: Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-25 17:58:36,995: Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e37f40>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:36,995: Creating channel 1
+2025-03-25 17:58:36,995: Added: {'callback': <bound method Connection._on_channel_cleanup of <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': <Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:36,995: Added: {'callback': <bound method Channel._on_getempty of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:36,995: Added: {'callback': <bound method Channel._on_cancel of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:36,995: Added: {'callback': <bound method Channel._on_flow of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:36,995: Added: {'callback': <bound method Channel._on_close_from_broker of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:36,995: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50>>)
+2025-03-25 17:58:36,995: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:36,995: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,995: Entering blocking state on frame <Channel.Open(['out_of_band='])>; acceptable_replies=[<class 'pika.spec.Channel.OpenOk'>]
+2025-03-25 17:58:36,995: Adding on_synchronous_complete callback
+2025-03-25 17:58:36,995: Added: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:36,995: Adding passed-in RPC response callback
+2025-03-25 17:58:36,995: Added: {'callback': <bound method Channel._on_openok of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:36,995: Added: {'callback': <bound method BlockingChannel._on_consumer_cancelled_by_broker of <BlockingChannel impl=<Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:36,995: Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e3e640>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:36,995: Added: {'callback': <bound method BlockingChannel._on_channel_closed of <BlockingChannel impl=<Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>>, 'one_shot': False, 'only': <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'arguments': None}
+2025-03-25 17:58:36,995: Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e3e5c0>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:36,995: Created channel=1
+2025-03-25 17:58:36,995: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:36,995: remove_writer(18) updated handler Rd
+2025-03-25 17:58:36,995: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,996: Processing 1:Channel.OpenOk
+2025-03-25 17:58:36,996: Processing use of oneshot callback
+2025-03-25 17:58:36,996: 0 registered uses left
+2025-03-25 17:58:36,996: Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:36,996: Processing use of oneshot callback
+2025-03-25 17:58:36,996: 0 registered uses left
+2025-03-25 17:58:36,996: Removing callback #0: {'callback': <bound method Channel._on_openok of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:36,996: Calling <bound method Channel._on_synchronous_complete of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.OpenOk"
+2025-03-25 17:58:36,996: 0 blocked frames
+2025-03-25 17:58:36,996: Calling <bound method Channel._on_openok of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.OpenOk"
+2025-03-25 17:58:36,996: Recv would block on <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,996: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50>>)
+2025-03-25 17:58:36,996: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:36,996: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,996: Entering blocking state on frame <Queue.Declare(['arguments={}', 'auto_delete=False', 'durable=True', 'exclusive=False', 'nowait=False', 'passive=False', 'queue=command_acknowledgements', 'ticket=0'])>; acceptable_replies=[(<class 'pika.spec.Queue.DeclareOk'>, {'queue': 'command_acknowledgements'})]
+2025-03-25 17:58:36,996: Adding on_synchronous_complete callback
+2025-03-25 17:58:36,996: Added: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'command_acknowledgements'}, 'calls': 1}
+2025-03-25 17:58:36,996: Adding passed-in RPC response callback
+2025-03-25 17:58:36,996: Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e3de80>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'command_acknowledgements'}, 'calls': 1}
+2025-03-25 17:58:36,996: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:36,996: remove_writer(18) updated handler Rd
+2025-03-25 17:58:36,996: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,996: Processing 1:Queue.DeclareOk
+2025-03-25 17:58:36,996: Processing use of oneshot callback
+2025-03-25 17:58:36,996: 0 registered uses left
+2025-03-25 17:58:36,996: Comparing {'queue': 'command_acknowledgements'} to {'queue': 'command_acknowledgements'}
+2025-03-25 17:58:36,996: Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'command_acknowledgements'}, 'calls': 0}
+2025-03-25 17:58:36,996: Processing use of oneshot callback
+2025-03-25 17:58:36,996: 0 registered uses left
+2025-03-25 17:58:36,996: Comparing {'queue': 'command_acknowledgements'} to {'queue': 'command_acknowledgements'}
+2025-03-25 17:58:36,996: Removing callback #0: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e3de80>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'command_acknowledgements'}, 'calls': 0}
+2025-03-25 17:58:36,996: Calling <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Queue.DeclareOk"
+2025-03-25 17:58:36,996: 0 blocked frames
+2025-03-25 17:58:36,996: Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e3de80>> for "1:Queue.DeclareOk"
+2025-03-25 17:58:36,996: Recv would block on <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,996: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50>>)
+2025-03-25 17:58:36,997: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:36,997: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,997: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:36,997: remove_writer(18) updated handler Rd
+2025-03-25 17:58:36,997: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,997: Closing connection (200): Normal shutdown
+2025-03-25 17:58:36,997: Channel.close(200, Normal shutdown)
+2025-03-25 17:58:36,997: Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>
+2025-03-25 17:58:36,997: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50>>)
+2025-03-25 17:58:36,997: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:36,997: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,997: Entering blocking state on frame <Channel.Close(['class_id=0', 'method_id=0', 'reply_code=200', 'reply_text=Normal shutdown'])>; acceptable_replies=[<class 'pika.spec.Channel.CloseOk'>]
+2025-03-25 17:58:36,997: Adding on_synchronous_complete callback
+2025-03-25 17:58:36,997: Added: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:36,997: Adding passed-in RPC response callback
+2025-03-25 17:58:36,997: Added: {'callback': <bound method Channel._on_closeok of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:36,997: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:36,997: remove_writer(18) updated handler Rd
+2025-03-25 17:58:36,997: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,997: Processing 1:Channel.CloseOk
+2025-03-25 17:58:36,997: Processing use of oneshot callback
+2025-03-25 17:58:36,997: 0 registered uses left
+2025-03-25 17:58:36,997: Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:36,997: Processing use of oneshot callback
+2025-03-25 17:58:36,997: 0 registered uses left
+2025-03-25 17:58:36,997: Removing callback #0: {'callback': <bound method Channel._on_closeok of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:36,997: Calling <bound method Channel._on_synchronous_complete of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.CloseOk"
+2025-03-25 17:58:36,997: 0 blocked frames
+2025-03-25 17:58:36,997: Calling <bound method Channel._on_closeok of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.CloseOk"
+2025-03-25 17:58:36,997: Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>
+2025-03-25 17:58:36,997: Processing 1:_on_channel_close
+2025-03-25 17:58:36,997: Calling <bound method BlockingChannel._on_channel_closed of <BlockingChannel impl=<Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>> for "1:_on_channel_close"
+2025-03-25 17:58:36,997: _on_channel_closed: ChannelClosedByClient: (200) 'Normal shutdown'; <BlockingChannel impl=<Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>
+2025-03-25 17:58:36,997: Processing 1:_on_channel_cleanup
+2025-03-25 17:58:36,997: Processing use of oneshot callback
+2025-03-25 17:58:36,997: 0 registered uses left
+2025-03-25 17:58:36,997: Removing callback #0: {'callback': <bound method Connection._on_channel_cleanup of <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': <Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:36,997: Calling <bound method Connection._on_channel_cleanup of <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "1:_on_channel_cleanup"
+2025-03-25 17:58:36,997: Removed channel 1
+2025-03-25 17:58:36,997: Clearing out '1' from the stack
+2025-03-25 17:58:36,997: Recv would block on <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,997: New Connection state: CLOSING (prev=OPEN)
+2025-03-25 17:58:36,997: Closing connection (200): 'Normal shutdown'
+2025-03-25 17:58:36,997: Added: {'callback': <bound method Connection._on_connection_close_ok of <SelectConnection CLOSING transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:36,997: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50>>)
+2025-03-25 17:58:36,997: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:36,997: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,997: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:36,997: remove_writer(18) updated handler Rd
+2025-03-25 17:58:36,997: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,997: Processing 0:Connection.CloseOk
+2025-03-25 17:58:36,997: Processing use of oneshot callback
+2025-03-25 17:58:36,997: 0 registered uses left
+2025-03-25 17:58:36,998: Removing callback #0: {'callback': <bound method Connection._on_connection_close_ok of <SelectConnection CLOSING transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:36,998: Calling <bound method Connection._on_connection_close_ok of <SelectConnection CLOSING transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.CloseOk"
+2025-03-25 17:58:36,998: _on_connection_close_ok: frame=<METHOD(['channel_number=0', 'frame_type=1', 'method=<Connection.CloseOk>'])>
+2025-03-25 17:58:36,998: Removing timer for next heartbeat send interval
+2025-03-25 17:58:36,998: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x102e16cb0> with deadline=1138903.158003916 and callback=<bound method HeartbeatChecker._send_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102e48910>>
+2025-03-25 17:58:36,998: Removing timer for next heartbeat check interval
+2025-03-25 17:58:36,998: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x102e17160> with deadline=1138938.1580165 and callback=<bound method HeartbeatChecker._check_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102e48910>>
+2025-03-25 17:58:36,998: Aborting transport connection: state=1; <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,998: _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,998: Deactivating transport: state=1; <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,998: SelectorIOServicesAdapter.remove_reader(18)
+2025-03-25 17:58:36,998: remove_reader(18) removed handler
+2025-03-25 17:58:36,998: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:36,998: remove_writer(18) neither was set.
+2025-03-25 17:58:36,998: add_callback_threadsafe: added callback=functools.partial(<bound method _AsyncTransportBase._connection_lost_notify_async of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50>>, None)
+2025-03-25 17:58:36,998: Leaving Plaintext consumer due to inactive state: state=3; <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,998: process_timeouts: invoking callback=functools.partial(<bound method _AsyncTransportBase._connection_lost_notify_async of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e48a50>>, None)
+2025-03-25 17:58:36,998: Concluding transport shutdown: state=3; error=None
+2025-03-25 17:58:36,998: connection_lost: None
+2025-03-25 17:58:36,998: AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-25 17:58:36,998: New Connection state: CLOSED (prev=CLOSING)
+2025-03-25 17:58:36,998: Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-25 17:58:36,998: Processing 0:_on_connection_closed
+2025-03-25 17:58:36,998: Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e37f40>> for "0:_on_connection_closed"
+2025-03-25 17:58:36,998: New Connection state: CLOSED (prev=CLOSED)
+2025-03-25 17:58:36,998: Added: {'callback': <bound method Connection._on_connection_start of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:36,998: Incremented callback reference counter: {'callback': <bound method Connection._on_connection_close_from_broker of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 2}
+2025-03-25 17:58:36,998: Closing transport socket and unlinking: state=3; <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64518), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:36,998: User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-25 17:58:36,998: Attempting to close serial XBee connection.
+2025-03-25 17:58:36,998: Attempting to close serial XBee connection.
+2025-03-25 17:58:37,006: Serial port closed.
+2025-03-25 17:58:37,006: Serial port closed.
+2025-03-25 17:58:37,006: SelectorIOServicesAdapter.set_writer(8, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0>>)
+2025-03-25 17:58:37,006: set_writer(8, _) updated handler RdWr
+2025-03-25 17:58:37,007: Turned on writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:37,007: SelectorIOServicesAdapter.remove_writer(8)
+2025-03-25 17:58:37,007: remove_writer(8) updated handler Rd
+2025-03-25 17:58:37,007: Turned off writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:44,143: Recv would block on <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:44,143: Log 86
+
+2025-03-25 17:58:44,143: LOGGER CREATED By XBee.py
+2025-03-25 17:58:44,143: LOGGER CREATED By XBee.py
+2025-03-25 17:58:44,143: port: /dev/cu.usbserial-D30DWZL4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 17:58:44,143: port: /dev/cu.usbserial-D30DWZL4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 17:58:44,143: Attempting to open serial XBee connection.
+2025-03-25 17:58:44,143: Attempting to open serial XBee connection.
+2025-03-25 17:58:44,676: Serial port opened.
+2025-03-25 17:58:44,676: Serial port opened.
+2025-03-25 17:58:44,677: Transmitting data: b'\x01\x02' to 0000000000000000
+2025-03-25 17:58:44,677: Transmitting data: b'\x01\x02' to 0000000000000000
+2025-03-25 17:58:44,677: Encoded data: 7e 00 0d 00 01 00 00 00 00 00 00 00 00 00 01 02 fb 
+2025-03-25 17:58:44,677: Encoded data: 7e 00 0d 00 01 00 00 00 00 00 00 00 00 00 01 02 fb 
+2025-03-25 17:58:44,696: Receiving data:
+2025-03-25 17:58:44,696: Receiving data:
+2025-03-25 17:58:44,696: 89 01 00
+2025-03-25 17:58:44,696: 89 01 00
+2025-03-25 17:58:44,696: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 0
+2025-03-25 17:58:44,696: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 0
+2025-03-25 17:58:44,817: Receiving data:
+2025-03-25 17:58:44,817: Receiving data:
+2025-03-25 17:58:44,833: 81 00 00 13 00 7b 22 76 65 68 69 63 6c 65 5f 69 64 22 3a 20 22 45 52 55 22 2c 20 22 63 6f 6d 6d 61 6e 64 22 3a 20 22 45 4d 45 52 47 45 4e 43 59 5f 53 54 4f 50 22 2c 20 22 73 74 61 74 75 73 22 3a 20 22 69 67 6e 6f 72 65 64 22 7d
+2025-03-25 17:58:44,833: 81 00 00 13 00 7b 22 76 65 68 69 63 6c 65 5f 69 64 22 3a 20 22 45 52 55 22 2c 20 22 63 6f 6d 6d 61 6e 64 22 3a 20 22 45 4d 45 52 47 45 4e 43 59 5f 53 54 4f 50 22 2c 20 22 73 74 61 74 75 73 22 3a 20 22 69 67 6e 6f 72 65 64 22 7d
+2025-03-25 17:58:44,833: Received payload. RSSI: -19, Decoded message: None
+2025-03-25 17:58:44,833: Received payload. RSSI: -19, Decoded message: None
+2025-03-25 17:58:44,833: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -19, Options: 0, Data: b'\x81\x00\x00\x13\x00{"vehicle_id": "ERU", "command": "EMERGENCY_STOP", "status": "ignored"}'
+2025-03-25 17:58:44,833: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -19, Options: 0, Data: b'\x81\x00\x00\x13\x00{"vehicle_id": "ERU", "command": "EMERGENCY_STOP", "status": "ignored"}'
+2025-03-25 17:58:49,678: Using KQueuePoller
+2025-03-25 17:58:49,679: Created default connection workflow <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x102daa060>
+2025-03-25 17:58:49,679: Starting AMQP Connection workflow asynchronously.
+2025-03-25 17:58:49,679: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e16560> with deadline=1138885.844767833 and callback=functools.partial(<bound method AMQPConnectionWorkflow._start_new_cycle_async of <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x102daa060>>, first=True); now=1138885.844767833; delay=0
+2025-03-25 17:58:49,679: Beginning a new AMQP connection workflow cycle; attempts remaining after this: 0
+2025-03-25 17:58:49,679: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e168f0> with deadline=1138885.844838833 and callback=<bound method AMQPConnectionWorkflow._try_next_config_async of <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x102daa060>>; now=1138885.844838833; delay=0
+2025-03-25 17:58:49,679: _try_next_config_async: 'localhost':5672
+2025-03-25 17:58:49,680: add_callback_threadsafe: added callback=<bound method _AddressResolver._dispatch_result of <pika.adapters.utils.selector_ioloop_adapter._AddressResolver object at 0x102daa190>>
+2025-03-25 17:58:49,680: process_timeouts: invoking callback=<bound method _AddressResolver._dispatch_result of <pika.adapters.utils.selector_ioloop_adapter._AddressResolver object at 0x102daa190>>
+2025-03-25 17:58:49,680: Invoking asynchronous getaddrinfo() completion callback; host='localhost'
+2025-03-25 17:58:49,680: getaddrinfo returned 2 records
+2025-03-25 17:58:49,680: Attempting to connect using address record (<AddressFamily.AF_INET6: 30>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0))
+2025-03-25 17:58:49,680: Pika version 1.3.2 connecting to ('::1', 5672, 0, 0)
+2025-03-25 17:58:49,680: add_callback_threadsafe: added callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x102a6f9b0>>
+2025-03-25 17:58:49,680: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e164d0> with deadline=1138895.845801166 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102a6fac0>>; now=1138885.845801166; delay=10.0
+2025-03-25 17:58:49,680: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e16e90> with deadline=1138900.845815708 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102a6fac0>>; now=1138885.845815708; delay=15.0
+2025-03-25 17:58:49,680: process_timeouts: invoking callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x102a6f9b0>>
+2025-03-25 17:58:49,680: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncSocketConnector._on_writable of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x102a6f9b0>>)
+2025-03-25 17:58:49,681: set_writer(18, _) added handler Wr
+2025-03-25 17:58:49,681: Connection-establishment is in progress for <socket.socket fd=18, family=30, type=1, proto=6, laddr=('::1', 64525, 0, 0)>.
+2025-03-25 17:58:49,681: Socket failed to connect: <socket.socket fd=18, family=30, type=1, proto=6, laddr=('::1', 64525, 0, 0)>; error=61 (Connection refused)
+2025-03-25 17:58:49,681: _AsyncSocketConnector._report_completion(ConnectionRefusedError(61, 'Connection refused')); <socket.socket fd=18, family=30, type=1, proto=6, laddr=('::1', 64525, 0, 0)>
+2025-03-25 17:58:49,681: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:49,681: remove_writer(18) removed handler
+2025-03-25 17:58:49,681: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x102e164d0> with deadline=1138895.845801166 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102a6fac0>>
+2025-03-25 17:58:49,681: TCP Connection attempt failed: ConnectionRefusedError(61, 'Connection refused'); dest=(<AddressFamily.AF_INET6: 30>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0))
+2025-03-25 17:58:49,681: AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(61, 'Connection refused')
+2025-03-25 17:58:49,681: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x102e16e90> with deadline=1138900.845815708 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102a6fac0>>
+2025-03-25 17:58:49,681: Connection attempt completed with AMQPConnectorSocketConnectError: ConnectionRefusedError(61, 'Connection refused')
+2025-03-25 17:58:49,681: Attempting to connect using address record (<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 5672))
+2025-03-25 17:58:49,681: Pika version 1.3.2 connecting to ('127.0.0.1', 5672)
+2025-03-25 17:58:49,681: add_callback_threadsafe: added callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x102a6f790>>
+2025-03-25 17:58:49,681: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e16e30> with deadline=1138895.84618325 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102a6f8a0>>; now=1138885.84618325; delay=10.0
+2025-03-25 17:58:49,681: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e16560> with deadline=1138900.846195083 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102a6f8a0>>; now=1138885.846195083; delay=15.0
+2025-03-25 17:58:49,681: process_timeouts: invoking callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x102a6f790>>
+2025-03-25 17:58:49,681: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncSocketConnector._on_writable of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x102a6f790>>)
+2025-03-25 17:58:49,681: set_writer(18, _) added handler Wr
+2025-03-25 17:58:49,681: Connection-establishment is in progress for <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526)>.
+2025-03-25 17:58:49,681: Socket connected: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,681: _AsyncSocketConnector._report_completion(None); <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,681: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:49,681: remove_writer(18) removed handler
+2025-03-25 17:58:49,681: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x102e16e30> with deadline=1138895.84618325 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102a6f8a0>>
+2025-03-25 17:58:49,681: TCP connection to broker established: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>.
+2025-03-25 17:58:49,681: _AsyncStreamConnector.start(); <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,681: add_callback_threadsafe: added callback=<bound method _AsyncStreamConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncStreamConnector object at 0x102daa190>>
+2025-03-25 17:58:49,681: process_timeouts: invoking callback=<bound method _AsyncStreamConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncStreamConnector object at 0x102daa190>>
+2025-03-25 17:58:49,681: _AsyncStreamConnector._start_async(); <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,681: _AsyncStreamConnector._linkup()
+2025-03-25 17:58:49,681: New Connection state: CLOSED (prev=CLOSED)
+2025-03-25 17:58:49,681: Added: {'callback': <bound method Connection._on_connection_start of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:49,681: Added: {'callback': <bound method Connection._on_connection_close_from_broker of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:49,681: Added: {'callback': <bound method Connection._default_on_connection_error of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:49,681: New Connection state: INIT (prev=CLOSED)
+2025-03-25 17:58:49,681: Using external connection workflow.
+2025-03-25 17:58:49,681: _AsyncTransportBase.__init__: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,681: SelectorIOServicesAdapter.set_reader(18, <bound method _AsyncPlaintextTransport._on_socket_readable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650>>)
+2025-03-25 17:58:49,681: set_reader(18, _) added handler Rd
+2025-03-25 17:58:49,681: _linkup(): created transport <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650>
+2025-03-25 17:58:49,681: New Connection state: PROTOCOL (prev=INIT)
+2025-03-25 17:58:49,681: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650>>)
+2025-03-25 17:58:49,681: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:49,681: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,681: _linkup(): introduced transport to protocol <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650>; _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-25 17:58:49,681: _AsyncStreamConnector._report_completion((<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>)); <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,681: Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
+2025-03-25 17:58:49,681: Removing callback #0: {'callback': <bound method Connection._default_on_connection_error of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:49,681: Added: {'callback': <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102a6f8a0>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:49,682: Added: {'callback': <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102a6f8a0>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:49,682: _AsyncStreamConnector._cleanup(False)
+2025-03-25 17:58:49,682: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:49,682: remove_writer(18) updated handler Rd
+2025-03-25 17:58:49,682: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,685: Processing 0:Connection.Start
+2025-03-25 17:58:49,685: Processing use of oneshot callback
+2025-03-25 17:58:49,685: 0 registered uses left
+2025-03-25 17:58:49,685: Removing callback #0: {'callback': <bound method Connection._on_connection_start of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:49,685: Calling <bound method Connection._on_connection_start of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.Start"
+2025-03-25 17:58:49,685: New Connection state: START (prev=PROTOCOL)
+2025-03-25 17:58:49,685: Added: {'callback': <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:49,685: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650>>)
+2025-03-25 17:58:49,685: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:49,685: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,685: Recv would block on <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,685: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:49,685: remove_writer(18) updated handler Rd
+2025-03-25 17:58:49,685: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,686: Processing 0:Connection.Tune
+2025-03-25 17:58:49,686: Processing use of oneshot callback
+2025-03-25 17:58:49,686: 0 registered uses left
+2025-03-25 17:58:49,686: Removing callback #0: {'callback': <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:49,686: Calling <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.Tune"
+2025-03-25 17:58:49,686: New Connection state: TUNE (prev=START)
+2025-03-25 17:58:49,686: Creating a HeartbeatChecker: 60
+2025-03-25 17:58:49,686: timeout: 60.000000 send_interval: 30.000000 check_interval: 65.000000
+2025-03-25 17:58:49,686: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e170d0> with deadline=1138915.851139125 and callback=<bound method HeartbeatChecker._send_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102daa780>>; now=1138885.851139125; delay=30.0
+2025-03-25 17:58:49,686: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e17520> with deadline=1138950.851152041 and callback=<bound method HeartbeatChecker._check_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102daa780>>; now=1138885.851152041; delay=65
+2025-03-25 17:58:49,686: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650>>)
+2025-03-25 17:58:49,686: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:49,686: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,686: Added: {'callback': <bound method Connection._on_connection_open_ok of <SelectConnection TUNE transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:49,686: Recv would block on <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,686: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:49,686: remove_writer(18) updated handler Rd
+2025-03-25 17:58:49,686: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,686: Processing 0:Connection.OpenOk
+2025-03-25 17:58:49,686: Processing use of oneshot callback
+2025-03-25 17:58:49,686: 0 registered uses left
+2025-03-25 17:58:49,686: Removing callback #0: {'callback': <bound method Connection._on_connection_open_ok of <SelectConnection TUNE transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:49,686: Calling <bound method Connection._on_connection_open_ok of <SelectConnection TUNE transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.OpenOk"
+2025-03-25 17:58:49,686: New Connection state: OPEN (prev=TUNE)
+2025-03-25 17:58:49,686: Processing 0:_on_connection_open_ok
+2025-03-25 17:58:49,686: Calling <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102a6f8a0>> for "0:_on_connection_open_ok"
+2025-03-25 17:58:49,686: AMQPConnector: AMQP handshake attempt completed; state=3; error=None; 'localhost'/(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 5672))
+2025-03-25 17:58:49,686: AMQPConnector: AMQP connection established for 'localhost'/(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 5672)): <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-25 17:58:49,686: AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-25 17:58:49,686: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x102e16560> with deadline=1138900.846195083 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x102a6f8a0>>
+2025-03-25 17:58:49,686: Connection attempt completed with <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-25 17:58:49,686: AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-25 17:58:49,686: Recv would block on <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,686: Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-03-25 17:58:49,686: Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e36500>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:49,686: Creating channel 1
+2025-03-25 17:58:49,686: Added: {'callback': <bound method Connection._on_channel_cleanup of <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': <Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:49,686: Added: {'callback': <bound method Channel._on_getempty of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:49,686: Added: {'callback': <bound method Channel._on_cancel of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:49,686: Added: {'callback': <bound method Channel._on_flow of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:49,687: Added: {'callback': <bound method Channel._on_close_from_broker of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:49,687: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650>>)
+2025-03-25 17:58:49,687: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:49,687: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,687: Entering blocking state on frame <Channel.Open(['out_of_band='])>; acceptable_replies=[<class 'pika.spec.Channel.OpenOk'>]
+2025-03-25 17:58:49,687: Adding on_synchronous_complete callback
+2025-03-25 17:58:49,687: Added: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:49,687: Adding passed-in RPC response callback
+2025-03-25 17:58:49,687: Added: {'callback': <bound method Channel._on_openok of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:49,687: Added: {'callback': <bound method BlockingChannel._on_consumer_cancelled_by_broker of <BlockingChannel impl=<Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:49,687: Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e3f100>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:49,687: Added: {'callback': <bound method BlockingChannel._on_channel_closed of <BlockingChannel impl=<Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>>, 'one_shot': False, 'only': <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'arguments': None}
+2025-03-25 17:58:49,687: Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e3ef40>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-03-25 17:58:49,687: Created channel=1
+2025-03-25 17:58:49,687: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:49,687: remove_writer(18) updated handler Rd
+2025-03-25 17:58:49,687: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,687: Processing 1:Channel.OpenOk
+2025-03-25 17:58:49,687: Processing use of oneshot callback
+2025-03-25 17:58:49,687: 0 registered uses left
+2025-03-25 17:58:49,687: Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:49,687: Processing use of oneshot callback
+2025-03-25 17:58:49,687: 0 registered uses left
+2025-03-25 17:58:49,687: Removing callback #0: {'callback': <bound method Channel._on_openok of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:49,687: Calling <bound method Channel._on_synchronous_complete of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.OpenOk"
+2025-03-25 17:58:49,687: 0 blocked frames
+2025-03-25 17:58:49,687: Calling <bound method Channel._on_openok of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.OpenOk"
+2025-03-25 17:58:49,687: Recv would block on <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,687: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650>>)
+2025-03-25 17:58:49,687: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:49,687: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,687: Entering blocking state on frame <Queue.Declare(['arguments={}', 'auto_delete=False', 'durable=True', 'exclusive=False', 'nowait=False', 'passive=False', 'queue=command_acknowledgements', 'ticket=0'])>; acceptable_replies=[(<class 'pika.spec.Queue.DeclareOk'>, {'queue': 'command_acknowledgements'})]
+2025-03-25 17:58:49,687: Adding on_synchronous_complete callback
+2025-03-25 17:58:49,687: Added: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'command_acknowledgements'}, 'calls': 1}
+2025-03-25 17:58:49,687: Adding passed-in RPC response callback
+2025-03-25 17:58:49,687: Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e3e6c0>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'command_acknowledgements'}, 'calls': 1}
+2025-03-25 17:58:49,687: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:49,687: remove_writer(18) updated handler Rd
+2025-03-25 17:58:49,687: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,688: Processing 1:Queue.DeclareOk
+2025-03-25 17:58:49,688: Processing use of oneshot callback
+2025-03-25 17:58:49,688: 0 registered uses left
+2025-03-25 17:58:49,688: Comparing {'queue': 'command_acknowledgements'} to {'queue': 'command_acknowledgements'}
+2025-03-25 17:58:49,688: Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'command_acknowledgements'}, 'calls': 0}
+2025-03-25 17:58:49,688: Processing use of oneshot callback
+2025-03-25 17:58:49,688: 0 registered uses left
+2025-03-25 17:58:49,688: Comparing {'queue': 'command_acknowledgements'} to {'queue': 'command_acknowledgements'}
+2025-03-25 17:58:49,688: Removing callback #0: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e3e6c0>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'command_acknowledgements'}, 'calls': 0}
+2025-03-25 17:58:49,688: Calling <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Queue.DeclareOk"
+2025-03-25 17:58:49,688: 0 blocked frames
+2025-03-25 17:58:49,688: Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e3e6c0>> for "1:Queue.DeclareOk"
+2025-03-25 17:58:49,688: Recv would block on <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,688: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650>>)
+2025-03-25 17:58:49,688: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:49,688: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,688: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:49,688: remove_writer(18) updated handler Rd
+2025-03-25 17:58:49,688: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,688: Closing connection (200): Normal shutdown
+2025-03-25 17:58:49,688: Channel.close(200, Normal shutdown)
+2025-03-25 17:58:49,688: Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>
+2025-03-25 17:58:49,688: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650>>)
+2025-03-25 17:58:49,688: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:49,688: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,688: Entering blocking state on frame <Channel.Close(['class_id=0', 'method_id=0', 'reply_code=200', 'reply_text=Normal shutdown'])>; acceptable_replies=[<class 'pika.spec.Channel.CloseOk'>]
+2025-03-25 17:58:49,688: Adding on_synchronous_complete callback
+2025-03-25 17:58:49,688: Added: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:49,688: Adding passed-in RPC response callback
+2025-03-25 17:58:49,688: Added: {'callback': <bound method Channel._on_closeok of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:49,688: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:49,688: remove_writer(18) updated handler Rd
+2025-03-25 17:58:49,688: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,688: Processing 1:Channel.CloseOk
+2025-03-25 17:58:49,688: Processing use of oneshot callback
+2025-03-25 17:58:49,688: 0 registered uses left
+2025-03-25 17:58:49,688: Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:49,688: Processing use of oneshot callback
+2025-03-25 17:58:49,688: 0 registered uses left
+2025-03-25 17:58:49,688: Removing callback #0: {'callback': <bound method Channel._on_closeok of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:49,688: Calling <bound method Channel._on_synchronous_complete of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.CloseOk"
+2025-03-25 17:58:49,688: 0 blocked frames
+2025-03-25 17:58:49,688: Calling <bound method Channel._on_closeok of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.CloseOk"
+2025-03-25 17:58:49,688: Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>
+2025-03-25 17:58:49,688: Processing 1:_on_channel_close
+2025-03-25 17:58:49,688: Calling <bound method BlockingChannel._on_channel_closed of <BlockingChannel impl=<Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>> for "1:_on_channel_close"
+2025-03-25 17:58:49,688: _on_channel_closed: ChannelClosedByClient: (200) 'Normal shutdown'; <BlockingChannel impl=<Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>
+2025-03-25 17:58:49,688: Processing 1:_on_channel_cleanup
+2025-03-25 17:58:49,688: Processing use of oneshot callback
+2025-03-25 17:58:49,688: 0 registered uses left
+2025-03-25 17:58:49,688: Removing callback #0: {'callback': <bound method Connection._on_channel_cleanup of <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': <Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:49,688: Calling <bound method Connection._on_channel_cleanup of <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "1:_on_channel_cleanup"
+2025-03-25 17:58:49,688: Removed channel 1
+2025-03-25 17:58:49,688: Clearing out '1' from the stack
+2025-03-25 17:58:49,688: Recv would block on <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,688: New Connection state: CLOSING (prev=OPEN)
+2025-03-25 17:58:49,688: Closing connection (200): 'Normal shutdown'
+2025-03-25 17:58:49,688: Added: {'callback': <bound method Connection._on_connection_close_ok of <SelectConnection CLOSING transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:49,688: SelectorIOServicesAdapter.set_writer(18, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650>>)
+2025-03-25 17:58:49,688: set_writer(18, _) updated handler RdWr
+2025-03-25 17:58:49,688: Turned on writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,688: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:49,688: remove_writer(18) updated handler Rd
+2025-03-25 17:58:49,689: Turned off writability watcher: <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,689: Processing 0:Connection.CloseOk
+2025-03-25 17:58:49,689: Processing use of oneshot callback
+2025-03-25 17:58:49,689: 0 registered uses left
+2025-03-25 17:58:49,689: Removing callback #0: {'callback': <bound method Connection._on_connection_close_ok of <SelectConnection CLOSING transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 17:58:49,689: Calling <bound method Connection._on_connection_close_ok of <SelectConnection CLOSING transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.CloseOk"
+2025-03-25 17:58:49,689: _on_connection_close_ok: frame=<METHOD(['channel_number=0', 'frame_type=1', 'method=<Connection.CloseOk>'])>
+2025-03-25 17:58:49,689: Removing timer for next heartbeat send interval
+2025-03-25 17:58:49,689: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x102e170d0> with deadline=1138915.851139125 and callback=<bound method HeartbeatChecker._send_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102daa780>>
+2025-03-25 17:58:49,689: Removing timer for next heartbeat check interval
+2025-03-25 17:58:49,689: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x102e17520> with deadline=1138950.851152041 and callback=<bound method HeartbeatChecker._check_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102daa780>>
+2025-03-25 17:58:49,689: Aborting transport connection: state=1; <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,689: _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,689: Deactivating transport: state=1; <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,689: SelectorIOServicesAdapter.remove_reader(18)
+2025-03-25 17:58:49,689: remove_reader(18) removed handler
+2025-03-25 17:58:49,689: SelectorIOServicesAdapter.remove_writer(18)
+2025-03-25 17:58:49,689: remove_writer(18) neither was set.
+2025-03-25 17:58:49,689: add_callback_threadsafe: added callback=functools.partial(<bound method _AsyncTransportBase._connection_lost_notify_async of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650>>, None)
+2025-03-25 17:58:49,689: Leaving Plaintext consumer due to inactive state: state=3; <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,689: process_timeouts: invoking callback=functools.partial(<bound method _AsyncTransportBase._connection_lost_notify_async of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102daa650>>, None)
+2025-03-25 17:58:49,689: Concluding transport shutdown: state=3; error=None
+2025-03-25 17:58:49,689: connection_lost: None
+2025-03-25 17:58:49,689: AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-25 17:58:49,689: New Connection state: CLOSED (prev=CLOSING)
+2025-03-25 17:58:49,689: Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-25 17:58:49,689: Processing 0:_on_connection_closed
+2025-03-25 17:58:49,689: Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e36500>> for "0:_on_connection_closed"
+2025-03-25 17:58:49,689: New Connection state: CLOSED (prev=CLOSED)
+2025-03-25 17:58:49,689: Added: {'callback': <bound method Connection._on_connection_start of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 17:58:49,689: Incremented callback reference counter: {'callback': <bound method Connection._on_connection_close_from_broker of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 2}
+2025-03-25 17:58:49,689: Closing transport socket and unlinking: state=3; <socket.socket fd=18, family=2, type=1, proto=6, laddr=('127.0.0.1', 64526), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,689: User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-03-25 17:58:49,689: Attempting to close serial XBee connection.
+2025-03-25 17:58:49,689: Attempting to close serial XBee connection.
+2025-03-25 17:58:49,697: Serial port closed.
+2025-03-25 17:58:49,697: Serial port closed.
+2025-03-25 17:58:49,697: SelectorIOServicesAdapter.set_writer(8, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0>>)
+2025-03-25 17:58:49,697: set_writer(8, _) updated handler RdWr
+2025-03-25 17:58:49,697: Turned on writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:49,697: SelectorIOServicesAdapter.remove_writer(8)
+2025-03-25 17:58:49,697: remove_writer(8) updated handler Rd
+2025-03-25 17:58:49,697: Turned off writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:57,704: Sending heartbeat frame
+2025-03-25 17:58:57,704: Sending heartbeat frame
+2025-03-25 17:58:57,704: SelectorIOServicesAdapter.set_writer(8, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0>>)
+2025-03-25 17:58:57,704: set_writer(8, _) updated handler RdWr
+2025-03-25 17:58:57,704: Turned on writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:58:57,705: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x10297aa40> with deadline=1138923.870040291 and callback=<bound method HeartbeatChecker._send_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102e18980>>; now=1138893.870040291; delay=30.0
+2025-03-25 17:58:57,705: SelectorIOServicesAdapter.remove_writer(8)
+2025-03-25 17:58:57,705: remove_writer(8) updated handler Rd
+2025-03-25 17:58:57,705: Turned off writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:59:02,702: Received 1 heartbeat frames, sent 2, idle intervals 0
+2025-03-25 17:59:02,702: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102dd26e0> with deadline=1138963.867521875 and callback=<bound method HeartbeatChecker._check_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102e18980>>; now=1138898.867521875; delay=65
+2025-03-25 17:59:27,705: Sending heartbeat frame
+2025-03-25 17:59:27,706: Sending heartbeat frame
+2025-03-25 17:59:27,707: SelectorIOServicesAdapter.set_writer(8, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0>>)
+2025-03-25 17:59:27,707: set_writer(8, _) updated handler RdWr
+2025-03-25 17:59:27,707: Turned on writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:59:27,707: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e16e00> with deadline=1138953.873307666 and callback=<bound method HeartbeatChecker._send_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102e18980>>; now=1138923.873307666; delay=30.0
+2025-03-25 17:59:27,708: SelectorIOServicesAdapter.remove_writer(8)
+2025-03-25 17:59:27,708: remove_writer(8) updated handler Rd
+2025-03-25 17:59:27,708: Turned off writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:59:27,708: Received heartbeat frame
+2025-03-25 17:59:27,708: Recv would block on <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:59:57,708: Sending heartbeat frame
+2025-03-25 17:59:57,710: Sending heartbeat frame
+2025-03-25 17:59:57,710: SelectorIOServicesAdapter.set_writer(8, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0>>)
+2025-03-25 17:59:57,710: set_writer(8, _) updated handler RdWr
+2025-03-25 17:59:57,710: Turned on writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:59:57,710: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x1025ca320> with deadline=1138983.876958625 and callback=<bound method HeartbeatChecker._send_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102e18980>>; now=1138953.876958625; delay=30.0
+2025-03-25 17:59:57,711: SelectorIOServicesAdapter.remove_writer(8)
+2025-03-25 17:59:57,711: remove_writer(8) updated handler Rd
+2025-03-25 17:59:57,711: Turned off writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 17:59:57,728: Received heartbeat frame
+2025-03-25 17:59:57,729: Recv would block on <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:00:07,701: Received 3 heartbeat frames, sent 4, idle intervals 0
+2025-03-25 18:00:07,701: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e16e00> with deadline=1139028.868171541 and callback=<bound method HeartbeatChecker._check_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102e18980>>; now=1138963.868171541; delay=65
+2025-03-25 18:00:27,711: Sending heartbeat frame
+2025-03-25 18:00:27,712: Sending heartbeat frame
+2025-03-25 18:00:27,712: SelectorIOServicesAdapter.set_writer(8, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0>>)
+2025-03-25 18:00:27,712: set_writer(8, _) updated handler RdWr
+2025-03-25 18:00:27,712: Turned on writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:00:27,713: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102dd26e0> with deadline=1139013.879687166 and callback=<bound method HeartbeatChecker._send_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102e18980>>; now=1138983.879687166; delay=30.0
+2025-03-25 18:00:27,713: SelectorIOServicesAdapter.remove_writer(8)
+2025-03-25 18:00:27,713: remove_writer(8) updated handler Rd
+2025-03-25 18:00:27,713: Turned off writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:00:27,774: Received heartbeat frame
+2025-03-25 18:00:27,775: Recv would block on <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:00:57,713: Sending heartbeat frame
+2025-03-25 18:00:57,715: Sending heartbeat frame
+2025-03-25 18:00:57,715: SelectorIOServicesAdapter.set_writer(8, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0>>)
+2025-03-25 18:00:57,715: set_writer(8, _) updated handler RdWr
+2025-03-25 18:00:57,715: Turned on writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:00:57,715: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x10297aa40> with deadline=1139043.882894416 and callback=<bound method HeartbeatChecker._send_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102e18980>>; now=1139013.882894416; delay=30.0
+2025-03-25 18:00:57,716: SelectorIOServicesAdapter.remove_writer(8)
+2025-03-25 18:00:57,716: remove_writer(8) updated handler Rd
+2025-03-25 18:00:57,716: Turned off writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:00:57,806: Received heartbeat frame
+2025-03-25 18:00:57,806: Recv would block on <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:01:12,727: Received 5 heartbeat frames, sent 6, idle intervals 0
+2025-03-25 18:01:12,727: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102dd26e0> with deadline=1139093.869803791 and callback=<bound method HeartbeatChecker._check_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102e18980>>; now=1139028.869803791; delay=65
+2025-03-25 18:01:27,755: Sending heartbeat frame
+2025-03-25 18:01:27,756: Sending heartbeat frame
+2025-03-25 18:01:27,756: SelectorIOServicesAdapter.set_writer(8, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0>>)
+2025-03-25 18:01:27,756: set_writer(8, _) updated handler RdWr
+2025-03-25 18:01:27,756: Turned on writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:01:27,756: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x102e16f50> with deadline=1139073.8846985 and callback=<bound method HeartbeatChecker._send_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102e18980>>; now=1139043.8846985; delay=30.0
+2025-03-25 18:01:27,757: SelectorIOServicesAdapter.remove_writer(8)
+2025-03-25 18:01:27,757: remove_writer(8) updated handler Rd
+2025-03-25 18:01:27,757: Turned off writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:01:27,904: Received heartbeat frame
+2025-03-25 18:01:27,905: Recv would block on <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:01:57,765: Sending heartbeat frame
+2025-03-25 18:01:57,766: Sending heartbeat frame
+2025-03-25 18:01:57,767: SelectorIOServicesAdapter.set_writer(8, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0>>)
+2025-03-25 18:01:57,767: set_writer(8, _) updated handler RdWr
+2025-03-25 18:01:57,767: Turned on writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:01:57,767: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x1025ca320> with deadline=1139103.887647375 and callback=<bound method HeartbeatChecker._send_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102e18980>>; now=1139073.887647375; delay=30.0
+2025-03-25 18:01:57,767: SelectorIOServicesAdapter.remove_writer(8)
+2025-03-25 18:01:57,768: remove_writer(8) updated handler Rd
+2025-03-25 18:01:57,768: Turned off writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:01:57,923: Received heartbeat frame
+2025-03-25 18:01:57,923: Recv would block on <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:02:01,916: Cancelling 1 consumers
+2025-03-25 18:02:01,917: Cancelling consumer: ctag1.85fc30ade5aa4f0480acb25b4fe248c4 (nowait=False)
+2025-03-25 18:02:01,917: Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e3ec80>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 18:02:01,917: SelectorIOServicesAdapter.set_writer(8, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0>>)
+2025-03-25 18:02:01,917: set_writer(8, _) updated handler RdWr
+2025-03-25 18:02:01,917: Turned on writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:02:01,918: Entering blocking state on frame <Basic.Cancel(['consumer_tag=ctag1.85fc30ade5aa4f0480acb25b4fe248c4', 'nowait=False'])>; acceptable_replies=[(<class 'pika.spec.Basic.CancelOk'>, {'consumer_tag': 'ctag1.85fc30ade5aa4f0480acb25b4fe248c4'})]
+2025-03-25 18:02:01,918: Adding on_synchronous_complete callback
+2025-03-25 18:02:01,918: Added: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'consumer_tag': 'ctag1.85fc30ade5aa4f0480acb25b4fe248c4'}, 'calls': 1}
+2025-03-25 18:02:01,918: Adding passed-in RPC response callback
+2025-03-25 18:02:01,918: Added: {'callback': <bound method Channel._on_cancelok of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'consumer_tag': 'ctag1.85fc30ade5aa4f0480acb25b4fe248c4'}, 'calls': 1}
+2025-03-25 18:02:01,918: SelectorIOServicesAdapter.remove_writer(8)
+2025-03-25 18:02:01,918: remove_writer(8) updated handler Rd
+2025-03-25 18:02:01,918: Turned off writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:02:01,919: Processing 1:Basic.CancelOk
+2025-03-25 18:02:01,919: Processing use of oneshot callback
+2025-03-25 18:02:01,919: 0 registered uses left
+2025-03-25 18:02:01,919: Removing callback #0: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e3ec80>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 18:02:01,919: Processing use of oneshot callback
+2025-03-25 18:02:01,919: 0 registered uses left
+2025-03-25 18:02:01,919: Comparing {'consumer_tag': 'ctag1.85fc30ade5aa4f0480acb25b4fe248c4'} to {'consumer_tag': 'ctag1.85fc30ade5aa4f0480acb25b4fe248c4'}
+2025-03-25 18:02:01,919: Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'consumer_tag': 'ctag1.85fc30ade5aa4f0480acb25b4fe248c4'}, 'calls': 0}
+2025-03-25 18:02:01,919: Processing use of oneshot callback
+2025-03-25 18:02:01,919: 0 registered uses left
+2025-03-25 18:02:01,919: Comparing {'consumer_tag': 'ctag1.85fc30ade5aa4f0480acb25b4fe248c4'} to {'consumer_tag': 'ctag1.85fc30ade5aa4f0480acb25b4fe248c4'}
+2025-03-25 18:02:01,920: Removing callback #0: {'callback': <bound method Channel._on_cancelok of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'consumer_tag': 'ctag1.85fc30ade5aa4f0480acb25b4fe248c4'}, 'calls': 0}
+2025-03-25 18:02:01,920: Calling <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e3ec80>> for "1:Basic.CancelOk"
+2025-03-25 18:02:01,920: Calling <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Basic.CancelOk"
+2025-03-25 18:02:01,920: 0 blocked frames
+2025-03-25 18:02:01,920: Calling <bound method Channel._on_cancelok of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Basic.CancelOk"
+2025-03-25 18:02:01,920: Recv would block on <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:02:01,920: Closing connection (200): Normal shutdown
+2025-03-25 18:02:01,920: Channel.close(200, Normal shutdown)
+2025-03-25 18:02:01,920: Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>
+2025-03-25 18:02:01,920: SelectorIOServicesAdapter.set_writer(8, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0>>)
+2025-03-25 18:02:01,920: set_writer(8, _) updated handler RdWr
+2025-03-25 18:02:01,920: Turned on writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:02:01,920: Entering blocking state on frame <Channel.Close(['class_id=0', 'method_id=0', 'reply_code=200', 'reply_text=Normal shutdown'])>; acceptable_replies=[<class 'pika.spec.Channel.CloseOk'>]
+2025-03-25 18:02:01,920: Adding on_synchronous_complete callback
+2025-03-25 18:02:01,920: Added: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 18:02:01,920: Adding passed-in RPC response callback
+2025-03-25 18:02:01,920: Added: {'callback': <bound method Channel._on_closeok of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 18:02:01,920: SelectorIOServicesAdapter.remove_writer(8)
+2025-03-25 18:02:01,921: remove_writer(8) updated handler Rd
+2025-03-25 18:02:01,921: Turned off writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:02:01,921: Processing 1:Channel.CloseOk
+2025-03-25 18:02:01,921: Processing use of oneshot callback
+2025-03-25 18:02:01,921: 0 registered uses left
+2025-03-25 18:02:01,921: Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 18:02:01,921: Processing use of oneshot callback
+2025-03-25 18:02:01,921: 0 registered uses left
+2025-03-25 18:02:01,921: Removing callback #0: {'callback': <bound method Channel._on_closeok of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 18:02:01,921: Calling <bound method Channel._on_synchronous_complete of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.CloseOk"
+2025-03-25 18:02:01,921: 0 blocked frames
+2025-03-25 18:02:01,921: Calling <bound method Channel._on_closeok of <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.CloseOk"
+2025-03-25 18:02:01,921: Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>
+2025-03-25 18:02:01,921: Processing 1:_on_channel_close
+2025-03-25 18:02:01,921: Calling <bound method BlockingChannel._on_channel_closed of <BlockingChannel impl=<Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>> for "1:_on_channel_close"
+2025-03-25 18:02:01,921: _on_channel_closed: ChannelClosedByClient: (200) 'Normal shutdown'; <BlockingChannel impl=<Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>
+2025-03-25 18:02:01,922: Processing 1:_on_channel_cleanup
+2025-03-25 18:02:01,922: Processing use of oneshot callback
+2025-03-25 18:02:01,922: 0 registered uses left
+2025-03-25 18:02:01,922: Removing callback #0: {'callback': <bound method Connection._on_channel_cleanup of <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': <Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'arguments': None, 'calls': 0}
+2025-03-25 18:02:01,922: Calling <bound method Connection._on_channel_cleanup of <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "1:_on_channel_cleanup"
+2025-03-25 18:02:01,922: Removed channel 1
+2025-03-25 18:02:01,922: Clearing out '1' from the stack
+2025-03-25 18:02:01,922: Recv would block on <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:02:01,922: New Connection state: CLOSING (prev=OPEN)
+2025-03-25 18:02:01,922: Closing connection (200): 'Normal shutdown'
+2025-03-25 18:02:01,922: Added: {'callback': <bound method Connection._on_connection_close_ok of <SelectConnection CLOSING transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 18:02:01,922: SelectorIOServicesAdapter.set_writer(8, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0>>)
+2025-03-25 18:02:01,922: set_writer(8, _) updated handler RdWr
+2025-03-25 18:02:01,922: Turned on writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:02:01,922: SelectorIOServicesAdapter.remove_writer(8)
+2025-03-25 18:02:01,922: remove_writer(8) updated handler Rd
+2025-03-25 18:02:01,922: Turned off writability watcher: <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:02:01,922: Processing 0:Connection.CloseOk
+2025-03-25 18:02:01,922: Processing use of oneshot callback
+2025-03-25 18:02:01,922: 0 registered uses left
+2025-03-25 18:02:01,922: Removing callback #0: {'callback': <bound method Connection._on_connection_close_ok of <SelectConnection CLOSING transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-03-25 18:02:01,922: Calling <bound method Connection._on_connection_close_ok of <SelectConnection CLOSING transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.CloseOk"
+2025-03-25 18:02:01,922: _on_connection_close_ok: frame=<METHOD(['channel_number=0', 'frame_type=1', 'method=<Connection.CloseOk>'])>
+2025-03-25 18:02:01,922: Removing timer for next heartbeat send interval
+2025-03-25 18:02:01,923: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x1025ca320> with deadline=1139103.887647375 and callback=<bound method HeartbeatChecker._send_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102e18980>>
+2025-03-25 18:02:01,923: Removing timer for next heartbeat check interval
+2025-03-25 18:02:01,923: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x102dd26e0> with deadline=1139093.869803791 and callback=<bound method HeartbeatChecker._check_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x102e18980>>
+2025-03-25 18:02:01,923: Aborting transport connection: state=1; <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:02:01,923: _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:02:01,923: Deactivating transport: state=1; <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:02:01,923: SelectorIOServicesAdapter.remove_reader(8)
+2025-03-25 18:02:01,923: remove_reader(8) removed handler
+2025-03-25 18:02:01,923: SelectorIOServicesAdapter.remove_writer(8)
+2025-03-25 18:02:01,923: remove_writer(8) neither was set.
+2025-03-25 18:02:01,923: add_callback_threadsafe: added callback=functools.partial(<bound method _AsyncTransportBase._connection_lost_notify_async of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0>>, None)
+2025-03-25 18:02:01,923: Leaving Plaintext consumer due to inactive state: state=3; <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:02:01,923: process_timeouts: invoking callback=functools.partial(<bound method _AsyncTransportBase._connection_lost_notify_async of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x102e181a0>>, None)
+2025-03-25 18:02:01,923: Concluding transport shutdown: state=3; error=None
+2025-03-25 18:02:01,923: connection_lost: None
+2025-03-25 18:02:01,923: AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-25 18:02:01,923: New Connection state: CLOSED (prev=CLOSING)
+2025-03-25 18:02:01,923: Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-03-25 18:02:01,923: Processing 0:_on_connection_closed
+2025-03-25 18:02:01,923: Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x102e098c0>> for "0:_on_connection_closed"
+2025-03-25 18:02:01,923: New Connection state: CLOSED (prev=CLOSED)
+2025-03-25 18:02:01,923: Added: {'callback': <bound method Connection._on_connection_start of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-03-25 18:02:01,923: Incremented callback reference counter: {'callback': <bound method Connection._on_connection_close_from_broker of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 2}
+2025-03-25 18:02:01,923: Closing transport socket and unlinking: state=3; <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 64502), raddr=('127.0.0.1', 5672)>
+2025-03-25 18:02:01,923: User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')

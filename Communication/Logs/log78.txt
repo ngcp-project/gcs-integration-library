@@ -1,0 +1,46 @@
+2025-03-25 17:55:01,593: Log 78
+
+2025-03-25 17:55:01,593: LOGGER CREATED By XBee.py
+2025-03-25 17:55:01,593: LOGGER CREATED By XBee.py
+2025-03-25 17:55:01,593: port: /dev/cu.usbserial-D30DWZL4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 17:55:01,593: port: /dev/cu.usbserial-D30DWZL4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 17:55:01,593: Attempting to open serial XBee connection.
+2025-03-25 17:55:01,593: Attempting to open serial XBee connection.
+2025-03-25 17:55:02,122: Serial port opened.
+2025-03-25 17:55:02,123: Serial port opened.
+2025-03-25 17:55:06,473: Receiving data:
+2025-03-25 17:55:06,473: Receiving data:
+2025-03-25 17:55:06,473: 81 00 00 15 00 01 01
+2025-03-25 17:55:06,473: 81 00 00 15 00 01 01
+2025-03-25 17:55:06,473: Received command payload (raw bytes): 0101, RSSI: -21
+2025-03-25 17:55:06,473: Received command payload (raw bytes): 0101, RSSI: -21
+2025-03-25 17:55:06,473: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -21, Options: 0, Data: b'\x81\x00\x00\x15\x00\x01\x01'
+2025-03-25 17:55:06,473: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -21, Options: 0, Data: b'\x81\x00\x00\x15\x00\x01\x01'
+2025-03-25 17:55:06,474: Transmitting data: b'{"vehicle_id": "ERU", "command": "EMERGENCY_STOP", "status": "acknowledged"}' to 0013A20042435A3D
+2025-03-25 17:55:06,474: Transmitting data: b'{"vehicle_id": "ERU", "command": "EMERGENCY_STOP", "status": "acknowledged"}' to 0013A20042435A3D
+2025-03-25 17:55:06,474: Encoded data: 7e 00 57 00 01 00 13 a2 00 42 43 5a 3d 00 7b 22 76 65 68 69 63 6c 65 5f 69 64 22 3a 20 22 45 52 55 22 2c 20 22 63 6f 6d 6d 61 6e 64 22 3a 20 22 45 4d 45 52 47 45 4e 43 59 5f 53 54 4f 50 22 2c 20 22 73 74 61 74 75 73 22 3a 20 22 61 63 6b 6e 6f 77 6c 65 64 67 65 64 22 7d 50 
+2025-03-25 17:55:06,474: Encoded data: 7e 00 57 00 01 00 13 a2 00 42 43 5a 3d 00 7b 22 76 65 68 69 63 6c 65 5f 69 64 22 3a 20 22 45 52 55 22 2c 20 22 63 6f 6d 6d 61 6e 64 22 3a 20 22 45 4d 45 52 47 45 4e 43 59 5f 53 54 4f 50 22 2c 20 22 73 74 61 74 75 73 22 3a 20 22 61 63 6b 6e 6f 77 6c 65 64 67 65 64 22 7d 50 
+2025-03-25 17:55:06,684: Receiving data:
+2025-03-25 17:55:06,684: Receiving data:
+2025-03-25 17:55:06,684: 89 01 01
+2025-03-25 17:55:06,684: 89 01 01
+2025-03-25 17:55:06,684: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 1
+2025-03-25 17:55:06,684: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 1
+2025-03-25 17:55:15,222: Receiving data:
+2025-03-25 17:55:15,222: Receiving data:
+2025-03-25 17:55:15,222: 81 00 00 14 00 01 02
+2025-03-25 17:55:15,222: 81 00 00 14 00 01 02
+2025-03-25 17:55:15,222: Received command payload (raw bytes): 0102, RSSI: -20
+2025-03-25 17:55:15,222: Received command payload (raw bytes): 0102, RSSI: -20
+2025-03-25 17:55:15,222: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -20, Options: 0, Data: b'\x81\x00\x00\x14\x00\x01\x02'
+2025-03-25 17:55:15,222: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -20, Options: 0, Data: b'\x81\x00\x00\x14\x00\x01\x02'
+2025-03-25 17:55:15,223: Transmitting data: b'{"vehicle_id": "ERU", "command": "EMERGENCY_STOP", "status": "ignored"}' to 0013A20042435A3D
+2025-03-25 17:55:15,223: Transmitting data: b'{"vehicle_id": "ERU", "command": "EMERGENCY_STOP", "status": "ignored"}' to 0013A20042435A3D
+2025-03-25 17:55:15,223: Encoded data: 7e 00 52 00 02 00 13 a2 00 42 43 5a 3d 00 7b 22 76 65 68 69 63 6c 65 5f 69 64 22 3a 20 22 45 52 55 22 2c 20 22 63 6f 6d 6d 61 6e 64 22 3a 20 22 45 4d 45 52 47 45 4e 43 59 5f 53 54 4f 50 22 2c 20 22 73 74 61 74 75 73 22 3a 20 22 69 67 6e 6f 72 65 64 22 7d 4f 
+2025-03-25 17:55:15,223: Encoded data: 7e 00 52 00 02 00 13 a2 00 42 43 5a 3d 00 7b 22 76 65 68 69 63 6c 65 5f 69 64 22 3a 20 22 45 52 55 22 2c 20 22 63 6f 6d 6d 61 6e 64 22 3a 20 22 45 4d 45 52 47 45 4e 43 59 5f 53 54 4f 50 22 2c 20 22 73 74 61 74 75 73 22 3a 20 22 69 67 6e 6f 72 65 64 22 7d 4f 
+2025-03-25 17:55:15,328: Receiving data:
+2025-03-25 17:55:15,328: Receiving data:
+2025-03-25 17:55:15,328: 89 02 01
+2025-03-25 17:55:15,328: 89 02 01
+2025-03-25 17:55:15,328: [Transmit status] Frame Type: 137, Frame ID: 2, Status: 1
+2025-03-25 17:55:15,328: [Transmit status] Frame Type: 137, Frame ID: 2, Status: 1

@@ -1,0 +1,10 @@
+2025-03-25 16:57:21,927: Log 61
+
+2025-03-25 16:57:21,928: LOGGER CREATED By XBee.py
+2025-03-25 16:57:21,928: LOGGER CREATED By XBee.py
+2025-03-25 16:57:21,928: port: COM4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 16:57:21,928: port: COM4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 16:57:21,928: Attempting to open serial XBee connection.
+2025-03-25 16:57:21,928: Attempting to open serial XBee connection.
+2025-03-25 16:57:21,928: Error opening serial port: [Errno 2] could not open port COM4: [Errno 2] No such file or directory: 'COM4'
+2025-03-25 16:57:21,928: Error opening serial port: [Errno 2] could not open port COM4: [Errno 2] No such file or directory: 'COM4'

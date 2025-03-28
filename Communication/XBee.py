@@ -1,6 +1,7 @@
 import re
 import serial
 import time
+import json
 from Communication.interfaces.Serial import Serial
 from Communication.Frames import x81, x88, x89
 from Logger.Logger import Logger
@@ -307,31 +308,54 @@ class XBee(Serial):
         """Handle XBee Frame Type 81 (Frame Receive: 16-bit Address)
 
         Args:
-          frame_data: Received bytes (between length and checksum fields)
+        frame_data: Received bytes (between length and checksum fields)
 
         Returns:
-          xxxxDecoded message & Received Signal Strength Indicator (RSSI), None if there is an error decoding message
-          Returns 0x81 class (frame_type, frame_id, payload, rssi, ...)
+        An x81 object containing the frame details. The payload will be decoded as telemetry if long,
+        or left as raw bytes (or attempted JSON decode) if short.
         """
         frame_type = frame_data[0]
         source_address = frame_data[1:3]
         rssi = -frame_data[3]
         options = frame_data[4]
         data = frame_data[5:]
-        try:
-            decoded_message = Telemetry.decode(data)
-            self.logger.write(f"Received payload. RSSI: {rssi}, Decoded message: {decoded_message}")
-            print(f"RSSI (Signal Strength : {rssi} dBm)")
-            print("Decoded message:", decoded_message)
-            #print("RSSI:", rssi)    
+    
+        # If the payload is short (e.g. less than 10 bytes), we assume it’s a command or an ack.
+        if len(data) < 10:
+        # If data looks like JSON (starts with '{'), try decoding it as JSON.
+            if data and data[0] == 0x7B:
+                try:
+                    decoded_message = json.loads(data.decode('utf-8'))
+                except Exception as e:
+                    self.logger.write(f"Error decoding JSON payload: {e}")
+                    decoded_message = data  # Fall back to raw bytes.
+            else:
+                decoded_message = data  # Raw bytes.
+            self.logger.write(f"Received command payload (raw): {decoded_message if isinstance(decoded_message, str) else decoded_message.hex()}, RSSI: {rssi}")
+            print(f"RSSI (Signal Strength: {rssi} dBm)")
+            if isinstance(decoded_message, bytes):
+                print("Received command payload (raw bytes):", decoded_message.hex())
+            else:
+                print("Received command payload (JSON):", decoded_message)
             frame = x81(frame_type, source_address, rssi, options, decoded_message)
             self.logger.write(f"[Frame Receive: 16-bit Address] Frame Type: {frame.frame_type}, Source Address: {frame.source_address}, RSSI: {frame.rssi}, Options: {frame.options}, Data: {frame_data}")
             print(f"[Frame Receive: 16-bit Address] Frame Type: {frame.frame_type}, Source Address: {frame.source_address}, RSSI: {frame.rssi}, Options: {frame.options}, Data: {frame_data}")
             return frame
-        except UnicodeDecodeError:
-            self.logger.write(f"Error decoding payload. RSSI: {rssi}")
-            print("Error decoding payload")
-            return None
+        else:
+            # Otherwise, assume it's a telemetry packet.
+            try:
+                decoded_message = Telemetry.decode(data)
+                self.logger.write(f"Received payload. RSSI: {rssi}, Decoded message: {decoded_message}")
+                print(f"RSSI (Signal Strength: {rssi} dBm)")
+                print("Decoded message:", decoded_message)
+                frame = x81(frame_type, source_address, rssi, options, decoded_message)
+                self.logger.write(f"[Frame Receive: 16-bit Address] Frame Type: {frame.frame_type}, Source Address: {frame.source_address}, RSSI: {frame.rssi}, Options: {frame.options}, Data: {frame_data}")
+                print(f"[Frame Receive: 16-bit Address] Frame Type: {frame.frame_type}, Source Address: {frame.source_address}, RSSI: {frame.rssi}, Options: {frame.options}, Data: {frame_data}")
+                return frame
+            except Exception as e:
+                self.logger.write(f"Error decoding telemetry: {e}")
+                print("Error decoding telemetry")
+                return None
         
     def __0x88(self, frame_data) -> x88:
         """Handle XBee Frame Type 88 (AT Command Response)
