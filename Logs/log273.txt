@@ -1,0 +1,74 @@
+2025-03-25 17:49:13,314: Log 273
+
+2025-03-25 17:49:13,314: LOGGER CREATED By XBee.py
+2025-03-25 17:49:13,314: LOGGER CREATED By XBee.py
+2025-03-25 17:49:13,314: port: COM4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 17:49:13,314: port: COM4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 17:49:13,314: Attempting to open serial XBee connection.
+2025-03-25 17:49:13,314: Attempting to open serial XBee connection.
+2025-03-25 17:49:13,874: Serial port opened.
+2025-03-25 17:49:13,874: Serial port opened.
+2025-03-25 17:49:13,874: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\tO\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:49:13,876: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\tO\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:49:13,876: Encoded data: 7e 00 4d 00 01 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 09 4f e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 2c 
+2025-03-25 17:49:13,876: Encoded data: 7e 00 4d 00 01 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 09 4f e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 2c 
+2025-03-25 17:49:14,377: Receiving data:
+2025-03-25 17:49:14,377: Receiving data:
+2025-03-25 17:49:14,377: 89 01 00
+2025-03-25 17:49:14,377: 89 01 00
+2025-03-25 17:49:14,377: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 0
+2025-03-25 17:49:14,377: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 0
+2025-03-25 17:49:15,381: Receiving data:
+2025-03-25 17:49:15,381: Receiving data:
+2025-03-25 17:49:15,382: 81 00 00 0c 00 70 69 6e 67
+2025-03-25 17:49:15,382: 81 00 00 0c 00 70 69 6e 67
+2025-03-25 17:49:15,382: ⚠️ Message length is 4 bytes, not 66. Skipping Telemetry.decode().
+2025-03-25 17:49:15,382: ⚠️ Message length is 4 bytes, not 66. Skipping Telemetry.decode().
+2025-03-25 17:49:15,382: Received payload. RSSI: -12, Decoded message: ping
+2025-03-25 17:49:15,382: Received payload. RSSI: -12, Decoded message: ping
+2025-03-25 17:49:15,382: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -12, Options: 0, Data: b'\x81\x00\x00\x0c\x00ping'
+2025-03-25 17:49:15,382: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -12, Options: 0, Data: b'\x81\x00\x00\x0c\x00ping'
+2025-03-25 17:49:16,878: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x0cO\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:49:16,879: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x0cO\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:49:16,879: Encoded data: 7e 00 4d 00 02 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 0c 4f e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 28 
+2025-03-25 17:49:16,879: Encoded data: 7e 00 4d 00 02 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 0c 4f e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 28 
+2025-03-25 17:49:17,388: Receiving data:
+2025-03-25 17:49:17,388: Receiving data:
+2025-03-25 17:49:17,388: 89 02 00
+2025-03-25 17:49:17,388: 89 02 00
+2025-03-25 17:49:17,388: [Transmit status] Frame Type: 137, Frame ID: 2, Status: 0
+2025-03-25 17:49:17,388: [Transmit status] Frame Type: 137, Frame ID: 2, Status: 0
+2025-03-25 17:49:17,892: Receiving data:
+2025-03-25 17:49:17,892: Receiving data:
+2025-03-25 17:49:17,893: 81 00 00 0c 00 70 69 6e 67
+2025-03-25 17:49:17,893: 81 00 00 0c 00 70 69 6e 67
+2025-03-25 17:49:17,893: ⚠️ Message length is 4 bytes, not 66. Skipping Telemetry.decode().
+2025-03-25 17:49:17,893: ⚠️ Message length is 4 bytes, not 66. Skipping Telemetry.decode().
+2025-03-25 17:49:17,893: Received payload. RSSI: -12, Decoded message: ping
+2025-03-25 17:49:17,893: Received payload. RSSI: -12, Decoded message: ping
+2025-03-25 17:49:17,893: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -12, Options: 0, Data: b'\x81\x00\x00\x0c\x00ping'
+2025-03-25 17:49:17,893: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -12, Options: 0, Data: b'\x81\x00\x00\x0c\x00ping'
+2025-03-25 17:49:19,881: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x0fO\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:49:19,881: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x0fO\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:49:19,882: Encoded data: 7e 00 4d 00 03 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 0f 4f e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 24 
+2025-03-25 17:49:19,882: Encoded data: 7e 00 4d 00 03 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 0f 4f e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 24 
+2025-03-25 17:49:20,398: Receiving data:
+2025-03-25 17:49:20,398: Receiving data:
+2025-03-25 17:49:20,398: 89 03 00
+2025-03-25 17:49:20,398: 89 03 00
+2025-03-25 17:49:20,398: [Transmit status] Frame Type: 137, Frame ID: 3, Status: 0
+2025-03-25 17:49:20,398: [Transmit status] Frame Type: 137, Frame ID: 3, Status: 0
+2025-03-25 17:49:20,901: Receiving data:
+2025-03-25 17:49:20,901: Receiving data:
+2025-03-25 17:49:20,901: 81 00 00 0d 00 70 69 6e 67
+2025-03-25 17:49:20,901: 81 00 00 0d 00 70 69 6e 67
+2025-03-25 17:49:20,902: ⚠️ Message length is 4 bytes, not 66. Skipping Telemetry.decode().
+2025-03-25 17:49:20,902: ⚠️ Message length is 4 bytes, not 66. Skipping Telemetry.decode().
+2025-03-25 17:49:20,902: Received payload. RSSI: -13, Decoded message: ping
+2025-03-25 17:49:20,902: Received payload. RSSI: -13, Decoded message: ping
+2025-03-25 17:49:20,902: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -13, Options: 0, Data: b'\x81\x00\x00\r\x00ping'
+2025-03-25 17:49:20,902: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -13, Options: 0, Data: b'\x81\x00\x00\r\x00ping'
+2025-03-25 17:49:22,099: Attempting to close serial XBee connection.
+2025-03-25 17:49:22,099: Attempting to close serial XBee connection.
+2025-03-25 17:49:22,219: Serial port closed.
+2025-03-25 17:49:22,219: Serial port closed.

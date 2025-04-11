@@ -1,0 +1,124 @@
+2025-03-25 17:46:57,215: Log 271
+
+2025-03-25 17:46:57,215: LOGGER CREATED By XBee.py
+2025-03-25 17:46:57,215: LOGGER CREATED By XBee.py
+2025-03-25 17:46:57,215: port: COM4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 17:46:57,215: port: COM4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 17:46:57,215: Attempting to open serial XBee connection.
+2025-03-25 17:46:57,215: Attempting to open serial XBee connection.
+2025-03-25 17:46:57,760: Serial port opened.
+2025-03-25 17:46:57,760: Serial port opened.
+2025-03-25 17:46:57,761: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x81N\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:46:57,774: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x81N\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:46:57,775: Encoded data: 7e 00 4d 00 01 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 81 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 b5 
+2025-03-25 17:46:57,775: Encoded data: 7e 00 4d 00 01 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 81 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 b5 
+2025-03-25 17:46:58,263: Receiving data:
+2025-03-25 17:46:58,263: Receiving data:
+2025-03-25 17:46:58,263: 89 01 00
+2025-03-25 17:46:58,263: 89 01 00
+2025-03-25 17:46:58,263: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 0
+2025-03-25 17:46:58,263: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 0
+2025-03-25 17:47:00,777: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x84N\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:00,777: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x84N\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:00,777: Encoded data: 7e 00 4d 00 02 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 84 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 b1 
+2025-03-25 17:47:00,777: Encoded data: 7e 00 4d 00 02 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 84 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 b1 
+2025-03-25 17:47:01,269: Receiving data:
+2025-03-25 17:47:01,269: Receiving data:
+2025-03-25 17:47:01,270: 89 02 00
+2025-03-25 17:47:01,270: 89 02 00
+2025-03-25 17:47:01,270: [Transmit status] Frame Type: 137, Frame ID: 2, Status: 0
+2025-03-25 17:47:01,270: [Transmit status] Frame Type: 137, Frame ID: 2, Status: 0
+2025-03-25 17:47:03,780: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x87N\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:03,780: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x87N\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:03,780: Encoded data: 7e 00 4d 00 03 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 87 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 ad 
+2025-03-25 17:47:03,780: Encoded data: 7e 00 4d 00 03 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 87 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 ad 
+2025-03-25 17:47:04,274: Receiving data:
+2025-03-25 17:47:04,274: Receiving data:
+2025-03-25 17:47:04,274: 89 03 00
+2025-03-25 17:47:04,274: 89 03 00
+2025-03-25 17:47:04,274: [Transmit status] Frame Type: 137, Frame ID: 3, Status: 0
+2025-03-25 17:47:04,274: [Transmit status] Frame Type: 137, Frame ID: 3, Status: 0
+2025-03-25 17:47:06,782: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x8aN\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:06,782: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x8aN\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:06,782: Encoded data: 7e 00 4d 00 04 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 8a 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 a9 
+2025-03-25 17:47:06,782: Encoded data: 7e 00 4d 00 04 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 8a 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 a9 
+2025-03-25 17:47:06,825: Receiving data:
+2025-03-25 17:47:06,826: Receiving data:
+2025-03-25 17:47:06,826: 89 04 00
+2025-03-25 17:47:06,826: 89 04 00
+2025-03-25 17:47:06,826: [Transmit status] Frame Type: 137, Frame ID: 4, Status: 0
+2025-03-25 17:47:06,826: [Transmit status] Frame Type: 137, Frame ID: 4, Status: 0
+2025-03-25 17:47:09,784: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x8dN\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:09,784: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x8dN\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:09,784: Encoded data: 7e 00 4d 00 05 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 8d 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 a5 
+2025-03-25 17:47:09,784: Encoded data: 7e 00 4d 00 05 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 8d 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 a5 
+2025-03-25 17:47:09,829: Receiving data:
+2025-03-25 17:47:09,829: Receiving data:
+2025-03-25 17:47:09,830: 89 05 00
+2025-03-25 17:47:09,830: 89 05 00
+2025-03-25 17:47:09,830: [Transmit status] Frame Type: 137, Frame ID: 5, Status: 0
+2025-03-25 17:47:09,830: [Transmit status] Frame Type: 137, Frame ID: 5, Status: 0
+2025-03-25 17:47:12,787: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x90N\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:12,787: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x90N\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:12,787: Encoded data: 7e 00 4d 00 06 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 90 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 a1 
+2025-03-25 17:47:12,787: Encoded data: 7e 00 4d 00 06 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 90 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 a1 
+2025-03-25 17:47:12,835: Receiving data:
+2025-03-25 17:47:12,835: Receiving data:
+2025-03-25 17:47:12,835: 89 06 00
+2025-03-25 17:47:12,835: 89 06 00
+2025-03-25 17:47:12,835: [Transmit status] Frame Type: 137, Frame ID: 6, Status: 0
+2025-03-25 17:47:12,835: [Transmit status] Frame Type: 137, Frame ID: 6, Status: 0
+2025-03-25 17:47:15,789: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x93N\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:15,789: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x93N\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:15,789: Encoded data: 7e 00 4d 00 07 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 93 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 9d 
+2025-03-25 17:47:15,789: Encoded data: 7e 00 4d 00 07 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 93 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 9d 
+2025-03-25 17:47:15,842: Receiving data:
+2025-03-25 17:47:15,842: Receiving data:
+2025-03-25 17:47:15,842: 89 07 00
+2025-03-25 17:47:15,842: 89 07 00
+2025-03-25 17:47:15,842: [Transmit status] Frame Type: 137, Frame ID: 7, Status: 0
+2025-03-25 17:47:15,842: [Transmit status] Frame Type: 137, Frame ID: 7, Status: 0
+2025-03-25 17:47:18,792: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x96N\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:18,792: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x96N\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:18,792: Encoded data: 7e 00 4d 00 08 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 96 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 99 
+2025-03-25 17:47:18,792: Encoded data: 7e 00 4d 00 08 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 96 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 99 
+2025-03-25 17:47:18,880: Receiving data:
+2025-03-25 17:47:18,880: Receiving data:
+2025-03-25 17:47:18,880: 89 08 00
+2025-03-25 17:47:18,880: 89 08 00
+2025-03-25 17:47:18,880: [Transmit status] Frame Type: 137, Frame ID: 8, Status: 0
+2025-03-25 17:47:18,880: [Transmit status] Frame Type: 137, Frame ID: 8, Status: 0
+2025-03-25 17:47:21,795: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x99N\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:21,795: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x99N\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:21,795: Encoded data: 7e 00 4d 00 09 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 99 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 95 
+2025-03-25 17:47:21,795: Encoded data: 7e 00 4d 00 09 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 99 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 95 
+2025-03-25 17:47:21,887: Receiving data:
+2025-03-25 17:47:21,887: Receiving data:
+2025-03-25 17:47:21,887: 89 09 00
+2025-03-25 17:47:21,887: 89 09 00
+2025-03-25 17:47:21,887: [Transmit status] Frame Type: 137, Frame ID: 9, Status: 0
+2025-03-25 17:47:21,887: [Transmit status] Frame Type: 137, Frame ID: 9, Status: 0
+2025-03-25 17:47:24,797: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x9cN\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:24,797: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x9cN\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:24,797: Encoded data: 7e 00 4d 00 0a 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 9c 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 91 
+2025-03-25 17:47:24,797: Encoded data: 7e 00 4d 00 0a 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 9c 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 91 
+2025-03-25 17:47:24,892: Receiving data:
+2025-03-25 17:47:24,892: Receiving data:
+2025-03-25 17:47:24,892: 89 0a 00
+2025-03-25 17:47:24,892: 89 0a 00
+2025-03-25 17:47:24,892: [Transmit status] Frame Type: 137, Frame ID: 10, Status: 0
+2025-03-25 17:47:24,892: [Transmit status] Frame Type: 137, Frame ID: 10, Status: 0
+2025-03-25 17:47:27,799: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x9fN\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:27,799: Transmitting data: b'\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\x00\x00\xa0B\x9fN\xe3g\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@' to 0000000000000000
+2025-03-25 17:47:27,799: Encoded data: 7e 00 4d 00 0b 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 9f 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 8d 
+2025-03-25 17:47:27,799: Encoded data: 7e 00 4d 00 0b 00 00 00 00 00 00 00 00 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a0 42 9f 4e e3 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 8d 
+2025-03-25 17:47:27,898: Receiving data:
+2025-03-25 17:47:27,898: Receiving data:
+2025-03-25 17:47:27,898: 89 0b 00
+2025-03-25 17:47:27,898: 89 0b 00
+2025-03-25 17:47:27,898: [Transmit status] Frame Type: 137, Frame ID: 11, Status: 0
+2025-03-25 17:47:27,898: [Transmit status] Frame Type: 137, Frame ID: 11, Status: 0
+2025-03-25 17:47:30,712: Attempting to close serial XBee connection.
+2025-03-25 17:47:30,712: Attempting to close serial XBee connection.
+2025-03-25 17:47:30,829: Serial port closed.
+2025-03-25 17:47:30,829: Serial port closed.

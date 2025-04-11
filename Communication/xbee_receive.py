@@ -7,10 +7,19 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 from Communication.XBee import XBee
 from Communication.tel_struct import Telemetry
 from Telemetry.RabbitMQ import TelemetryRabbitMQ
+import threading
+from Communication.Frames import x81, x88, x89
+
 
 # Configuration
-RECEIVER_PORT = "COM3"
+RECEIVER_PORT = "COM5"
 BAUD_RATE = 115200
+
+transmit = False
+transmit_lock = threading.Lock()
+transmit_data = "ping"
+
+vehicle_list = {"eru", "mra", "mea"}
 
 def main():
     """
@@ -30,19 +39,26 @@ def main():
     print("[*] Waiting for incoming telemetry data...")
 
     try:
-        while True:
-            received_data = xbee.retrieve_data()            
-            if received_data is None:
-                continue
-            
-            print(f"Received Data: {received_data.data}")         
-               
-            parse_pipe_separated_data(received_data)
-            
-            # Send acknowledgment back to sender
-            # ack_message = f"ACK: Received bytes"
-            # xbee.transmit_data(ack_message.encode())
-            # print(f"Sent Acknowledgment: {ack_message}")
+        while xbee is not None and xbee.ser is not None:
+            received_data = xbee.retrieve_data()
+
+            if received_data:
+                # ✅ Process telemetry (x81) messages
+                if isinstance(received_data, x81):  
+                    print(f"📩 Received Data: {received_data.data}")      
+                    parse_pipe_separated_data(received_data)
+
+                    # ✅ Send ping response
+                    ping_message = "ping".encode("utf-8")  # Convert to bytes before sending
+                    print(f"📤 Sending: {ping_message.decode()}")
+                    xbee.transmit_data(ping_message)
+
+                # ✅ Process transmit status (x89) messages
+                elif isinstance(received_data, x89):  
+                    print(f"📤 Transmit Status Received: Frame ID {received_data.frame_id}, Status {received_data.status}")
+
+                else:
+                    print(f"⚠️ Unhandled frame type: {type(received_data)}")
 
             time.sleep(1)  # Small delay to avoid excessive CPU usage
     except KeyboardInterrupt:
@@ -53,26 +69,29 @@ def main():
         xbee.close()
         print("[*] Receiver XBee closed.")
 
+
+
 def parse_pipe_separated_data(data):
     
     vehicleID = data.source_address
     vehicle_name = ""
+    i = 0
     
     received_telemetry = data.data
     telemetry_dict = {
-        "speed": received_telemetry.speed,
-        "pitch": received_telemetry.pitch,
-        "yaw": received_telemetry.yaw,
-        "roll": received_telemetry.roll,
-        "alt": received_telemetry.altitude,
-        "battery_life": received_telemetry.battery_life,
-        "lastUpdated": received_telemetry.last_updated,
-        "current_latitude": received_telemetry.current_latitude,
-        "current_longitude": received_telemetry.current_longitude,
-        "vehicle_status": received_telemetry.vehicle_status,
-        "message_flag": received_telemetry.message_flag,
-        "message_lat": received_telemetry.message_lat,
-        "message_lon": received_telemetry.message_lon,
+        "speed": received_telemetry.speed + i,
+        "pitch": received_telemetry.pitch + i,
+        "yaw": received_telemetry.yaw + i,
+        "roll": received_telemetry.roll + i,
+        "alt": received_telemetry.altitude + i,
+        "battery_life": received_telemetry.battery_life - i/5,
+        "lastUpdated": received_telemetry.last_updated + i,
+        "current_latitude": received_telemetry.current_latitude + i + 20,
+        "current_longitude": received_telemetry.current_longitude + i + 30,
+        "vehicle_status": received_telemetry.vehicle_status + i,
+        "message_flag": received_telemetry.message_flag + i,
+        "message_lat": received_telemetry.message_lat + i,
+        "message_lon": received_telemetry.message_lon + i,
     }
     
     for key, value in telemetry_dict.items():
@@ -83,8 +102,9 @@ def parse_pipe_separated_data(data):
             vehicle_name = "eru"
     print(f"\nVehicle Name: {vehicle_name.capitalize()}")
 
-    telemetry = TelemetryRabbitMQ(f"{vehicle_name}", "localhost")
-    telemetry.publish(telemetry_dict)
+    for vehicle in vehicle_list:
+        telemetry = TelemetryRabbitMQ(f"{vehicle}", "localhost")
+        telemetry.publish(telemetry_dict)
 
 if __name__ == '__main__':
     main()

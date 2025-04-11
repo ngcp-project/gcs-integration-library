@@ -319,7 +319,14 @@ class XBee(Serial):
         options = frame_data[4]
         data = frame_data[5:]
         try:
-            decoded_message = Telemetry.decode(data)
+            if len(data) == 66:
+                # ✅ Use Telemetry.decode() if the message is exactly 66 bytes
+                decoded_message = Telemetry.decode(data)
+                self.logger.write(f"✅ Using Telemetry.decode(). RSSI: {rssi}, Decoded message: {decoded_message}")
+            else:
+                # 🚨 Handle other cases: data is not 66 bytes
+                decoded_message = data.decode()  # Keep as raw bytes or implement another parsing function
+                self.logger.write(f"⚠️ Message length is {len(data)} bytes, not 66. Skipping Telemetry.decode().")
             self.logger.write(f"Received payload. RSSI: {rssi}, Decoded message: {decoded_message}")
             print(f"RSSI (Signal Strength : {rssi} dBm)")
             print("Decoded message:", decoded_message)

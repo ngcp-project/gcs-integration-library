@@ -6,8 +6,6 @@ from Types.Geolocation import Coordinate
 from Types.Communication import Message
 from datetime import datetime
 import time
-
-
 class TelemetryRabbitMQ:
     def __init__(self, vehicleName: str,  hostname: str):
         self.vehicleName = vehicleName.lower()
@@ -62,30 +60,32 @@ class TelemetryRabbitMQ:
             self.connection.close()
     
 if __name__ == "__main__":
-    # vehicle_name = input("Enter vehicle name: ")
-    telemetry = TelemetryRabbitMQ("eru", "localhost")
-    # current_coordinate = Coordinate(latitude=37.7749, longitude=-122.4194)
-    # vehicleSearch_coordinate = Coordinate(latitude=1.0, longitude=2.0)
-    # request_location = Coordinate(latitude=45.8484, longitude=100.4194)
-    # request_coordinates = RequestCoordinates(messageFlag=1, requestLocation=request_location)
-    
+    vehicle_list = {"eru", "mra", "mea"}
+    i = 0
+        # current_coordinate = Coordinate(latitude=37.7749, longitude=-122.4194)
+        # vehicleSearch_coordinate = Coordinate(latitude=1.0, longitude=2.0)
+        # request_location = Coordinate(latitude=45.8484, longitude=100.4194)
+        # request_coordinates = RequestCoordinates(messageFlag=1, requestLocation=request_location)
     while True:
         tel_data = {
-            "pitch":10.5,
-            "yaw":20.3,
-            "roll":5.8,
-            "speed":45.2,
-            "alt":1000.0,
-            "battery_life":80.5,
-            "current_latitude": 12.222,
-            "current_longitude":2333.22,
+            "pitch":10.5 + i,
+            "yaw":20.3 + i,
+            "roll":5.8 + i + 2,
+            "speed":45.2 + i,
+            "alt":1000.0+ i,
+            "battery_life":0.85,
+            "current_latitude": 12.222 + i + 20,
+            "current_longitude":33.22 + i + 30,
             "lastUpdated":datetime.now().isoformat(),
-            "vehicle_status": 1,
-            "message_flag": 1,
-            "message_lat":22.22,
-            "message_lon":656.22
+            "vehicle_status": 1 + i,
+            "message_flag": 1+ i,
+            "message_lat":22.22 + i,
+            "message_lon":656.22 + i
         }
-        # transmit_data = Message(vehId=1, type=1, telemetryData=tel_data)
-        telemetry.publish(tel_data)
-        time.sleep(10)
+        i += 1
+        for vehicle in vehicle_list:
+            telemetry = TelemetryRabbitMQ(f"{vehicle}", "localhost")
+            # transmit_data = Message(vehId=1, type=1, telemetryData=tel_data)
+            telemetry.publish(tel_data)
+        time.sleep(1)
 
