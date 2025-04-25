@@ -1,0 +1,32 @@
+2025-04-25 13:31:05,631: Log 68
+
+2025-04-25 13:31:05,631: port: COM4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-04-25 13:31:05,631: Attempting to open serial XBee connection.
+2025-04-25 13:31:06,187: Serial port opened.
+2025-04-25 13:31:06,187: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\n\xf1\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424366C7
+2025-04-25 13:31:06,187: Encoded data: 7e 00 4f 00 01 00 13 a2 00 42 43 66 c7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 0a f1 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 b5 
+2025-04-25 13:31:06,690: Receiving data:
+2025-04-25 13:31:06,690: 89 01 01
+2025-04-25 13:31:06,690: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 1
+2025-04-25 13:31:09,203: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\r\xf1\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424366C7
+2025-04-25 13:31:09,203: Encoded data: 7e 00 4f 00 02 00 13 a2 00 42 43 66 c7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 0d f1 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 b1 
+2025-04-25 13:31:09,696: Receiving data:
+2025-04-25 13:31:09,696: 89 02 01
+2025-04-25 13:31:09,696: [Transmit status] Frame Type: 137, Frame ID: 2, Status: 1
+2025-04-25 13:31:12,206: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x10\xf1\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424366C7
+2025-04-25 13:31:12,207: Encoded data: 7e 00 4f 00 03 00 13 a2 00 42 43 66 c7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 10 f1 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 ad 
+2025-04-25 13:31:12,700: Receiving data:
+2025-04-25 13:31:12,701: 89 03 01
+2025-04-25 13:31:12,701: [Transmit status] Frame Type: 137, Frame ID: 3, Status: 1
+2025-04-25 13:31:15,209: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x13\xf1\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424366C7
+2025-04-25 13:31:15,210: Encoded data: 7e 00 4f 00 04 00 13 a2 00 42 43 66 c7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 13 f1 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 a9 
+2025-04-25 13:31:15,706: Receiving data:
+2025-04-25 13:31:15,707: 89 04 01
+2025-04-25 13:31:15,707: [Transmit status] Frame Type: 137, Frame ID: 4, Status: 1
+2025-04-25 13:31:18,212: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x16\xf1\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424366C7
+2025-04-25 13:31:18,212: Encoded data: 7e 00 4f 00 05 00 13 a2 00 42 43 66 c7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 16 f1 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 a5 
+2025-04-25 13:31:18,712: Receiving data:
+2025-04-25 13:31:18,712: 89 05 01
+2025-04-25 13:31:18,712: [Transmit status] Frame Type: 137, Frame ID: 5, Status: 1
+2025-04-25 13:31:19,096: Attempting to close serial XBee connection.
+2025-04-25 13:31:19,218: Serial port closed.

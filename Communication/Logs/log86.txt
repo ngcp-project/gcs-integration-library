@@ -1,0 +1,13 @@
+2025-04-25 14:02:17,442: Log 86
+
+2025-04-25 14:02:17,442: port: COM3, baudrate: 115200, timeout: 0.05, config_file: None
+2025-04-25 14:02:17,442: Attempting to open serial XBee connection.
+2025-04-25 14:02:17,483: Serial port opened.
+2025-04-25 14:02:17,483: Clearing input and output buffers.
+2025-04-25 14:02:17,984: Receiving data:
+2025-04-25 14:02:17,984: Decoded frame data: 81 00 03 18 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 57 f8 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00
+2025-04-25 14:02:17,984: Received Checksum: 2d
+2025-04-25 14:02:17,984: Calculated Checksum: 2d
+2025-04-25 14:02:17,984: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 14:02:26,859: Attempting to close serial XBee connection.
+2025-04-25 14:02:26,970: Serial port closed.

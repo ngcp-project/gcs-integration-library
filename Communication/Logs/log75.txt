@@ -1,0 +1,10 @@
+2025-04-25 13:41:11,387: Log 75
+
+2025-04-25 13:41:11,387: port: COM4, baudrate: 115200, timeout: 0.05, config_file: None
+2025-04-25 13:41:11,387: Attempting to open serial XBee connection.
+2025-04-25 13:41:11,447: Serial port opened.
+2025-04-25 13:41:11,448: Clearing input and output buffers.
+2025-04-25 13:41:11,949: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?g\xf3\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424366C7
+2025-04-25 13:41:14,951: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?j\xf3\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424366C7
+2025-04-25 13:41:16,790: Attempting to close serial XBee connection.
+2025-04-25 13:41:16,906: Serial port closed.

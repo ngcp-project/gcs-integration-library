@@ -1,0 +1,39 @@
+2025-04-25T14:08:15 | Telemetry from ERU (0003) | RSSI: -15
+Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=0.800000011920929, Last Updated=1745615295, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=45.8484, Message Location=(100.4194, 0)),Patient Status = 1
+
+2025-04-25T14:08:18 | Telemetry from ERU (0003) | RSSI: -15
+Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=0.800000011920929, Last Updated=1745615298, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=45.8484, Message Location=(100.4194, 0)),Patient Status = 1
+
+2025-04-25T14:09:47 | Telemetry from ERU (0003) | RSSI: -15
+Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=0.800000011920929, Last Updated=1745615301, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=45.8484, Message Location=(100.4194, 0)),Patient Status = 1
+
+2025-04-25T14:09:47 | Telemetry from ERU (0003) | RSSI: -16
+Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=0.800000011920929, Last Updated=1745615383, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=45.8484, Message Location=(100.4194, 0)),Patient Status = 1
+
+2025-04-25T14:09:47 | Telemetry from ERU (0003) | RSSI: -16
+Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=0.800000011920929, Last Updated=1745615386, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=45.8484, Message Location=(100.4194, 0)),Patient Status = 1
+
+2025-04-25T14:09:49 | Telemetry from ERU (0003) | RSSI: -16
+Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=0.800000011920929, Last Updated=1745615389, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=45.8484, Message Location=(100.4194, 0)),Patient Status = 1
+
+2025-04-25T14:09:52 | Telemetry from ERU (0003) | RSSI: -16
+Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=0.800000011920929, Last Updated=1745615392, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=45.8484, Message Location=(100.4194, 0)),Patient Status = 1
+
+2025-04-25T14:11:11 | Telemetry from ERU (0003) | RSSI: -16
+Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=0.800000011920929, Last Updated=1745615395, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=45.8484, Message Location=(100.4194, 0)),Patient Status = 1
+
+2025-04-25T14:11:14 | Telemetry from ERU (0003) | RSSI: -16
+Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=0.800000011920929, Last Updated=1745615474, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=45.8484, Message Location=(100.4194, 0)),Patient Status = 1
+
+2025-04-25T14:17:07 | Telemetry from ERU (0003) | RSSI: -20
+Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=0.800000011920929, Last Updated=1745615827, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=45.8484, Message Location=(100.4194, 0)),Patient Status = 1
+
+2025-04-25T14:24:29 | Telemetry from ERU (0003) | RSSI: -15
+Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=0.800000011920929, Last Updated=1745616269, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=45.8484, Message Location=(100.4194, 0)),Patient Status = 1
+
+2025-04-25T14:24:32 | Telemetry from ERU (0003) | RSSI: -15
+Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=0.800000011920929, Last Updated=1745616272, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=45.8484, Message Location=(100.4194, 0)),Patient Status = 1
+
+2025-04-25T14:24:35 | Telemetry from ERU (0003) | RSSI: -14
+Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=0.800000011920929, Last Updated=1745616275, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=45.8484, Message Location=(100.4194, 0)),Patient Status = 1
+
