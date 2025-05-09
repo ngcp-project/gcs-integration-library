@@ -9,15 +9,17 @@ from Communication.XBee import XBee
 from Communication.Frames import x81
 from Communication.tel_struct import Telemetry
 from Logger.Logger import Logger
+from Telemetry.RabbitMQ import TelemetryRabbitMQ
 
 # === Constants ===
 TAG_COMMAND = 0x01
 TAG_TELEMETRY = 0x02
 TAG_ACK = 0x03
+TAG_PING = 0x04
 
 # === Vehicle Info ===
 VEHICLES = {
-    "MRA": {"MAC": "0013A20042435EA9", "short": "0002"},
+    "MRA": {"MAC": "0013A2004243672F", "short": "0002"},
     "ERU": {"MAC": "NaN", "short": "0003"},
     "MEA": {"MAC": "0013A2004243672F", "short": "0004"}
 }
@@ -32,7 +34,7 @@ COMMANDS = {
 # === Init GCS XBee ===
 logger = Logger(log_to_console=False)
 # gcs_xbee = XBee(port="/dev/cu.usbserial-D30DWZKT", baudrate=115200, logger=logger)
-gcs_xbee = XBee(port="COM3", baudrate=115200, logger=logger)
+gcs_xbee = XBee(port="COM9", baudrate=115200, logger=logger)
 gcs_xbee.open()
 terminate_event = threading.Event()
 
@@ -42,28 +44,73 @@ def listen_for_telemetry():
     while not terminate_event.is_set():
         frame: x81 = gcs_xbee.retrieve_data()
         if frame:
-            src_16bit = frame.source_address.hex().upper().zfill(4)
-            print(f"📍 Incoming packet short address: {src_16bit}")
-            
-            vehicle_name = next((name for name, info in VEHICLES.items() if info["short"] == src_16bit), "UNKNOWN")
+            try:
+                src_16bit = frame.source_address.hex().upper().zfill(4)
+                print(f"📍 Incoming packet short address: {src_16bit}")
+                
+                vehicle_name = next((name for name, info in VEHICLES.items() if info["short"] == src_16bit), "UNKNOWN")
 
-            if isinstance(frame.data, Telemetry):
-                telemetry = frame.data
-                print(f"📡 [Telemetry] From: {vehicle_name} ({src_16bit}), RSSI: {frame.rssi}")
-                print(telemetry)
-
-                timestamp = datetime.now().isoformat(timespec="seconds")
-                with open("gcs_telemetry_log.txt", "a") as log_file:
-                    log_file.write(f"{timestamp} | Telemetry from {vehicle_name} ({src_16bit}) | RSSI: {frame.rssi}\n")
-                    log_file.write(f"{telemetry}\n\n")
-
-            elif isinstance(frame.data, bytes) and frame.data[0] == TAG_ACK:
-                print(f"✅ Received ACK from {vehicle_name} ({src_16bit}): {frame.data[1:].decode(errors='ignore')}")
-            else:
-                print(f"[!] Unknown or unhandled data from {vehicle_name}")
-
-
+                if isinstance(frame.data, Telemetry):
+                    telemetry = frame.data
+                    print(f"📡 [Telemetry] From: {vehicle_name} ({src_16bit}), RSSI: {frame.rssi}")
+                    print(telemetry)
+                    parse_and_export_telemetry(telemetry, vehicle_name)
+                    
+                    # Safely send ping with address validation
+                    if src_16bit and len(src_16bit) >= 4:
+                        ping_payload = bytes([TAG_PING])
+                        try:
+                            vehicle_mac = next((info["MAC"] for name, info in VEHICLES.items() 
+                                              if info["short"] == src_16bit), None)
+                            
+                            if vehicle_mac and vehicle_mac != "NaN":
+                                gcs_xbee.transmit_data(ping_payload, address=vehicle_mac)
+                                print(f"Sent TAG-PING to {vehicle_name}")
+                            else:
+                                print(f"Cannot send ping to {vehicle_name} - no valid MAC address")
+                        except Exception as e:
+                            print(f"Error sending ping: {e}")
+                elif isinstance(frame.data, bytes) and len(frame.data) > 0 and frame.data[0] == TAG_ACK:
+                    print(f"✅ Received ACK from {vehicle_name} ({src_16bit}): {frame.data[1:].decode(errors='ignore')}")
+                else:
+                    print(f"[!] Unknown or unhandled data from {vehicle_name}")
+            except Exception as e:
+                print(f"Error processing frame: {e}")
+        
         time.sleep(0.05)
+        
+def parse_and_export_telemetry(telemetry: Telemetry, vehicle_name: str):
+    telemetry_dict = {
+        "speed": telemetry.speed,
+        "pitch": telemetry.pitch,
+        "yaw": telemetry.yaw,
+        "roll": telemetry.roll,
+        "alt": telemetry.altitude,
+        "battery_life": telemetry.battery_life,
+        "lastUpdated": telemetry.last_updated,
+        "current_latitude": telemetry.current_latitude,
+        "current_longitude": telemetry.current_longitude,
+        "vehicle_status": telemetry.vehicle_status,
+        "patient_status": telemetry.patient_status,
+        "message_flag": telemetry.message_flag,
+        "message_lat": telemetry.message_lat,
+        "message_lon": telemetry.message_lon,
+        
+    }
+
+    print(f"\n📤 Parsed Telemetry from {vehicle_name}:")
+    for key, value in telemetry_dict.items():
+        print(f"  {key}: {value}")
+
+    try:
+        publisher = TelemetryRabbitMQ(vehicle_name.lower(), "localhost")
+        publisher.publish(telemetry_dict)
+        print("✅ Telemetry published to RabbitMQ.\n")
+    except Exception as e:
+        import traceback
+        print(f"[!] Failed to publish telemetry: {e}")
+        print(f"[!] Error details: {traceback.format_exc()}")
+
 
 def main():
     telemetry_thread = threading.Thread(target=listen_for_telemetry, daemon=True)

@@ -1,0 +1,335 @@
+2025-04-25 15:04:54,247: Log 102
+
+2025-04-25 15:04:54,247: port: COM4, baudrate: 115200, timeout: 0.05, config_file: None
+2025-04-25 15:04:54,247: Attempting to open serial XBee connection.
+2025-04-25 15:04:54,298: Serial port opened.
+2025-04-25 15:04:54,298: Clearing input and output buffers.
+2025-04-25 15:04:54,803: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x06\x07\x0ch\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 15:04:54,803: Receiving data:
+2025-04-25 15:04:54,803: Encoded data: 7e 00 4f 00 01 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 06 07 0c 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 38 
+2025-04-25 15:04:54,805: Pass 49
+2025-04-25 15:04:54,805: Receiving data:
+2025-04-25 15:04:54,805: Pass 15
+2025-04-25 15:04:54,805: Receiving data:
+2025-04-25 15:04:54,805: Pass 26
+2025-04-25 15:04:54,805: Receiving data:
+2025-04-25 15:04:54,805: Pass 1d
+2025-04-25 15:04:54,805: Receiving data:
+2025-04-25 15:04:54,805: Pass 20
+2025-04-25 15:04:54,805: Receiving data:
+2025-04-25 15:04:54,807: Pass 31
+2025-04-25 15:04:54,807: Receiving data:
+2025-04-25 15:04:54,807: Pass 15
+2025-04-25 15:04:54,807: Receiving data:
+2025-04-25 15:04:54,807: Pass 51
+2025-04-25 15:04:54,807: Receiving data:
+2025-04-25 15:04:54,807: Pass 01
+2025-04-25 15:04:54,807: Receiving data:
+2025-04-25 15:04:54,807: Pass 22
+2025-04-25 15:04:54,807: Receiving data:
+2025-04-25 15:04:54,807: Pass 21
+2025-04-25 15:04:54,807: Receiving data:
+2025-04-25 15:04:54,807: Pass 15
+2025-04-25 15:04:54,807: Receiving data:
+2025-04-25 15:04:54,807: Pass 01
+2025-04-25 15:04:54,807: Receiving data:
+2025-04-25 15:04:54,807: Pass 3a
+2025-04-25 15:04:54,807: Receiving data:
+2025-04-25 15:04:54,807: Pass 75
+2025-04-25 15:04:54,807: Receiving data:
+2025-04-25 15:04:54,807: Pass 6b
+2025-04-25 15:04:54,807: Receiving data:
+2025-04-25 15:04:54,807: Pass 6b
+2025-04-25 15:04:54,807: Receiving data:
+2025-04-25 15:04:54,807: Pass 2d
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 5a
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 65
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 65
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 01
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 3a
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 25
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 39
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 39
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 6a
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 64
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 01
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 74
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 0a
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 0c
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 50
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 40
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 0b
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 02
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 25
+2025-04-25 15:04:54,809: Receiving data:
+2025-04-25 15:04:54,809: Pass 01
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 1a
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 55
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 1d
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 1d
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 15
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 4d
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 51
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 01
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 0a
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 0b
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 12
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 2b
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 56
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 17
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 48
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 2e
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 3a
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 72
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 05
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 51
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 15
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 1d
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 65
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 31
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 02
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 49
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 15
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 26
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 9d
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 90
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 6c
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 65
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 74
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 20
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 74
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 68
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 65
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 20
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 57
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 6f
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 6f
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 6b
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 69
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 65
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,812: Pass 65
+2025-04-25 15:04:54,812: Receiving data:
+2025-04-25 15:04:54,820: Pass 20
+2025-04-25 15:04:54,820: Receiving data:
+2025-04-25 15:04:54,820: Pass 77
+2025-04-25 15:04:54,820: Receiving data:
+2025-04-25 15:04:54,820: Pass 69
+2025-04-25 15:04:54,820: Receiving data:
+2025-04-25 15:04:54,820: Pass 6e
+2025-04-25 15:04:54,820: Receiving data:
+2025-04-25 15:04:54,820: Pass 2e
+2025-04-25 15:04:54,820: Receiving data:
+2025-04-25 15:04:54,820: Pass 1d
+2025-04-25 15:04:54,820: Receiving data:
+2025-04-25 15:04:54,820: Decoded frame data: 81 00 01 16 02 49 20 73 75 67 67 65 73 74 20 61 20 6e 65 77 20 73 74 72 61 74 65 67 79 2c 20 52 32 3a 20 6c 65 74 20 74 68 65 20 57 6f 6f 6b 69 65 65 20 77 69 6e 2e
+2025-04-25 15:04:54,820: Received Checksum: 1d
+2025-04-25 15:04:54,820: Calculated Checksum: 1d
+2025-04-25 15:04:54,820: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 15:04:54,820: Received payload. RSSI: -22, Decoded message: I suggest a new strategy, R2: let the Wookiee win.
+2025-04-25 15:04:54,822: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x01', RSSI: -22, Options: 2, Data: b'\x81\x00\x01\x16\x02I suggest a new strategy, R2: let the Wookiee win.'
+2025-04-25 15:04:54,822: Receiving data:
+2025-04-25 15:04:54,822: Decoded frame data: 81 00 01 16 02 49 20 73 75 67 67 65 73 74 20 61 20 6e 65 77 20 73 74 72 61 74 65 67 79 2c 20 52 32 3a 20 6c 65 74 20 74 68 65 20 57 6f 6f 6b 69 65 65 20 77 69 6e 2e
+2025-04-25 15:04:54,822: Received Checksum: 1d
+2025-04-25 15:04:54,822: Calculated Checksum: 1d
+2025-04-25 15:04:54,822: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 15:04:54,822: Received payload. RSSI: -22, Decoded message: I suggest a new strategy, R2: let the Wookiee win.
+2025-04-25 15:04:54,822: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x01', RSSI: -22, Options: 2, Data: b'\x81\x00\x01\x16\x02I suggest a new strategy, R2: let the Wookiee win.'
+2025-04-25 15:04:54,823: Receiving data:
+2025-04-25 15:04:54,823: Decoded frame data: 81 00 01 16 02 49 20 73 75 67 67 65 73 74 20 61 20 6e 65 77 20 73 74 72 61 74 65 67 79 2c 20 52 32 3a 20 6c 65 74 20 74 68 65 20 57 6f 6f 6b 69 65 65 20 77 69 6e 2e
+2025-04-25 15:04:54,823: Received Checksum: 1d
+2025-04-25 15:04:54,823: Calculated Checksum: 1d
+2025-04-25 15:04:54,823: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 15:04:54,823: Received payload. RSSI: -22, Decoded message: I suggest a new strategy, R2: let the Wookiee win.
+2025-04-25 15:04:54,823: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x01', RSSI: -22, Options: 2, Data: b'\x81\x00\x01\x16\x02I suggest a new strategy, R2: let the Wookiee win.'
+2025-04-25 15:04:54,823: Receiving data:
+2025-04-25 15:04:54,823: Decoded frame data: 81 00 01 15 02 49 20 73 75 67 67 65 73 74 20 61 20 6e 65 77 20 73 74 72 61 74 65 67 79 2c 20 52 32 3a 20 6c 65 74 20 74 68 65 20 57 6f 6f 6b 69 65 65 20 77 69 6e 2e
+2025-04-25 15:04:54,823: Received Checksum: 1e
+2025-04-25 15:04:54,823: Calculated Checksum: 1e
+2025-04-25 15:04:54,823: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 15:04:54,823: Received payload. RSSI: -21, Decoded message: I suggest a new strategy, R2: let the Wookiee win.
+2025-04-25 15:04:54,823: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x01', RSSI: -21, Options: 2, Data: b'\x81\x00\x01\x15\x02I suggest a new strategy, R2: let the Wookiee win.'
+2025-04-25 15:04:54,823: Receiving data:
+2025-04-25 15:04:54,823: Decoded frame data: 81 00 01 16 02 49 20 73 75 67 67 65 73 74 20 61 20 6e 65 77 20 73 74 72 61 74 65 67 79 2c 20 52 32 3a 20 6c 65 74 20 74 68 65 20 57 6f 6f 6b 69 65 65 20 77 69 6e 2e
+2025-04-25 15:04:54,823: Received Checksum: 1d
+2025-04-25 15:04:54,823: Calculated Checksum: 1d
+2025-04-25 15:04:54,823: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 15:04:54,823: Received payload. RSSI: -22, Decoded message: I suggest a new strategy, R2: let the Wookiee win.
+2025-04-25 15:04:54,823: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x01', RSSI: -22, Options: 2, Data: b'\x81\x00\x01\x16\x02I suggest a new strategy, R2: let the Wookiee win.'
+2025-04-25 15:04:54,823: Receiving data:
+2025-04-25 15:04:54,823: Decoded frame data: 81 00 01 16 02 49 20 73 75 67 67 65 73 74 20 61 20 6e 65 77 20 73 74 72 61 74 65 67 79 2c 20 52 32 3a 20 6c 65 74 20 74 68 65 20 57 6f 6f 6b 69 65 65 20 77 69 6e 2e
+2025-04-25 15:04:54,823: Received Checksum: 1d
+2025-04-25 15:04:54,823: Calculated Checksum: 1d
+2025-04-25 15:04:54,823: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 15:04:54,823: Received payload. RSSI: -22, Decoded message: I suggest a new strategy, R2: let the Wookiee win.
+2025-04-25 15:04:54,823: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x01', RSSI: -22, Options: 2, Data: b'\x81\x00\x01\x16\x02I suggest a new strategy, R2: let the Wookiee win.'
+2025-04-25 15:04:54,823: Receiving data:
+2025-04-25 15:04:54,823: Decoded frame data: 81 00 01 15 02 49 20 73 75 67 67 65 73 74 20 61 20 6e 65 77 20 73 74 72 61 74 65 67 79 2c 20 52 32 3a 20 6c 65 74 20 74 68 65 20 57 6f 6f 6b 69 65 65 20 77 69 6e 2e
+2025-04-25 15:04:54,823: Received Checksum: 1e
+2025-04-25 15:04:54,823: Calculated Checksum: 1e
+2025-04-25 15:04:54,823: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 15:04:54,823: Received payload. RSSI: -21, Decoded message: I suggest a new strategy, R2: let the Wookiee win.
+2025-04-25 15:04:54,823: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x01', RSSI: -21, Options: 2, Data: b'\x81\x00\x01\x15\x02I suggest a new strategy, R2: let the Wookiee win.'
+2025-04-25 15:04:54,823: Receiving data:
+2025-04-25 15:04:54,823: Decoded frame data: 81 00 01 1f 02 49 20 73 75 67 67 65 73 74 20 61 20 6e 65 77 20 73 74 72 61 74 65 67 79 2c 20 52 32 3a 20 6c 65 74 20 74 68 65 20 57 6f 6f 6b 69 65 65 20 77 69 6e 2e
+2025-04-25 15:04:54,823: Received Checksum: 14
+2025-04-25 15:04:54,823: Calculated Checksum: 14
+2025-04-25 15:04:54,823: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 15:04:54,825: Received payload. RSSI: -31, Decoded message: I suggest a new strategy, R2: let the Wookiee win.
+2025-04-25 15:04:54,825: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x01', RSSI: -31, Options: 2, Data: b'\x81\x00\x01\x1f\x02I suggest a new strategy, R2: let the Wookiee win.'
+2025-04-25 15:04:54,825: Receiving data:
+2025-04-25 15:04:54,825: Decoded frame data: 81 00 01 1c 02 49 20 73 75 67 67 65 73 74 20 61 20 6e 65 77 20 73 74 72 61 74 65 67 79 2c 20 52 32 3a 20 6c 65 74 20 74 68 65 20 57 6f 6f 6b 69 65 65 20 77 69 6e 2e
+2025-04-25 15:04:54,825: Received Checksum: 17
+2025-04-25 15:04:54,825: Calculated Checksum: 17
+2025-04-25 15:04:54,825: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 15:04:54,825: Received payload. RSSI: -28, Decoded message: I suggest a new strategy, R2: let the Wookiee win.
+2025-04-25 15:04:54,825: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x01', RSSI: -28, Options: 2, Data: b'\x81\x00\x01\x1c\x02I suggest a new strategy, R2: let the Wookiee win.'
+2025-04-25 15:04:54,825: Receiving data:
+2025-04-25 15:04:54,825: Decoded frame data: 81 00 01 1b 02 49 20 73 75 67 67 65 73 74 20 61 20 6e 65 77 20 73 74 72 61 74 65 67 79 2c 20 52 32 3a 20 6c 65 74 20 74 68 65 20 57 6f 6f 6b 69 65 65 20 77 69 6e 2e
+2025-04-25 15:04:54,825: Received Checksum: 18
+2025-04-25 15:04:54,825: Calculated Checksum: 18
+2025-04-25 15:04:54,825: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 15:04:54,825: Received payload. RSSI: -27, Decoded message: I suggest a new strategy, R2: let the Wookiee win.
+2025-04-25 15:04:54,825: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x01', RSSI: -27, Options: 2, Data: b'\x81\x00\x01\x1b\x02I suggest a new strategy, R2: let the Wookiee win.'
+2025-04-25 15:04:54,825: Receiving data:
+2025-04-25 15:04:54,825: Decoded frame data: 81 00 01 1c 02 49 20 73 75 67 67 65 73 74 20 61 20 6e 65 77 20 73 74 72 61 74 65 67 79 2c 20 52 32 3a 20 6c 65 74 20 74 68 65 20 57 6f 6f 6b 69 65 65 20 77 69 6e 2e
+2025-04-25 15:04:54,825: Received Checksum: 17
+2025-04-25 15:04:54,825: Calculated Checksum: 17
+2025-04-25 15:04:54,825: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 15:04:54,825: Received payload. RSSI: -28, Decoded message: I suggest a new strategy, R2: let the Wookiee win.
+2025-04-25 15:04:54,825: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x01', RSSI: -28, Options: 2, Data: b'\x81\x00\x01\x1c\x02I suggest a new strategy, R2: let the Wookiee win.'
+2025-04-25 15:04:54,825: Receiving data:
+2025-04-25 15:04:54,825: Decoded frame data: 81 00 01 1a 02 49 20 73 75 67 67 65 73 74 20 61 20 6e 65 77 20 73 74 72 61 74 65 67 79 2c 20 52 32 3a 20 6c 65 74 20 74 68 65 20 57 6f 6f 6b 69 65 65 20 77 69 6e 2e
+2025-04-25 15:04:54,825: Received Checksum: 19
+2025-04-25 15:04:54,825: Calculated Checksum: 19
+2025-04-25 15:04:54,825: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 15:04:54,825: Received payload. RSSI: -26, Decoded message: I suggest a new strategy, R2: let the Wookiee win.
+2025-04-25 15:04:54,825: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x01', RSSI: -26, Options: 2, Data: b'\x81\x00\x01\x1a\x02I suggest a new strategy, R2: let the Wookiee win.'
+2025-04-25 15:04:54,825: Receiving data:
+2025-04-25 15:04:54,825: Decoded frame data: 81 00 01 22 02 49 20 73 75 67 67 65 73 74 20 61 20 6e 65 77 20 73 74 72 61 74 65 67 79 2c 20 52 32 3a 20 6c 65 74 20 74 68 65 20 57 6f 6f 6b 69 65 65 20 77 69 6e 2e
+2025-04-25 15:04:54,825: Received Checksum: 11
+2025-04-25 15:04:54,825: Calculated Checksum: 11
+2025-04-25 15:04:54,825: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 15:04:54,825: Received payload. RSSI: -34, Decoded message: I suggest a new strategy, R2: let the Wookiee win.
+2025-04-25 15:04:54,825: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x01', RSSI: -34, Options: 2, Data: b'\x81\x00\x01"\x02I suggest a new strategy, R2: let the Wookiee win.'
+2025-04-25 15:04:54,825: Receiving data:
+2025-04-25 15:04:54,825: Decoded frame data: 81 00 00 1e 00 01 31
+2025-04-25 15:04:54,825: Received Checksum: 2e
+2025-04-25 15:04:54,825: Calculated Checksum: 2e
+2025-04-25 15:04:54,825: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 15:04:54,825: Received payload. RSSI: -30, Decoded message: Command ID: 1
+2025-04-25 15:04:54,825: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -30, Options: 0, Data: b'\x81\x00\x00\x1e\x00\x011'
+2025-04-25 15:04:54,825: Receiving data:
+2025-04-25 15:04:54,825: Decoded frame data: 81 00 00 1e 00 01 31
+2025-04-25 15:04:54,825: Received Checksum: 2e
+2025-04-25 15:04:54,825: Calculated Checksum: 2e
+2025-04-25 15:04:54,825: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 15:04:54,825: Received payload. RSSI: -30, Decoded message: Command ID: 1
+2025-04-25 15:04:54,825: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -30, Options: 0, Data: b'\x81\x00\x00\x1e\x00\x011'
+2025-04-25 15:04:54,825: Receiving data:
+2025-04-25 15:04:54,825: Decoded frame data: 81 00 00 1e 00 01 31
+2025-04-25 15:04:54,825: Received Checksum: 2e
+2025-04-25 15:04:54,825: Calculated Checksum: 2e
+2025-04-25 15:04:54,825: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 15:04:54,825: Received payload. RSSI: -30, Decoded message: Command ID: 1
+2025-04-25 15:04:54,825: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -30, Options: 0, Data: b'\x81\x00\x00\x1e\x00\x011'
+2025-04-25 15:04:54,828: Receiving data:
+2025-04-25 15:04:54,828: Decoded frame data: 89 01 00
+2025-04-25 15:04:54,828: Received Checksum: 75
+2025-04-25 15:04:54,828: Calculated Checksum: 75
+2025-04-25 15:04:54,828: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 15:04:54,828: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 0
+2025-04-25 15:04:55,792: Receiving data:
+2025-04-25 15:04:55,792: Decoded frame data: 81 00 00 1e 00 01 31
+2025-04-25 15:04:55,792: Received Checksum: 2e
+2025-04-25 15:04:55,792: Calculated Checksum: 2e
+2025-04-25 15:04:55,792: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 15:04:55,792: Received payload. RSSI: -30, Decoded message: Command ID: 1
+2025-04-25 15:04:55,792: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -30, Options: 0, Data: b'\x81\x00\x00\x1e\x00\x011'
+2025-04-25 15:04:56,865: Receiving data:
+2025-04-25 15:04:56,865: Decoded frame data: 81 00 00 1e 00 01 31
+2025-04-25 15:04:56,865: Received Checksum: 2e
+2025-04-25 15:04:56,865: Calculated Checksum: 2e
+2025-04-25 15:04:56,865: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 15:04:56,865: Received payload. RSSI: -30, Decoded message: Command ID: 1
+2025-04-25 15:04:56,865: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -30, Options: 0, Data: b'\x81\x00\x00\x1e\x00\x011'
+2025-04-25 15:04:57,793: Receiving data:
+2025-04-25 15:04:57,793: Decoded frame data: 81 00 00 1e 00 01 31
+2025-04-25 15:04:57,793: Received Checksum: 2e
+2025-04-25 15:04:57,793: Calculated Checksum: 2e
+2025-04-25 15:04:57,793: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 15:04:57,793: Received payload. RSSI: -30, Decoded message: Command ID: 1
+2025-04-25 15:04:57,793: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -30, Options: 0, Data: b'\x81\x00\x00\x1e\x00\x011'
+2025-04-25 15:04:57,806: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\t\x07\x0ch\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 15:04:57,806: Encoded data: 7e 00 4f 00 02 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 09 07 0c 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 34 
+2025-04-25 15:04:57,825: Receiving data:
+2025-04-25 15:04:57,825: Decoded frame data: 89 02 00
+2025-04-25 15:04:57,825: Received Checksum: 74
+2025-04-25 15:04:57,825: Calculated Checksum: 74
+2025-04-25 15:04:57,825: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 15:04:57,825: [Transmit status] Frame Type: 137, Frame ID: 2, Status: 0
+2025-04-25 15:04:57,997: Attempting to close serial XBee connection.
+2025-04-25 15:04:58,114: Serial port closed.

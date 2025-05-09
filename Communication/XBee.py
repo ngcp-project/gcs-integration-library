@@ -170,29 +170,60 @@ class XBee(Serial):
 
     
     def __encode_data(self, data, address="0000000000000000"):
+        """Encode String data.
+
+        Args: 
+        data: String data to encode.
+        address: Address of destination XBee module. "0000000000000000" if no value is provided.
+        Returns:
+        Framed String data.
+        """
         frame = bytearray()
-        frame.append(0x7E)  # Start delimiter
-        data_length = len(data.encode('utf-8')) if isinstance(data, str) else len(data)
-        frame.append(((data_length + 11) // 256))  # Length
+        frame.append(0x7E)  # Start delimiter (1 byte)
+        
+        # Handle data properly for both string and bytes
+        if isinstance(data, str):
+            data_bytes = data.encode('utf-8')
+        else:
+            data_bytes = data
+        
+        # Calculate length based on actual byte count
+        data_length = len(data_bytes)
+        
+        frame.append(((data_length + 11) // 256))  # Length (2 bytes)
         frame.append((data_length + 11) % 256)
-        frame.append(0x00)  # Frame type
-        frame.append(self.frame_id)
+        frame.append(0x00)  # Frame type (1 byte)
+        frame.append(self.frame_id)  # Frame ID (1 bytes)
         self.frame_id = self.frame_id % 0xff + 0x01
 
-        for i in range(8):
-            frame.append(int(address[2 * i:2 * i + 2], 16))
+        # Validate address format
+        if not address or len(address) < 16:
+            self.logger.write(f"Warning: Invalid address '{address}', using default address")
+            address = "0000000000000000"
+        
+        # Ensure address is always padded to correct length
+        address = address.zfill(16)
+        
+        # Process the address bytes
+        for i in range(8):  # 64-bit address (8 bytes)
+            try:
+                addr_part = address[2*i:2*i+2]
+                frame.append(int(addr_part, 16))
+            except ValueError:
+                self.logger.write(f"Warning: Invalid hex in address: '{addr_part}', using 0")
+                frame.append(0)  # Fallback for invalid hex
 
-        frame.append(0x00)  # Options
-        if isinstance(data, str):
-            frame.extend(data.encode('utf-8'))
-        else:
-            frame.extend(data)
-
+        frame.append(0x00)  # Options (1 byte)
+        frame.extend(data_bytes)  # RF data
+        
+        # Calculate checksum
         checksum = 0xFF - (sum(frame[3:]) & 0xFF)
-        frame.append(checksum)
+        frame.append(checksum)  # Checksum (1 byte)
 
-        self.logger.write("Encoded data: " + ''.join('{:02x} '.format(x) for x in frame))
-        print("Encoded data: " + ''.join('{:02x} '.format(x) for x in frame))
+        # Log the encoded data
+        hex_str = ''.join('{:02x} '.format(x) for x in frame)
+        self.logger.write(f"Encoded data: {hex_str}")
+        print(f"Encoded data: {hex_str}")
 
         return frame
 
@@ -478,9 +509,13 @@ class XBee(Serial):
         data = frame_data[5:]
         try:
             if data[0] == TAG_TELEMETRY:
-                decoded_message = Telemetry.decode(data[1:])  # ← Skip tag byte
+                decoded_message = Telemetry.decode(data[1:])  # ✅ skip tag byte
+            elif data[0] == TAG_ACK:
+                decoded_message = f"ACK: {data[1:].decode(errors='ignore')}"  # ✅ decode ACK message properly
+            elif data[0] == TAG_COMMAND:
+                decoded_message = f"Command ID: {data[1:].decode(errors='ignore')}"
             else:
-                decoded_message = data.decode(errors="ignore")  # fallback
+                decoded_message = data.decode(errors="ignore")
 
             self.logger.write(f"Received payload. RSSI: {rssi}, Decoded message: {decoded_message}")
             

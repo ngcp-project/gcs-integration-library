@@ -14,6 +14,7 @@ from Logger.Logger import Logger
 TAG_COMMAND = 0x01
 TAG_TELEMETRY = 0x02
 TAG_ACK = 0x03
+TAG_PING = 0x04
 
 COMMANDS = {
     1: "KEEP_IN_ZONE",
@@ -24,10 +25,13 @@ COMMANDS = {
 
 # === Vehicle Setup ===
 VEHICLE_NAME = "MRA"  # Change this for each vehicle
-GCS_MAC = "0013A20042435A3D"  # MAC of the GCS XBee
+GCS_MAC = "0013A200424353F7"  # MAC of the GCS XBee
+TAG_PING = 0x04  # New tag for ping responses
+flag_count = 0  # Missed ping counter
+
 
 logger = Logger(log_to_console=False)
-vehicle_xbee = XBee(port="COM4", baudrate=115200, logger=logger)
+vehicle_xbee = XBee(port="COM8", baudrate=115200, logger=logger)
 vehicle_xbee.open()
 
 # === Send Telemetry ===
@@ -44,6 +48,12 @@ def send_telemetry():
             encoded = telemetry_data.encode()
             tagged_payload = bytes([TAG_TELEMETRY]) + encoded
             vehicle_xbee.transmit_data(tagged_payload, address=GCS_MAC)
+            
+            global flag_count
+            
+            if flag_count >= 3:
+                print("[!] Warning: GCS is disconnected (No 'ping' received for 10 telemetry messages)")
+                flag_count += 1
 
             print(f"📡 Sent Tagged Telemetry ({len(tagged_payload)} bytes)")
 
@@ -99,7 +109,10 @@ def listen_for_commands():
 
             elif tag == TAG_ACK:
                 print(f"✅ Received ACK from GCS: {body.decode(errors='ignore')}")
-
+            elif tag == TAG_PING:
+                global flag_count
+                flag_count = 0  # Reset on receiving ping
+                print("📶 Received ping from GCS. Connection OK.")
             else:
                 print(f"[!] Unknown tag received: {tag}")
 

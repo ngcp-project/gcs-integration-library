@@ -14,17 +14,15 @@ class TelemetryRabbitMQ:
         self.setup_rabbitmq(hostname)
 
     # Sets up the connection to rabbitMQ using the provided credentials
-    def setup_rabbitmq(self,hostname):
-        # parameters = pika.ConnectionParameters(
-        #     'localhost'  # Use 'localhost' since RabbitMQ is running in a Docker container
-        # )
-        # Create the connection using pika.BlockingConnection
+    def setup_rabbitmq(self, hostname):
+        credentials = pika.PlainCredentials("admin", "admin")  # use your actual RabbitMQ username/password
         self.connection = pika.BlockingConnection(pika.ConnectionParameters(
-            hostname))
-        # Declare a queue on the channel
+            host=hostname,
+            credentials=credentials
+        ))
         self.channel = self.connection.channel()
-        #name of the queue is set to vehicle name
         self.channel.queue_declare(queue=f"telemetry_{self.vehicleName}")
+
    # telemetry = TelemetryRabbitMQ(vehicleName = "ERU") 
     # 
     # Publishing messages to RabbitMQ. 
@@ -78,6 +76,7 @@ if __name__ == "__main__":
             "current_longitude":33.22 + i + 30,
             "lastUpdated":datetime.now().isoformat(),
             "vehicle_status": 1 + i,
+            "patient_status": 2,
             "message_flag": 1+ i,
             "message_lat":22.22 + i,
             "message_lon":656.22 + i
