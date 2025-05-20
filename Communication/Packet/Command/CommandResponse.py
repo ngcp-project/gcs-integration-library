@@ -1,4 +1,4 @@
-from Interfaces.CommandInterface import CommandInterface
+from Communication.Packet.Command.Interfaces.CommandInterface import CommandInterface
 import struct
 
 class CommandResponse(CommandInterface):

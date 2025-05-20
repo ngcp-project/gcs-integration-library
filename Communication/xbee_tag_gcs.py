@@ -10,6 +10,7 @@ from Communication.XBee import XBee
 from Communication.Frames import x81
 # from Communication.tel_struct import Telemetry
 from Communication.Packet.Telemetry.Telemetry import Telemetry
+from Communication.Packet.Command.EmergencyStop import EmergencyStop
 from Logger.Logger import Logger
 from Telemetry.RabbitMQ import TelemetryRabbitMQ
 
@@ -27,8 +28,8 @@ VEHICLES = {
 # TO DO: Update after command structure is finalized
 COMMANDS = {
     1: "KEEP_IN_ZONE",
-    2: "EMERGENCY_STOP",
-    3: "MOVE_TO_COORD",
+    2: "MOVE_TO_COORD",
+    3: "EMERGENCY_STOP",
     4: "RETURN_HOME"
 }
 
@@ -138,6 +139,15 @@ def export_rssi(vehicle_name: str, rssi: int):
     except Exception as e:
         logger.write(f"[!] Failed to publish RSSI for {vehicle_name}: {e}")
 
+def command_test():
+    es = 0
+
+    while True:
+        emergency_stop_command_packet = EmergencyStop.encode_packet((es))
+        es = (es + 1) % 2
+        logger.write(f"ES Stop Command Packet: {emergency_stop_command_packet}")
+        gcs_xbee.transmit_data(emergency_stop_command_packet)
+        time.sleep(1)
 
 def shutdown():
     terminate_event.set()
@@ -147,7 +157,10 @@ def shutdown():
     logger.write("✅ GCS shutdown complete.")
 
 def main():
+    command_test_thread = threading.Thread(target=command_test, daemon=True)
     telemetry_thread = threading.Thread(target=listen_for_telemetry, daemon=True)
+
+    command_test_thread.start()
     telemetry_thread.start()
 
     try:

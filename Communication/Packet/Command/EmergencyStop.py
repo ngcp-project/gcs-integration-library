@@ -1,10 +1,10 @@
-from Interfaces.CommandInterface import CommandInterface
+from Communication.Packet.Command.Interfaces.CommandInterface import CommandInterface
 import struct
 
 class EmergencyStop(CommandInterface):
     FORMAT_STRING = "BBB"
     PAYLOAD_ID = 1 # All commands will have a payload ID of 1
-    COMMAND_ID = 1
+    COMMAND_ID = 3
 
     @staticmethod
     def encode_packet(stop_status) -> bytes:

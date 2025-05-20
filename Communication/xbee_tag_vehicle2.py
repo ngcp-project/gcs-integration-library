@@ -104,8 +104,7 @@ def send_telemetry():
     while True:
         with telemetry_lock:
             telemetry_data = shared_telemetry.encode()
-        tagged_payload = bytes([TAG_TELEMETRY]) + telemetry_data
-        vehicle_xbee.transmit_data(tagged_payload, address=GCS_MAC)
+        vehicle_xbee.transmit_data(telemetry_data, address=GCS_MAC)
 
         if flag_count >= 3:
             print("[!] Warning: GCS is disconnected (No 'ping' received)")
@@ -133,19 +132,19 @@ def listen_for_commands():
                 continue
 
             tag = payload[0]
-            body = payload[1:]
+            # body = payload[1:]
 
             
             if tag == TAG_COMMAND:
                 
                 # decode the emergency stop command
-                if len(body) == 3 and body[0] == 1 and body[1] == 1:
-                    stop_status = EmergencyStop.decode_packet(body)
+                if len(payload) == 3 and payload[1] == 3:
+                    stop_status = EmergencyStop.decode_packet(payload)
                     with telemetry_lock:
                         shared_telemetry.vehicle_status = 2 if stop_status == 0 else 1 # 2 - emergency mode, 1 - normal
 
                     
-                    command_id = body[1] 
+                    command_id = payload[0] 
                     
                     # Construct the ACK packet
                     ack_data = CommandResponse.encode_packet(command_id)
@@ -156,14 +155,14 @@ def listen_for_commands():
                     state = "ENABLED" if stop_status == 0 else "DISABLED"
                     print(f"✅ Emergency Stop {state}, ACK sent")
                 else:
-                    print(f"[!] Invalid command format or unsupported commandId: {body}")
+                    print(f"[!] Invalid command format or unsupported commandId: {payload}")
 
             elif tag == TAG_PING:
                 flag_count = 0
                 print("📶 Received ping from GCS")
 
             elif tag == TAG_ACK:
-                print(f"✅ Received ACK from GCS: {body}")
+                print(f"✅ Received ACK from GCS: {payload}")
 
             elif tag == TAG_TELEMETRY:
                 print("[!] Received unexpected telemetry from GCS")
