@@ -7,14 +7,6 @@ import time     # Used for timeouts, sleep, and measuring performance
 from Communication.interfaces.Serial import Serial  # Custom interface/base class for serial communication
 from Communication.Frames import x81, x88, x89 # Frame parser for classes for each Xbee frame type
 from Logger.Logger import Logger    # Custom logging class
-from Communication.Frames import x81, x88, x89
-from Logger.Logger import Logger
-from Communication.tel_struct import Telemetry
-
-
-TAG_COMMAND = 0x01
-TAG_TELEMETRY = 0x02
-TAG_ACK = 0x03
 
 class XBee(Serial):
     # Configure serial port
@@ -37,7 +29,8 @@ class XBee(Serial):
             self.logger.write("LOGGER CREATED By XBee.py")
         else:
             self.logger = logger
-        self.timeout = 0.05 # Allow programmer to configure timeout? # Max time to wait for responses
+        self.timeout = 0.1 # Allow programmer to configure timeout? # Max time to wait for responses
+        self.status_timeout = 0.2
         self.frame_id = 0x01    # Frame ID (used to track commands)
 
         self.config_file = config_file # Add AT_Config.py file  # Path to config file with AT commands 
@@ -133,8 +126,7 @@ class XBee(Serial):
         self.logger.write("Serial port is already closed.")
         return False
 
-
-    def transmit_data(self, data, address: str = "0000000000000000", retrieveStatus: bool = False):
+    def transmit_data(self, data: str, address: str = "0000000000000000", retrieveStatus: bool = False) -> x89 | bool:
         """Transmit data.
         Args:
           data: String data to transmit.
@@ -158,74 +150,16 @@ class XBee(Serial):
 
         encoded_data = self.__encode_data(data, address)
         self.transmit_queue.put(encoded_data) # Append encoded packet to transmit queue
+        
         # self.ser.write(self.__encode_data(data, address))
         # self.__transmitting = False
 
         # If retrieve status is true
         if(retrieveStatus): # If caller wants TX status...
             # self.__receiving = True
-            return self.__retrieve_transmit_status() # Wait for a 0x89 fram
+            return self.__retrieve_transmit_status(current_frame_id) # Wait for a 0x89 frame
         
-        return False
-
-    
-    def __encode_data(self, data, address="0000000000000000"):
-        """Encode String data.
-
-        Args: 
-        data: String data to encode.
-        address: Address of destination XBee module. "0000000000000000" if no value is provided.
-        Returns:
-        Framed String data.
-        """
-        frame = bytearray()
-        frame.append(0x7E)  # Start delimiter (1 byte)
-        
-        # Handle data properly for both string and bytes
-        if isinstance(data, str):
-            data_bytes = data.encode('utf-8')
-        else:
-            data_bytes = data
-        
-        # Calculate length based on actual byte count
-        data_length = len(data_bytes)
-        
-        frame.append(((data_length + 11) // 256))  # Length (2 bytes)
-        frame.append((data_length + 11) % 256)
-        frame.append(0x00)  # Frame type (1 byte)
-        frame.append(self.frame_id)  # Frame ID (1 bytes)
-        self.frame_id = self.frame_id % 0xff + 0x01
-
-        # Validate address format
-        if not address or len(address) < 16:
-            self.logger.write(f"Warning: Invalid address '{address}', using default address")
-            address = "0000000000000000"
-        
-        # Ensure address is always padded to correct length
-        address = address.zfill(16)
-        
-        # Process the address bytes
-        for i in range(8):  # 64-bit address (8 bytes)
-            try:
-                addr_part = address[2*i:2*i+2]
-                frame.append(int(addr_part, 16))
-            except ValueError:
-                self.logger.write(f"Warning: Invalid hex in address: '{addr_part}', using 0")
-                frame.append(0)  # Fallback for invalid hex
-
-        frame.append(0x00)  # Options (1 byte)
-        frame.extend(data_bytes)  # RF data
-        
-        # Calculate checksum
-        checksum = 0xFF - (sum(frame[3:]) & 0xFF)
-        frame.append(checksum)  # Checksum (1 byte)
-
-        # Log the encoded data
-        hex_str = ''.join('{:02x} '.format(x) for x in frame)
-        self.logger.write(f"Encoded data: {hex_str}")
-        print(f"Encoded data: {hex_str}")
-
-        return frame
+        return None
 
 
     def __retrieve_data(self):
@@ -250,7 +184,7 @@ class XBee(Serial):
         start_delim = self.ser.read(1)
         if not start_delim:
             # No data at all
-            
+            # print("NO START DELIM")
             return None
     
         self.logger.write("Receiving data:")
@@ -354,10 +288,6 @@ class XBee(Serial):
         - None: If there is no data.
         """
 
-        # if not self.x81_queue.empty():
-            # return self.x81_queue.get(True, self.timeout)
-        # else:
-            # return None
         try:
             data = self.x81_queue.get(True, self.timeout)
         except:
@@ -373,10 +303,6 @@ class XBee(Serial):
         - 0x88: (frame_type, frame_id, at_command, status, data)
         - None: If there is no data.
         """
-        # if not self.x88_queue.empty():
-        #     return self.x88_queue.get()
-        # else:
-        #     return None
         
         try:
             data = self.x88_queue.get(True, self.timeout)
@@ -384,8 +310,7 @@ class XBee(Serial):
             return None
         else:
             return data
-        
-    def __retrieve_transmit_status(self) -> x89:
+    def __retrieve_transmit_status(self, frame_id) -> x89:
         """
         Retrieves one transmit status frame (0x89 - Tx Status)
 
@@ -393,51 +318,61 @@ class XBee(Serial):
         - 0x89: (frame_type, frame_id, status)
         - None: If there is no data.
         """
-        # if not self.x89_queue.empty():
-        #     return self.x89_queue.get()
-        # else:
-        #     return None
 
         try:
-            data = self.x89_queue.get(True, self.timeout)
+
+            data: x89 = self.x89_queue.get(True, self.status_timeout)
+            
+            # Not a good solution but it should work.
+            if data.frame_id != frame_id:
+                data: x89 = self.x89_queue.get(True, self.status_timeout)
         except:
             return None
         else:
             return data
     
 
-    # # NOTE** Might need to check data length
-    # def __encode_data(self, data, address = "0000000000000000"):
-    #     """Encode String data.
+    # NOTE** Might need to check data length
+    def __encode_data(self, data, address = "0000000000000000"):
+        """Encode String data.
 
-    #     Args: 
-    #       data: String data to encode.
-    #       address: Address of destination XBee module. "0000000000000000" if no value is provided.
-    #     Returns:
-    #       Framed String data.
-    #     """
-    #     frame = bytearray()
-    #     frame.append(0x7E)  # Start delimiter (1 byte)
-    #     frame.append(((len(data) + 11) // 256))  # Length (2 bytes)
-    #     frame.append((len(data) + 11) % 256)
-    #     frame.append(0x00)  # Frame type (1 byte)
-    #     frame.append(self.frame_id)  # Frame ID (1 bytes)
-    #     self.frame_id = self.frame_id % 0xff + 0x01
+        Args: 
+          data: String data to encode.
+          address: Address of destination XBee module. "0000000000000000" if no value is provided.
+        Returns:
+          Framed String data.
+        """
+        frame = bytearray()
+        frame.append(0x7E)  # Start delimiter (1 byte)
+        frame.append(((len(data) + 11) // 256))  # Length (2 bytes)
+        frame.append((len(data) + 11) % 256)
+        frame.append(0x00)  # Frame type (1 byte)
+        frame.append(self.frame_id)  # Frame ID (1 bytes)
+        self.frame_id = self.frame_id % 0xff + 0x01
 
-    #     for i in range(8):  # 64-bit address (8 bytes)
-    #         frame.append(int(address[2 * i : 2 * i + 2], 16))
+        for i in range(8):  # 64-bit address (8 bytes)
+            frame.append(int(address[2 * i : 2 * i + 2], 16))
 
-    #     frame.append(0x00)  # Options (1 byte)
-    #     frame.extend(data.encode('utf-8'))  # RF data (0 - 256 bytes)
-    #     # FF - number of bytes between length & checksum field
-    #     checksum = 0xFF - (sum(frame[3:]) & 0xFF)
-    #     frame.append(checksum)  # Checksum (1 byte)
+        frame.append(0x00)  # Options (1 byte)
+        if isinstance(data, str):
+            frame.extend(data.encode('utf-8'))
+        elif isinstance(data, (bytes, bytearray)):
+            frame.extend(data)
+        else:
+            raise TypeError("data must be str, bytes, or bytearray")
+        # else:
+        #     decoded_message = data.decode()
+        # if isByteString:
+        #     frame.extend(data)
+        # FF - number of bytes between length & checksum field
+        checksum = 0xFF - (sum(frame[3:]) & 0xFF)
+        frame.append(checksum)  # Checksum (1 byte)
 
-    #     # print(frame)
-    #     # print("Encoded data: " + ''.join('{:02x} '.format(x) for x in frame))
-    #     self.logger.write("Encoded data: " + ''.join('{:02x} '.format(x) for x in frame))
+        # print(frame)
+        # print("Encoded data: " + ''.join('{:02x} '.format(x) for x in frame))
+        self.logger.write("Encoded data: " + ''.join('{:02x} '.format(x) for x in frame))
 
-    #     return frame
+        return frame
     
     def request_at_command_data(self, id, retry = 3) -> x88:
 
@@ -508,27 +443,29 @@ class XBee(Serial):
         options = frame_data[4]
         data = frame_data[5:]
         try:
-            if data[0] == TAG_TELEMETRY:
-                decoded_message = Telemetry.decode(data[1:])  # ✅ skip tag byte
-            elif data[0] == TAG_ACK:
-                decoded_message = f"ACK: {data[1:].decode(errors='ignore')}"  # ✅ decode ACK message properly
-            elif data[0] == TAG_COMMAND:
-                decoded_message = f"Command ID: {data[1:].decode(errors='ignore')}"
+            if isinstance(data, str):
+                decoded_message = data
+            elif isinstance(data, (bytes, bytearray)):
+                decoded_message = data.decode('utf-8')
             else:
-                decoded_message = data.decode(errors="ignore")
-
-            self.logger.write(f"Received payload. RSSI: {rssi}, Decoded message: {decoded_message}")
+                raise TypeError("data must be a str, bytes, or bytearray")
+            # self.logger.write(f"Received payload. RSSI: {rssi}, Decoded message: {decoded_message}")
             
             #print(f"RSSI (Signal Strength : {rssi} dBm)")
             #print("Decoded message:", decoded_message)
                
-            frame = x81(frame_type, source_address, rssi, options, decoded_message)
-            self.logger.write(f"[Frame Receive: 16-bit Address] Frame Type: {frame.frame_type}, Source Address: {frame.source_address}, RSSI: {frame.rssi}, Options: {frame.options}, Data: {frame_data}")
-            return frame
-        except UnicodeDecodeError:
-            self.logger.write(f"Error decoding payload. RSSI: {rssi}, Decoded message: {decoded_message}")
-            print("Error decoding payload")
-            return None
+            # frame = x81(frame_type, source_address, rssi, options, decoded_message)
+            # self.logger.write(f"[Frame Receive: 16-bit Address] Frame Type: {frame.frame_type}, Source Address: {frame.source_address}, RSSI: {frame.rssi}, Options: {frame.options}, Data: {frame_data}")
+            # return frame
+        except UnicodeDecodeError: 
+            decoded_message = data
+            # self.logger.write(f"Error decoding payload. RSSI: {rssi}, Decoded message: {decoded_message}")
+            # print("Error decoding payload")
+            # return None
+        self.logger.write(f"Received payload. RSSI: {rssi}, Decoded message: {decoded_message}")
+        frame = x81(frame_type, source_address, rssi, options, decoded_message)
+        self.logger.write(f"[Frame Receive: 16-bit Address] Frame Type: {frame.frame_type}, Source Address: {frame.source_address}, RSSI: {frame.rssi}, Options: {frame.options}, Data: {frame_data}")
+        return frame
         
     def __0x88(self, frame_data) -> x88:
         """Handle XBee Frame Type 88 (AT Command Response)

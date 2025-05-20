@@ -76,13 +76,10 @@ def listen_for_commands():
                 time.sleep(0.5)
                 continue
 
-            # If it's a Telemetry object (shouldn't happen normally, but just safe check)
-            if isinstance(frame.data, Telemetry):
-                print("⚡ Unexpected Telemetry received at vehicle side (skipping).")
-                continue
-
-            # Otherwise treat it as bytes
-            payload = frame.data if isinstance(frame.data, bytes) else frame.data.encode()
+            # Safely get payload from the frame
+            payload = frame.data
+            if not isinstance(payload, (bytes, bytearray)):
+                payload = payload.encode()  # fallback in case it’s a string
 
             if len(payload) < 1:
                 continue
@@ -92,27 +89,31 @@ def listen_for_commands():
 
             if tag == TAG_COMMAND:
                 try:
-                    cmd_id = int(body.decode())
+                    cmd_id = int(body.decode(errors='ignore'))
                     cmd_name = COMMANDS.get(cmd_id, "UNKNOWN_COMMAND")
                     print(f"📥 Received Command: [{cmd_id}] {cmd_name}")
 
-                    # Respond back with an ACK
                     ack_msg = bytes([TAG_ACK]) + str(cmd_id).encode()
                     vehicle_xbee.transmit_data(ack_msg, address=GCS_MAC)
                     print(f"✅ Sent ACK for command [{cmd_id}] {cmd_name}")
-
                 except ValueError:
                     print(f"[!] Failed to decode command ID: {body}")
 
             elif tag == TAG_TELEMETRY:
-                print("[!] Unexpected Telemetry packet at vehicle side.")
+                try:
+                    telemetry = Telemetry.decode(body)
+                    print(f"📡 Received Telemetry (unexpected): {telemetry}")
+                except Exception as e:
+                    print(f"[!] Failed to decode telemetry: {e}")
 
             elif tag == TAG_ACK:
                 print(f"✅ Received ACK from GCS: {body.decode(errors='ignore')}")
+
             elif tag == TAG_PING:
                 global flag_count
-                flag_count = 0  # Reset on receiving ping
+                flag_count = 0
                 print("📶 Received ping from GCS. Connection OK.")
+
             else:
                 print(f"[!] Unknown tag received: {tag}")
 
