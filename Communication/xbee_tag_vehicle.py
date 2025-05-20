@@ -7,8 +7,10 @@ sys.path.insert(1, "../")
 
 from Communication.XBee import XBee
 from Communication.Frames.x81 import x81
-# from Communication.tel_struct import Telemetry
 from Communication.Packet.Telemetry.Telemetry import Telemetry
+from Communication.Packet.Command.EmergencyStop import EmergencyStop  # Import command class
+from Communication.Packet.Command.CommandResponse import CommandResponse
+
 from Logger.Logger import Logger
 
 # === Tag Constants ===
@@ -17,62 +19,104 @@ TAG_TELEMETRY = 0x02
 TAG_ACK = 0x03
 TAG_PING = 0x04
 
-COMMANDS = {
-    1: "KEEP_IN_ZONE",
-    2: "EMERGENCY_STOP",
-    3: "MOVE_TO_COORD",
-    4: "RETURN_HOME"
-}
+# === Shared Telemetry Object ===
+shared_telemetry = Telemetry()
+telemetry_lock = threading.Lock()
 
 # === Vehicle Setup ===
-VEHICLE_NAME = "MRA"  # Change this for each vehicle
+VEHICLE_NAME = "ERU"  # Change this to the current vehicle
 GCS_MAC = "0013A200424366C7"  # MAC of the GCS XBee
-TAG_PING = 0x04  # New tag for ping responses
-flag_count = 0  # Missed ping counter
-
-PORT = "/dev/cu.usbserial-D30DWZL4"
-# PORT = "/dev/ttyUSB0" # For Linux
-
-
+PORT = "/dev/cu.usbserial-D30DWZL4" # Change this to the current port 
 logger = Logger(log_to_console=False)
 vehicle_xbee = XBee(port=PORT, baudrate=115200, logger=logger)
 vehicle_xbee.open()
 
-# === Send Telemetry ===
-def send_telemetry():
+flag_count = 0  # Ping counter
+
+# === Update Telemetry with Changing Dummy Data ===
+# Every second, incremement speed, pitchm yaw, roll, altitude
+# and decrement battery life. Also update latitude and longitude.
+# Patient status and message flag are toggled every second.
+def update_telemetry():
     while True:
-        try:
-            telemetry_data = Telemetry(
-                speed=45.2, pitch=10.5, yaw=20.3, roll=5.8,
-                altitude=1000.0, battery_life=0.80, last_updated=int(datetime.now().timestamp()),
-                current_latitude=37.7749, current_longitude=-122.4194,
-                vehicle_status=1, patient_status=0,
-                message_flag=1, message_lat=45.8484, message_lon=100.4194
-            )
-            encoded = telemetry_data.encode()
-            # tagged_payload = bytes([TAG_TELEMETRY]) + encoded
-            vehicle_xbee.transmit_data(encoded, address=GCS_MAC)
-            
-            global flag_count
-            
-            if flag_count >= 3:
-                print("[!] Warning: GCS is disconnected (No 'ping' received for 10 telemetry messages)")
-                flag_count += 1
+        print("[.] Updating telemetry data...")
+        if not hasattr(update_telemetry, "speed"):
+            update_telemetry.speed = 0
+            update_telemetry.pitch = 0
+            update_telemetry.yaw = 0
+            update_telemetry.roll = 0
+            update_telemetry.altitude = 0
+            update_telemetry.battery_life = 1.0
+            update_telemetry.current_latitude = 40.0
+            update_telemetry.current_longitude = -74.0
+            update_telemetry.vehicle_status = 0
+            update_telemetry.patient_status = 0
+            update_telemetry.message_flag = 0
+            update_telemetry.message_lat = 40.0
+            update_telemetry.message_lon = -74.0
 
-            print(f"📡 Sent Telemetry ({len(encoded)} bytes)")
+        update_telemetry.speed += 1
+        update_telemetry.pitch += 1
+        update_telemetry.yaw += 1
+        update_telemetry.roll += 1
+        update_telemetry.altitude += 1
 
-            timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            with open("vehicle_telemetry_log.txt", "a") as log_file:
-                log_file.write(f"[{timestamp}] Sent telemetry\n")
+        update_telemetry.battery_life -= 0.01
+        if update_telemetry.battery_life < 0:
+            update_telemetry.battery_life = 1.0
 
-            time.sleep(3)
+        update_telemetry.current_latitude += 0.0001
+        update_telemetry.current_longitude += 0.0001
+        
+        #update_telemetry.vehicle_status = 1 - update_telemetry.vehicle_status
+        
+        update_telemetry.patient_status = 1 - update_telemetry.patient_status
+        update_telemetry.message_flag = (update_telemetry.message_flag + 1) % 2
+        update_telemetry.message_lat += 0.0001
+        update_telemetry.message_lon += 0.0001
 
-        except Exception as e:
-            print(f"[!] Error in send_telemetry: {e}")
-            time.sleep(3)
+        # Locks access to shared_telemetry object
+        with telemetry_lock:
+            shared_telemetry.speed = update_telemetry.speed
+            shared_telemetry.pitch = update_telemetry.pitch
+            shared_telemetry.yaw = update_telemetry.yaw
+            shared_telemetry.roll = update_telemetry.roll
+            shared_telemetry.altitude = update_telemetry.altitude
+            shared_telemetry.battery_life = update_telemetry.battery_life
+            shared_telemetry.current_latitude = update_telemetry.current_latitude
+            shared_telemetry.current_longitude = update_telemetry.current_longitude
+            shared_telemetry.vehicle_status = update_telemetry.vehicle_status
+            shared_telemetry.patient_status = update_telemetry.patient_status
+            shared_telemetry.message_flag = update_telemetry.message_flag
+            shared_telemetry.message_lat = update_telemetry.message_lat
+            shared_telemetry.message_lon = update_telemetry.message_lon
+            shared_telemetry.last_updated = datetime.now().timestamp()
 
+        time.sleep(1)
+        
+# === Send Telemetry ===
+# Locks and encodes shared_telemetry. Prefizes encoded bytes with TAG_TELEMETRY
+# and sends to GCS. If no ping is received from GCS within 3 seconds,
+# increment flag_count. If flag_count >= 3, print warning.
+def send_telemetry():
+    global flag_count
+    logger.write("Starting to send telemetry data...")
+    while True:
+        with telemetry_lock:
+            telemetry_data = shared_telemetry.encode()
+        vehicle_xbee.transmit_data(telemetry_data, address=GCS_MAC)
+
+        if flag_count >= 3:
+            print("[!] Warning: GCS is disconnected (No 'ping' received)")
+            flag_count += 1
+
+        time.sleep(3)
+        
 # === Listen for Incoming Commands ===
+# constant polling of GCS for commands.
+# decodes the frame's tag.
 def listen_for_commands():
+    global flag_count
     while True:
         try:
             frame: x81 = vehicle_xbee.retrieve_data()
@@ -80,58 +124,66 @@ def listen_for_commands():
                 time.sleep(0.5)
                 continue
 
-            # Safely get payload from the frame
             payload = frame.data
             if not isinstance(payload, (bytes, bytearray)):
-                payload = payload.encode()  # fallback in case it’s a string
+                payload = payload.encode()
 
             if len(payload) < 1:
                 continue
 
             tag = payload[0]
-            body = payload[1:]
+            # body = payload[1:]
 
+            
             if tag == TAG_COMMAND:
-                try:
-                    cmd_id = int(body.decode(errors='ignore'))
-                    cmd_name = COMMANDS.get(cmd_id, "UNKNOWN_COMMAND")
-                    print(f"📥 Received Command: [{cmd_id}] {cmd_name}")
+                
+                # decode the emergency stop command
+                if len(payload) == 3 and payload[1] == 3:
+                    stop_status = EmergencyStop.decode_packet(payload)
+                    with telemetry_lock:
+                        shared_telemetry.vehicle_status = 2 if stop_status == 0 else 1 # 2 - emergency mode, 1 - normal
 
-                    ack_msg = bytes([TAG_ACK]) + str(cmd_id).encode()
-                    vehicle_xbee.transmit_data(ack_msg, address=GCS_MAC)
-                    print(f"✅ Sent ACK for command [{cmd_id}] {cmd_name}")
-                except ValueError:
-                    print(f"[!] Failed to decode command ID: {body}")
-
-            elif tag == TAG_TELEMETRY:
-                try:
-                    telemetry = Telemetry.decode(body)
-                    print(f"📡 Received Telemetry (unexpected): {telemetry}")
-                except Exception as e:
-                    print(f"[!] Failed to decode telemetry: {e}")
-
-            elif tag == TAG_ACK:
-                print(f"✅ Received ACK from GCS: {body.decode(errors='ignore')}")
+                    
+                    command_id = payload[0] 
+                    
+                    # Construct the ACK packet
+                    ack_data = CommandResponse.encode_packet(command_id)
+                    ack_payload = bytes([TAG_ACK]) + ack_data
+                    
+                    # sends the ACK packet back to GCS
+                    vehicle_xbee.transmit_data(ack_payload, address=GCS_MAC)
+                    state = "ENABLED" if stop_status == 0 else "DISABLED"
+                    print(f"✅ Emergency Stop {state}, ACK sent")
+                else:
+                    print(f"[!] Invalid command format or unsupported commandId: {payload}")
 
             elif tag == TAG_PING:
-                global flag_count
                 flag_count = 0
-                print("📶 Received ping from GCS. Connection OK.")
+                print("📶 Received ping from GCS")
+
+            elif tag == TAG_ACK:
+                print(f"✅ Received ACK from GCS: {payload}")
+
+            elif tag == TAG_TELEMETRY:
+                print("[!] Received unexpected telemetry from GCS")
 
             else:
-                print(f"[!] Unknown tag received: {tag}")
+                print(f"[!] Unknown tag: {tag}")
 
         except Exception as e:
             print(f"[!] Error in listen_for_commands: {e}")
-
         time.sleep(0.5)
 
-# === Main ===
+# === Main Entry ===
 def main():
+    
+    # starts 3 daemon threads 
     telemetry_thread = threading.Thread(target=send_telemetry, daemon=True)
+    update_thread = threading.Thread(target=update_telemetry, daemon=True)
     command_thread = threading.Thread(target=listen_for_commands, daemon=True)
 
     telemetry_thread.start()
+    update_thread.start()
     command_thread.start()
 
     try:
@@ -140,7 +192,7 @@ def main():
     except KeyboardInterrupt:
         print("\n🛑 Shutting down vehicle...")
         vehicle_xbee.close()
-        print("✅ Vehicle clean shutdown complete.")
+        print("✅ Shutdown complete")
 
 if __name__ == "__main__":
     main()
