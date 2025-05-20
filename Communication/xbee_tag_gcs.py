@@ -1,13 +1,15 @@
+import json
 import sys
 import threading
 import time
 from datetime import datetime
 
-sys.path.append('/Users/olenamolla/Desktop/NGCP/gcs-infrastructure')
+sys.path.insert(1, "../")
 
 from Communication.XBee import XBee
 from Communication.Frames import x81
-from Communication.tel_struct import Telemetry
+# from Communication.tel_struct import Telemetry
+from Communication.Packet.Telemetry.Telemetry import Telemetry
 from Logger.Logger import Logger
 from Telemetry.RabbitMQ import TelemetryRabbitMQ
 
@@ -17,11 +19,12 @@ TAG_ACK = 0x03
 TAG_PING = 0x04
 
 VEHICLES = {
-    "MRA": {"MAC": "0013A2004243672F", "short": "0002"},
-    "ERU": {"MAC": "NaN", "short": "0003"},
-    "MEA": {"MAC": "0013A2004243672F", "short": "0004"}
+    "MRA": {"MAC": "0013A200424353F7", "short": "0002"},
+    "ERU": {"MAC": "0013A20042435EA9", "short": "0003"},
+    # "MEA": {"MAC": "0013A2004243672F", "short": "0004"}
 }
 
+# TO DO: Update after command structure is finalized
 COMMANDS = {
     1: "KEEP_IN_ZONE",
     2: "EMERGENCY_STOP",
@@ -29,8 +32,12 @@ COMMANDS = {
     4: "RETURN_HOME"
 }
 
+PORT = "/dev/cu.usbserial-D30DWZKT"
+# PORT = "/dev/ttyUSB0" # For Linux
+
+
 logger = Logger(log_to_console=True)
-gcs_xbee = XBee(port="COM9", baudrate=115200, logger=logger)
+gcs_xbee = XBee(port=PORT, baudrate=115200, logger=logger)
 gcs_xbee.open()
 
 terminate_event = threading.Event()

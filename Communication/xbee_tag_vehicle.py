@@ -3,11 +3,12 @@ import threading
 import time
 from datetime import datetime
 
-# sys.path.append('/Users/olenamolla/Desktop/NGCP/gcs-infrastructure')
+sys.path.insert(1, "../")
 
 from Communication.XBee import XBee
 from Communication.Frames.x81 import x81
-from Communication.tel_struct import Telemetry
+# from Communication.tel_struct import Telemetry
+from Communication.Packet.Telemetry.Telemetry import Telemetry
 from Logger.Logger import Logger
 
 # === Tag Constants ===
@@ -25,13 +26,16 @@ COMMANDS = {
 
 # === Vehicle Setup ===
 VEHICLE_NAME = "MRA"  # Change this for each vehicle
-GCS_MAC = "0013A200424353F7"  # MAC of the GCS XBee
+GCS_MAC = "0013A200424366C7"  # MAC of the GCS XBee
 TAG_PING = 0x04  # New tag for ping responses
 flag_count = 0  # Missed ping counter
 
+PORT = "/dev/cu.usbserial-D30DWZL4"
+# PORT = "/dev/ttyUSB0" # For Linux
+
 
 logger = Logger(log_to_console=False)
-vehicle_xbee = XBee(port="COM8", baudrate=115200, logger=logger)
+vehicle_xbee = XBee(port=PORT, baudrate=115200, logger=logger)
 vehicle_xbee.open()
 
 # === Send Telemetry ===
