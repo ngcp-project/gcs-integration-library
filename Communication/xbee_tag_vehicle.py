@@ -50,8 +50,8 @@ def send_telemetry():
                 message_flag=1, message_lat=45.8484, message_lon=100.4194
             )
             encoded = telemetry_data.encode()
-            tagged_payload = bytes([TAG_TELEMETRY]) + encoded
-            vehicle_xbee.transmit_data(tagged_payload, address=GCS_MAC)
+            # tagged_payload = bytes([TAG_TELEMETRY]) + encoded
+            vehicle_xbee.transmit_data(encoded, address=GCS_MAC)
             
             global flag_count
             
@@ -59,7 +59,7 @@ def send_telemetry():
                 print("[!] Warning: GCS is disconnected (No 'ping' received for 10 telemetry messages)")
                 flag_count += 1
 
-            print(f"📡 Sent Tagged Telemetry ({len(tagged_payload)} bytes)")
+            print(f"📡 Sent Telemetry ({len(encoded)} bytes)")
 
             timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             with open("vehicle_telemetry_log.txt", "a") as log_file:

@@ -91,7 +91,7 @@ def listen_for_telemetry():
                 telemetry = frame.data
             elif isinstance(frame.data, bytes) and frame.data[0] == TAG_TELEMETRY:
                 try:
-                    telemetry = Telemetry.decode(frame.data[1:])
+                    telemetry = Telemetry.decode(frame.data)
                 except Exception as e:
                     logger.write(f"[!] Failed to decode raw telemetry: {e}")
                     continue
@@ -103,6 +103,7 @@ def listen_for_telemetry():
                 continue
 
             logger.write(f"📡 Telemetry from {vehicle_name} (RSSI: {frame.rssi})")
+            logger.write(f"Telemetry Data: {telemetry}")
             parse_and_export_telemetry(telemetry, vehicle_name, frame.rssi)
 
             # Send ping back
