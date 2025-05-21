@@ -13,6 +13,8 @@ from Communication.Packet.Telemetry.Telemetry import Telemetry
 from Communication.Packet.Command.EmergencyStop import EmergencyStop
 from Logger.Logger import Logger
 from Telemetry.RabbitMQ import TelemetryRabbitMQ
+from Commands.CommandRabbitMQConsumer import CommandRabbitMQConsumer # Import the newly created command consumer 
+
 
 TAG_COMMAND = 0x01
 TAG_TELEMETRY = 0x02
@@ -25,12 +27,9 @@ VEHICLES = {
     # "MEA": {"MAC": "0013A2004243672F", "short": "0004"}
 }
 
-# TO DO: Update after command structure is finalized
-COMMANDS = {
-    1: "KEEP_IN_ZONE",
-    2: "MOVE_TO_COORD",
-    3: "EMERGENCY_STOP",
-    4: "RETURN_HOME"
+COMMAND_REGISTRY = {
+    1: EmergencyStop,
+    # Add more like 1: KeepInZone, etc.
 }
 
 PORT = "/dev/cu.usbserial-D30DWZKT"
@@ -122,7 +121,35 @@ def listen_for_telemetry():
         except Exception as e:
             logger.write(f"[!] Error in listen_for_telemetry: {e}")
             time.sleep(0.2)
-            
+           
+def handle_ui_command(msg: dict):
+    """
+    Handles a UI-issued command received from RabbitMQ.
+    Expects: { "vehicle_name": str, "command_id": int, "value": ... }
+    """
+    vehicle = msg.get("vehicle_name")
+    command_id = msg.get("command_id")
+    value = msg.get("value")
+
+    if vehicle not in VEHICLES:
+        logger.write(f"[!] Unknown vehicle: {vehicle}")
+        return
+
+    if command_id not in COMMAND_REGISTRY:
+        logger.write(f"[!] Unknown command_id: {command_id}")
+        return
+
+    command_cls = COMMAND_REGISTRY[command_id]
+    command_packet = command_cls.encode_packet(value)
+    tagged_packet = bytes([TAG_COMMAND]) + command_packet
+
+    # Send command over XBee
+    gcs_xbee.transmit_data(tagged_packet, address=VEHICLES[vehicle]["MAC"])
+
+    logger.write(f"📤 Sent command {command_id} to {vehicle} with value {value}")
+    
+    
+ 
 def export_rssi(vehicle_name: str, rssi: int):
     try:
         publisher = get_or_create_publisher(vehicle_name)
@@ -159,10 +186,24 @@ def shutdown():
     logger.write("✅ GCS shutdown complete.")
 
 def main():
-    command_test_thread = threading.Thread(target=command_test, daemon=True)
+    #command_test_thread = threading.Thread(target=command_test, daemon=True)
     telemetry_thread = threading.Thread(target=listen_for_telemetry, daemon=True)
-
-    command_test_thread.start()
+    
+    
+    # Start RabbitMQ Command Consumer
+    consumer = CommandRabbitMQConsumer(
+        gcs_xbee=gcs_xbee,
+        logger=logger,
+        vehicle_table=VEHICLES,
+        callback=handle_ui_command
+    )
+    
+    
+    consumer_thread = threading.Thread(target=consumer.start_consuming, daemon=True)
+    consumer_thread.start()
+    
+    
+    #command_test_thread.start()
     telemetry_thread.start()
 
     try:
