@@ -13,11 +13,12 @@ class TelemetryRabbitMQ:
         credentials = pika.PlainCredentials("admin", "admin")  # TODO: replace with env vars
         self.connection = pika.BlockingConnection(pika.ConnectionParameters(
             host=hostname,
-            credentials=credentials
+            credentials=credentials,
+            virtual_host='/'
         ))
         self.channel = self.connection.channel()
-        self.channel.queue_declare(queue=f"telemetry_{self.vehicleName}")
-        self.channel.queue_declare(queue=f"rssi_{self.vehicleName}")
+        self.channel.queue_declare(queue=f"telemetry_{self.vehicleName}", durable=True)
+        self.channel.queue_declare(queue=f"rssi_{self.vehicleName}", durable=True)
 
     def publish(self, data):
         if self.channel is None:

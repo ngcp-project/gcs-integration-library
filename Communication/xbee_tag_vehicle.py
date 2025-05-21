@@ -46,7 +46,7 @@ def update_telemetry():
             update_telemetry.yaw = 0
             update_telemetry.roll = 0
             update_telemetry.altitude = 0
-            update_telemetry.battery_life = 1.0
+            update_telemetry.battery_life = 100.0
             update_telemetry.current_latitude = 40.0
             update_telemetry.current_longitude = -74.0
             update_telemetry.vehicle_status = 0
@@ -63,7 +63,7 @@ def update_telemetry():
 
         update_telemetry.battery_life -= 0.01
         if update_telemetry.battery_life < 0:
-            update_telemetry.battery_life = 1.0
+            update_telemetry.battery_life = 100.0
 
         update_telemetry.current_latitude += 0.0001
         update_telemetry.current_longitude += 0.0001

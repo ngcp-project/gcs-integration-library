@@ -14,11 +14,12 @@ class CommandRabbitMQConsumer:
         """
         self.queue = queue_name
         self.on_command = on_command
-        # credentials = pika.PlainCredentials("admin", "admin")  # TODO: replace with env vars
+        credentials = pika.PlainCredentials("admin", "admin")  # TODO: replace with env vars
         self.connection = pika.BlockingConnection(
             pika.ConnectionParameters(
                 host='localhost',
-                # credentials=credentials
+                credentials=credentials,
+                virtual_host='/'
             )
         )
         self.channel = self.connection.channel()

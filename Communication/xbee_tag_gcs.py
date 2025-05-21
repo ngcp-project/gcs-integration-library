@@ -36,6 +36,12 @@ COMMAND_REGISTRY = {
 PORT = "/dev/cu.usbserial-D30DWZKT"
 # PORT = "/dev/ttyUSB0" # For Linux
 
+VEHICLE_STATUS = {
+    0: "In Use",
+    1: "Standby",
+    2: "Emergency Stoped"
+}
+
 
 logger = Logger(log_to_console=True)
 gcs_xbee = XBee(port=PORT, baudrate=115200, logger=logger)
@@ -52,27 +58,89 @@ def get_or_create_publisher(vehicle_name):
     return telemetry_publishers[vehicle_name]
 
 def parse_and_export_telemetry(telemetry: Telemetry, vehicle_name: str, rssi: int):
+    # telemetry_dict = {
+    #     "speed": telemetry.speed,
+    #     "pitch": telemetry.pitch,
+    #     "yaw": telemetry.yaw,
+    #     "roll": telemetry.roll,
+    #     "alt": telemetry.altitude,
+    #     "battery_life": telemetry.battery_life,
+    #     "lastUpdated": telemetry.last_updated,
+    #     "current_latitude": telemetry.current_latitude,
+    #     "current_longitude": telemetry.current_longitude,
+    #     "vehicle_status": VEHICLE_STATUS[telemetry.vehicle_status],
+    #     "patient_status": telemetry.patient_status,
+    #     "message_flag": telemetry.message_flag,
+    #     "message_lat": telemetry.message_lat,
+    #     "message_lon": telemetry.message_lon,
+    
     telemetry_dict = {
-        "speed": telemetry.speed,
+        "vehicle_id": vehicle_name.lower(),
+        "signal_strength": rssi,
         "pitch": telemetry.pitch,
         "yaw": telemetry.yaw,
         "roll": telemetry.roll,
-        "alt": telemetry.altitude,
-        "battery_life": telemetry.battery_life,
-        "lastUpdated": telemetry.last_updated,
-        "current_latitude": telemetry.current_latitude,
-        "current_longitude": telemetry.current_longitude,
-        "vehicle_status": telemetry.vehicle_status,
-        "patient_status": telemetry.patient_status,
-        "message_flag": telemetry.message_flag,
-        "message_lat": telemetry.message_lat,
-        "message_lon": telemetry.message_lon,
+        "speed": telemetry.speed,
+        "altitude": telemetry.altitude,
+        "battery_life": int(telemetry.battery_life),
+        "current_position": {
+            "latitude": telemetry.current_latitude,
+            "longitude": telemetry.current_longitude,
+        },
+        # "lastUpdated": telemetry.last_updated,
+        "vehicle_status": VEHICLE_STATUS[telemetry.vehicle_status],
+        "request_coordinate": {
+            "message_flag": 0,
+            "request_location": {
+                "latitude": telemetry.message_lat,
+                "longitude": telemetry.message_lon,
+            }
+        },
+        "patient_secured": telemetry.patient_status,
     }
+
+        # vehicle_id: vehicle_id.to_string(),
+        # signal_strength: rand::random::<i32>() % 70 + 30,
+        # pitch: rand::random::<f32>() * 100.0,
+        # yaw: rand::random::<f32>() * 100.0,
+        # roll: rand::random::<f32>() * 100.0,
+        # speed: rand::random::<f32>() * 100.0,
+        # altitude: rand::random::<f32>() * 100.0,
+        # battery_life: rand::random::<f32>(),
+        # current_position: Coordinate {
+        #     latitude: rand::random::<f64>() * 100.0,
+        #     longitude: rand::random::<f64>() * 100.0,
+        # },
+        # // last_updated: SystemTime::now(),
+        # vehicle_status: "something".to_string(),
+        # request_coordinate: RequestCoordinate {
+        #     message_flag: rand::random::<i32>(),
+        #     request_location: Coordinate {
+        #         latitude: rand::random::<f64>() * 100.0,
+        #         longitude: rand::random::<f64>() * 100.0,
+        #     },
+        #     patient_secured: Some(rand::random()),
+        # },
+
+
+
+    # pub vehicle_id: String, // Added vehicle_id
+    # pub signal_strength: i32,
+    # pub pitch: f32,
+    # pub yaw: f32,
+    # pub roll: f32,
+    # pub speed: f32,
+    # pub altitude: f32,
+    # pub battery_life: f32, //f32
+    # pub current_position: Coordinate,
+    # pub vehicle_status: String,
+    # pub request_coordinate: RequestCoordinate,
+    # }
 
     try:
         publisher = get_or_create_publisher(vehicle_name)
         publisher.publish(telemetry_dict)
-        export_rssi(vehicle_name, rssi)
+        # export_rssi(vehicle_name, rssi)
         logger.write(f"✅ Published telemetry for {vehicle_name}")
     except Exception as e:
         import traceback
@@ -149,23 +217,23 @@ def handle_ui_command(msg: dict):
     
     
  
-def export_rssi(vehicle_name: str, rssi: int):
-    try:
-        publisher = get_or_create_publisher(vehicle_name)
-        rssi_payload = {
-            "vehicle": vehicle_name,
-            "rssi": rssi,
-            "timestamp": datetime.now().isoformat()
-        }
-        publisher.channel.queue_declare(queue=f"rssi_{vehicle_name.lower()}")
-        publisher.channel.basic_publish(
-            exchange='',
-            routing_key=f"rssi_{vehicle_name.lower()}",
-            body=json.dumps(rssi_payload)
-        )
-        logger.write(f"📶 Published RSSI for {vehicle_name}: {rssi} dBm")
-    except Exception as e:
-        logger.write(f"[!] Failed to publish RSSI for {vehicle_name}: {e}")
+# def export_rssi(vehicle_name: str, rssi: int):
+#     try:
+#         publisher = get_or_create_publisher(vehicle_name)
+#         rssi_payload = {
+#             "vehicle": vehicle_name,
+#             "rssi": rssi,
+#             "timestamp": datetime.now().isoformat()
+#         }
+#         publisher.channel.queue_declare(queue=f"rssi_{vehicle_name.lower()}", durable=True)
+#         publisher.channel.basic_publish(
+#             exchange='',
+#             routing_key=f"rssi_{vehicle_name.lower()}",
+#             body=json.dumps(rssi_payload)
+#         )
+#         logger.write(f"📶 Published RSSI for {vehicle_name}: {rssi} dBm")
+#     except Exception as e:
+#         logger.write(f"[!] Failed to publish RSSI for {vehicle_name}: {e}")
 
 def command_test():
     es = 0
