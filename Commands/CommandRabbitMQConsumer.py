@@ -14,8 +14,13 @@ class CommandRabbitMQConsumer:
         """
         self.queue = queue_name
         self.on_command = on_command
-
-        self.connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
+        # credentials = pika.PlainCredentials("admin", "admin")  # TODO: replace with env vars
+        self.connection = pika.BlockingConnection(
+            pika.ConnectionParameters(
+                host='localhost',
+                # credentials=credentials
+            )
+        )
         self.channel = self.connection.channel()
         self.channel.queue_declare(queue=self.queue, durable=True)
 

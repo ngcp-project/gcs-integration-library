@@ -132,14 +132,13 @@ def listen_for_commands():
                 continue
 
             tag = payload[0]
-            # body = payload[1:]
 
             
             if tag == TAG_COMMAND:
                 
                 # decode the emergency stop command
-                if len(payload) == 4 and payload[1] == 1 and payload[2] == 3:
-                    stop_status = EmergencyStop.decode_packet(payload[1:])
+                if len(payload) == 3 and payload[0] == 1 and payload[1] == 3:
+                    stop_status = EmergencyStop.decode_packet(payload)
                     with telemetry_lock:
                         shared_telemetry.vehicle_status = 2 if stop_status == 0 else 1 # 2 - emergency mode, 1 - normal
 
