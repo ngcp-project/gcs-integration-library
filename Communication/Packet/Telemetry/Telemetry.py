@@ -5,8 +5,7 @@ class Telemetry:
     
     def __init__(self, payloadId=2, speed=0, pitch=0, yaw=0, roll=0, altitude=0, battery_life=0, last_updated=0,
              current_latitude=0, current_longitude=0, vehicle_status=0,
-             patient_status=0,  # <-- move this up
-             message_flag=0, message_lat=0.0, message_lon=0.0):
+             message_flag=0, message_lat=0.0, message_lon=0.0, patient_status=0):
         self.payloadId = 2 # Payload ID for telemetry data is always 2
         self.speed = speed
         self.pitch = pitch
@@ -50,11 +49,10 @@ class Telemetry:
         return Telemetry(*unpacked_data)
 
     def __str__(self):
-        message_info = (f"Message Type={self.message_flag}, "
-                        f"Message Location=({self.message_lat}, {self.message_lon})") if self.message_flag else "No Message"
-
         return (f"Telemetry(Speed={self.speed}, Pitch={self.pitch}, Yaw={self.yaw}, Roll={self.roll}, "
-                f"Altitude={self.altitude}, Battery Life={self.battery_life}, Last Updated={self.last_updated}, "
-                f"Current Position=({self.current_latitude}, {self.current_longitude}), "
-                f"Vehicle Status={self.vehicle_status}, {message_info}),"
-                f"Patient Status = {self.patient_status}")
+            f"Altitude={self.altitude}, Battery Life={self.battery_life}, Last Updated={self.last_updated}, "
+            f"Current Position=({self.current_latitude}, {self.current_longitude}), "
+            f"Vehicle Status={self.vehicle_status}, "
+            f"Message Flag={self.message_flag}, "
+            f"Message Location=({self.message_lat}, {self.message_lon}), "
+            f"Patient Status = {self.patient_status}")
