@@ -22,6 +22,7 @@ TAG_ACK = 0x03
 TAG_PING = 0x04
 
 VEHICLES = {
+    "ALL": {"MAC": "000000000000FFFF", "short": "0000"},
     "MRA": {"MAC": "0013A200424353F7", "short": "0002"},
     "ERU": {"MAC": "0013A20042435EA9", "short": "0003"},
     # "MEA": {"MAC": "0013A2004243672F", "short": "0004"}
@@ -157,6 +158,8 @@ def listen_for_telemetry():
 
             src_16bit = frame.source_address.hex().upper().zfill(4)
             vehicle_name = next((name for name, info in VEHICLES.items() if info["short"] == src_16bit), "UNKNOWN")
+            # logger.write(f"Frame Data: {frame.data}")
+            # logger.write(Telemetry.decode(frame.data))
 
             if isinstance(frame.data, Telemetry):
                 telemetry = frame.data
@@ -276,7 +279,9 @@ def main():
     except KeyboardInterrupt:
         logger.write("\n🛑 Shutdown requested by user.")
     finally:
+        consumer.stop()
         shutdown()
+
 
 if __name__ == "__main__":
     main()
