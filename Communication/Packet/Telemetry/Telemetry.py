@@ -3,8 +3,8 @@ import struct
 class Telemetry:
     """Handles telemetry data encoding and decoding for UAV/UGV communication."""
     
-    def __init__(self, payloadId=2, speed=0, pitch=0, yaw=0, roll=0, altitude=0, battery_life=0, last_updated=0,
-             current_latitude=0, current_longitude=0, vehicle_status=0,
+    def __init__(self, payloadId=2, speed=0.0, pitch=0.0, yaw=0.0, roll=0.0, altitude=0.0, battery_life=0, last_updated=0,
+             current_latitude=0.0, current_longitude=0.0, vehicle_status=0,
              message_flag=0, message_lat=0.0, message_lon=0.0, patient_status=0):
         self.payloadId = 2 # Payload ID for telemetry data is always 2
         self.speed = speed
