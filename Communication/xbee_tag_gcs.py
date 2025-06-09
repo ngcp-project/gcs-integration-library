@@ -25,6 +25,7 @@ VEHICLES = {
     "ALL": {"MAC": "000000000000FFFF", "short": "0000"},
     "MRA": {"MAC": "0013A200424353F7", "short": "0002"},
     "ERU": {"MAC": "0013A20042435EA9", "short": "0003"},
+    # "ERU": {"MAC": "0013A20042435A3D", "short": "0005"},
     # "MEA": {"MAC": "0013A2004243672F", "short": "0004"}
 }
 
@@ -34,7 +35,7 @@ COMMAND_REGISTRY = {
     # Add more like 1: KeepInZone, etc.
 }
 
-PORT = "/dev/cu.usbserial-D30DWZKT"
+PORT = "COM3"
 # PORT = "/dev/ttyUSB0" # For Linux
 
 VEHICLE_STATUS = {
