@@ -1,0 +1,288 @@
+import json
+import sys
+import threading
+import time
+from datetime import datetime
+
+sys.path.insert(1, "../")
+
+from Communication.XBee import XBee
+from Communication.Frames import x81
+# from Communication.tel_struct import Telemetry
+from Communication.Packet.Telemetry.Telemetry import Telemetry
+from Communication.Packet.Command.EmergencyStop import EmergencyStop
+from Logger.Logger import Logger
+from Telemetry.RabbitMQ import TelemetryRabbitMQ
+from Commands.CommandRabbitMQConsumer import CommandRabbitMQConsumer # Import the newly created command consumer 
+
+
+TAG_COMMAND = 0x01
+TAG_TELEMETRY = 0x02
+TAG_ACK = 0x03
+TAG_PING = 0x04
+
+VEHICLES = {
+    "ALL": {"MAC": "000000000000FFFF", "short": "0000"},
+    "MRA": {"MAC": "0013A200424353F7", "short": "0002"},
+    "ERU": {"MAC": "0013A20042435EA9", "short": "0003"},
+    # "ERU": {"MAC": "0013A20042435A3D", "short": "0005"},
+    # "MEA": {"MAC": "0013A2004243672F", "short": "0004"}
+}
+
+COMMAND_REGISTRY = {
+    1: EmergencyStop,
+    "emergency_stop": EmergencyStop
+    # Add more like 1: KeepInZone, etc.
+}
+
+PORT = "COM3"
+# PORT = "/dev/ttyUSB0" # For Linux
+
+VEHICLE_STATUS = {
+    0: "In Use",
+    1: "Standby",
+    2: "Emergency Stoped"
+}
+
+
+logger = Logger(log_to_console=True)
+gcs_xbee = XBee(port=PORT, baudrate=115200, logger=logger)
+gcs_xbee.open()
+
+terminate_event = threading.Event()
+telemetry_publishers = {}
+
+
+# 
+def get_or_create_publisher(vehicle_name):
+    if vehicle_name not in telemetry_publishers:
+        telemetry_publishers[vehicle_name] = TelemetryRabbitMQ(vehicle_name.lower(), "localhost")
+    return telemetry_publishers[vehicle_name]
+
+def parse_and_export_telemetry(telemetry: Telemetry, vehicle_name: str, rssi: int):
+    # telemetry_dict = {
+    #     "speed": telemetry.speed,
+    #     "pitch": telemetry.pitch,
+    #     "yaw": telemetry.yaw,
+    #     "roll": telemetry.roll,
+    #     "alt": telemetry.altitude,
+    #     "battery_life": telemetry.battery_life,
+    #     "lastUpdated": telemetry.last_updated,
+    #     "current_latitude": telemetry.current_latitude,
+    #     "current_longitude": telemetry.current_longitude,
+    #     "vehicle_status": VEHICLE_STATUS[telemetry.vehicle_status],
+    #     "patient_status": telemetry.patient_status,
+    #     "message_flag": telemetry.message_flag,
+    #     "message_lat": telemetry.message_lat,
+    #     "message_lon": telemetry.message_lon,
+    
+    telemetry_dict = {
+        "vehicle_id": vehicle_name.lower(),
+        "signal_strength": rssi,
+        "pitch": telemetry.pitch,
+        "yaw": telemetry.yaw,
+        "roll": telemetry.roll,
+        "speed": telemetry.speed,
+        "altitude": telemetry.altitude,
+        "battery_life": int(telemetry.battery_life),
+        "current_position": {
+            "latitude": telemetry.current_latitude,
+            "longitude": telemetry.current_longitude,
+        },
+        # "lastUpdated": telemetry.last_updated,
+        "vehicle_status": VEHICLE_STATUS[telemetry.vehicle_status],
+        "request_coordinate": {
+            "message_flag": 0,
+            "request_location": {
+                "latitude": telemetry.message_lat,
+                "longitude": telemetry.message_lon,
+            }
+        },
+        "patient_secured": telemetry.patient_status,
+    }
+
+        # vehicle_id: vehicle_id.to_string(),
+        # signal_strength: rand::random::<i32>() % 70 + 30,
+        # pitch: rand::random::<f32>() * 100.0,
+        # yaw: rand::random::<f32>() * 100.0,
+        # roll: rand::random::<f32>() * 100.0,
+        # speed: rand::random::<f32>() * 100.0,
+        # altitude: rand::random::<f32>() * 100.0,
+        # battery_life: rand::random::<f32>(),
+        # current_position: Coordinate {
+        #     latitude: rand::random::<f64>() * 100.0,
+        #     longitude: rand::random::<f64>() * 100.0,
+        # },
+        # // last_updated: SystemTime::now(),
+        # vehicle_status: "something".to_string(),
+        # request_coordinate: RequestCoordinate {
+        #     message_flag: rand::random::<i32>(),
+        #     request_location: Coordinate {
+        #         latitude: rand::random::<f64>() * 100.0,
+        #         longitude: rand::random::<f64>() * 100.0,
+        #     },
+        #     patient_secured: Some(rand::random()),
+        # },
+
+
+
+    # pub vehicle_id: String, // Added vehicle_id
+    # pub signal_strength: i32,
+    # pub pitch: f32,
+    # pub yaw: f32,
+    # pub roll: f32,
+    # pub speed: f32,
+    # pub altitude: f32,
+    # pub battery_life: f32, //f32
+    # pub current_position: Coordinate,
+    # pub vehicle_status: String,
+    # pub request_coordinate: RequestCoordinate,
+    # }
+
+    try:
+        publisher = get_or_create_publisher(vehicle_name)
+        publisher.publish(telemetry_dict)
+        # export_rssi(vehicle_name, rssi)
+        logger.write(f"✅ Published telemetry for {vehicle_name}")
+    except Exception as e:
+        import traceback
+        logger.write(f"[!] Failed to publish telemetry for {vehicle_name}: {e}")
+        logger.write(traceback.format_exc())
+
+def listen_for_telemetry():
+    while not terminate_event.is_set():
+        try:
+            frame: x81 = gcs_xbee.retrieve_data()
+            if not frame:
+                time.sleep(0.05)
+                continue
+
+            src_16bit = frame.source_address.hex().upper().zfill(4)
+            vehicle_name = next((name for name, info in VEHICLES.items() if info["short"] == src_16bit), "UNKNOWN")
+            # logger.write(f"Frame Data: {frame.data}")
+            # logger.write(Telemetry.decode(frame.data))
+
+            if isinstance(frame.data, Telemetry):
+                telemetry = frame.data
+            elif isinstance(frame.data, bytes) and frame.data[0] == TAG_TELEMETRY:
+                try:
+                    telemetry = Telemetry.decode(frame.data)
+                except Exception as e:
+                    logger.write(f"[!] Failed to decode raw telemetry: {e}")
+                    continue
+            else:
+                if isinstance(frame.data, bytes) and frame.data[0] == TAG_ACK:
+                    logger.write(f"✅ Received ACK from {vehicle_name}: {frame.data[1:].decode(errors='ignore')}")
+                else:
+                    logger.write(f"[!] Unknown data from {vehicle_name}")
+                continue
+
+            logger.write(f"📡 Telemetry from {vehicle_name} (RSSI: {frame.rssi})")
+            logger.write(f"Telemetry Data: {telemetry}")
+            parse_and_export_telemetry(telemetry, vehicle_name, frame.rssi)
+
+            # Send ping back
+            ping_payload = bytes([TAG_PING])
+            mac = VEHICLES.get(vehicle_name, {}).get("MAC")
+            if mac and mac != "NaN":
+                try:
+                    gcs_xbee.transmit_data(ping_payload, address=mac)
+                    logger.write(f"📶 Sent PING to {vehicle_name}")
+                except Exception as e:
+                    logger.write(f"[!] Error sending PING: {e}")
+
+        except Exception as e:
+            logger.write(f"[!] Error in listen_for_telemetry: {e}")
+            time.sleep(0.2)
+           
+def handle_ui_command(msg: dict):
+    """
+    Handles a UI-issued command received from RabbitMQ.
+    Expects: { "vehicle_name": str, "command_id": int, "value": ... }
+    """
+    logger.write(f"Message: {msg}")
+    vehicle = msg.get("vehicle_id")
+    command_id = msg.get("command")
+    value = msg.get("value")
+
+    if vehicle not in VEHICLES:
+        logger.write(f"[!] Unknown vehicle: {vehicle}")
+        return
+
+    if command_id not in COMMAND_REGISTRY:
+        logger.write(f"[!] Unknown command_id: {command_id}")
+        return
+
+    command_cls = COMMAND_REGISTRY[command_id]
+    command_packet = command_cls.encode_packet(int(value))
+    # Send command over XBee
+    gcs_xbee.transmit_data(command_packet, address=VEHICLES[vehicle]["MAC"])
+    logger.write(f"📤 Sent command {command_id} to {vehicle} with value {value}")
+    
+    
+ 
+# def export_rssi(vehicle_name: str, rssi: int):
+#     try:
+#         publisher = get_or_create_publisher(vehicle_name)
+#         rssi_payload = {
+#             "vehicle": vehicle_name,
+#             "rssi": rssi,
+#             "timestamp": datetime.now().isoformat()
+#         }
+#         publisher.channel.queue_declare(queue=f"rssi_{vehicle_name.lower()}", durable=True)
+#         publisher.channel.basic_publish(
+#             exchange='',
+#             routing_key=f"rssi_{vehicle_name.lower()}",
+#             body=json.dumps(rssi_payload)
+#         )
+#         logger.write(f"📶 Published RSSI for {vehicle_name}: {rssi} dBm")
+#     except Exception as e:
+#         logger.write(f"[!] Failed to publish RSSI for {vehicle_name}: {e}")
+
+def command_test():
+    es = 0
+
+    while True:
+        emergency_stop_command_packet = EmergencyStop.encode_packet((es))
+        es = (es + 1) % 2
+        logger.write(f"ES Stop Command Packet: {emergency_stop_command_packet}")
+        gcs_xbee.transmit_data(emergency_stop_command_packet)
+        time.sleep(1)
+
+def shutdown():
+    terminate_event.set()
+    gcs_xbee.close()
+    for pub in telemetry_publishers.values():
+        pub.close_connection()
+    logger.write("✅ GCS shutdown complete.")
+
+def main():
+    #command_test_thread = threading.Thread(target=command_test, daemon=True)
+    telemetry_thread = threading.Thread(target=listen_for_telemetry, daemon=True)
+    
+    
+    # Start RabbitMQ Command Consumer
+    consumer = CommandRabbitMQConsumer(
+        on_command=handle_ui_command
+    )
+    
+    
+    consumer_thread = threading.Thread(target=consumer.start, daemon=True)
+    consumer_thread.start()
+    
+    
+    #command_test_thread.start()
+    telemetry_thread.start()
+
+    try:
+        while True:
+            time.sleep(1)  
+    except KeyboardInterrupt:
+        logger.write("\n🛑 Shutdown requested by user.")
+    finally:
+        consumer.stop()
+        shutdown()
+
+
+if __name__ == "__main__":
+    main()

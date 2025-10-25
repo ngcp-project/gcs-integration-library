@@ -1,0 +1,8 @@
+2025-03-14 16:07:33,101: Log 45
+
+2025-03-14 16:07:33,131: Attempting to open serial XBee connection.
+2025-03-14 16:07:33,131: Attempting to open serial XBee connection.
+2025-03-14 16:07:33,181: Serial port opened.
+2025-03-14 16:07:33,181: Serial port opened.
+2025-03-14 16:07:33,181: Transmitting data: hello to 0000000000000000
+2025-03-14 16:07:33,181: Transmitting data: hello to 0000000000000000

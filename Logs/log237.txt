@@ -1,0 +1,12 @@
+2025-03-19 15:43:20,456: Log 237
+
+2025-03-19 15:43:20,456: LOGGER CREATED By XBee.py
+2025-03-19 15:43:20,456: LOGGER CREATED By XBee.py
+2025-03-19 15:43:20,456: port: COM4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-19 15:43:20,456: port: COM4, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-19 15:43:20,456: Attempting to open serial XBee connection.
+2025-03-19 15:43:20,456: Attempting to open serial XBee connection.
+2025-03-19 15:43:21,016: Serial port opened.
+2025-03-19 15:43:21,016: Serial port opened.
+2025-03-19 15:43:21,016: Transmitting data: Telemetry(Speed=45.2, Pitch=10.5, Yaw=20.3, Roll=5.8, Altitude=1000.0, Battery Life=80.5, Last Updated=1742424201, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=1, Message Location=(45.8484, 100.4194)) to 0000000000000000
+2025-03-19 15:43:21,016: Transmitting data: Telemetry(Speed=45.2, Pitch=10.5, Yaw=20.3, Roll=5.8, Altitude=1000.0, Battery Life=80.5, Last Updated=1742424201, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=1, Message Location=(45.8484, 100.4194)) to 0000000000000000

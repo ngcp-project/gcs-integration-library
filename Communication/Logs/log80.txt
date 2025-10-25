@@ -1,0 +1,16 @@
+2025-04-25 13:54:59,019: Log 80
+
+2025-04-25 13:54:59,019: port: COM3, baudrate: 115200, timeout: 0.05, config_file: None
+2025-04-25 13:54:59,019: Attempting to open serial XBee connection.
+2025-04-25 13:54:59,062: Serial port opened.
+2025-04-25 13:54:59,062: Clearing input and output buffers.
+2025-04-25 13:55:14,909: Transmitting data: b'\x011' to 0013A200424353F7
+2025-04-25 13:55:14,910: Encoded data: 7e 00 0d 00 01 00 13 a2 00 42 43 53 f7 00 01 31 48 
+2025-04-25 13:55:15,024: Receiving data:
+2025-04-25 13:55:15,024: Decoded frame data: 89 01 02
+2025-04-25 13:55:15,025: Received Checksum: 73
+2025-04-25 13:55:15,025: Calculated Checksum: 73
+2025-04-25 13:55:15,025: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 13:55:15,025: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 2
+2025-04-25 13:55:18,623: Attempting to close serial XBee connection.
+2025-04-25 13:55:18,742: Serial port closed.

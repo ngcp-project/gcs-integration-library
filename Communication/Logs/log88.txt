@@ -1,0 +1,144 @@
+2025-04-25 14:04:40,156: Log 88
+
+2025-04-25 14:04:40,156: port: COM4, baudrate: 115200, timeout: 0.05, config_file: None
+2025-04-25 14:04:40,156: Attempting to open serial XBee connection.
+2025-04-25 14:04:40,199: Serial port opened.
+2025-04-25 14:04:40,199: Clearing input and output buffers.
+2025-04-25 14:04:40,703: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\xe8\xf8\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:04:40,703: Encoded data: 7e 00 4f 00 01 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f e8 f8 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 66 
+2025-04-25 14:04:40,728: Receiving data:
+2025-04-25 14:04:40,728: Decoded frame data: 89 01 00
+2025-04-25 14:04:40,728: Received Checksum: 75
+2025-04-25 14:04:40,728: Calculated Checksum: 75
+2025-04-25 14:04:40,728: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:04:40,728: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 0
+2025-04-25 14:04:43,717: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\xeb\xf8\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:04:43,717: Encoded data: 7e 00 4f 00 02 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f eb f8 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 62 
+2025-04-25 14:04:43,744: Receiving data:
+2025-04-25 14:04:43,744: Decoded frame data: 89 02 00
+2025-04-25 14:04:43,744: Received Checksum: 74
+2025-04-25 14:04:43,744: Calculated Checksum: 74
+2025-04-25 14:04:43,744: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:04:43,744: [Transmit status] Frame Type: 137, Frame ID: 2, Status: 0
+2025-04-25 14:04:46,720: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\xee\xf8\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:04:46,720: Encoded data: 7e 00 4f 00 03 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f ee f8 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 5e 
+2025-04-25 14:04:46,735: Receiving data:
+2025-04-25 14:04:46,735: Decoded frame data: 89 03 00
+2025-04-25 14:04:46,735: Received Checksum: 73
+2025-04-25 14:04:46,735: Calculated Checksum: 73
+2025-04-25 14:04:46,735: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:04:46,735: [Transmit status] Frame Type: 137, Frame ID: 3, Status: 0
+2025-04-25 14:04:49,721: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\xf1\xf8\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:04:49,721: Encoded data: 7e 00 4f 00 04 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f f1 f8 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 5a 
+2025-04-25 14:04:49,742: Receiving data:
+2025-04-25 14:04:49,742: Decoded frame data: 89 04 00
+2025-04-25 14:04:49,742: Received Checksum: 72
+2025-04-25 14:04:49,742: Calculated Checksum: 72
+2025-04-25 14:04:49,742: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:04:49,742: [Transmit status] Frame Type: 137, Frame ID: 4, Status: 0
+2025-04-25 14:04:52,724: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\xf4\xf8\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:04:52,724: Encoded data: 7e 00 4f 00 05 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f f4 f8 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 56 
+2025-04-25 14:04:52,740: Receiving data:
+2025-04-25 14:04:52,741: Decoded frame data: 89 05 00
+2025-04-25 14:04:52,741: Received Checksum: 71
+2025-04-25 14:04:52,741: Calculated Checksum: 71
+2025-04-25 14:04:52,741: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:04:52,741: [Transmit status] Frame Type: 137, Frame ID: 5, Status: 0
+2025-04-25 14:04:55,731: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\xf7\xf8\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:04:55,731: Encoded data: 7e 00 4f 00 06 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f f7 f8 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 52 
+2025-04-25 14:04:55,748: Receiving data:
+2025-04-25 14:04:55,748: Decoded frame data: 89 06 00
+2025-04-25 14:04:55,748: Received Checksum: 70
+2025-04-25 14:04:55,748: Calculated Checksum: 70
+2025-04-25 14:04:55,748: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:04:55,748: [Transmit status] Frame Type: 137, Frame ID: 6, Status: 0
+2025-04-25 14:04:58,735: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\xfa\xf8\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:04:58,735: Encoded data: 7e 00 4f 00 07 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f fa f8 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 4e 
+2025-04-25 14:04:58,760: Receiving data:
+2025-04-25 14:04:58,760: Decoded frame data: 89 07 00
+2025-04-25 14:04:58,760: Received Checksum: 6f
+2025-04-25 14:04:58,760: Calculated Checksum: 6f
+2025-04-25 14:04:58,760: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:04:58,760: [Transmit status] Frame Type: 137, Frame ID: 7, Status: 0
+2025-04-25 14:05:01,738: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\xfd\xf8\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:05:01,738: Encoded data: 7e 00 4f 00 08 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f fd f8 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 4a 
+2025-04-25 14:05:01,754: Receiving data:
+2025-04-25 14:05:01,754: Decoded frame data: 89 08 00
+2025-04-25 14:05:01,754: Received Checksum: 6e
+2025-04-25 14:05:01,754: Calculated Checksum: 6e
+2025-04-25 14:05:01,754: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:05:01,754: [Transmit status] Frame Type: 137, Frame ID: 8, Status: 0
+2025-04-25 14:05:04,740: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x00\xf9\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:05:04,740: Encoded data: 7e 00 4f 00 09 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 00 f9 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 45 
+2025-04-25 14:05:04,763: Receiving data:
+2025-04-25 14:05:04,763: Decoded frame data: 89 09 00
+2025-04-25 14:05:04,763: Received Checksum: 6d
+2025-04-25 14:05:04,763: Calculated Checksum: 6d
+2025-04-25 14:05:04,763: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:05:04,763: [Transmit status] Frame Type: 137, Frame ID: 9, Status: 0
+2025-04-25 14:05:07,742: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x03\xf9\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:05:07,742: Encoded data: 7e 00 4f 00 0a 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 03 f9 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 41 
+2025-04-25 14:05:07,772: Receiving data:
+2025-04-25 14:05:07,772: Decoded frame data: 89 0a 00
+2025-04-25 14:05:07,772: Received Checksum: 6c
+2025-04-25 14:05:07,772: Calculated Checksum: 6c
+2025-04-25 14:05:07,772: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:05:07,772: [Transmit status] Frame Type: 137, Frame ID: 10, Status: 0
+2025-04-25 14:05:10,744: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x06\xf9\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:05:10,744: Encoded data: 7e 00 4f 00 0b 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 06 f9 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 3d 
+2025-04-25 14:05:10,761: Receiving data:
+2025-04-25 14:05:10,761: Decoded frame data: 89 0b 00
+2025-04-25 14:05:10,761: Received Checksum: 6b
+2025-04-25 14:05:10,761: Calculated Checksum: 6b
+2025-04-25 14:05:10,761: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:05:10,761: [Transmit status] Frame Type: 137, Frame ID: 11, Status: 0
+2025-04-25 14:05:13,746: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\t\xf9\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:05:13,746: Encoded data: 7e 00 4f 00 0c 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 09 f9 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 39 
+2025-04-25 14:05:13,770: Receiving data:
+2025-04-25 14:05:13,770: Decoded frame data: 89 0c 00
+2025-04-25 14:05:13,770: Received Checksum: 6a
+2025-04-25 14:05:13,770: Calculated Checksum: 6a
+2025-04-25 14:05:13,770: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:05:13,770: [Transmit status] Frame Type: 137, Frame ID: 12, Status: 0
+2025-04-25 14:05:16,750: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x0c\xf9\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:05:16,750: Encoded data: 7e 00 4f 00 0d 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 0c f9 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 35 
+2025-04-25 14:05:16,771: Receiving data:
+2025-04-25 14:05:16,771: Decoded frame data: 89 0d 00
+2025-04-25 14:05:16,771: Received Checksum: 69
+2025-04-25 14:05:16,771: Calculated Checksum: 69
+2025-04-25 14:05:16,771: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:05:16,771: [Transmit status] Frame Type: 137, Frame ID: 13, Status: 0
+2025-04-25 14:05:19,752: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x0f\xf9\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:05:19,752: Encoded data: 7e 00 4f 00 0e 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 0f f9 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 31 
+2025-04-25 14:05:19,777: Receiving data:
+2025-04-25 14:05:19,777: Decoded frame data: 89 0e 00
+2025-04-25 14:05:19,777: Received Checksum: 68
+2025-04-25 14:05:19,777: Calculated Checksum: 68
+2025-04-25 14:05:19,777: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:05:19,777: [Transmit status] Frame Type: 137, Frame ID: 14, Status: 0
+2025-04-25 14:05:22,754: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x12\xf9\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:05:22,754: Encoded data: 7e 00 4f 00 0f 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 12 f9 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 2d 
+2025-04-25 14:05:22,771: Receiving data:
+2025-04-25 14:05:22,771: Decoded frame data: 89 0f 00
+2025-04-25 14:05:22,771: Received Checksum: 67
+2025-04-25 14:05:22,771: Calculated Checksum: 67
+2025-04-25 14:05:22,771: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:05:22,771: [Transmit status] Frame Type: 137, Frame ID: 15, Status: 0
+2025-04-25 14:05:25,756: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x15\xf9\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:05:25,756: Encoded data: 7e 00 4f 00 10 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 15 f9 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 29 
+2025-04-25 14:05:25,785: Receiving data:
+2025-04-25 14:05:25,785: Decoded frame data: 89 10 00
+2025-04-25 14:05:25,785: Received Checksum: 66
+2025-04-25 14:05:25,786: Calculated Checksum: 66
+2025-04-25 14:05:25,786: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:05:25,786: [Transmit status] Frame Type: 137, Frame ID: 16, Status: 0
+2025-04-25 14:05:28,757: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x18\xf9\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:05:28,757: Encoded data: 7e 00 4f 00 11 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 18 f9 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 25 
+2025-04-25 14:05:28,773: Receiving data:
+2025-04-25 14:05:28,773: Decoded frame data: 89 11 00
+2025-04-25 14:05:28,773: Received Checksum: 65
+2025-04-25 14:05:28,773: Calculated Checksum: 65
+2025-04-25 14:05:28,773: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:05:28,773: [Transmit status] Frame Type: 137, Frame ID: 17, Status: 0
+2025-04-25 14:05:29,748: Attempting to close serial XBee connection.
+2025-04-25 14:05:29,870: Serial port closed.

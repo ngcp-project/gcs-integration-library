@@ -1,0 +1,48 @@
+2025-04-25 14:09:42,743: Log 93
+
+2025-04-25 14:09:42,747: port: COM4, baudrate: 115200, timeout: 0.05, config_file: None
+2025-04-25 14:09:42,747: Attempting to open serial XBee connection.
+2025-04-25 14:09:42,801: Serial port opened.
+2025-04-25 14:09:42,801: Clearing input and output buffers.
+2025-04-25 14:09:43,302: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x17\xfa\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:09:43,304: Encoded data: 7e 00 4f 00 01 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 17 fa 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 35 
+2025-04-25 14:09:43,336: Receiving data:
+2025-04-25 14:09:43,336: Decoded frame data: 89 01 00
+2025-04-25 14:09:43,336: Received Checksum: 75
+2025-04-25 14:09:43,336: Calculated Checksum: 75
+2025-04-25 14:09:43,336: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:09:43,336: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 0
+2025-04-25 14:09:46,318: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x1a\xfa\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:09:46,318: Encoded data: 7e 00 4f 00 02 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 1a fa 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 31 
+2025-04-25 14:09:46,344: Receiving data:
+2025-04-25 14:09:46,344: Decoded frame data: 89 02 00
+2025-04-25 14:09:46,344: Received Checksum: 74
+2025-04-25 14:09:46,344: Calculated Checksum: 74
+2025-04-25 14:09:46,344: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:09:46,344: [Transmit status] Frame Type: 137, Frame ID: 2, Status: 0
+2025-04-25 14:09:49,321: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x1d\xfa\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:09:49,321: Encoded data: 7e 00 4f 00 03 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 1d fa 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 2d 
+2025-04-25 14:09:49,338: Receiving data:
+2025-04-25 14:09:49,356: Decoded frame data: 89 03 00
+2025-04-25 14:09:49,356: Received Checksum: 73
+2025-04-25 14:09:49,356: Calculated Checksum: 73
+2025-04-25 14:09:49,356: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:09:49,356: [Transmit status] Frame Type: 137, Frame ID: 3, Status: 0
+2025-04-25 14:09:52,323: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL? \xfa\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:09:52,323: Encoded data: 7e 00 4f 00 04 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 20 fa 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 29 
+2025-04-25 14:09:52,347: Receiving data:
+2025-04-25 14:09:52,347: Decoded frame data: 89 04 00
+2025-04-25 14:09:52,347: Received Checksum: 72
+2025-04-25 14:09:52,347: Calculated Checksum: 72
+2025-04-25 14:09:52,347: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:09:52,347: [Transmit status] Frame Type: 137, Frame ID: 4, Status: 0
+2025-04-25 14:09:55,325: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?#\xfa\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:09:55,325: Encoded data: 7e 00 4f 00 05 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 23 fa 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 25 
+2025-04-25 14:09:55,356: Receiving data:
+2025-04-25 14:09:55,357: Decoded frame data: 89 05 00
+2025-04-25 14:09:55,357: Received Checksum: 71
+2025-04-25 14:09:55,357: Calculated Checksum: 71
+2025-04-25 14:09:55,357: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:09:55,357: [Transmit status] Frame Type: 137, Frame ID: 5, Status: 0
+2025-04-25 14:09:56,238: Attempting to close serial XBee connection.
+2025-04-25 14:09:56,363: Serial port closed.

@@ -1,0 +1,54 @@
+2025-04-25 14:11:14,282: Log 96
+
+2025-04-25 14:11:14,282: port: COM4, baudrate: 115200, timeout: 0.05, config_file: None
+2025-04-25 14:11:14,282: Attempting to open serial XBee connection.
+2025-04-25 14:11:14,335: Serial port opened.
+2025-04-25 14:11:14,335: Clearing input and output buffers.
+2025-04-25 14:11:14,840: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?r\xfa\x0bh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A20042435A3D
+2025-04-25 14:11:14,840: Encoded data: 7e 00 4f 00 01 00 13 a2 00 42 43 5a 3d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 72 fa 0b 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 da 
+2025-04-25 14:11:14,871: Receiving data:
+2025-04-25 14:11:14,871: Decoded frame data: 89 01 00
+2025-04-25 14:11:14,871: Received Checksum: 75
+2025-04-25 14:11:14,871: Calculated Checksum: 75
+2025-04-25 14:11:14,871: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:11:14,871: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 0
+2025-04-25 14:11:15,157: Receiving data:
+2025-04-25 14:11:15,157: Decoded frame data: 81 00 00 12 00 01 31
+2025-04-25 14:11:15,157: Received Checksum: 3a
+2025-04-25 14:11:15,157: Calculated Checksum: 3a
+2025-04-25 14:11:15,157: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 14:11:15,157: Received payload. RSSI: -18, Decoded message: 1
+2025-04-25 14:11:15,157: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -18, Options: 0, Data: b'\x81\x00\x00\x12\x00\x011'
+2025-04-25 14:11:15,412: Transmitting data: b'\x031' to 0013A20042435A3D
+2025-04-25 14:11:15,412: Encoded data: 7e 00 0d 00 02 00 13 a2 00 42 43 5a 3d 00 03 31 f8 
+2025-04-25 14:11:15,418: Receiving data:
+2025-04-25 14:11:15,418: Pass. Unable to read length bytes
+2025-04-25 14:11:15,433: Receiving data:
+2025-04-25 14:11:15,433: Pass 00
+2025-04-25 14:11:15,433: Receiving data:
+2025-04-25 14:11:15,433: Pass 03
+2025-04-25 14:11:15,433: Receiving data:
+2025-04-25 14:11:15,433: Pass 89
+2025-04-25 14:11:15,433: Receiving data:
+2025-04-25 14:11:15,433: Pass 02
+2025-04-25 14:11:15,433: Receiving data:
+2025-04-25 14:11:15,433: Pass 00
+2025-04-25 14:11:15,433: Receiving data:
+2025-04-25 14:11:15,433: Pass 74
+2025-04-25 14:11:16,137: Receiving data:
+2025-04-25 14:11:16,137: Decoded frame data: 81 00 00 12 00 01 31
+2025-04-25 14:11:16,137: Received Checksum: 3a
+2025-04-25 14:11:16,137: Calculated Checksum: 3a
+2025-04-25 14:11:16,137: Adding frame to 0x81 (Rx Packet) queue
+2025-04-25 14:11:16,137: Received payload. RSSI: -18, Decoded message: 1
+2025-04-25 14:11:16,137: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x00', RSSI: -18, Options: 0, Data: b'\x81\x00\x00\x12\x00\x011'
+2025-04-25 14:11:16,471: Transmitting data: b'\x031' to 0013A20042435A3D
+2025-04-25 14:11:16,471: Encoded data: 7e 00 0d 00 03 00 13 a2 00 42 43 5a 3d 00 03 31 f7 
+2025-04-25 14:11:16,491: Receiving data:
+2025-04-25 14:11:16,491: Decoded frame data: 89 03 00
+2025-04-25 14:11:16,491: Received Checksum: 73
+2025-04-25 14:11:16,491: Calculated Checksum: 73
+2025-04-25 14:11:16,491: Adding frame to 0x89 (Tx Status) queue
+2025-04-25 14:11:16,491: [Transmit status] Frame Type: 137, Frame ID: 3, Status: 0
+2025-04-25 14:11:17,144: Attempting to close serial XBee connection.
+2025-04-25 14:11:17,257: Serial port closed.

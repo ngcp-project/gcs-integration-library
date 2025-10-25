@@ -1,0 +1,12 @@
+2025-03-16 23:00:43,708: Log 57
+
+2025-03-16 23:00:43,822: Attempting to open serial XBee connection.
+2025-03-16 23:00:43,822: Attempting to open serial XBee connection.
+2025-03-16 23:00:43,875: Serial port opened.
+2025-03-16 23:00:43,875: Serial port opened.
+2025-03-16 23:00:46,888: Received payload. RSSI: -24, Decoded message: {"vId":0,"dT":2,"rC":{"mF":1,"rL":{"lat":45.8484,"lon":100.4194}}}
+2025-03-16 23:00:46,889: Received payload. RSSI: -24, Decoded message: {"vId":0,"dT":2,"rC":{"mF":1,"rL":{"lat":45.8484,"lon":100.4194}}}
+2025-03-16 23:01:02,158: Attempting to close serial XBee connection.
+2025-03-16 23:01:02,158: Attempting to close serial XBee connection.
+2025-03-16 23:01:02,278: Serial port closed.
+2025-03-16 23:01:02,278: Serial port closed.

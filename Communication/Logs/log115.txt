@@ -1,0 +1,566 @@
+2025-05-08 23:55:43,056: Log 115
+
+2025-05-08 23:55:43,056: port: COM8, baudrate: 115200, timeout: 0.05, config_file: None
+2025-05-08 23:55:43,056: Attempting to open serial XBee connection.
+2025-05-08 23:55:43,111: Serial port opened.
+2025-05-08 23:55:43,111: Clearing input and output buffers.
+2025-05-08 23:55:43,613: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\xef\xa6\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:55:43,613: Encoded data: 7e 00 4f 00 01 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f ef a6 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 ec 
+2025-05-08 23:55:43,727: Receiving data:
+2025-05-08 23:55:43,727: Decoded frame data: 89 01 00
+2025-05-08 23:55:43,727: Received Checksum: 75
+2025-05-08 23:55:43,727: Calculated Checksum: 75
+2025-05-08 23:55:43,727: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:43,727: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 0
+2025-05-08 23:55:46,615: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\xf2\xa6\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:55:46,615: Encoded data: 7e 00 4f 00 02 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f f2 a6 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 e8 
+2025-05-08 23:55:46,738: Receiving data:
+2025-05-08 23:55:46,739: Decoded frame data: 89 02 02
+2025-05-08 23:55:46,739: Received Checksum: 72
+2025-05-08 23:55:46,739: Calculated Checksum: 72
+2025-05-08 23:55:46,739: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:46,739: [Transmit status] Frame Type: 137, Frame ID: 2, Status: 2
+2025-05-08 23:55:47,843: Receiving data:
+2025-05-08 23:55:47,843: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:55:47,843: Received Checksum: 3e
+2025-05-08 23:55:47,843: Calculated Checksum: 3e
+2025-05-08 23:55:47,843: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:55:47,843: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:55:47,843: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:55:47,971: Receiving data:
+2025-05-08 23:55:47,971: Decoded frame data: 81 00 02 0c 00 04
+2025-05-08 23:55:47,971: Received Checksum: 6c
+2025-05-08 23:55:47,971: Calculated Checksum: 6c
+2025-05-08 23:55:47,971: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:55:47,971: Received payload. RSSI: -12, Decoded message: 
+2025-05-08 23:55:47,971: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x04'
+2025-05-08 23:55:48,820: Receiving data:
+2025-05-08 23:55:48,820: Decoded frame data: 81 00 02 0b 00 01 31
+2025-05-08 23:55:48,820: Received Checksum: 3f
+2025-05-08 23:55:48,820: Calculated Checksum: 3f
+2025-05-08 23:55:48,820: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:55:48,820: Received payload. RSSI: -11, Decoded message: Command ID: 1
+2025-05-08 23:55:48,820: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -11, Options: 0, Data: b'\x81\x00\x02\x0b\x00\x011'
+2025-05-08 23:55:49,617: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\xf5\xa6\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:55:49,617: Encoded data: 7e 00 4f 00 03 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f f5 a6 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 e4 
+2025-05-08 23:55:49,749: Receiving data:
+2025-05-08 23:55:49,749: Decoded frame data: 89 03 02
+2025-05-08 23:55:49,749: Received Checksum: 71
+2025-05-08 23:55:49,749: Calculated Checksum: 71
+2025-05-08 23:55:49,749: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:49,749: [Transmit status] Frame Type: 137, Frame ID: 3, Status: 2
+2025-05-08 23:55:49,828: Receiving data:
+2025-05-08 23:55:49,828: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:55:49,829: Received Checksum: 3e
+2025-05-08 23:55:49,829: Calculated Checksum: 3e
+2025-05-08 23:55:49,829: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:55:49,829: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:55:49,829: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:55:50,821: Receiving data:
+2025-05-08 23:55:50,821: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:55:50,821: Received Checksum: 3e
+2025-05-08 23:55:50,821: Calculated Checksum: 3e
+2025-05-08 23:55:50,821: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:55:50,821: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:55:50,821: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:55:51,878: Receiving data:
+2025-05-08 23:55:51,878: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:55:51,878: Received Checksum: 3e
+2025-05-08 23:55:51,878: Calculated Checksum: 3e
+2025-05-08 23:55:51,878: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:55:51,878: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:55:51,878: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:55:52,618: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\xf8\xa6\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:55:52,618: Encoded data: 7e 00 4f 00 04 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f f8 a6 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 e0 
+2025-05-08 23:55:52,759: Receiving data:
+2025-05-08 23:55:52,759: Decoded frame data: 89 04 02
+2025-05-08 23:55:52,759: Received Checksum: 70
+2025-05-08 23:55:52,759: Calculated Checksum: 70
+2025-05-08 23:55:52,759: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:52,759: [Transmit status] Frame Type: 137, Frame ID: 4, Status: 2
+2025-05-08 23:55:52,854: Receiving data:
+2025-05-08 23:55:52,854: Decoded frame data: 81 00 02 0d 00 01 31
+2025-05-08 23:55:52,854: Received Checksum: 3d
+2025-05-08 23:55:52,854: Calculated Checksum: 3d
+2025-05-08 23:55:52,854: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:55:52,854: Received payload. RSSI: -13, Decoded message: Command ID: 1
+2025-05-08 23:55:52,854: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -13, Options: 0, Data: b'\x81\x00\x02\r\x00\x011'
+2025-05-08 23:55:53,831: Receiving data:
+2025-05-08 23:55:53,832: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:55:53,832: Received Checksum: 3e
+2025-05-08 23:55:53,832: Calculated Checksum: 3e
+2025-05-08 23:55:53,832: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:55:53,832: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:55:53,832: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:55:54,872: Receiving data:
+2025-05-08 23:55:54,872: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:55:54,872: Received Checksum: 3e
+2025-05-08 23:55:54,872: Calculated Checksum: 3e
+2025-05-08 23:55:54,872: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:55:54,872: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:55:54,872: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:55:55,620: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\xfb\xa6\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:55:55,620: Encoded data: 7e 00 4f 00 05 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f fb a6 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 dc 
+2025-05-08 23:55:55,737: Receiving data:
+2025-05-08 23:55:55,737: Decoded frame data: 89 05 02
+2025-05-08 23:55:55,737: Received Checksum: 6f
+2025-05-08 23:55:55,737: Calculated Checksum: 6f
+2025-05-08 23:55:55,737: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:55,737: [Transmit status] Frame Type: 137, Frame ID: 5, Status: 2
+2025-05-08 23:55:55,832: Receiving data:
+2025-05-08 23:55:55,833: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:55:55,833: Received Checksum: 3e
+2025-05-08 23:55:55,833: Calculated Checksum: 3e
+2025-05-08 23:55:55,833: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:55:55,833: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:55:55,833: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:55:56,842: Receiving data:
+2025-05-08 23:55:56,842: Decoded frame data: 81 00 02 0d 00 01 31
+2025-05-08 23:55:56,842: Received Checksum: 3d
+2025-05-08 23:55:56,842: Calculated Checksum: 3d
+2025-05-08 23:55:56,842: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:55:56,842: Received payload. RSSI: -13, Decoded message: Command ID: 1
+2025-05-08 23:55:56,842: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -13, Options: 0, Data: b'\x81\x00\x02\r\x00\x011'
+2025-05-08 23:55:57,882: Receiving data:
+2025-05-08 23:55:57,882: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:55:57,883: Received Checksum: 3e
+2025-05-08 23:55:57,883: Calculated Checksum: 3e
+2025-05-08 23:55:57,883: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:55:57,883: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:55:57,883: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:55:58,622: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\xfe\xa6\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:55:58,622: Encoded data: 7e 00 4f 00 06 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f fe a6 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 d8 
+2025-05-08 23:55:58,715: Receiving data:
+2025-05-08 23:55:58,715: Decoded frame data: 89 06 02
+2025-05-08 23:55:58,715: Received Checksum: 6e
+2025-05-08 23:55:58,715: Calculated Checksum: 6e
+2025-05-08 23:55:58,715: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:58,715: [Transmit status] Frame Type: 137, Frame ID: 6, Status: 2
+2025-05-08 23:55:58,827: Receiving data:
+2025-05-08 23:55:58,827: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:55:58,827: Received Checksum: 3e
+2025-05-08 23:55:58,827: Calculated Checksum: 3e
+2025-05-08 23:55:58,827: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:55:58,827: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:55:58,827: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:55:59,835: Receiving data:
+2025-05-08 23:55:59,835: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:55:59,835: Received Checksum: 3e
+2025-05-08 23:55:59,835: Calculated Checksum: 3e
+2025-05-08 23:55:59,835: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:55:59,835: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:55:59,835: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:00,828: Receiving data:
+2025-05-08 23:56:00,845: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:00,845: Received Checksum: 3e
+2025-05-08 23:56:00,845: Calculated Checksum: 3e
+2025-05-08 23:56:00,845: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:00,845: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:00,845: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:01,623: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x01\xa7\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:56:01,623: Encoded data: 7e 00 4f 00 07 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 01 a7 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 d3 
+2025-05-08 23:56:01,773: Receiving data:
+2025-05-08 23:56:01,773: Decoded frame data: 89 07 02
+2025-05-08 23:56:01,773: Received Checksum: 6d
+2025-05-08 23:56:01,773: Calculated Checksum: 6d
+2025-05-08 23:56:01,773: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:01,773: [Transmit status] Frame Type: 137, Frame ID: 7, Status: 2
+2025-05-08 23:56:02,909: Receiving data:
+2025-05-08 23:56:02,909: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:02,911: Received Checksum: 3e
+2025-05-08 23:56:02,911: Calculated Checksum: 3e
+2025-05-08 23:56:02,911: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:02,911: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:02,911: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:03,903: Receiving data:
+2025-05-08 23:56:03,903: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:03,903: Received Checksum: 3e
+2025-05-08 23:56:03,903: Calculated Checksum: 3e
+2025-05-08 23:56:03,903: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:03,903: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:03,903: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:04,625: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x04\xa7\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:56:04,625: Encoded data: 7e 00 4f 00 08 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 04 a7 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 cf 
+2025-05-08 23:56:04,735: Receiving data:
+2025-05-08 23:56:04,735: Decoded frame data: 89 08 02
+2025-05-08 23:56:04,735: Received Checksum: 6c
+2025-05-08 23:56:04,735: Calculated Checksum: 6c
+2025-05-08 23:56:04,735: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:04,735: [Transmit status] Frame Type: 137, Frame ID: 8, Status: 2
+2025-05-08 23:56:04,944: Receiving data:
+2025-05-08 23:56:04,944: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:04,944: Received Checksum: 3e
+2025-05-08 23:56:04,944: Calculated Checksum: 3e
+2025-05-08 23:56:04,944: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:04,944: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:04,944: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:05,840: Receiving data:
+2025-05-08 23:56:05,840: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:05,840: Received Checksum: 3e
+2025-05-08 23:56:05,840: Calculated Checksum: 3e
+2025-05-08 23:56:05,840: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:05,840: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:05,840: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:06,848: Receiving data:
+2025-05-08 23:56:06,849: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:06,849: Received Checksum: 3e
+2025-05-08 23:56:06,849: Calculated Checksum: 3e
+2025-05-08 23:56:06,849: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:06,849: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:06,849: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:07,626: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x07\xa7\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:56:07,626: Encoded data: 7e 00 4f 00 09 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 07 a7 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 cb 
+2025-05-08 23:56:07,729: Receiving data:
+2025-05-08 23:56:07,729: Decoded frame data: 89 09 02
+2025-05-08 23:56:07,729: Received Checksum: 6b
+2025-05-08 23:56:07,729: Calculated Checksum: 6b
+2025-05-08 23:56:07,729: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:07,729: [Transmit status] Frame Type: 137, Frame ID: 9, Status: 2
+2025-05-08 23:56:07,842: Receiving data:
+2025-05-08 23:56:07,842: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:07,842: Received Checksum: 3e
+2025-05-08 23:56:07,842: Calculated Checksum: 3e
+2025-05-08 23:56:07,842: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:07,842: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:07,842: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:08,850: Receiving data:
+2025-05-08 23:56:08,851: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:08,851: Received Checksum: 3e
+2025-05-08 23:56:08,851: Calculated Checksum: 3e
+2025-05-08 23:56:08,851: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:08,851: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:08,851: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:09,842: Receiving data:
+2025-05-08 23:56:09,843: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:09,843: Received Checksum: 3e
+2025-05-08 23:56:09,843: Calculated Checksum: 3e
+2025-05-08 23:56:09,843: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:09,843: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:09,843: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:10,628: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\n\xa7\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:56:10,628: Encoded data: 7e 00 4f 00 0a 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 0a a7 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 c7 
+2025-05-08 23:56:10,660: Receiving data:
+2025-05-08 23:56:10,660: Decoded frame data: 89 0a 00
+2025-05-08 23:56:10,660: Received Checksum: 6c
+2025-05-08 23:56:10,660: Calculated Checksum: 6c
+2025-05-08 23:56:10,660: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:10,660: [Transmit status] Frame Type: 137, Frame ID: 10, Status: 0
+2025-05-08 23:56:10,786: Receiving data:
+2025-05-08 23:56:10,788: Decoded frame data: 81 00 02 0c 00 04
+2025-05-08 23:56:10,788: Received Checksum: 6c
+2025-05-08 23:56:10,788: Calculated Checksum: 6c
+2025-05-08 23:56:10,788: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:10,788: Received payload. RSSI: -12, Decoded message: 
+2025-05-08 23:56:10,788: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x04'
+2025-05-08 23:56:10,852: Receiving data:
+2025-05-08 23:56:10,852: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:10,853: Received Checksum: 3e
+2025-05-08 23:56:10,853: Calculated Checksum: 3e
+2025-05-08 23:56:10,853: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:10,854: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:10,854: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:11,861: Receiving data:
+2025-05-08 23:56:11,862: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:11,862: Received Checksum: 3e
+2025-05-08 23:56:11,862: Calculated Checksum: 3e
+2025-05-08 23:56:11,862: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:11,862: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:11,862: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:12,853: Receiving data:
+2025-05-08 23:56:12,854: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:12,854: Received Checksum: 3e
+2025-05-08 23:56:12,854: Calculated Checksum: 3e
+2025-05-08 23:56:12,854: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:12,854: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:12,854: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:13,630: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\r\xa7\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:56:13,630: Encoded data: 7e 00 4f 00 0b 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 0d a7 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 c3 
+2025-05-08 23:56:13,782: Receiving data:
+2025-05-08 23:56:13,782: Decoded frame data: 89 0b 02
+2025-05-08 23:56:13,782: Received Checksum: 69
+2025-05-08 23:56:13,782: Calculated Checksum: 69
+2025-05-08 23:56:13,782: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:13,782: [Transmit status] Frame Type: 137, Frame ID: 11, Status: 2
+2025-05-08 23:56:13,862: Receiving data:
+2025-05-08 23:56:13,862: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:13,862: Received Checksum: 3e
+2025-05-08 23:56:13,862: Calculated Checksum: 3e
+2025-05-08 23:56:13,862: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:13,862: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:13,862: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:14,867: Receiving data:
+2025-05-08 23:56:14,867: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:14,867: Received Checksum: 3e
+2025-05-08 23:56:14,867: Calculated Checksum: 3e
+2025-05-08 23:56:14,867: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:14,867: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:14,867: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:15,863: Receiving data:
+2025-05-08 23:56:15,863: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:15,863: Received Checksum: 3e
+2025-05-08 23:56:15,864: Calculated Checksum: 3e
+2025-05-08 23:56:15,864: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:15,864: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:15,864: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:16,631: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x10\xa7\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:56:16,631: Encoded data: 7e 00 4f 00 0c 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 10 a7 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 bf 
+2025-05-08 23:56:16,728: Receiving data:
+2025-05-08 23:56:16,728: Decoded frame data: 89 0c 02
+2025-05-08 23:56:16,728: Received Checksum: 68
+2025-05-08 23:56:16,728: Calculated Checksum: 68
+2025-05-08 23:56:16,728: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:16,728: [Transmit status] Frame Type: 137, Frame ID: 12, Status: 2
+2025-05-08 23:56:16,904: Receiving data:
+2025-05-08 23:56:16,904: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:16,904: Received Checksum: 3e
+2025-05-08 23:56:16,904: Calculated Checksum: 3e
+2025-05-08 23:56:16,904: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:16,904: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:16,904: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:17,929: Receiving data:
+2025-05-08 23:56:17,929: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:17,929: Received Checksum: 3e
+2025-05-08 23:56:17,929: Calculated Checksum: 3e
+2025-05-08 23:56:17,929: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:17,929: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:17,929: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:18,874: Receiving data:
+2025-05-08 23:56:18,874: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:18,874: Received Checksum: 3e
+2025-05-08 23:56:18,874: Calculated Checksum: 3e
+2025-05-08 23:56:18,874: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:18,874: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:18,874: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:19,633: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x13\xa7\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:56:19,633: Encoded data: 7e 00 4f 00 0d 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 13 a7 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 bb 
+2025-05-08 23:56:19,754: Receiving data:
+2025-05-08 23:56:19,754: Decoded frame data: 89 0d 02
+2025-05-08 23:56:19,754: Received Checksum: 67
+2025-05-08 23:56:19,754: Calculated Checksum: 67
+2025-05-08 23:56:19,754: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:19,754: [Transmit status] Frame Type: 137, Frame ID: 13, Status: 2
+2025-05-08 23:56:19,930: Receiving data:
+2025-05-08 23:56:19,930: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:19,930: Received Checksum: 3e
+2025-05-08 23:56:19,930: Calculated Checksum: 3e
+2025-05-08 23:56:19,930: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:19,930: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:19,930: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:20,874: Receiving data:
+2025-05-08 23:56:20,874: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:20,874: Received Checksum: 3e
+2025-05-08 23:56:20,874: Calculated Checksum: 3e
+2025-05-08 23:56:20,874: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:20,874: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:20,874: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:21,900: Receiving data:
+2025-05-08 23:56:21,900: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:21,900: Received Checksum: 3e
+2025-05-08 23:56:21,900: Calculated Checksum: 3e
+2025-05-08 23:56:21,900: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:21,900: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:21,900: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:22,634: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x16\xa7\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:56:22,634: Encoded data: 7e 00 4f 00 0e 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 16 a7 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 b7 
+2025-05-08 23:56:22,749: Receiving data:
+2025-05-08 23:56:22,749: Decoded frame data: 89 0e 02
+2025-05-08 23:56:22,749: Received Checksum: 66
+2025-05-08 23:56:22,749: Calculated Checksum: 66
+2025-05-08 23:56:22,749: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:22,749: [Transmit status] Frame Type: 137, Frame ID: 14, Status: 2
+2025-05-08 23:56:22,876: Receiving data:
+2025-05-08 23:56:22,876: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:22,876: Received Checksum: 3e
+2025-05-08 23:56:22,876: Calculated Checksum: 3e
+2025-05-08 23:56:22,876: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:22,876: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:22,876: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:23,869: Receiving data:
+2025-05-08 23:56:23,869: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:23,869: Received Checksum: 3e
+2025-05-08 23:56:23,869: Calculated Checksum: 3e
+2025-05-08 23:56:23,869: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:23,869: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:23,869: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:25,635: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x19\xa7\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:56:25,636: Encoded data: 7e 00 4f 00 0f 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 19 a7 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 b3 
+2025-05-08 23:56:25,774: Receiving data:
+2025-05-08 23:56:25,774: Decoded frame data: 89 0f 02
+2025-05-08 23:56:25,774: Received Checksum: 65
+2025-05-08 23:56:25,774: Calculated Checksum: 65
+2025-05-08 23:56:25,774: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:25,774: [Transmit status] Frame Type: 137, Frame ID: 15, Status: 2
+2025-05-08 23:56:26,895: Receiving data:
+2025-05-08 23:56:26,896: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:26,896: Received Checksum: 3e
+2025-05-08 23:56:26,896: Calculated Checksum: 3e
+2025-05-08 23:56:26,896: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:26,896: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:26,896: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:27,872: Receiving data:
+2025-05-08 23:56:27,872: Pass. Unable to read length bytes
+2025-05-08 23:56:27,888: Receiving data:
+2025-05-08 23:56:27,888: Pass 07
+2025-05-08 23:56:27,888: Receiving data:
+2025-05-08 23:56:27,889: Pass 81
+2025-05-08 23:56:27,889: Receiving data:
+2025-05-08 23:56:27,889: Pass 00
+2025-05-08 23:56:27,889: Receiving data:
+2025-05-08 23:56:27,889: Pass 02
+2025-05-08 23:56:27,889: Receiving data:
+2025-05-08 23:56:27,889: Pass 0c
+2025-05-08 23:56:27,890: Receiving data:
+2025-05-08 23:56:27,890: Pass 00
+2025-05-08 23:56:27,890: Receiving data:
+2025-05-08 23:56:27,891: Pass 01
+2025-05-08 23:56:27,891: Receiving data:
+2025-05-08 23:56:27,891: Pass 31
+2025-05-08 23:56:27,891: Receiving data:
+2025-05-08 23:56:27,891: Pass 3e
+2025-05-08 23:56:28,637: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x1c\xa7\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:56:28,637: Encoded data: 7e 00 4f 00 10 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 1c a7 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 af 
+2025-05-08 23:56:28,752: Receiving data:
+2025-05-08 23:56:28,753: Decoded frame data: 89 10 02
+2025-05-08 23:56:28,753: Received Checksum: 64
+2025-05-08 23:56:28,753: Calculated Checksum: 64
+2025-05-08 23:56:28,753: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:28,753: [Transmit status] Frame Type: 137, Frame ID: 16, Status: 2
+2025-05-08 23:56:28,880: Receiving data:
+2025-05-08 23:56:28,880: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:28,880: Received Checksum: 3e
+2025-05-08 23:56:28,880: Calculated Checksum: 3e
+2025-05-08 23:56:28,880: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:28,882: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:28,882: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:29,889: Receiving data:
+2025-05-08 23:56:29,889: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:29,889: Received Checksum: 3e
+2025-05-08 23:56:29,889: Calculated Checksum: 3e
+2025-05-08 23:56:29,889: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:29,890: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:29,890: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:30,882: Receiving data:
+2025-05-08 23:56:30,882: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:30,882: Received Checksum: 3e
+2025-05-08 23:56:30,882: Calculated Checksum: 3e
+2025-05-08 23:56:30,882: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:30,882: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:30,882: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:31,639: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\x1f\xa7\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:56:31,639: Encoded data: 7e 00 4f 00 11 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 1f a7 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 ab 
+2025-05-08 23:56:31,763: Receiving data:
+2025-05-08 23:56:31,763: Decoded frame data: 89 11 02
+2025-05-08 23:56:31,763: Received Checksum: 63
+2025-05-08 23:56:31,763: Calculated Checksum: 63
+2025-05-08 23:56:31,763: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:31,763: [Transmit status] Frame Type: 137, Frame ID: 17, Status: 2
+2025-05-08 23:56:31,891: Receiving data:
+2025-05-08 23:56:31,891: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:31,891: Received Checksum: 3e
+2025-05-08 23:56:31,891: Calculated Checksum: 3e
+2025-05-08 23:56:31,891: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:31,891: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:31,891: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:32,884: Receiving data:
+2025-05-08 23:56:32,884: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:32,884: Received Checksum: 3e
+2025-05-08 23:56:32,884: Calculated Checksum: 3e
+2025-05-08 23:56:32,884: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:32,884: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:32,884: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:33,893: Receiving data:
+2025-05-08 23:56:33,893: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:33,893: Received Checksum: 3e
+2025-05-08 23:56:33,893: Calculated Checksum: 3e
+2025-05-08 23:56:33,893: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:33,893: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:33,893: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:34,640: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?"\xa7\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:56:34,640: Encoded data: 7e 00 4f 00 12 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 22 a7 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 a7 
+2025-05-08 23:56:34,757: Receiving data:
+2025-05-08 23:56:34,757: Decoded frame data: 89 12 00
+2025-05-08 23:56:34,757: Received Checksum: 64
+2025-05-08 23:56:34,757: Calculated Checksum: 64
+2025-05-08 23:56:34,757: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:34,757: [Transmit status] Frame Type: 137, Frame ID: 18, Status: 0
+2025-05-08 23:56:34,901: Receiving data:
+2025-05-08 23:56:34,902: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:34,902: Received Checksum: 3e
+2025-05-08 23:56:34,902: Calculated Checksum: 3e
+2025-05-08 23:56:34,902: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:34,902: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:34,902: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:34,902: Receiving data:
+2025-05-08 23:56:34,902: Decoded frame data: 81 00 02 0c 00 04
+2025-05-08 23:56:34,902: Received Checksum: 6c
+2025-05-08 23:56:34,902: Calculated Checksum: 6c
+2025-05-08 23:56:34,902: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:34,902: Received payload. RSSI: -12, Decoded message: 
+2025-05-08 23:56:34,902: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x04'
+2025-05-08 23:56:35,894: Receiving data:
+2025-05-08 23:56:35,894: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:35,894: Received Checksum: 3e
+2025-05-08 23:56:35,894: Calculated Checksum: 3e
+2025-05-08 23:56:35,894: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:35,894: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:35,894: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:36,887: Receiving data:
+2025-05-08 23:56:36,903: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:36,903: Received Checksum: 3e
+2025-05-08 23:56:36,903: Calculated Checksum: 3e
+2025-05-08 23:56:36,903: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:36,903: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:36,903: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:37,641: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?%\xa7\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:56:37,641: Encoded data: 7e 00 4f 00 13 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 25 a7 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 a3 
+2025-05-08 23:56:37,751: Receiving data:
+2025-05-08 23:56:37,751: Decoded frame data: 89 13 02
+2025-05-08 23:56:37,751: Received Checksum: 61
+2025-05-08 23:56:37,751: Calculated Checksum: 61
+2025-05-08 23:56:37,751: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:37,751: [Transmit status] Frame Type: 137, Frame ID: 19, Status: 2
+2025-05-08 23:56:37,927: Receiving data:
+2025-05-08 23:56:37,928: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:37,928: Received Checksum: 3e
+2025-05-08 23:56:37,928: Calculated Checksum: 3e
+2025-05-08 23:56:37,928: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:37,928: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:37,928: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:38,904: Receiving data:
+2025-05-08 23:56:38,904: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:38,904: Received Checksum: 3e
+2025-05-08 23:56:38,904: Calculated Checksum: 3e
+2025-05-08 23:56:38,904: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:38,904: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:38,904: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:39,896: Receiving data:
+2025-05-08 23:56:39,896: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:39,896: Received Checksum: 3e
+2025-05-08 23:56:39,896: Calculated Checksum: 3e
+2025-05-08 23:56:39,896: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:39,896: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:39,896: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:40,643: Transmitting data: b'\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?(\xa7\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00' to 0013A200424353F7
+2025-05-08 23:56:40,643: Encoded data: 7e 00 4f 00 14 00 13 a2 00 42 43 53 f7 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 28 a7 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00 9f 
+2025-05-08 23:56:40,775: Receiving data:
+2025-05-08 23:56:40,775: Decoded frame data: 89 14 02
+2025-05-08 23:56:40,775: Received Checksum: 60
+2025-05-08 23:56:40,775: Calculated Checksum: 60
+2025-05-08 23:56:40,775: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:40,775: [Transmit status] Frame Type: 137, Frame ID: 20, Status: 2
+2025-05-08 23:56:40,905: Receiving data:
+2025-05-08 23:56:40,905: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:40,905: Received Checksum: 3e
+2025-05-08 23:56:40,905: Calculated Checksum: 3e
+2025-05-08 23:56:40,905: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:40,905: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:40,906: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:41,978: Receiving data:
+2025-05-08 23:56:41,978: Decoded frame data: 81 00 02 0c 00 01 31
+2025-05-08 23:56:41,978: Received Checksum: 3e
+2025-05-08 23:56:41,979: Calculated Checksum: 3e
+2025-05-08 23:56:41,979: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:41,979: Received payload. RSSI: -12, Decoded message: Command ID: 1
+2025-05-08 23:56:41,979: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x02', RSSI: -12, Options: 0, Data: b'\x81\x00\x02\x0c\x00\x011'
+2025-05-08 23:56:42,888: Attempting to close serial XBee connection.
+2025-05-08 23:56:42,997: Serial port closed.

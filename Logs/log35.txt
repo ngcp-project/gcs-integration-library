@@ -1,0 +1,6 @@
+2025-03-16 22:44:47,937: Log 35
+
+2025-03-16 22:44:47,968: Attempting to open serial XBee connection.
+2025-03-16 22:44:47,970: Attempting to open serial XBee connection.
+2025-03-16 22:44:48,021: Serial port opened.
+2025-03-16 22:44:48,021: Serial port opened.

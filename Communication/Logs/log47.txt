@@ -1,0 +1,12 @@
+2025-03-14 16:09:08,069: Log 47
+
+2025-03-14 16:09:08,102: Attempting to open serial XBee connection.
+2025-03-14 16:09:08,102: Attempting to open serial XBee connection.
+2025-03-14 16:09:08,152: Serial port opened.
+2025-03-14 16:09:08,152: Serial port opened.
+2025-03-14 16:09:08,152: Transmitting data: hello to 0000000000000000
+2025-03-14 16:09:08,152: Transmitting data: hello to 0000000000000000
+2025-03-14 16:09:13,162: Attempting to close serial XBee connection.
+2025-03-14 16:09:13,162: Attempting to close serial XBee connection.
+2025-03-14 16:09:13,278: Serial port closed.
+2025-03-14 16:09:13,278: Serial port closed.

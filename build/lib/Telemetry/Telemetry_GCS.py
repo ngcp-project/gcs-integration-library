@@ -32,7 +32,7 @@ class TelemetrySubscriber:
         print(f" [*] Waiting for telemetry data for {self.vehicleName}. To exit press CTRL+C")
 
         self.channel.basic_consume(queue=self.queue_name, on_message_callback=self.callback, auto_ack=True)
-
+    
     def callback(self, ch, method, properties, body):
         telemetry_data = body
         print(f"Received telemetry data for {self.vehicleName}: {telemetry_data}")

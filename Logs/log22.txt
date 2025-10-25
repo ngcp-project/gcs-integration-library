@@ -1,0 +1,12 @@
+2025-03-16 22:34:09,581: Log 22
+
+2025-03-16 22:34:09,593: Attempting to open serial XBee connection.
+2025-03-16 22:34:09,593: Attempting to open serial XBee connection.
+2025-03-16 22:34:09,647: Serial port opened.
+2025-03-16 22:34:09,647: Serial port opened.
+2025-03-16 22:34:09,649: Transmitting data: bytearray(b'~\x01\x7f\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00{"vehId": 0, "type": 1, "telemetryData": {"speed": 45.2, "pitch": 10.5, "yaw": 20.3, "roll": 5.8, "alt": 1000.0, "batteryLife": 80.5, "currentPosition": {"lat": 37.7749, "lon": -122.4194}, "lastUpdated": 1742189649, "vehicleStatus": 0, "requestCoord": {"messageFlag": 1, "requestLocation": {"lat": 45.8484, "lon": 100.4194}, "patientSecured": null}}, "commandsData": null}\xad') to 0000000000000000
+2025-03-16 22:34:09,649: Transmitting data: bytearray(b'~\x01\x7f\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00{"vehId": 0, "type": 1, "telemetryData": {"speed": 45.2, "pitch": 10.5, "yaw": 20.3, "roll": 5.8, "alt": 1000.0, "batteryLife": 80.5, "currentPosition": {"lat": 37.7749, "lon": -122.4194}, "lastUpdated": 1742189649, "vehicleStatus": 0, "requestCoord": {"messageFlag": 1, "requestLocation": {"lat": 45.8484, "lon": 100.4194}, "patientSecured": null}}, "commandsData": null}\xad') to 0000000000000000
+2025-03-16 22:34:14,650: Attempting to close serial XBee connection.
+2025-03-16 22:34:14,650: Attempting to close serial XBee connection.
+2025-03-16 22:34:14,776: Serial port closed.
+2025-03-16 22:34:14,776: Serial port closed.

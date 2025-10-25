@@ -1,0 +1,1016 @@
+2025-05-08 23:55:47,244: Log 116
+
+2025-05-08 23:55:47,244: port: COM9, baudrate: 115200, timeout: 0.05, config_file: None
+2025-05-08 23:55:47,244: Attempting to open serial XBee connection.
+2025-05-08 23:55:47,297: Serial port opened.
+2025-05-08 23:55:47,297: Clearing input and output buffers.
+2025-05-08 23:55:47,797: Receiving data:
+2025-05-08 23:55:47,797: Decoded frame data: 81 00 04 0d 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f ef a6 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00
+2025-05-08 23:55:47,797: Received Checksum: df
+2025-05-08 23:55:47,797: Calculated Checksum: df
+2025-05-08 23:55:47,799: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:55:47,799: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:55:47,799: Received payload. RSSI: -13, Decoded message: Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=0.800000011920929, Last Updated=1746773743, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=45.8484, Message Location=(100.4194, 0)),Patient Status = 1
+2025-05-08 23:55:47,799: Encoded data: 7e 00 0d 00 01 00 13 a2 00 42 43 67 2f 00 01 31 fc 
+2025-05-08 23:55:47,799: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x04', RSSI: -13, Options: 0, Data: b'\x81\x00\x04\r\x00\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\xef\xa6\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00'
+2025-05-08 23:55:47,801: Using SelectPoller
+2025-05-08 23:55:47,803: Created default connection workflow <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x00000259C06ABE90>
+2025-05-08 23:55:47,803: Starting AMQP Connection workflow asynchronously.
+2025-05-08 23:55:47,803: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x00000259BDA54370> with deadline=654897.734 and callback=functools.partial(<bound method AMQPConnectionWorkflow._start_new_cycle_async of <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x00000259C06ABE90>>, first=True); now=654897.734; delay=0
+2025-05-08 23:55:47,804: Beginning a new AMQP connection workflow cycle; attempts remaining after this: 0
+2025-05-08 23:55:47,804: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x00000259BDD85240> with deadline=654897.734 and callback=<bound method AMQPConnectionWorkflow._try_next_config_async of <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x00000259C06ABE90>>; now=654897.734; delay=0
+2025-05-08 23:55:47,804: _try_next_config_async: 'localhost':5672
+2025-05-08 23:55:47,816: add_callback_threadsafe: added callback=<bound method _AddressResolver._dispatch_result of <pika.adapters.utils.selector_ioloop_adapter._AddressResolver object at 0x00000259BDD856A0>>
+2025-05-08 23:55:47,816: process_timeouts: invoking callback=<bound method _AddressResolver._dispatch_result of <pika.adapters.utils.selector_ioloop_adapter._AddressResolver object at 0x00000259BDD856A0>>
+2025-05-08 23:55:47,816: Invoking asynchronous getaddrinfo() completion callback; host='localhost'
+2025-05-08 23:55:47,816: getaddrinfo returned 2 records
+2025-05-08 23:55:47,816: Attempting to connect using address record (<AddressFamily.AF_INET6: 23>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0))
+2025-05-08 23:55:47,817: Pika version 1.3.2 connecting to ('::1', 5672, 0, 0)
+2025-05-08 23:55:47,817: add_callback_threadsafe: added callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x00000259C06ABF80>>
+2025-05-08 23:55:47,817: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x00000259BDD85600> with deadline=654907.75 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C06AB380>>; now=654897.75; delay=10.0
+2025-05-08 23:55:47,817: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06DC070> with deadline=654912.75 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C06AB380>>; now=654897.75; delay=15.0
+2025-05-08 23:55:47,817: process_timeouts: invoking callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x00000259C06ABF80>>
+2025-05-08 23:55:47,818: SelectorIOServicesAdapter.set_writer(1160, <bound method _AsyncSocketConnector._on_writable of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x00000259C06ABF80>>)
+2025-05-08 23:55:47,818: set_writer(1160, _) added handler Wr
+2025-05-08 23:55:47,819: Connection-establishment is in progress for <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>.
+2025-05-08 23:55:47,819: Socket connected: <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,819: _AsyncSocketConnector._report_completion(None); <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,819: SelectorIOServicesAdapter.remove_writer(1160)
+2025-05-08 23:55:47,819: remove_writer(1160) removed handler
+2025-05-08 23:55:47,820: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x00000259BDD85600> with deadline=654907.75 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C06AB380>>
+2025-05-08 23:55:47,820: TCP connection to broker established: <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>.
+2025-05-08 23:55:47,820: _AsyncStreamConnector.start(); <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,821: add_callback_threadsafe: added callback=<bound method _AsyncStreamConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncStreamConnector object at 0x00000259BDECB320>>
+2025-05-08 23:55:47,821: process_timeouts: invoking callback=<bound method _AsyncStreamConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncStreamConnector object at 0x00000259BDECB320>>
+2025-05-08 23:55:47,821: _AsyncStreamConnector._start_async(); <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,821: _AsyncStreamConnector._linkup()
+2025-05-08 23:55:47,821: New Connection state: CLOSED (prev=CLOSED)
+2025-05-08 23:55:47,821: Added: {'callback': <bound method Connection._on_connection_start of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:55:47,821: Added: {'callback': <bound method Connection._on_connection_close_from_broker of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:55:47,821: Added: {'callback': <bound method Connection._default_on_connection_error of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:55:47,821: New Connection state: INIT (prev=CLOSED)
+2025-05-08 23:55:47,821: Using external connection workflow.
+2025-05-08 23:55:47,821: _AsyncTransportBase.__init__: <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,821: SelectorIOServicesAdapter.set_reader(1160, <bound method _AsyncPlaintextTransport._on_socket_readable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0>>)
+2025-05-08 23:55:47,823: set_reader(1160, _) added handler Rd
+2025-05-08 23:55:47,823: _linkup(): created transport <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0>
+2025-05-08 23:55:47,823: New Connection state: PROTOCOL (prev=INIT)
+2025-05-08 23:55:47,823: SelectorIOServicesAdapter.set_writer(1160, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0>>)
+2025-05-08 23:55:47,823: set_writer(1160, _) updated handler RdWr
+2025-05-08 23:55:47,823: Turned on writability watcher: <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,823: _linkup(): introduced transport to protocol <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0>; _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-05-08 23:55:47,823: _AsyncStreamConnector._report_completion((<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>)); <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,823: Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
+2025-05-08 23:55:47,823: Removing callback #0: {'callback': <bound method Connection._default_on_connection_error of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:55:47,823: Added: {'callback': <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C06AB380>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:55:47,823: Added: {'callback': <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C06AB380>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:55:47,823: _AsyncStreamConnector._cleanup(False)
+2025-05-08 23:55:47,824: SelectorIOServicesAdapter.remove_writer(1160)
+2025-05-08 23:55:47,824: remove_writer(1160) updated handler Rd
+2025-05-08 23:55:47,824: Turned off writability watcher: <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,825: Processing 0:Connection.Start
+2025-05-08 23:55:47,826: Processing use of oneshot callback
+2025-05-08 23:55:47,826: 0 registered uses left
+2025-05-08 23:55:47,826: Removing callback #0: {'callback': <bound method Connection._on_connection_start of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-05-08 23:55:47,826: Calling <bound method Connection._on_connection_start of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.Start"
+2025-05-08 23:55:47,826: New Connection state: START (prev=PROTOCOL)
+2025-05-08 23:55:47,826: Added: {'callback': <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:55:47,827: SelectorIOServicesAdapter.set_writer(1160, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0>>)
+2025-05-08 23:55:47,827: set_writer(1160, _) updated handler RdWr
+2025-05-08 23:55:47,827: Turned on writability watcher: <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,827: Recv would block on <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,827: SelectorIOServicesAdapter.remove_writer(1160)
+2025-05-08 23:55:47,827: remove_writer(1160) updated handler Rd
+2025-05-08 23:55:47,827: Turned off writability watcher: <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,829: Receiving data:
+2025-05-08 23:55:47,829: Decoded frame data: 89 01 00
+2025-05-08 23:55:47,829: Received Checksum: 75
+2025-05-08 23:55:47,829: Calculated Checksum: 75
+2025-05-08 23:55:47,829: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:47,829: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 0
+2025-05-08 23:55:47,830: Processing 0:Connection.Tune
+2025-05-08 23:55:47,830: Processing use of oneshot callback
+2025-05-08 23:55:47,830: 0 registered uses left
+2025-05-08 23:55:47,830: Removing callback #0: {'callback': <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-05-08 23:55:47,830: Calling <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.Tune"
+2025-05-08 23:55:47,830: New Connection state: TUNE (prev=START)
+2025-05-08 23:55:47,830: Creating a HeartbeatChecker: 60
+2025-05-08 23:55:47,830: timeout: 60.000000 send_interval: 30.000000 check_interval: 65.000000
+2025-05-08 23:55:47,830: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06DC610> with deadline=654927.75 and callback=<bound method HeartbeatChecker._send_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x00000259C06DD6D0>>; now=654897.75; delay=30.0
+2025-05-08 23:55:47,831: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06DD6F0> with deadline=654962.75 and callback=<bound method HeartbeatChecker._check_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x00000259C06DD6D0>>; now=654897.75; delay=65
+2025-05-08 23:55:47,831: SelectorIOServicesAdapter.set_writer(1160, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0>>)
+2025-05-08 23:55:47,831: set_writer(1160, _) updated handler RdWr
+2025-05-08 23:55:47,831: Turned on writability watcher: <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,831: Added: {'callback': <bound method Connection._on_connection_open_ok of <SelectConnection TUNE transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:55:47,831: Recv would block on <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,831: SelectorIOServicesAdapter.remove_writer(1160)
+2025-05-08 23:55:47,831: remove_writer(1160) updated handler Rd
+2025-05-08 23:55:47,831: Turned off writability watcher: <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,875: Processing 0:Connection.OpenOk
+2025-05-08 23:55:47,875: Processing use of oneshot callback
+2025-05-08 23:55:47,875: 0 registered uses left
+2025-05-08 23:55:47,875: Removing callback #0: {'callback': <bound method Connection._on_connection_open_ok of <SelectConnection TUNE transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-05-08 23:55:47,875: Calling <bound method Connection._on_connection_open_ok of <SelectConnection TUNE transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.OpenOk"
+2025-05-08 23:55:47,875: New Connection state: OPEN (prev=TUNE)
+2025-05-08 23:55:47,875: Processing 0:_on_connection_open_ok
+2025-05-08 23:55:47,875: Calling <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C06AB380>> for "0:_on_connection_open_ok"
+2025-05-08 23:55:47,875: AMQPConnector: AMQP handshake attempt completed; state=3; error=None; 'localhost'/(<AddressFamily.AF_INET6: 23>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0))
+2025-05-08 23:55:47,877: AMQPConnector: AMQP connection established for 'localhost'/(<AddressFamily.AF_INET6: 23>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0)): <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-05-08 23:55:47,877: AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-05-08 23:55:47,877: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06DC070> with deadline=654912.75 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C06AB380>>
+2025-05-08 23:55:47,877: Connection attempt completed with <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-05-08 23:55:47,877: AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-05-08 23:55:47,877: Recv would block on <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,877: Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-05-08 23:55:47,877: Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x00000259C06CD080>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:55:47,877: Creating channel 1
+2025-05-08 23:55:47,877: Added: {'callback': <bound method Connection._on_channel_cleanup of <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': <Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'arguments': None, 'calls': 1}
+2025-05-08 23:55:47,878: Added: {'callback': <bound method Channel._on_getempty of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:55:47,878: Added: {'callback': <bound method Channel._on_cancel of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:55:47,878: Added: {'callback': <bound method Channel._on_flow of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:55:47,878: Added: {'callback': <bound method Channel._on_close_from_broker of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:55:47,878: SelectorIOServicesAdapter.set_writer(1160, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0>>)
+2025-05-08 23:55:47,878: set_writer(1160, _) updated handler RdWr
+2025-05-08 23:55:47,878: Turned on writability watcher: <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,878: Entering blocking state on frame <Channel.Open(['out_of_band='])>; acceptable_replies=[<class 'pika.spec.Channel.OpenOk'>]
+2025-05-08 23:55:47,878: Adding on_synchronous_complete callback
+2025-05-08 23:55:47,878: Added: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:55:47,878: Adding passed-in RPC response callback
+2025-05-08 23:55:47,878: Added: {'callback': <bound method Channel._on_openok of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:55:47,878: Added: {'callback': <bound method BlockingChannel._on_consumer_cancelled_by_broker of <BlockingChannel impl=<Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:55:47,879: Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x00000259C06F4C40>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:55:47,879: Added: {'callback': <bound method BlockingChannel._on_channel_closed of <BlockingChannel impl=<Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>>, 'one_shot': False, 'only': <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'arguments': None}
+2025-05-08 23:55:47,879: Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x00000259C06F4D00>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:55:47,879: Created channel=1
+2025-05-08 23:55:47,879: SelectorIOServicesAdapter.remove_writer(1160)
+2025-05-08 23:55:47,879: remove_writer(1160) updated handler Rd
+2025-05-08 23:55:47,879: Turned off writability watcher: <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,881: Processing 1:Channel.OpenOk
+2025-05-08 23:55:47,881: Processing use of oneshot callback
+2025-05-08 23:55:47,881: 0 registered uses left
+2025-05-08 23:55:47,881: Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-05-08 23:55:47,881: Processing use of oneshot callback
+2025-05-08 23:55:47,881: 0 registered uses left
+2025-05-08 23:55:47,881: Removing callback #0: {'callback': <bound method Channel._on_openok of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-05-08 23:55:47,881: Calling <bound method Channel._on_synchronous_complete of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.OpenOk"
+2025-05-08 23:55:47,881: 0 blocked frames
+2025-05-08 23:55:47,881: Calling <bound method Channel._on_openok of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.OpenOk"
+2025-05-08 23:55:47,882: Recv would block on <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,882: SelectorIOServicesAdapter.set_writer(1160, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0>>)
+2025-05-08 23:55:47,882: set_writer(1160, _) updated handler RdWr
+2025-05-08 23:55:47,882: Turned on writability watcher: <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,882: Entering blocking state on frame <Queue.Declare(['arguments={}', 'auto_delete=False', 'durable=False', 'exclusive=False', 'nowait=False', 'passive=False', 'queue=telemetry_mea', 'ticket=0'])>; acceptable_replies=[(<class 'pika.spec.Queue.DeclareOk'>, {'queue': 'telemetry_mea'})]
+2025-05-08 23:55:47,882: Adding on_synchronous_complete callback
+2025-05-08 23:55:47,882: Added: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'telemetry_mea'}, 'calls': 1}
+2025-05-08 23:55:47,882: Adding passed-in RPC response callback
+2025-05-08 23:55:47,883: Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x00000259C06CCF00>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'telemetry_mea'}, 'calls': 1}
+2025-05-08 23:55:47,883: SelectorIOServicesAdapter.remove_writer(1160)
+2025-05-08 23:55:47,883: remove_writer(1160) updated handler Rd
+2025-05-08 23:55:47,883: Turned off writability watcher: <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,885: Processing 1:Queue.DeclareOk
+2025-05-08 23:55:47,885: Processing use of oneshot callback
+2025-05-08 23:55:47,885: 0 registered uses left
+2025-05-08 23:55:47,885: Comparing {'queue': 'telemetry_mea'} to {'queue': 'telemetry_mea'}
+2025-05-08 23:55:47,885: Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'telemetry_mea'}, 'calls': 0}
+2025-05-08 23:55:47,885: Processing use of oneshot callback
+2025-05-08 23:55:47,885: 0 registered uses left
+2025-05-08 23:55:47,885: Comparing {'queue': 'telemetry_mea'} to {'queue': 'telemetry_mea'}
+2025-05-08 23:55:47,885: Removing callback #0: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x00000259C06CCF00>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'telemetry_mea'}, 'calls': 0}
+2025-05-08 23:55:47,885: Calling <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Queue.DeclareOk"
+2025-05-08 23:55:47,885: 0 blocked frames
+2025-05-08 23:55:47,885: Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x00000259C06CCF00>> for "1:Queue.DeclareOk"
+2025-05-08 23:55:47,885: Recv would block on <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,886: SelectorIOServicesAdapter.set_writer(1160, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259BDD853A0>>)
+2025-05-08 23:55:47,886: set_writer(1160, _) updated handler RdWr
+2025-05-08 23:55:47,886: Turned on writability watcher: <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,886: SelectorIOServicesAdapter.remove_writer(1160)
+2025-05-08 23:55:47,886: remove_writer(1160) updated handler Rd
+2025-05-08 23:55:47,886: Turned off writability watcher: <socket.socket fd=1160, family=23, type=1, proto=6, laddr=('::1', 53425, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:55:47,887: Transmitting data: b'\x04' to 0013A2004243672F
+2025-05-08 23:55:47,887: Encoded data: 7e 00 0c 00 02 00 13 a2 00 42 43 67 2f 00 04 29 
+2025-05-08 23:55:47,973: Receiving data:
+2025-05-08 23:55:47,973: Decoded frame data: 89 02 00
+2025-05-08 23:55:47,973: Received Checksum: 74
+2025-05-08 23:55:47,974: Calculated Checksum: 74
+2025-05-08 23:55:47,974: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:47,974: [Transmit status] Frame Type: 137, Frame ID: 2, Status: 0
+2025-05-08 23:55:48,800: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:55:48,800: Encoded data: 7e 00 0d 00 03 00 13 a2 00 42 43 67 2f 00 01 31 fa 
+2025-05-08 23:55:48,822: Receiving data:
+2025-05-08 23:55:48,822: Decoded frame data: 89 03 00
+2025-05-08 23:55:48,823: Received Checksum: 73
+2025-05-08 23:55:48,823: Calculated Checksum: 73
+2025-05-08 23:55:48,823: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:48,823: [Transmit status] Frame Type: 137, Frame ID: 3, Status: 0
+2025-05-08 23:55:49,802: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:55:49,802: Encoded data: 7e 00 0d 00 04 00 13 a2 00 42 43 67 2f 00 01 31 f9 
+2025-05-08 23:55:49,832: Receiving data:
+2025-05-08 23:55:49,832: Decoded frame data: 89 04 00
+2025-05-08 23:55:49,832: Received Checksum: 72
+2025-05-08 23:55:49,832: Calculated Checksum: 72
+2025-05-08 23:55:49,832: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:49,832: [Transmit status] Frame Type: 137, Frame ID: 4, Status: 0
+2025-05-08 23:55:50,803: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:55:50,803: Encoded data: 7e 00 0d 00 05 00 13 a2 00 42 43 67 2f 00 01 31 f8 
+2025-05-08 23:55:50,824: Receiving data:
+2025-05-08 23:55:50,824: Decoded frame data: 89 05 00
+2025-05-08 23:55:50,824: Received Checksum: 71
+2025-05-08 23:55:50,824: Calculated Checksum: 71
+2025-05-08 23:55:50,824: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:50,824: [Transmit status] Frame Type: 137, Frame ID: 5, Status: 0
+2025-05-08 23:55:51,805: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:55:51,805: Encoded data: 7e 00 0d 00 06 00 13 a2 00 42 43 67 2f 00 01 31 f7 
+2025-05-08 23:55:51,882: Receiving data:
+2025-05-08 23:55:51,882: Decoded frame data: 89 06 00
+2025-05-08 23:55:51,882: Received Checksum: 70
+2025-05-08 23:55:51,882: Calculated Checksum: 70
+2025-05-08 23:55:51,883: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:51,883: [Transmit status] Frame Type: 137, Frame ID: 6, Status: 0
+2025-05-08 23:55:52,806: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:55:52,807: Encoded data: 7e 00 0d 00 07 00 13 a2 00 42 43 67 2f 00 01 31 f6 
+2025-05-08 23:55:52,859: Receiving data:
+2025-05-08 23:55:52,859: Decoded frame data: 89 07 00
+2025-05-08 23:55:52,859: Received Checksum: 6f
+2025-05-08 23:55:52,859: Calculated Checksum: 6f
+2025-05-08 23:55:52,859: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:52,859: [Transmit status] Frame Type: 137, Frame ID: 7, Status: 0
+2025-05-08 23:55:53,808: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:55:53,808: Encoded data: 7e 00 0d 00 08 00 13 a2 00 42 43 67 2f 00 01 31 f5 
+2025-05-08 23:55:53,820: Receiving data:
+2025-05-08 23:55:53,820: Decoded frame data: 89 08 00
+2025-05-08 23:55:53,820: Received Checksum: 6e
+2025-05-08 23:55:53,820: Calculated Checksum: 6e
+2025-05-08 23:55:53,820: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:53,820: [Transmit status] Frame Type: 137, Frame ID: 8, Status: 0
+2025-05-08 23:55:54,811: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:55:54,811: Encoded data: 7e 00 0d 00 09 00 13 a2 00 42 43 67 2f 00 01 31 f4 
+2025-05-08 23:55:54,878: Receiving data:
+2025-05-08 23:55:54,878: Decoded frame data: 89 09 00
+2025-05-08 23:55:54,878: Received Checksum: 6d
+2025-05-08 23:55:54,878: Calculated Checksum: 6d
+2025-05-08 23:55:54,878: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:54,878: [Transmit status] Frame Type: 137, Frame ID: 9, Status: 0
+2025-05-08 23:55:55,812: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:55:55,812: Encoded data: 7e 00 0d 00 0a 00 13 a2 00 42 43 67 2f 00 01 31 f3 
+2025-05-08 23:55:55,822: Receiving data:
+2025-05-08 23:55:55,823: Decoded frame data: 89 0a 00
+2025-05-08 23:55:55,823: Received Checksum: 6c
+2025-05-08 23:55:55,823: Calculated Checksum: 6c
+2025-05-08 23:55:55,823: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:55,823: [Transmit status] Frame Type: 137, Frame ID: 10, Status: 0
+2025-05-08 23:55:56,815: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:55:56,815: Encoded data: 7e 00 0d 00 0b 00 13 a2 00 42 43 67 2f 00 01 31 f2 
+2025-05-08 23:55:56,847: Receiving data:
+2025-05-08 23:55:56,847: Decoded frame data: 89 0b 00
+2025-05-08 23:55:56,847: Received Checksum: 6b
+2025-05-08 23:55:56,847: Calculated Checksum: 6b
+2025-05-08 23:55:56,847: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:56,847: [Transmit status] Frame Type: 137, Frame ID: 11, Status: 0
+2025-05-08 23:55:57,816: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:55:57,816: Encoded data: 7e 00 0d 00 0c 00 13 a2 00 42 43 67 2f 00 01 31 f1 
+2025-05-08 23:55:57,889: Receiving data:
+2025-05-08 23:55:57,889: Decoded frame data: 89 0c 00
+2025-05-08 23:55:57,889: Received Checksum: 6a
+2025-05-08 23:55:57,889: Calculated Checksum: 6a
+2025-05-08 23:55:57,889: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:57,889: [Transmit status] Frame Type: 137, Frame ID: 12, Status: 0
+2025-05-08 23:55:58,817: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:55:58,817: Encoded data: 7e 00 0d 00 0d 00 13 a2 00 42 43 67 2f 00 01 31 f0 
+2025-05-08 23:55:58,834: Receiving data:
+2025-05-08 23:55:58,835: Decoded frame data: 89 0d 00
+2025-05-08 23:55:58,835: Received Checksum: 69
+2025-05-08 23:55:58,835: Calculated Checksum: 69
+2025-05-08 23:55:58,835: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:58,835: [Transmit status] Frame Type: 137, Frame ID: 13, Status: 0
+2025-05-08 23:55:59,819: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:55:59,819: Encoded data: 7e 00 0d 00 0e 00 13 a2 00 42 43 67 2f 00 01 31 ef 
+2025-05-08 23:55:59,827: Receiving data:
+2025-05-08 23:55:59,844: Decoded frame data: 89 0e 00
+2025-05-08 23:55:59,844: Received Checksum: 68
+2025-05-08 23:55:59,844: Calculated Checksum: 68
+2025-05-08 23:55:59,844: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:55:59,844: [Transmit status] Frame Type: 137, Frame ID: 14, Status: 0
+2025-05-08 23:56:00,820: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:00,820: Encoded data: 7e 00 0d 00 0f 00 13 a2 00 42 43 67 2f 00 01 31 ee 
+2025-05-08 23:56:00,835: Receiving data:
+2025-05-08 23:56:00,835: Decoded frame data: 89 0f 00
+2025-05-08 23:56:00,835: Received Checksum: 67
+2025-05-08 23:56:00,835: Calculated Checksum: 67
+2025-05-08 23:56:00,837: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:00,837: [Transmit status] Frame Type: 137, Frame ID: 15, Status: 0
+2025-05-08 23:56:01,822: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:01,822: Encoded data: 7e 00 0d 00 10 00 13 a2 00 42 43 67 2f 00 01 31 ed 
+2025-05-08 23:56:01,941: Receiving data:
+2025-05-08 23:56:01,942: Decoded frame data: 89 10 02
+2025-05-08 23:56:01,942: Received Checksum: 64
+2025-05-08 23:56:01,942: Calculated Checksum: 64
+2025-05-08 23:56:01,942: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:01,942: [Transmit status] Frame Type: 137, Frame ID: 16, Status: 2
+2025-05-08 23:56:02,823: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:02,823: Encoded data: 7e 00 0d 00 11 00 13 a2 00 42 43 67 2f 00 01 31 ec 
+2025-05-08 23:56:02,903: Receiving data:
+2025-05-08 23:56:02,903: Decoded frame data: 89 11 00
+2025-05-08 23:56:02,903: Received Checksum: 65
+2025-05-08 23:56:02,903: Calculated Checksum: 65
+2025-05-08 23:56:02,903: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:02,903: [Transmit status] Frame Type: 137, Frame ID: 17, Status: 0
+2025-05-08 23:56:03,824: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:03,824: Encoded data: 7e 00 0d 00 12 00 13 a2 00 42 43 67 2f 00 01 31 eb 
+2025-05-08 23:56:03,896: Receiving data:
+2025-05-08 23:56:03,896: Decoded frame data: 89 12 00
+2025-05-08 23:56:03,896: Received Checksum: 64
+2025-05-08 23:56:03,896: Calculated Checksum: 64
+2025-05-08 23:56:03,896: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:03,896: [Transmit status] Frame Type: 137, Frame ID: 18, Status: 0
+2025-05-08 23:56:04,825: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:04,826: Encoded data: 7e 00 0d 00 13 00 13 a2 00 42 43 67 2f 00 01 31 ea 
+2025-05-08 23:56:04,937: Receiving data:
+2025-05-08 23:56:04,937: Decoded frame data: 89 13 00
+2025-05-08 23:56:04,937: Received Checksum: 63
+2025-05-08 23:56:04,937: Calculated Checksum: 63
+2025-05-08 23:56:04,937: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:04,937: [Transmit status] Frame Type: 137, Frame ID: 19, Status: 0
+2025-05-08 23:56:05,827: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:05,827: Encoded data: 7e 00 0d 00 14 00 13 a2 00 42 43 67 2f 00 01 31 e9 
+2025-05-08 23:56:05,850: Receiving data:
+2025-05-08 23:56:05,850: Decoded frame data: 89 14 00
+2025-05-08 23:56:05,850: Received Checksum: 62
+2025-05-08 23:56:05,850: Calculated Checksum: 62
+2025-05-08 23:56:05,850: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:05,850: [Transmit status] Frame Type: 137, Frame ID: 20, Status: 0
+2025-05-08 23:56:06,828: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:06,828: Encoded data: 7e 00 0d 00 15 00 13 a2 00 42 43 67 2f 00 01 31 e8 
+2025-05-08 23:56:06,843: Receiving data:
+2025-05-08 23:56:06,843: Decoded frame data: 89 15 00
+2025-05-08 23:56:06,844: Received Checksum: 61
+2025-05-08 23:56:06,844: Calculated Checksum: 61
+2025-05-08 23:56:06,844: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:06,844: [Transmit status] Frame Type: 137, Frame ID: 21, Status: 0
+2025-05-08 23:56:07,829: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:07,829: Encoded data: 7e 00 0d 00 16 00 13 a2 00 42 43 67 2f 00 01 31 e7 
+2025-05-08 23:56:07,852: Receiving data:
+2025-05-08 23:56:07,853: Decoded frame data: 89 16 00
+2025-05-08 23:56:07,853: Received Checksum: 60
+2025-05-08 23:56:07,853: Calculated Checksum: 60
+2025-05-08 23:56:07,854: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:07,854: [Transmit status] Frame Type: 137, Frame ID: 22, Status: 0
+2025-05-08 23:56:08,832: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:08,832: Encoded data: 7e 00 0d 00 17 00 13 a2 00 42 43 67 2f 00 01 31 e6 
+2025-05-08 23:56:08,845: Receiving data:
+2025-05-08 23:56:08,846: Decoded frame data: 89 17 00
+2025-05-08 23:56:08,846: Received Checksum: 5f
+2025-05-08 23:56:08,846: Calculated Checksum: 5f
+2025-05-08 23:56:08,846: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:08,846: [Transmit status] Frame Type: 137, Frame ID: 23, Status: 0
+2025-05-08 23:56:09,833: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:09,833: Encoded data: 7e 00 0d 00 18 00 13 a2 00 42 43 67 2f 00 01 31 e5 
+2025-05-08 23:56:09,855: Receiving data:
+2025-05-08 23:56:09,855: Decoded frame data: 89 18 00
+2025-05-08 23:56:09,855: Received Checksum: 5e
+2025-05-08 23:56:09,855: Calculated Checksum: 5e
+2025-05-08 23:56:09,855: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:09,855: [Transmit status] Frame Type: 137, Frame ID: 24, Status: 0
+2025-05-08 23:56:10,666: Receiving data:
+2025-05-08 23:56:10,666: Decoded frame data: 81 00 04 0f 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 0a a7 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00
+2025-05-08 23:56:10,666: Received Checksum: c1
+2025-05-08 23:56:10,666: Calculated Checksum: c1
+2025-05-08 23:56:10,666: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:10,666: Received payload. RSSI: -15, Decoded message: Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=0.800000011920929, Last Updated=1746773770, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=45.8484, Message Location=(100.4194, 0)),Patient Status = 1
+2025-05-08 23:56:10,666: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x04', RSSI: -15, Options: 0, Data: b'\x81\x00\x04\x0f\x00\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\n\xa7\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00'
+2025-05-08 23:56:10,698: Using SelectPoller
+2025-05-08 23:56:10,698: Created default connection workflow <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x00000259C06DE3F0>
+2025-05-08 23:56:10,698: Starting AMQP Connection workflow asynchronously.
+2025-05-08 23:56:10,698: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06DE410> with deadline=654920.625 and callback=functools.partial(<bound method AMQPConnectionWorkflow._start_new_cycle_async of <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x00000259C06DE3F0>>, first=True); now=654920.625; delay=0
+2025-05-08 23:56:10,698: Beginning a new AMQP connection workflow cycle; attempts remaining after this: 0
+2025-05-08 23:56:10,698: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06DE440> with deadline=654920.625 and callback=<bound method AMQPConnectionWorkflow._try_next_config_async of <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x00000259C06DE3F0>>; now=654920.625; delay=0
+2025-05-08 23:56:10,698: _try_next_config_async: 'localhost':5672
+2025-05-08 23:56:10,701: process_timeouts: invoking callback=<bound method _AddressResolver._dispatch_result of <pika.adapters.utils.selector_ioloop_adapter._AddressResolver object at 0x00000259C06DE4E0>>
+2025-05-08 23:56:10,701: add_callback_threadsafe: added callback=<bound method _AddressResolver._dispatch_result of <pika.adapters.utils.selector_ioloop_adapter._AddressResolver object at 0x00000259C06DE4E0>>
+2025-05-08 23:56:10,702: Invoking asynchronous getaddrinfo() completion callback; host='localhost'
+2025-05-08 23:56:10,702: getaddrinfo returned 2 records
+2025-05-08 23:56:10,702: Attempting to connect using address record (<AddressFamily.AF_INET6: 23>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0))
+2025-05-08 23:56:10,702: Pika version 1.3.2 connecting to ('::1', 5672, 0, 0)
+2025-05-08 23:56:10,702: add_callback_threadsafe: added callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x00000259BDE0F590>>
+2025-05-08 23:56:10,702: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06ABE80> with deadline=654930.625 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C04CB020>>; now=654920.625; delay=10.0
+2025-05-08 23:56:10,702: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06ABF40> with deadline=654935.625 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C04CB020>>; now=654920.625; delay=15.0
+2025-05-08 23:56:10,702: process_timeouts: invoking callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x00000259BDE0F590>>
+2025-05-08 23:56:10,703: SelectorIOServicesAdapter.set_writer(1576, <bound method _AsyncSocketConnector._on_writable of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x00000259BDE0F590>>)
+2025-05-08 23:56:10,703: set_writer(1576, _) added handler Wr
+2025-05-08 23:56:10,703: Connection-establishment is in progress for <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>.
+2025-05-08 23:56:10,703: Socket connected: <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,703: _AsyncSocketConnector._report_completion(None); <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,703: SelectorIOServicesAdapter.remove_writer(1576)
+2025-05-08 23:56:10,703: remove_writer(1576) removed handler
+2025-05-08 23:56:10,703: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06ABE80> with deadline=654930.625 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C04CB020>>
+2025-05-08 23:56:10,703: TCP connection to broker established: <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>.
+2025-05-08 23:56:10,705: _AsyncStreamConnector.start(); <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,705: add_callback_threadsafe: added callback=<bound method _AsyncStreamConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncStreamConnector object at 0x00000259BDE0D640>>
+2025-05-08 23:56:10,705: process_timeouts: invoking callback=<bound method _AsyncStreamConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncStreamConnector object at 0x00000259BDE0D640>>
+2025-05-08 23:56:10,705: _AsyncStreamConnector._start_async(); <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,705: _AsyncStreamConnector._linkup()
+2025-05-08 23:56:10,705: New Connection state: CLOSED (prev=CLOSED)
+2025-05-08 23:56:10,705: Added: {'callback': <bound method Connection._on_connection_start of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:56:10,705: Added: {'callback': <bound method Connection._on_connection_close_from_broker of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:56:10,705: Added: {'callback': <bound method Connection._default_on_connection_error of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:10,705: New Connection state: INIT (prev=CLOSED)
+2025-05-08 23:56:10,705: Using external connection workflow.
+2025-05-08 23:56:10,705: _AsyncTransportBase.__init__: <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,705: SelectorIOServicesAdapter.set_reader(1576, <bound method _AsyncPlaintextTransport._on_socket_readable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10>>)
+2025-05-08 23:56:10,706: set_reader(1576, _) added handler Rd
+2025-05-08 23:56:10,706: _linkup(): created transport <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10>
+2025-05-08 23:56:10,706: New Connection state: PROTOCOL (prev=INIT)
+2025-05-08 23:56:10,706: SelectorIOServicesAdapter.set_writer(1576, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10>>)
+2025-05-08 23:56:10,706: set_writer(1576, _) updated handler RdWr
+2025-05-08 23:56:10,706: Turned on writability watcher: <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,707: _linkup(): introduced transport to protocol <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10>; _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-05-08 23:56:10,707: _AsyncStreamConnector._report_completion((<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>)); <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,707: Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
+2025-05-08 23:56:10,707: Removing callback #0: {'callback': <bound method Connection._default_on_connection_error of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:10,707: Added: {'callback': <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C04CB020>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:10,707: Added: {'callback': <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C04CB020>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:10,707: _AsyncStreamConnector._cleanup(False)
+2025-05-08 23:56:10,707: SelectorIOServicesAdapter.remove_writer(1576)
+2025-05-08 23:56:10,707: remove_writer(1576) updated handler Rd
+2025-05-08 23:56:10,707: Turned off writability watcher: <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,711: Processing 0:Connection.Start
+2025-05-08 23:56:10,712: Processing use of oneshot callback
+2025-05-08 23:56:10,712: 0 registered uses left
+2025-05-08 23:56:10,712: Removing callback #0: {'callback': <bound method Connection._on_connection_start of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-05-08 23:56:10,712: Calling <bound method Connection._on_connection_start of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.Start"
+2025-05-08 23:56:10,712: New Connection state: START (prev=PROTOCOL)
+2025-05-08 23:56:10,712: Added: {'callback': <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:56:10,712: SelectorIOServicesAdapter.set_writer(1576, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10>>)
+2025-05-08 23:56:10,712: set_writer(1576, _) updated handler RdWr
+2025-05-08 23:56:10,712: Turned on writability watcher: <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,713: Recv would block on <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,713: SelectorIOServicesAdapter.remove_writer(1576)
+2025-05-08 23:56:10,713: remove_writer(1576) updated handler Rd
+2025-05-08 23:56:10,713: Turned off writability watcher: <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,714: Processing 0:Connection.Tune
+2025-05-08 23:56:10,714: Processing use of oneshot callback
+2025-05-08 23:56:10,714: 0 registered uses left
+2025-05-08 23:56:10,714: Removing callback #0: {'callback': <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-05-08 23:56:10,714: Calling <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.Tune"
+2025-05-08 23:56:10,714: New Connection state: TUNE (prev=START)
+2025-05-08 23:56:10,714: Creating a HeartbeatChecker: 60
+2025-05-08 23:56:10,714: timeout: 60.000000 send_interval: 30.000000 check_interval: 65.000000
+2025-05-08 23:56:10,715: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06DE500> with deadline=654950.64 and callback=<bound method HeartbeatChecker._send_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x00000259C06DE630>>; now=654920.64; delay=30.0
+2025-05-08 23:56:10,715: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06DE410> with deadline=654985.64 and callback=<bound method HeartbeatChecker._check_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x00000259C06DE630>>; now=654920.64; delay=65
+2025-05-08 23:56:10,715: SelectorIOServicesAdapter.set_writer(1576, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10>>)
+2025-05-08 23:56:10,715: set_writer(1576, _) updated handler RdWr
+2025-05-08 23:56:10,715: Turned on writability watcher: <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,715: Added: {'callback': <bound method Connection._on_connection_open_ok of <SelectConnection TUNE transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:56:10,715: Recv would block on <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,715: SelectorIOServicesAdapter.remove_writer(1576)
+2025-05-08 23:56:10,715: remove_writer(1576) updated handler Rd
+2025-05-08 23:56:10,715: Turned off writability watcher: <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,764: Processing 0:Connection.OpenOk
+2025-05-08 23:56:10,764: Processing use of oneshot callback
+2025-05-08 23:56:10,764: 0 registered uses left
+2025-05-08 23:56:10,764: Removing callback #0: {'callback': <bound method Connection._on_connection_open_ok of <SelectConnection TUNE transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-05-08 23:56:10,764: Calling <bound method Connection._on_connection_open_ok of <SelectConnection TUNE transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.OpenOk"
+2025-05-08 23:56:10,764: New Connection state: OPEN (prev=TUNE)
+2025-05-08 23:56:10,764: Processing 0:_on_connection_open_ok
+2025-05-08 23:56:10,764: Calling <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C04CB020>> for "0:_on_connection_open_ok"
+2025-05-08 23:56:10,764: AMQPConnector: AMQP handshake attempt completed; state=3; error=None; 'localhost'/(<AddressFamily.AF_INET6: 23>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0))
+2025-05-08 23:56:10,764: AMQPConnector: AMQP connection established for 'localhost'/(<AddressFamily.AF_INET6: 23>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0)): <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-05-08 23:56:10,764: AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-05-08 23:56:10,764: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06ABF40> with deadline=654935.625 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C04CB020>>
+2025-05-08 23:56:10,764: Connection attempt completed with <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-05-08 23:56:10,764: AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-05-08 23:56:10,766: Recv would block on <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,766: Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-05-08 23:56:10,766: Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x00000259C06F4E40>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:10,766: Creating channel 1
+2025-05-08 23:56:10,766: Added: {'callback': <bound method Connection._on_channel_cleanup of <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': <Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'arguments': None, 'calls': 1}
+2025-05-08 23:56:10,766: Added: {'callback': <bound method Channel._on_getempty of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:10,766: Added: {'callback': <bound method Channel._on_cancel of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:10,766: Added: {'callback': <bound method Channel._on_flow of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:10,766: Added: {'callback': <bound method Channel._on_close_from_broker of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:56:10,766: SelectorIOServicesAdapter.set_writer(1576, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10>>)
+2025-05-08 23:56:10,766: set_writer(1576, _) updated handler RdWr
+2025-05-08 23:56:10,768: Turned on writability watcher: <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,769: Entering blocking state on frame <Channel.Open(['out_of_band='])>; acceptable_replies=[<class 'pika.spec.Channel.OpenOk'>]
+2025-05-08 23:56:10,769: Adding on_synchronous_complete callback
+2025-05-08 23:56:10,769: Added: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:56:10,769: Adding passed-in RPC response callback
+2025-05-08 23:56:10,769: Added: {'callback': <bound method Channel._on_openok of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:56:10,769: Added: {'callback': <bound method BlockingChannel._on_consumer_cancelled_by_broker of <BlockingChannel impl=<Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:10,769: Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x00000259C06F5D80>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:10,769: Added: {'callback': <bound method BlockingChannel._on_channel_closed of <BlockingChannel impl=<Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>>, 'one_shot': False, 'only': <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'arguments': None}
+2025-05-08 23:56:10,769: Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x00000259C06F5E40>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:10,769: Created channel=1
+2025-05-08 23:56:10,769: SelectorIOServicesAdapter.remove_writer(1576)
+2025-05-08 23:56:10,769: remove_writer(1576) updated handler Rd
+2025-05-08 23:56:10,769: Turned off writability watcher: <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,769: Processing 1:Channel.OpenOk
+2025-05-08 23:56:10,769: Processing use of oneshot callback
+2025-05-08 23:56:10,769: 0 registered uses left
+2025-05-08 23:56:10,769: Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-05-08 23:56:10,769: Processing use of oneshot callback
+2025-05-08 23:56:10,769: 0 registered uses left
+2025-05-08 23:56:10,769: Removing callback #0: {'callback': <bound method Channel._on_openok of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-05-08 23:56:10,769: Calling <bound method Channel._on_synchronous_complete of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.OpenOk"
+2025-05-08 23:56:10,769: 0 blocked frames
+2025-05-08 23:56:10,769: Calling <bound method Channel._on_openok of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.OpenOk"
+2025-05-08 23:56:10,769: Recv would block on <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,769: SelectorIOServicesAdapter.set_writer(1576, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10>>)
+2025-05-08 23:56:10,772: set_writer(1576, _) updated handler RdWr
+2025-05-08 23:56:10,772: Turned on writability watcher: <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,772: Entering blocking state on frame <Queue.Declare(['arguments={}', 'auto_delete=False', 'durable=False', 'exclusive=False', 'nowait=False', 'passive=False', 'queue=telemetry_mea', 'ticket=0'])>; acceptable_replies=[(<class 'pika.spec.Queue.DeclareOk'>, {'queue': 'telemetry_mea'})]
+2025-05-08 23:56:10,772: Adding on_synchronous_complete callback
+2025-05-08 23:56:10,772: Added: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'telemetry_mea'}, 'calls': 1}
+2025-05-08 23:56:10,772: Adding passed-in RPC response callback
+2025-05-08 23:56:10,772: Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x00000259C06E7C80>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'telemetry_mea'}, 'calls': 1}
+2025-05-08 23:56:10,772: SelectorIOServicesAdapter.remove_writer(1576)
+2025-05-08 23:56:10,772: remove_writer(1576) updated handler Rd
+2025-05-08 23:56:10,772: Turned off writability watcher: <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,774: Processing 1:Queue.DeclareOk
+2025-05-08 23:56:10,774: Processing use of oneshot callback
+2025-05-08 23:56:10,774: 0 registered uses left
+2025-05-08 23:56:10,774: Comparing {'queue': 'telemetry_mea'} to {'queue': 'telemetry_mea'}
+2025-05-08 23:56:10,774: Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'telemetry_mea'}, 'calls': 0}
+2025-05-08 23:56:10,774: Processing use of oneshot callback
+2025-05-08 23:56:10,774: 0 registered uses left
+2025-05-08 23:56:10,774: Comparing {'queue': 'telemetry_mea'} to {'queue': 'telemetry_mea'}
+2025-05-08 23:56:10,774: Removing callback #0: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x00000259C06E7C80>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'telemetry_mea'}, 'calls': 0}
+2025-05-08 23:56:10,774: Calling <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Queue.DeclareOk"
+2025-05-08 23:56:10,774: 0 blocked frames
+2025-05-08 23:56:10,774: Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x00000259C06E7C80>> for "1:Queue.DeclareOk"
+2025-05-08 23:56:10,774: Recv would block on <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,774: SelectorIOServicesAdapter.set_writer(1576, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06ABA10>>)
+2025-05-08 23:56:10,774: set_writer(1576, _) updated handler RdWr
+2025-05-08 23:56:10,774: Turned on writability watcher: <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,774: SelectorIOServicesAdapter.remove_writer(1576)
+2025-05-08 23:56:10,774: remove_writer(1576) updated handler Rd
+2025-05-08 23:56:10,774: Turned off writability watcher: <socket.socket fd=1576, family=23, type=1, proto=6, laddr=('::1', 53521, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:10,774: Transmitting data: b'\x04' to 0013A2004243672F
+2025-05-08 23:56:10,774: Encoded data: 7e 00 0c 00 19 00 13 a2 00 42 43 67 2f 00 04 12 
+2025-05-08 23:56:10,796: Receiving data:
+2025-05-08 23:56:10,796: Decoded frame data: 89 19 00
+2025-05-08 23:56:10,796: Received Checksum: 5d
+2025-05-08 23:56:10,796: Calculated Checksum: 5d
+2025-05-08 23:56:10,796: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:10,796: [Transmit status] Frame Type: 137, Frame ID: 25, Status: 0
+2025-05-08 23:56:10,835: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:10,835: Encoded data: 7e 00 0d 00 1a 00 13 a2 00 42 43 67 2f 00 01 31 e3 
+2025-05-08 23:56:10,860: Receiving data:
+2025-05-08 23:56:10,860: Decoded frame data: 89 1a 00
+2025-05-08 23:56:10,860: Received Checksum: 5c
+2025-05-08 23:56:10,860: Calculated Checksum: 5c
+2025-05-08 23:56:10,860: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:10,860: [Transmit status] Frame Type: 137, Frame ID: 26, Status: 0
+2025-05-08 23:56:11,836: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:11,836: Encoded data: 7e 00 0d 00 1b 00 13 a2 00 42 43 67 2f 00 01 31 e2 
+2025-05-08 23:56:11,852: Receiving data:
+2025-05-08 23:56:11,854: Decoded frame data: 89 1b 00
+2025-05-08 23:56:11,854: Received Checksum: 5b
+2025-05-08 23:56:11,854: Calculated Checksum: 5b
+2025-05-08 23:56:11,854: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:11,854: [Transmit status] Frame Type: 137, Frame ID: 27, Status: 0
+2025-05-08 23:56:12,838: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:12,838: Encoded data: 7e 00 0d 00 1c 00 13 a2 00 42 43 67 2f 00 01 31 e1 
+2025-05-08 23:56:12,846: Receiving data:
+2025-05-08 23:56:12,846: Decoded frame data: 89 1c 00
+2025-05-08 23:56:12,846: Received Checksum: 5a
+2025-05-08 23:56:12,846: Calculated Checksum: 5a
+2025-05-08 23:56:12,846: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:12,846: [Transmit status] Frame Type: 137, Frame ID: 28, Status: 0
+2025-05-08 23:56:13,840: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:13,840: Encoded data: 7e 00 0d 00 1d 00 13 a2 00 42 43 67 2f 00 01 31 e0 
+2025-05-08 23:56:13,855: Receiving data:
+2025-05-08 23:56:13,856: Decoded frame data: 89 1d 00
+2025-05-08 23:56:13,856: Received Checksum: 59
+2025-05-08 23:56:13,856: Calculated Checksum: 59
+2025-05-08 23:56:13,856: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:13,856: [Transmit status] Frame Type: 137, Frame ID: 29, Status: 0
+2025-05-08 23:56:14,842: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:14,842: Encoded data: 7e 00 0d 00 1e 00 13 a2 00 42 43 67 2f 00 01 31 df 
+2025-05-08 23:56:14,861: Receiving data:
+2025-05-08 23:56:14,861: Decoded frame data: 89 1e 00
+2025-05-08 23:56:14,861: Received Checksum: 58
+2025-05-08 23:56:14,861: Calculated Checksum: 58
+2025-05-08 23:56:14,861: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:14,861: [Transmit status] Frame Type: 137, Frame ID: 30, Status: 0
+2025-05-08 23:56:15,843: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:15,843: Encoded data: 7e 00 0d 00 1f 00 13 a2 00 42 43 67 2f 00 01 31 de 
+2025-05-08 23:56:15,857: Receiving data:
+2025-05-08 23:56:15,857: Decoded frame data: 89 1f 00
+2025-05-08 23:56:15,857: Received Checksum: 57
+2025-05-08 23:56:15,857: Calculated Checksum: 57
+2025-05-08 23:56:15,857: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:15,857: [Transmit status] Frame Type: 137, Frame ID: 31, Status: 0
+2025-05-08 23:56:16,845: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:16,845: Encoded data: 7e 00 0d 00 20 00 13 a2 00 42 43 67 2f 00 01 31 dd 
+2025-05-08 23:56:16,914: Receiving data:
+2025-05-08 23:56:16,914: Decoded frame data: 89 20 00
+2025-05-08 23:56:16,914: Received Checksum: 56
+2025-05-08 23:56:16,914: Calculated Checksum: 56
+2025-05-08 23:56:16,914: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:16,914: [Transmit status] Frame Type: 137, Frame ID: 32, Status: 0
+2025-05-08 23:56:17,847: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:17,847: Encoded data: 7e 00 0d 00 21 00 13 a2 00 42 43 67 2f 00 01 31 dc 
+2025-05-08 23:56:17,940: Receiving data:
+2025-05-08 23:56:17,940: Decoded frame data: 89 21 00
+2025-05-08 23:56:17,940: Received Checksum: 55
+2025-05-08 23:56:17,940: Calculated Checksum: 55
+2025-05-08 23:56:17,941: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:17,941: [Transmit status] Frame Type: 137, Frame ID: 33, Status: 0
+2025-05-08 23:56:18,849: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:18,849: Encoded data: 7e 00 0d 00 22 00 13 a2 00 42 43 67 2f 00 01 31 db 
+2025-05-08 23:56:18,869: Receiving data:
+2025-05-08 23:56:18,869: Decoded frame data: 89 22 00
+2025-05-08 23:56:18,869: Received Checksum: 54
+2025-05-08 23:56:18,869: Calculated Checksum: 54
+2025-05-08 23:56:18,869: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:18,869: [Transmit status] Frame Type: 137, Frame ID: 34, Status: 0
+2025-05-08 23:56:19,850: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:19,850: Encoded data: 7e 00 0d 00 23 00 13 a2 00 42 43 67 2f 00 01 31 da 
+2025-05-08 23:56:19,925: Receiving data:
+2025-05-08 23:56:19,925: Decoded frame data: 89 23 00
+2025-05-08 23:56:19,925: Received Checksum: 53
+2025-05-08 23:56:19,925: Calculated Checksum: 53
+2025-05-08 23:56:19,925: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:19,925: [Transmit status] Frame Type: 137, Frame ID: 35, Status: 0
+2025-05-08 23:56:20,853: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:20,853: Encoded data: 7e 00 0d 00 24 00 13 a2 00 42 43 67 2f 00 01 31 d9 
+2025-05-08 23:56:20,872: Receiving data:
+2025-05-08 23:56:20,872: Decoded frame data: 89 24 00
+2025-05-08 23:56:20,872: Received Checksum: 52
+2025-05-08 23:56:20,872: Calculated Checksum: 52
+2025-05-08 23:56:20,872: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:20,872: [Transmit status] Frame Type: 137, Frame ID: 36, Status: 0
+2025-05-08 23:56:21,855: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:21,855: Encoded data: 7e 00 0d 00 25 00 13 a2 00 42 43 67 2f 00 01 31 d8 
+2025-05-08 23:56:21,896: Receiving data:
+2025-05-08 23:56:21,897: Decoded frame data: 89 25 00
+2025-05-08 23:56:21,897: Received Checksum: 51
+2025-05-08 23:56:21,897: Calculated Checksum: 51
+2025-05-08 23:56:21,897: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:21,897: [Transmit status] Frame Type: 137, Frame ID: 37, Status: 0
+2025-05-08 23:56:22,856: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:22,856: Encoded data: 7e 00 0d 00 26 00 13 a2 00 42 43 67 2f 00 01 31 d7 
+2025-05-08 23:56:22,874: Receiving data:
+2025-05-08 23:56:22,874: Decoded frame data: 89 26 00
+2025-05-08 23:56:22,874: Received Checksum: 50
+2025-05-08 23:56:22,874: Calculated Checksum: 50
+2025-05-08 23:56:22,874: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:22,874: [Transmit status] Frame Type: 137, Frame ID: 38, Status: 0
+2025-05-08 23:56:23,858: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:23,858: Encoded data: 7e 00 0d 00 27 00 13 a2 00 42 43 67 2f 00 01 31 d6 
+2025-05-08 23:56:23,867: Receiving data:
+2025-05-08 23:56:23,867: Decoded frame data: 89 27 00
+2025-05-08 23:56:23,867: Received Checksum: 4f
+2025-05-08 23:56:23,867: Calculated Checksum: 4f
+2025-05-08 23:56:23,867: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:23,867: [Transmit status] Frame Type: 137, Frame ID: 39, Status: 0
+2025-05-08 23:56:24,859: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:24,859: Encoded data: 7e 00 0d 00 28 00 13 a2 00 42 43 67 2f 00 01 31 d5 
+2025-05-08 23:56:24,988: Receiving data:
+2025-05-08 23:56:24,989: Decoded frame data: 89 28 02
+2025-05-08 23:56:24,989: Received Checksum: 4c
+2025-05-08 23:56:24,989: Calculated Checksum: 4c
+2025-05-08 23:56:24,989: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:24,989: [Transmit status] Frame Type: 137, Frame ID: 40, Status: 2
+2025-05-08 23:56:25,861: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:25,861: Encoded data: 7e 00 0d 00 29 00 13 a2 00 42 43 67 2f 00 01 31 d4 
+2025-05-08 23:56:25,998: Receiving data:
+2025-05-08 23:56:25,998: Decoded frame data: 89 29 02
+2025-05-08 23:56:25,998: Received Checksum: 4b
+2025-05-08 23:56:25,998: Calculated Checksum: 4b
+2025-05-08 23:56:25,998: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:25,998: [Transmit status] Frame Type: 137, Frame ID: 41, Status: 2
+2025-05-08 23:56:26,863: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:26,863: Encoded data: 7e 00 0d 00 2a 00 13 a2 00 42 43 67 2f 00 01 31 d3 
+2025-05-08 23:56:26,895: Receiving data:
+2025-05-08 23:56:26,895: Decoded frame data: 89 2a 00
+2025-05-08 23:56:26,895: Received Checksum: 4c
+2025-05-08 23:56:26,895: Calculated Checksum: 4c
+2025-05-08 23:56:26,895: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:26,895: [Transmit status] Frame Type: 137, Frame ID: 42, Status: 0
+2025-05-08 23:56:27,864: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:27,864: Encoded data: 7e 00 0d 00 2b 00 13 a2 00 42 43 67 2f 00 01 31 d2 
+2025-05-08 23:56:27,872: Receiving data:
+2025-05-08 23:56:27,872: Pass. Unable to read length bytes
+2025-05-08 23:56:27,888: Receiving data:
+2025-05-08 23:56:27,888: Pass 03
+2025-05-08 23:56:27,888: Receiving data:
+2025-05-08 23:56:27,889: Pass 89
+2025-05-08 23:56:27,889: Receiving data:
+2025-05-08 23:56:27,889: Pass 2b
+2025-05-08 23:56:27,889: Receiving data:
+2025-05-08 23:56:27,889: Pass 00
+2025-05-08 23:56:27,889: Receiving data:
+2025-05-08 23:56:27,890: Pass 4b
+2025-05-08 23:56:28,865: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:28,865: Encoded data: 7e 00 0d 00 2c 00 13 a2 00 42 43 67 2f 00 01 31 d1 
+2025-05-08 23:56:28,880: Receiving data:
+2025-05-08 23:56:28,880: Decoded frame data: 89 2c 00
+2025-05-08 23:56:28,880: Received Checksum: 4a
+2025-05-08 23:56:28,880: Calculated Checksum: 4a
+2025-05-08 23:56:28,880: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:28,882: [Transmit status] Frame Type: 137, Frame ID: 44, Status: 0
+2025-05-08 23:56:29,868: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:29,868: Encoded data: 7e 00 0d 00 2d 00 13 a2 00 42 43 67 2f 00 01 31 d0 
+2025-05-08 23:56:29,890: Receiving data:
+2025-05-08 23:56:29,890: Decoded frame data: 89 2d 00
+2025-05-08 23:56:29,890: Received Checksum: 49
+2025-05-08 23:56:29,890: Calculated Checksum: 49
+2025-05-08 23:56:29,890: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:29,890: [Transmit status] Frame Type: 137, Frame ID: 45, Status: 0
+2025-05-08 23:56:30,869: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:30,870: Encoded data: 7e 00 0d 00 2e 00 13 a2 00 42 43 67 2f 00 01 31 cf 
+2025-05-08 23:56:30,883: Receiving data:
+2025-05-08 23:56:30,883: Decoded frame data: 89 2e 00
+2025-05-08 23:56:30,883: Received Checksum: 48
+2025-05-08 23:56:30,883: Calculated Checksum: 48
+2025-05-08 23:56:30,883: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:30,883: [Transmit status] Frame Type: 137, Frame ID: 46, Status: 0
+2025-05-08 23:56:31,871: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:31,871: Encoded data: 7e 00 0d 00 2f 00 13 a2 00 42 43 67 2f 00 01 31 ce 
+2025-05-08 23:56:31,892: Receiving data:
+2025-05-08 23:56:31,893: Decoded frame data: 89 2f 00
+2025-05-08 23:56:31,893: Received Checksum: 47
+2025-05-08 23:56:31,893: Calculated Checksum: 47
+2025-05-08 23:56:31,893: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:31,893: [Transmit status] Frame Type: 137, Frame ID: 47, Status: 0
+2025-05-08 23:56:32,873: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:32,873: Encoded data: 7e 00 0d 00 30 00 13 a2 00 42 43 67 2f 00 01 31 cd 
+2025-05-08 23:56:32,885: Receiving data:
+2025-05-08 23:56:32,885: Decoded frame data: 89 30 00
+2025-05-08 23:56:32,885: Received Checksum: 46
+2025-05-08 23:56:32,885: Calculated Checksum: 46
+2025-05-08 23:56:32,885: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:32,885: [Transmit status] Frame Type: 137, Frame ID: 48, Status: 0
+2025-05-08 23:56:33,875: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:33,875: Encoded data: 7e 00 0d 00 31 00 13 a2 00 42 43 67 2f 00 01 31 cc 
+2025-05-08 23:56:33,895: Receiving data:
+2025-05-08 23:56:33,895: Decoded frame data: 89 31 00
+2025-05-08 23:56:33,895: Received Checksum: 45
+2025-05-08 23:56:33,895: Calculated Checksum: 45
+2025-05-08 23:56:33,895: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:33,895: [Transmit status] Frame Type: 137, Frame ID: 49, Status: 0
+2025-05-08 23:56:34,769: Receiving data:
+2025-05-08 23:56:34,769: Decoded frame data: 81 00 04 0e 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f 22 a7 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00
+2025-05-08 23:56:34,769: Received Checksum: aa
+2025-05-08 23:56:34,769: Calculated Checksum: aa
+2025-05-08 23:56:34,769: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:56:34,769: Received payload. RSSI: -14, Decoded message: Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=0.800000011920929, Last Updated=1746773794, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=45.8484, Message Location=(100.4194, 0)),Patient Status = 1
+2025-05-08 23:56:34,769: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x04', RSSI: -14, Options: 0, Data: b'\x81\x00\x04\x0e\x00\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?"\xa7\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00'
+2025-05-08 23:56:34,811: Using SelectPoller
+2025-05-08 23:56:34,812: Created default connection workflow <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x00000259C06DF590>
+2025-05-08 23:56:34,812: Starting AMQP Connection workflow asynchronously.
+2025-05-08 23:56:34,812: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06DF5B0> with deadline=654944.734 and callback=functools.partial(<bound method AMQPConnectionWorkflow._start_new_cycle_async of <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x00000259C06DF590>>, first=True); now=654944.734; delay=0
+2025-05-08 23:56:34,812: Beginning a new AMQP connection workflow cycle; attempts remaining after this: 0
+2025-05-08 23:56:34,812: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06DF5E0> with deadline=654944.734 and callback=<bound method AMQPConnectionWorkflow._try_next_config_async of <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x00000259C06DF590>>; now=654944.734; delay=0
+2025-05-08 23:56:34,812: _try_next_config_async: 'localhost':5672
+2025-05-08 23:56:34,813: add_callback_threadsafe: added callback=<bound method _AddressResolver._dispatch_result of <pika.adapters.utils.selector_ioloop_adapter._AddressResolver object at 0x00000259C06DF680>>
+2025-05-08 23:56:34,814: process_timeouts: invoking callback=<bound method _AddressResolver._dispatch_result of <pika.adapters.utils.selector_ioloop_adapter._AddressResolver object at 0x00000259C06DF680>>
+2025-05-08 23:56:34,814: Invoking asynchronous getaddrinfo() completion callback; host='localhost'
+2025-05-08 23:56:34,814: getaddrinfo returned 2 records
+2025-05-08 23:56:34,814: Attempting to connect using address record (<AddressFamily.AF_INET6: 23>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0))
+2025-05-08 23:56:34,814: Pika version 1.3.2 connecting to ('::1', 5672, 0, 0)
+2025-05-08 23:56:34,814: add_callback_threadsafe: added callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x00000259C06DF890>>
+2025-05-08 23:56:34,814: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06DF5B0> with deadline=654954.734 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C06DF8C0>>; now=654944.734; delay=10.0
+2025-05-08 23:56:34,814: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06DF940> with deadline=654959.734 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C06DF8C0>>; now=654944.734; delay=15.0
+2025-05-08 23:56:34,814: process_timeouts: invoking callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x00000259C06DF890>>
+2025-05-08 23:56:34,815: SelectorIOServicesAdapter.set_writer(1764, <bound method _AsyncSocketConnector._on_writable of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x00000259C06DF890>>)
+2025-05-08 23:56:34,815: set_writer(1764, _) added handler Wr
+2025-05-08 23:56:34,815: Connection-establishment is in progress for <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>.
+2025-05-08 23:56:34,815: Socket connected: <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,815: _AsyncSocketConnector._report_completion(None); <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,815: SelectorIOServicesAdapter.remove_writer(1764)
+2025-05-08 23:56:34,815: remove_writer(1764) removed handler
+2025-05-08 23:56:34,815: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06DF5B0> with deadline=654954.734 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C06DF8C0>>
+2025-05-08 23:56:34,815: TCP connection to broker established: <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>.
+2025-05-08 23:56:34,815: _AsyncStreamConnector.start(); <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,815: add_callback_threadsafe: added callback=<bound method _AsyncStreamConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncStreamConnector object at 0x00000259C06DF920>>
+2025-05-08 23:56:34,816: process_timeouts: invoking callback=<bound method _AsyncStreamConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncStreamConnector object at 0x00000259C06DF920>>
+2025-05-08 23:56:34,816: _AsyncStreamConnector._start_async(); <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,816: _AsyncStreamConnector._linkup()
+2025-05-08 23:56:34,816: New Connection state: CLOSED (prev=CLOSED)
+2025-05-08 23:56:34,816: Added: {'callback': <bound method Connection._on_connection_start of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:56:34,816: Added: {'callback': <bound method Connection._on_connection_close_from_broker of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:56:34,816: Added: {'callback': <bound method Connection._default_on_connection_error of <SelectConnection CLOSED transport=None params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:34,816: New Connection state: INIT (prev=CLOSED)
+2025-05-08 23:56:34,816: Using external connection workflow.
+2025-05-08 23:56:34,816: _AsyncTransportBase.__init__: <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,816: SelectorIOServicesAdapter.set_reader(1764, <bound method _AsyncPlaintextTransport._on_socket_readable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0>>)
+2025-05-08 23:56:34,816: set_reader(1764, _) added handler Rd
+2025-05-08 23:56:34,816: _linkup(): created transport <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0>
+2025-05-08 23:56:34,816: New Connection state: PROTOCOL (prev=INIT)
+2025-05-08 23:56:34,816: SelectorIOServicesAdapter.set_writer(1764, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0>>)
+2025-05-08 23:56:34,816: set_writer(1764, _) updated handler RdWr
+2025-05-08 23:56:34,816: Turned on writability watcher: <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,817: _linkup(): introduced transport to protocol <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0>; _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-05-08 23:56:34,817: _AsyncStreamConnector._report_completion((<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>)); <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,817: Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
+2025-05-08 23:56:34,817: Removing callback #0: {'callback': <bound method Connection._default_on_connection_error of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:34,817: Added: {'callback': <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C06DF8C0>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:34,817: Added: {'callback': <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C06DF8C0>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:34,817: _AsyncStreamConnector._cleanup(False)
+2025-05-08 23:56:34,817: SelectorIOServicesAdapter.remove_writer(1764)
+2025-05-08 23:56:34,817: remove_writer(1764) updated handler Rd
+2025-05-08 23:56:34,817: Turned off writability watcher: <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,821: Processing 0:Connection.Start
+2025-05-08 23:56:34,821: Processing use of oneshot callback
+2025-05-08 23:56:34,821: 0 registered uses left
+2025-05-08 23:56:34,822: Removing callback #0: {'callback': <bound method Connection._on_connection_start of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-05-08 23:56:34,822: Calling <bound method Connection._on_connection_start of <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.Start"
+2025-05-08 23:56:34,822: New Connection state: START (prev=PROTOCOL)
+2025-05-08 23:56:34,822: Added: {'callback': <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:56:34,822: SelectorIOServicesAdapter.set_writer(1764, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0>>)
+2025-05-08 23:56:34,822: set_writer(1764, _) updated handler RdWr
+2025-05-08 23:56:34,822: Turned on writability watcher: <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,822: Recv would block on <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,822: SelectorIOServicesAdapter.remove_writer(1764)
+2025-05-08 23:56:34,822: remove_writer(1764) updated handler Rd
+2025-05-08 23:56:34,822: Turned off writability watcher: <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,823: Processing 0:Connection.Tune
+2025-05-08 23:56:34,823: Processing use of oneshot callback
+2025-05-08 23:56:34,823: 0 registered uses left
+2025-05-08 23:56:34,824: Removing callback #0: {'callback': <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-05-08 23:56:34,824: Calling <bound method Connection._on_connection_tune of <SelectConnection START transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.Tune"
+2025-05-08 23:56:34,824: New Connection state: TUNE (prev=START)
+2025-05-08 23:56:34,824: Creating a HeartbeatChecker: 60
+2025-05-08 23:56:34,824: timeout: 60.000000 send_interval: 30.000000 check_interval: 65.000000
+2025-05-08 23:56:34,824: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06DFB50> with deadline=654974.75 and callback=<bound method HeartbeatChecker._send_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x00000259C06DFB30>>; now=654944.75; delay=30.0
+2025-05-08 23:56:34,824: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06DFB80> with deadline=655009.75 and callback=<bound method HeartbeatChecker._check_heartbeat of <pika.heartbeat.HeartbeatChecker object at 0x00000259C06DFB30>>; now=654944.75; delay=65
+2025-05-08 23:56:34,824: SelectorIOServicesAdapter.set_writer(1764, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0>>)
+2025-05-08 23:56:34,824: set_writer(1764, _) updated handler RdWr
+2025-05-08 23:56:34,824: Turned on writability watcher: <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,824: Added: {'callback': <bound method Connection._on_connection_open_ok of <SelectConnection TUNE transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:56:34,825: Recv would block on <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,825: SelectorIOServicesAdapter.remove_writer(1764)
+2025-05-08 23:56:34,825: remove_writer(1764) updated handler Rd
+2025-05-08 23:56:34,825: Turned off writability watcher: <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,875: Processing 0:Connection.OpenOk
+2025-05-08 23:56:34,875: Processing use of oneshot callback
+2025-05-08 23:56:34,875: 0 registered uses left
+2025-05-08 23:56:34,876: Removing callback #0: {'callback': <bound method Connection._on_connection_open_ok of <SelectConnection TUNE transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-05-08 23:56:34,876: Calling <bound method Connection._on_connection_open_ok of <SelectConnection TUNE transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>> for "0:Connection.OpenOk"
+2025-05-08 23:56:34,876: New Connection state: OPEN (prev=TUNE)
+2025-05-08 23:56:34,876: Processing 0:_on_connection_open_ok
+2025-05-08 23:56:34,876: Calling <bound method AMQPConnector._on_amqp_handshake_done of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C06DF8C0>> for "0:_on_connection_open_ok"
+2025-05-08 23:56:34,876: AMQPConnector: AMQP handshake attempt completed; state=3; error=None; 'localhost'/(<AddressFamily.AF_INET6: 23>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0))
+2025-05-08 23:56:34,876: AMQPConnector: AMQP connection established for 'localhost'/(<AddressFamily.AF_INET6: 23>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0)): <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-05-08 23:56:34,876: AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-05-08 23:56:34,876: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x00000259C06DF940> with deadline=654959.734 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x00000259C06DF8C0>>
+2025-05-08 23:56:34,876: Connection attempt completed with <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-05-08 23:56:34,876: AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-05-08 23:56:34,876: Recv would block on <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,876: Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2025-05-08 23:56:34,876: Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x00000259C06F6500>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:34,876: Creating channel 1
+2025-05-08 23:56:34,876: Added: {'callback': <bound method Connection._on_channel_cleanup of <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'one_shot': True, 'only': <Channel number=1 CLOSED conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'arguments': None, 'calls': 1}
+2025-05-08 23:56:34,876: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:34,876: Added: {'callback': <bound method Channel._on_getempty of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:34,876: Encoded data: 7e 00 0d 00 32 00 13 a2 00 42 43 67 2f 00 01 31 cb 
+2025-05-08 23:56:34,877: Added: {'callback': <bound method Channel._on_cancel of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:34,877: Added: {'callback': <bound method Channel._on_flow of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:34,877: Added: {'callback': <bound method Channel._on_close_from_broker of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:56:34,877: SelectorIOServicesAdapter.set_writer(1764, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0>>)
+2025-05-08 23:56:34,877: set_writer(1764, _) updated handler RdWr
+2025-05-08 23:56:34,877: Turned on writability watcher: <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,877: Entering blocking state on frame <Channel.Open(['out_of_band='])>; acceptable_replies=[<class 'pika.spec.Channel.OpenOk'>]
+2025-05-08 23:56:34,877: Adding on_synchronous_complete callback
+2025-05-08 23:56:34,878: Added: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:56:34,878: Adding passed-in RPC response callback
+2025-05-08 23:56:34,878: Added: {'callback': <bound method Channel._on_openok of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 1}
+2025-05-08 23:56:34,878: Added: {'callback': <bound method BlockingChannel._on_consumer_cancelled_by_broker of <BlockingChannel impl=<Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:34,878: Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x00000259C06F7940>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:34,878: Added: {'callback': <bound method BlockingChannel._on_channel_closed of <BlockingChannel impl=<Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>>, 'one_shot': False, 'only': <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>, 'arguments': None}
+2025-05-08 23:56:34,878: Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x00000259C06F7C40>>, 'one_shot': False, 'only': None, 'arguments': None}
+2025-05-08 23:56:34,878: Created channel=1
+2025-05-08 23:56:34,878: SelectorIOServicesAdapter.remove_writer(1764)
+2025-05-08 23:56:34,878: remove_writer(1764) updated handler Rd
+2025-05-08 23:56:34,878: Turned off writability watcher: <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,879: Processing 1:Channel.OpenOk
+2025-05-08 23:56:34,879: Processing use of oneshot callback
+2025-05-08 23:56:34,879: 0 registered uses left
+2025-05-08 23:56:34,881: Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-05-08 23:56:34,881: Processing use of oneshot callback
+2025-05-08 23:56:34,881: 0 registered uses left
+2025-05-08 23:56:34,881: Removing callback #0: {'callback': <bound method Channel._on_openok of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': None, 'calls': 0}
+2025-05-08 23:56:34,881: Calling <bound method Channel._on_synchronous_complete of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.OpenOk"
+2025-05-08 23:56:34,881: 0 blocked frames
+2025-05-08 23:56:34,881: Calling <bound method Channel._on_openok of <Channel number=1 OPENING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Channel.OpenOk"
+2025-05-08 23:56:34,881: Recv would block on <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,881: SelectorIOServicesAdapter.set_writer(1764, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0>>)
+2025-05-08 23:56:34,881: set_writer(1764, _) updated handler RdWr
+2025-05-08 23:56:34,881: Turned on writability watcher: <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,881: Entering blocking state on frame <Queue.Declare(['arguments={}', 'auto_delete=False', 'durable=False', 'exclusive=False', 'nowait=False', 'passive=False', 'queue=telemetry_mea', 'ticket=0'])>; acceptable_replies=[(<class 'pika.spec.Queue.DeclareOk'>, {'queue': 'telemetry_mea'})]
+2025-05-08 23:56:34,881: Adding on_synchronous_complete callback
+2025-05-08 23:56:34,881: Added: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'telemetry_mea'}, 'calls': 1}
+2025-05-08 23:56:34,881: Adding passed-in RPC response callback
+2025-05-08 23:56:34,881: Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x00000259C06F7FC0>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'telemetry_mea'}, 'calls': 1}
+2025-05-08 23:56:34,882: SelectorIOServicesAdapter.remove_writer(1764)
+2025-05-08 23:56:34,882: remove_writer(1764) updated handler Rd
+2025-05-08 23:56:34,882: Turned off writability watcher: <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,883: Processing 1:Queue.DeclareOk
+2025-05-08 23:56:34,883: Processing use of oneshot callback
+2025-05-08 23:56:34,883: 0 registered uses left
+2025-05-08 23:56:34,883: Comparing {'queue': 'telemetry_mea'} to {'queue': 'telemetry_mea'}
+2025-05-08 23:56:34,883: Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'telemetry_mea'}, 'calls': 0}
+2025-05-08 23:56:34,883: Processing use of oneshot callback
+2025-05-08 23:56:34,883: 0 registered uses left
+2025-05-08 23:56:34,884: Comparing {'queue': 'telemetry_mea'} to {'queue': 'telemetry_mea'}
+2025-05-08 23:56:34,884: Removing callback #0: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x00000259C06F7FC0>>, 'one_shot': True, 'only': None, 'arguments': {'queue': 'telemetry_mea'}, 'calls': 0}
+2025-05-08 23:56:34,884: Calling <bound method Channel._on_synchronous_complete of <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0> params=<ConnectionParameters host=localhost port=5672 virtual_host=/ ssl=False>>>> for "1:Queue.DeclareOk"
+2025-05-08 23:56:34,884: 0 blocked frames
+2025-05-08 23:56:34,884: Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x00000259C06F7FC0>> for "1:Queue.DeclareOk"
+2025-05-08 23:56:34,884: Recv would block on <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,884: SelectorIOServicesAdapter.set_writer(1764, <bound method _AsyncPlaintextTransport._on_socket_writable of <pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x00000259C06DF6B0>>)
+2025-05-08 23:56:34,885: set_writer(1764, _) updated handler RdWr
+2025-05-08 23:56:34,885: Turned on writability watcher: <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,885: SelectorIOServicesAdapter.remove_writer(1764)
+2025-05-08 23:56:34,885: remove_writer(1764) updated handler Rd
+2025-05-08 23:56:34,885: Turned off writability watcher: <socket.socket fd=1764, family=23, type=1, proto=6, laddr=('::1', 53576, 0, 0), raddr=('::1', 5672, 0, 0)>
+2025-05-08 23:56:34,886: Transmitting data: b'\x04' to 0013A2004243672F
+2025-05-08 23:56:34,886: Encoded data: 7e 00 0c 00 33 00 13 a2 00 42 43 67 2f 00 04 f8 
+2025-05-08 23:56:34,897: Receiving data:
+2025-05-08 23:56:34,898: Decoded frame data: 89 32 00
+2025-05-08 23:56:34,898: Received Checksum: 44
+2025-05-08 23:56:34,898: Calculated Checksum: 44
+2025-05-08 23:56:34,898: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:34,898: [Transmit status] Frame Type: 137, Frame ID: 50, Status: 0
+2025-05-08 23:56:34,898: Receiving data:
+2025-05-08 23:56:34,898: Decoded frame data: 89 33 00
+2025-05-08 23:56:34,898: Received Checksum: 43
+2025-05-08 23:56:34,898: Calculated Checksum: 43
+2025-05-08 23:56:34,898: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:34,898: [Transmit status] Frame Type: 137, Frame ID: 51, Status: 0
+2025-05-08 23:56:35,878: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:35,878: Encoded data: 7e 00 0d 00 34 00 13 a2 00 42 43 67 2f 00 01 31 c9 
+2025-05-08 23:56:35,890: Receiving data:
+2025-05-08 23:56:35,890: Decoded frame data: 89 34 00
+2025-05-08 23:56:35,890: Received Checksum: 42
+2025-05-08 23:56:35,890: Calculated Checksum: 42
+2025-05-08 23:56:35,890: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:35,890: [Transmit status] Frame Type: 137, Frame ID: 52, Status: 0
+2025-05-08 23:56:36,879: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:36,879: Encoded data: 7e 00 0d 00 35 00 13 a2 00 42 43 67 2f 00 01 31 c8 
+2025-05-08 23:56:36,899: Receiving data:
+2025-05-08 23:56:36,899: Decoded frame data: 89 35 00
+2025-05-08 23:56:36,899: Received Checksum: 41
+2025-05-08 23:56:36,899: Calculated Checksum: 41
+2025-05-08 23:56:36,899: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:36,899: [Transmit status] Frame Type: 137, Frame ID: 53, Status: 0
+2025-05-08 23:56:37,881: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:37,881: Encoded data: 7e 00 0d 00 36 00 13 a2 00 42 43 67 2f 00 01 31 c7 
+2025-05-08 23:56:37,925: Receiving data:
+2025-05-08 23:56:37,925: Decoded frame data: 89 36 00
+2025-05-08 23:56:37,925: Received Checksum: 40
+2025-05-08 23:56:37,925: Calculated Checksum: 40
+2025-05-08 23:56:37,925: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:37,925: [Transmit status] Frame Type: 137, Frame ID: 54, Status: 0
+2025-05-08 23:56:38,882: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:38,882: Encoded data: 7e 00 0d 00 37 00 13 a2 00 42 43 67 2f 00 01 31 c6 
+2025-05-08 23:56:38,901: Receiving data:
+2025-05-08 23:56:38,901: Decoded frame data: 89 37 00
+2025-05-08 23:56:38,902: Received Checksum: 3f
+2025-05-08 23:56:38,902: Calculated Checksum: 3f
+2025-05-08 23:56:38,902: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:38,902: [Transmit status] Frame Type: 137, Frame ID: 55, Status: 0
+2025-05-08 23:56:39,884: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:39,884: Encoded data: 7e 00 0d 00 38 00 13 a2 00 42 43 67 2f 00 01 31 c5 
+2025-05-08 23:56:39,894: Receiving data:
+2025-05-08 23:56:39,894: Decoded frame data: 89 38 00
+2025-05-08 23:56:39,894: Received Checksum: 3e
+2025-05-08 23:56:39,894: Calculated Checksum: 3e
+2025-05-08 23:56:39,894: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:39,894: [Transmit status] Frame Type: 137, Frame ID: 56, Status: 0
+2025-05-08 23:56:40,885: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:40,885: Encoded data: 7e 00 0d 00 39 00 13 a2 00 42 43 67 2f 00 01 31 c4 
+2025-05-08 23:56:40,904: Receiving data:
+2025-05-08 23:56:40,904: Decoded frame data: 89 39 00
+2025-05-08 23:56:40,904: Received Checksum: 3d
+2025-05-08 23:56:40,904: Calculated Checksum: 3d
+2025-05-08 23:56:40,904: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:40,904: [Transmit status] Frame Type: 137, Frame ID: 57, Status: 0
+2025-05-08 23:56:41,887: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:41,887: Encoded data: 7e 00 0d 00 3a 00 13 a2 00 42 43 67 2f 00 01 31 c3 
+2025-05-08 23:56:41,977: Receiving data:
+2025-05-08 23:56:41,977: Decoded frame data: 89 3a 00
+2025-05-08 23:56:41,978: Received Checksum: 3c
+2025-05-08 23:56:41,978: Calculated Checksum: 3c
+2025-05-08 23:56:41,978: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:41,978: [Transmit status] Frame Type: 137, Frame ID: 58, Status: 0
+2025-05-08 23:56:42,889: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:42,889: Encoded data: 7e 00 0d 00 3b 00 13 a2 00 42 43 67 2f 00 01 31 c2 
+2025-05-08 23:56:42,920: Receiving data:
+2025-05-08 23:56:42,920: Decoded frame data: 89 3b 00
+2025-05-08 23:56:42,920: Received Checksum: 3b
+2025-05-08 23:56:42,920: Calculated Checksum: 3b
+2025-05-08 23:56:42,920: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:42,920: [Transmit status] Frame Type: 137, Frame ID: 59, Status: 0
+2025-05-08 23:56:43,890: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:56:43,890: Encoded data: 7e 00 0d 00 3c 00 13 a2 00 42 43 67 2f 00 01 31 c1 
+2025-05-08 23:56:43,948: Receiving data:
+2025-05-08 23:56:43,948: Decoded frame data: 89 3c 00
+2025-05-08 23:56:43,948: Received Checksum: 3a
+2025-05-08 23:56:43,948: Calculated Checksum: 3a
+2025-05-08 23:56:43,948: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:56:43,948: [Transmit status] Frame Type: 137, Frame ID: 60, Status: 0
+2025-05-08 23:56:44,077: Attempting to close serial XBee connection.
+2025-05-08 23:56:44,204: Serial port closed.

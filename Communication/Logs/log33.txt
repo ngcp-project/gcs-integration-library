@@ -1,0 +1,14 @@
+2025-03-14 15:58:05,706: Log 33
+
+2025-03-14 15:58:05,738: Attempting to open serial XBee connection.
+2025-03-14 15:58:05,738: Attempting to open serial XBee connection.
+2025-03-14 15:58:05,790: Serial port opened.
+2025-03-14 15:58:05,790: Serial port opened.
+2025-03-14 15:58:05,790: Transmitting data: hello to 0000000000000000
+2025-03-14 15:58:05,790: Transmitting data: hello to 0000000000000000
+2025-03-14 15:58:05,790: Transmitting data: {"vehicleId": 0, "messageType": {"dataType": "data", "messageType": "telemetry"}, "telemetryData": {"pitch": 10.5, "yaw": 20.3, "roll": 5.8, "speed": 45.2, "altitude": 1000.0, "batteryLife": 80.5, "currentPosition": {"latitude": 37.7749, "longitude": -122.4194}, "lastUpdated": 1741993085790, "requestCoord": {"messageFlag": 1, "requestLocation": {"latitude": 45.8484, "longitude": 100.4194}, "patientSecured": null}}, "commandsData": null} to 0000000000000000
+2025-03-14 15:58:05,804: Transmitting data: {"vehicleId": 0, "messageType": {"dataType": "data", "messageType": "telemetry"}, "telemetryData": {"pitch": 10.5, "yaw": 20.3, "roll": 5.8, "speed": 45.2, "altitude": 1000.0, "batteryLife": 80.5, "currentPosition": {"latitude": 37.7749, "longitude": -122.4194}, "lastUpdated": 1741993085790, "requestCoord": {"messageFlag": 1, "requestLocation": {"latitude": 45.8484, "longitude": 100.4194}, "patientSecured": null}}, "commandsData": null} to 0000000000000000
+2025-03-14 15:58:10,806: Attempting to close serial XBee connection.
+2025-03-14 15:58:10,806: Attempting to close serial XBee connection.
+2025-03-14 15:58:10,914: Serial port closed.
+2025-03-14 15:58:10,914: Serial port closed.

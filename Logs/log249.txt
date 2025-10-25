@@ -1,0 +1,16 @@
+2025-03-25 15:05:01,504: Log 249
+
+2025-03-25 15:05:01,504: LOGGER CREATED By XBee.py
+2025-03-25 15:05:01,504: LOGGER CREATED By XBee.py
+2025-03-25 15:05:01,504: port: COM3, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 15:05:01,504: port: COM3, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-25 15:05:01,504: Attempting to open serial XBee connection.
+2025-03-25 15:05:01,504: Attempting to open serial XBee connection.
+2025-03-25 15:05:02,053: Serial port opened.
+2025-03-25 15:05:02,053: Serial port opened.
+2025-03-25 15:05:02,053: Receiving data:
+2025-03-25 15:05:02,053: Receiving data:
+2025-03-25 15:05:02,053: Attempting to close serial XBee connection.
+2025-03-25 15:05:02,053: Attempting to close serial XBee connection.
+2025-03-25 15:05:02,164: Serial port closed.
+2025-03-25 15:05:02,164: Serial port closed.

@@ -1,0 +1,8 @@
+2025-03-17 10:24:36,588: Log 74
+
+2025-03-17 10:24:36,661: Attempting to open serial XBee connection.
+2025-03-17 10:24:36,662: Attempting to open serial XBee connection.
+2025-03-17 10:24:36,662: Error opening serial port: could not open port 'COM4': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)
+2025-03-17 10:24:36,662: Error opening serial port: could not open port 'COM4': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)
+2025-03-17 10:24:36,662: Serial port is already closed.
+2025-03-17 10:24:36,662: Serial port is already closed.

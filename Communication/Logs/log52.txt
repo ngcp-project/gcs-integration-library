@@ -1,0 +1,8 @@
+2025-03-14 16:09:48,292: Log 52
+
+2025-03-14 16:09:48,317: Attempting to open serial XBee connection.
+2025-03-14 16:09:48,317: Attempting to open serial XBee connection.
+2025-03-14 16:09:48,375: Serial port opened.
+2025-03-14 16:09:48,375: Serial port opened.
+2025-03-14 16:09:48,376: Transmitting data: bytearray(b'~\x01\xc3\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00{"vehicleId": 0, "messageType": {"dataType": "data", "messageType": "telemetry"}, "telemetryData": {"pitch": 10.5, "yaw": 20.3, "roll": 5.8, "speed": 45.2, "altitude": 1000.0, "batteryLife": 80.5, "currentPosition": {"latitude": 37.7749, "longitude": -122.4194}, "lastUpdated": 1741993788375, "requestCoord": {"messageFlag": 1, "requestLocation": {"latitude": 45.8484, "longitude": 100.4194}, "patientSecured": null}}, "commandsData": null}\xc0') to 0000000000000000
+2025-03-14 16:09:48,388: Transmitting data: bytearray(b'~\x01\xc3\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00{"vehicleId": 0, "messageType": {"dataType": "data", "messageType": "telemetry"}, "telemetryData": {"pitch": 10.5, "yaw": 20.3, "roll": 5.8, "speed": 45.2, "altitude": 1000.0, "batteryLife": 80.5, "currentPosition": {"latitude": 37.7749, "longitude": -122.4194}, "lastUpdated": 1741993788375, "requestCoord": {"messageFlag": 1, "requestLocation": {"latitude": 45.8484, "longitude": 100.4194}, "patientSecured": null}}, "commandsData": null}\xc0') to 0000000000000000

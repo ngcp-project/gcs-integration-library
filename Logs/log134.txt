@@ -1,0 +1,20 @@
+2025-03-17 22:15:32,498: Log 134
+
+2025-03-17 22:15:32,498: LOGGER CREATED By XBee.py
+2025-03-17 22:15:32,498: LOGGER CREATED By XBee.py
+2025-03-17 22:15:32,498: port: COM3, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-17 22:15:32,498: port: COM3, baudrate: 115200, timeout: 0.025, config_file: None
+2025-03-17 22:15:32,498: Attempting to open serial XBee connection.
+2025-03-17 22:15:32,498: Attempting to open serial XBee connection.
+2025-03-17 22:15:33,058: Serial port opened.
+2025-03-17 22:15:33,058: Serial port opened.
+2025-03-17 22:15:35,447: Receiving data:
+2025-03-17 22:15:35,447: Receiving data:
+2025-03-17 22:15:35,447: 81 00 00 0c 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a1 42 77 01 d9 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40
+2025-03-17 22:15:35,448: 81 00 00 0c 00 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 00 00 a1 42 77 01 d9 67 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40
+2025-03-17 22:15:35,448: Error decoding payload. RSSI: -12
+2025-03-17 22:15:35,448: Error decoding payload. RSSI: -12
+2025-03-17 22:16:10,108: Attempting to close serial XBee connection.
+2025-03-17 22:16:10,108: Attempting to close serial XBee connection.
+2025-03-17 22:16:10,216: Serial port closed.
+2025-03-17 22:16:10,216: Serial port closed.

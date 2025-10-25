@@ -1,0 +1,240 @@
+2025-05-08 23:42:02,635: Log 109
+
+2025-05-08 23:42:02,635: port: COM9, baudrate: 115200, timeout: 0.05, config_file: None
+2025-05-08 23:42:02,635: Attempting to open serial XBee connection.
+2025-05-08 23:42:02,687: Serial port opened.
+2025-05-08 23:42:02,688: Clearing input and output buffers.
+2025-05-08 23:42:03,190: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:03,190: Encoded data: 7e 00 0d 00 01 00 13 a2 00 42 43 67 2f 00 01 31 fc 
+2025-05-08 23:42:03,224: Receiving data:
+2025-05-08 23:42:03,224: Decoded frame data: 89 01 00
+2025-05-08 23:42:03,224: Received Checksum: 75
+2025-05-08 23:42:03,224: Calculated Checksum: 75
+2025-05-08 23:42:03,224: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:03,224: [Transmit status] Frame Type: 137, Frame ID: 1, Status: 0
+2025-05-08 23:42:04,191: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:04,191: Encoded data: 7e 00 0d 00 02 00 13 a2 00 42 43 67 2f 00 01 31 fb 
+2025-05-08 23:42:04,202: Receiving data:
+2025-05-08 23:42:04,202: Decoded frame data: 89 02 00
+2025-05-08 23:42:04,202: Received Checksum: 74
+2025-05-08 23:42:04,202: Calculated Checksum: 74
+2025-05-08 23:42:04,202: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:04,202: [Transmit status] Frame Type: 137, Frame ID: 2, Status: 0
+2025-05-08 23:42:05,192: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:05,192: Encoded data: 7e 00 0d 00 03 00 13 a2 00 42 43 67 2f 00 01 31 fa 
+2025-05-08 23:42:05,307: Receiving data:
+2025-05-08 23:42:05,307: Decoded frame data: 89 03 00
+2025-05-08 23:42:05,307: Received Checksum: 73
+2025-05-08 23:42:05,307: Calculated Checksum: 73
+2025-05-08 23:42:05,308: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:05,308: [Transmit status] Frame Type: 137, Frame ID: 3, Status: 0
+2025-05-08 23:42:06,193: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:06,193: Encoded data: 7e 00 0d 00 04 00 13 a2 00 42 43 67 2f 00 01 31 f9 
+2025-05-08 23:42:06,204: Receiving data:
+2025-05-08 23:42:06,204: Decoded frame data: 89 04 00
+2025-05-08 23:42:06,204: Received Checksum: 72
+2025-05-08 23:42:06,205: Calculated Checksum: 72
+2025-05-08 23:42:06,205: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:06,205: [Transmit status] Frame Type: 137, Frame ID: 4, Status: 0
+2025-05-08 23:42:07,195: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:07,195: Encoded data: 7e 00 0d 00 05 00 13 a2 00 42 43 67 2f 00 01 31 f8 
+2025-05-08 23:42:07,213: Receiving data:
+2025-05-08 23:42:07,213: Decoded frame data: 89 05 00
+2025-05-08 23:42:07,213: Received Checksum: 71
+2025-05-08 23:42:07,213: Calculated Checksum: 71
+2025-05-08 23:42:07,213: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:07,213: [Transmit status] Frame Type: 137, Frame ID: 5, Status: 0
+2025-05-08 23:42:08,196: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:08,197: Encoded data: 7e 00 0d 00 06 00 13 a2 00 42 43 67 2f 00 01 31 f7 
+2025-05-08 23:42:08,206: Receiving data:
+2025-05-08 23:42:08,206: Decoded frame data: 89 06 00
+2025-05-08 23:42:08,206: Received Checksum: 70
+2025-05-08 23:42:08,206: Calculated Checksum: 70
+2025-05-08 23:42:08,207: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:08,207: [Transmit status] Frame Type: 137, Frame ID: 6, Status: 0
+2025-05-08 23:42:09,198: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:09,198: Encoded data: 7e 00 0d 00 07 00 13 a2 00 42 43 67 2f 00 01 31 f6 
+2025-05-08 23:42:09,231: Receiving data:
+2025-05-08 23:42:09,231: Decoded frame data: 89 07 00
+2025-05-08 23:42:09,231: Received Checksum: 6f
+2025-05-08 23:42:09,231: Calculated Checksum: 6f
+2025-05-08 23:42:09,231: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:09,231: [Transmit status] Frame Type: 137, Frame ID: 7, Status: 0
+2025-05-08 23:42:10,199: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:10,199: Encoded data: 7e 00 0d 00 08 00 13 a2 00 42 43 67 2f 00 01 31 f5 
+2025-05-08 23:42:10,209: Receiving data:
+2025-05-08 23:42:10,209: Decoded frame data: 89 08 00
+2025-05-08 23:42:10,209: Received Checksum: 6e
+2025-05-08 23:42:10,209: Calculated Checksum: 6e
+2025-05-08 23:42:10,209: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:10,209: [Transmit status] Frame Type: 137, Frame ID: 8, Status: 0
+2025-05-08 23:42:11,201: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:11,201: Encoded data: 7e 00 0d 00 09 00 13 a2 00 42 43 67 2f 00 01 31 f4 
+2025-05-08 23:42:11,218: Receiving data:
+2025-05-08 23:42:11,218: Decoded frame data: 89 09 00
+2025-05-08 23:42:11,218: Received Checksum: 6d
+2025-05-08 23:42:11,218: Calculated Checksum: 6d
+2025-05-08 23:42:11,218: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:11,218: [Transmit status] Frame Type: 137, Frame ID: 9, Status: 0
+2025-05-08 23:42:12,203: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:12,203: Encoded data: 7e 00 0d 00 0a 00 13 a2 00 42 43 67 2f 00 01 31 f3 
+2025-05-08 23:42:12,227: Receiving data:
+2025-05-08 23:42:12,228: Decoded frame data: 89 0a 00
+2025-05-08 23:42:12,228: Received Checksum: 6c
+2025-05-08 23:42:12,228: Calculated Checksum: 6c
+2025-05-08 23:42:12,228: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:12,228: [Transmit status] Frame Type: 137, Frame ID: 10, Status: 0
+2025-05-08 23:42:13,204: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:13,204: Encoded data: 7e 00 0d 00 0b 00 13 a2 00 42 43 67 2f 00 01 31 f2 
+2025-05-08 23:42:13,220: Receiving data:
+2025-05-08 23:42:13,220: Decoded frame data: 89 0b 00
+2025-05-08 23:42:13,220: Received Checksum: 6b
+2025-05-08 23:42:13,220: Calculated Checksum: 6b
+2025-05-08 23:42:13,220: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:13,221: [Transmit status] Frame Type: 137, Frame ID: 11, Status: 0
+2025-05-08 23:42:14,206: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:14,206: Encoded data: 7e 00 0d 00 0c 00 13 a2 00 42 43 67 2f 00 01 31 f1 
+2025-05-08 23:42:14,229: Receiving data:
+2025-05-08 23:42:14,247: Decoded frame data: 89 0c 00
+2025-05-08 23:42:14,247: Received Checksum: 6a
+2025-05-08 23:42:14,247: Calculated Checksum: 6a
+2025-05-08 23:42:14,247: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:14,247: [Transmit status] Frame Type: 137, Frame ID: 12, Status: 0
+2025-05-08 23:42:15,207: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:15,207: Encoded data: 7e 00 0d 00 0d 00 13 a2 00 42 43 67 2f 00 01 31 f0 
+2025-05-08 23:42:15,223: Receiving data:
+2025-05-08 23:42:15,223: Decoded frame data: 89 0d 00
+2025-05-08 23:42:15,223: Received Checksum: 69
+2025-05-08 23:42:15,223: Calculated Checksum: 69
+2025-05-08 23:42:15,223: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:15,223: [Transmit status] Frame Type: 137, Frame ID: 13, Status: 0
+2025-05-08 23:42:16,152: Receiving data:
+2025-05-08 23:42:16,169: Decoded frame data: 81 00 04 0e 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f c8 a3 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00
+2025-05-08 23:42:16,169: Received Checksum: 08
+2025-05-08 23:42:16,169: Calculated Checksum: 08
+2025-05-08 23:42:16,169: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:42:16,169: Received payload. RSSI: -14, Decoded message: Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=0.800000011920929, Last Updated=1746772936, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=45.8484, Message Location=(100.4194, 0)),Patient Status = 1
+2025-05-08 23:42:16,169: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x04', RSSI: -14, Options: 0, Data: b'\x81\x00\x04\x0e\x00\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\xc8\xa3\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00'
+2025-05-08 23:42:16,173: Using SelectPoller
+2025-05-08 23:42:16,176: Created default connection workflow <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x000001B26920B1A0>
+2025-05-08 23:42:16,176: Starting AMQP Connection workflow asynchronously.
+2025-05-08 23:42:16,176: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x000001B268D8DC30> with deadline=654086.109 and callback=functools.partial(<bound method AMQPConnectionWorkflow._start_new_cycle_async of <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x000001B26920B1A0>>, first=True); now=654086.109; delay=0
+2025-05-08 23:42:16,177: Beginning a new AMQP connection workflow cycle; attempts remaining after this: 0
+2025-05-08 23:42:16,177: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x000001B268D05390> with deadline=654086.109 and callback=<bound method AMQPConnectionWorkflow._try_next_config_async of <pika.adapters.utils.connection_workflow.AMQPConnectionWorkflow object at 0x000001B26920B1A0>>; now=654086.109; delay=0
+2025-05-08 23:42:16,177: _try_next_config_async: 'localhost':5672
+2025-05-08 23:42:16,187: add_callback_threadsafe: added callback=<bound method _AddressResolver._dispatch_result of <pika.adapters.utils.selector_ioloop_adapter._AddressResolver object at 0x000001B26920B140>>
+2025-05-08 23:42:16,187: process_timeouts: invoking callback=<bound method _AddressResolver._dispatch_result of <pika.adapters.utils.selector_ioloop_adapter._AddressResolver object at 0x000001B26920B140>>
+2025-05-08 23:42:16,187: Invoking asynchronous getaddrinfo() completion callback; host='localhost'
+2025-05-08 23:42:16,187: getaddrinfo returned 2 records
+2025-05-08 23:42:16,187: Attempting to connect using address record (<AddressFamily.AF_INET6: 23>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0))
+2025-05-08 23:42:16,187: Pika version 1.3.2 connecting to ('::1', 5672, 0, 0)
+2025-05-08 23:42:16,189: add_callback_threadsafe: added callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x000001B268F2CD40>>
+2025-05-08 23:42:16,189: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x000001B268FB46A0> with deadline=654096.109 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x000001B268E37350>>; now=654086.109; delay=10.0
+2025-05-08 23:42:16,189: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x000001B26920BB50> with deadline=654101.109 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x000001B268E37350>>; now=654086.109; delay=15.0
+2025-05-08 23:42:16,189: process_timeouts: invoking callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x000001B268F2CD40>>
+2025-05-08 23:42:16,189: SelectorIOServicesAdapter.set_writer(764, <bound method _AsyncSocketConnector._on_writable of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x000001B268F2CD40>>)
+2025-05-08 23:42:16,189: set_writer(764, _) added handler Wr
+2025-05-08 23:42:16,190: Connection-establishment is in progress for <socket.socket fd=764, family=23, type=1, proto=6, laddr=('::', 56549, 0, 0), raddr=('::1', 5672, 0, 0)>.
+2025-05-08 23:42:16,209: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:16,209: Encoded data: 7e 00 0d 00 0e 00 13 a2 00 42 43 67 2f 00 01 31 ef 
+2025-05-08 23:42:16,280: Receiving data:
+2025-05-08 23:42:16,280: Decoded frame data: 89 0e 00
+2025-05-08 23:42:16,280: Received Checksum: 68
+2025-05-08 23:42:16,280: Calculated Checksum: 68
+2025-05-08 23:42:16,280: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:16,280: [Transmit status] Frame Type: 137, Frame ID: 14, Status: 0
+2025-05-08 23:42:17,211: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:17,211: Encoded data: 7e 00 0d 00 0f 00 13 a2 00 42 43 67 2f 00 01 31 ee 
+2025-05-08 23:42:17,225: Receiving data:
+2025-05-08 23:42:17,225: Decoded frame data: 89 0f 00
+2025-05-08 23:42:17,225: Received Checksum: 67
+2025-05-08 23:42:17,225: Calculated Checksum: 67
+2025-05-08 23:42:17,225: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:17,225: [Transmit status] Frame Type: 137, Frame ID: 15, Status: 0
+2025-05-08 23:42:18,212: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:18,212: Encoded data: 7e 00 0d 00 10 00 13 a2 00 42 43 67 2f 00 01 31 ed 
+2025-05-08 23:42:18,227: Socket failed to connect: <socket.socket fd=764, family=23, type=1, proto=6, laddr=('::', 56549, 0, 0)>; error=10061 (Unknown error)
+2025-05-08 23:42:18,227: _AsyncSocketConnector._report_completion(ConnectionRefusedError(10061, 'Unknown error')); <socket.socket fd=764, family=23, type=1, proto=6, laddr=('::', 56549, 0, 0)>
+2025-05-08 23:42:18,229: SelectorIOServicesAdapter.remove_writer(764)
+2025-05-08 23:42:18,229: remove_writer(764) removed handler
+2025-05-08 23:42:18,229: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x000001B268FB46A0> with deadline=654096.109 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x000001B268E37350>>
+2025-05-08 23:42:18,229: TCP Connection attempt failed: ConnectionRefusedError(10061, 'Unknown error'); dest=(<AddressFamily.AF_INET6: 23>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('::1', 5672, 0, 0))
+2025-05-08 23:42:18,229: AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error')
+2025-05-08 23:42:18,229: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x000001B26920BB50> with deadline=654101.109 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x000001B268E37350>>
+2025-05-08 23:42:18,229: Connection attempt completed with AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error')
+2025-05-08 23:42:18,229: Attempting to connect using address record (<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 5672))
+2025-05-08 23:42:18,229: Pika version 1.3.2 connecting to ('127.0.0.1', 5672)
+2025-05-08 23:42:18,230: add_callback_threadsafe: added callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x000001B26920BC50>>
+2025-05-08 23:42:18,230: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x000001B269093010> with deadline=654098.156 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x000001B26920BF50>>; now=654088.156; delay=10.0
+2025-05-08 23:42:18,230: call_later: added timeout <pika.adapters.select_connection._Timeout object at 0x000001B268D053F0> with deadline=654103.156 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x000001B26920BF50>>; now=654088.156; delay=15.0
+2025-05-08 23:42:18,230: process_timeouts: invoking callback=<bound method _AsyncSocketConnector._start_async of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x000001B26920BC50>>
+2025-05-08 23:42:18,230: SelectorIOServicesAdapter.set_writer(1188, <bound method _AsyncSocketConnector._on_writable of <pika.adapters.utils.io_services_utils._AsyncSocketConnector object at 0x000001B26920BC50>>)
+2025-05-08 23:42:18,230: set_writer(1188, _) added handler Wr
+2025-05-08 23:42:18,230: Connection-establishment is in progress for <socket.socket fd=1188, family=2, type=1, proto=6, laddr=('0.0.0.0', 56553), raddr=('127.0.0.1', 5672)>.
+2025-05-08 23:42:18,234: Receiving data:
+2025-05-08 23:42:18,234: Decoded frame data: 89 10 00
+2025-05-08 23:42:18,234: Received Checksum: 66
+2025-05-08 23:42:18,234: Calculated Checksum: 66
+2025-05-08 23:42:18,234: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:18,234: [Transmit status] Frame Type: 137, Frame ID: 16, Status: 0
+2025-05-08 23:42:19,213: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:19,213: Encoded data: 7e 00 0d 00 11 00 13 a2 00 42 43 67 2f 00 01 31 ec 
+2025-05-08 23:42:19,227: Receiving data:
+2025-05-08 23:42:19,228: Decoded frame data: 89 11 00
+2025-05-08 23:42:19,228: Received Checksum: 65
+2025-05-08 23:42:19,228: Calculated Checksum: 65
+2025-05-08 23:42:19,228: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:19,228: [Transmit status] Frame Type: 137, Frame ID: 17, Status: 0
+2025-05-08 23:42:19,271: Receiving data:
+2025-05-08 23:42:19,271: Decoded frame data: 81 00 04 0f 00 02 cd cc 34 42 00 00 28 41 66 66 a2 41 9a 99 b9 40 00 00 7a 44 cd cc 4c 3f cb a3 1d 68 00 00 00 00 d0 d5 56 ec 2f e3 42 40 50 fc 18 73 d7 9a 5e c0 01 01 94 f6 06 5f 98 ec 46 40 50 fc 18 73 d7 1a 59 40 00
+2025-05-08 23:42:19,271: Received Checksum: 04
+2025-05-08 23:42:19,271: Calculated Checksum: 04
+2025-05-08 23:42:19,271: Adding frame to 0x81 (Rx Packet) queue
+2025-05-08 23:42:19,271: Received payload. RSSI: -15, Decoded message: Telemetry(Speed=45.20000076293945, Pitch=10.5, Yaw=20.299999237060547, Roll=5.800000190734863, Altitude=1000.0, Battery Life=0.800000011920929, Last Updated=1746772939, Current Position=(37.7749, -122.4194), Vehicle Status=1, Message Type=45.8484, Message Location=(100.4194, 0)),Patient Status = 1
+2025-05-08 23:42:19,271: [Frame Receive: 16-bit Address] Frame Type: 129, Source Address: b'\x00\x04', RSSI: -15, Options: 0, Data: b'\x81\x00\x04\x0f\x00\x02\xcd\xcc4B\x00\x00(Aff\xa2A\x9a\x99\xb9@\x00\x00zD\xcd\xccL?\xcb\xa3\x1dh\x00\x00\x00\x00\xd0\xd5V\xec/\xe3B@P\xfc\x18s\xd7\x9a^\xc0\x01\x01\x94\xf6\x06_\x98\xecF@P\xfc\x18s\xd7\x1aY@\x00'
+2025-05-08 23:42:20,215: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:20,215: Encoded data: 7e 00 0d 00 12 00 13 a2 00 42 43 67 2f 00 01 31 eb 
+2025-05-08 23:42:20,231: Receiving data:
+2025-05-08 23:42:20,231: Decoded frame data: 89 12 00
+2025-05-08 23:42:20,231: Received Checksum: 64
+2025-05-08 23:42:20,231: Calculated Checksum: 64
+2025-05-08 23:42:20,231: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:20,232: [Transmit status] Frame Type: 137, Frame ID: 18, Status: 0
+2025-05-08 23:42:20,272: Socket failed to connect: <socket.socket fd=1188, family=2, type=1, proto=6, laddr=('0.0.0.0', 56553)>; error=10061 (Unknown error)
+2025-05-08 23:42:20,272: _AsyncSocketConnector._report_completion(ConnectionRefusedError(10061, 'Unknown error')); <socket.socket fd=1188, family=2, type=1, proto=6, laddr=('0.0.0.0', 56553)>
+2025-05-08 23:42:20,272: SelectorIOServicesAdapter.remove_writer(1188)
+2025-05-08 23:42:20,272: remove_writer(1188) removed handler
+2025-05-08 23:42:20,272: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x000001B269093010> with deadline=654098.156 and callback=<bound method AMQPConnector._on_tcp_connection_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x000001B26920BF50>>
+2025-05-08 23:42:20,272: TCP Connection attempt failed: ConnectionRefusedError(10061, 'Unknown error'); dest=(<AddressFamily.AF_INET: 2>, <SocketKind.SOCK_STREAM: 1>, 6, '', ('127.0.0.1', 5672))
+2025-05-08 23:42:20,272: AMQPConnector - reporting failure: AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error')
+2025-05-08 23:42:20,273: remove_timeout: removing timeout <pika.adapters.select_connection._Timeout object at 0x000001B268D053F0> with deadline=654103.156 and callback=<bound method AMQPConnector._on_overall_timeout of <pika.adapters.utils.connection_workflow.AMQPConnector object at 0x000001B26920BF50>>
+2025-05-08 23:42:20,273: Connection attempt completed with AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error')
+2025-05-08 23:42:20,273: _try_next_resolved_address: continuing with next config.
+2025-05-08 23:42:20,273: _try_next_config_async: starting a new cycle.
+2025-05-08 23:42:20,273: AMQP connection workflow failed: AMQPConnectionWorkflowFailed: 2 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error'); first exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error').
+2025-05-08 23:42:20,273: AMQPConnectionWorkflow - reporting failure: AMQPConnectionWorkflowFailed: 2 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error'); first exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error')
+2025-05-08 23:42:20,273: Connection workflow failed: AMQPConnectionWorkflowFailed: 2 exceptions in all; last exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error'); first exception - AMQPConnectorSocketConnectError: ConnectionRefusedError(10061, 'Unknown error')
+2025-05-08 23:42:20,273: Error in _create_connection().
+Traceback (most recent call last):
+  File "C:\Users\nnttr\OneDrive\Desktop\NGCP\gcs-integration-library\.venv\Lib\site-packages\pika\adapters\blocking_connection.py", line 451, in _create_connection
+    raise self._reap_last_connection_workflow_error(error)
+pika.exceptions.AMQPConnectionError
+2025-05-08 23:42:20,277: Transmitting data: b'\x04' to 0004
+2025-05-08 23:42:21,216: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:21,216: Encoded data: 7e 00 0d 00 14 00 13 a2 00 42 43 67 2f 00 01 31 e9 
+2025-05-08 23:42:21,241: Receiving data:
+2025-05-08 23:42:21,241: Decoded frame data: 89 14 00
+2025-05-08 23:42:21,241: Received Checksum: 62
+2025-05-08 23:42:21,241: Calculated Checksum: 62
+2025-05-08 23:42:21,241: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:21,241: [Transmit status] Frame Type: 137, Frame ID: 20, Status: 0
+2025-05-08 23:42:22,218: Transmitting data: b'\x011' to 0013A2004243672F
+2025-05-08 23:42:22,218: Encoded data: 7e 00 0d 00 15 00 13 a2 00 42 43 67 2f 00 01 31 e8 
+2025-05-08 23:42:22,234: Receiving data:
+2025-05-08 23:42:22,234: Decoded frame data: 89 15 00
+2025-05-08 23:42:22,234: Received Checksum: 61
+2025-05-08 23:42:22,234: Calculated Checksum: 61
+2025-05-08 23:42:22,234: Adding frame to 0x89 (Tx Status) queue
+2025-05-08 23:42:22,234: [Transmit status] Frame Type: 137, Frame ID: 21, Status: 0
+2025-05-08 23:42:23,024: Attempting to close serial XBee connection.
+2025-05-08 23:42:23,150: Serial port closed.

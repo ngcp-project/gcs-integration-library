@@ -1,0 +1,9 @@
+2025-04-25 13:31:01,297: Log 67
+
+2025-04-25 13:31:01,297: port: COM3, baudrate: 115200, timeout: 0.025, config_file: None
+2025-04-25 13:31:01,297: Attempting to open serial XBee connection.
+2025-04-25 13:31:01,840: Serial port opened.
+2025-04-25 13:31:40,066: Transmitting data: b'\x011' to 0013A200424353F7
+2025-04-25 13:31:40,066: Encoded data: 7e 00 0d 00 01 00 13 a2 00 42 43 53 f7 00 01 31 48 
+2025-04-25 13:31:40,066: Attempting to close serial XBee connection.
+2025-04-25 13:31:40,176: Serial port closed.

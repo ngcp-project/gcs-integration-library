@@ -1,0 +1,10 @@
+2025-03-16 22:34:07,668: Log 21
+
+2025-03-16 22:34:07,833: Attempting to open serial XBee connection.
+2025-03-16 22:34:07,833: Attempting to open serial XBee connection.
+2025-03-16 22:34:07,873: Serial port opened.
+2025-03-16 22:34:07,873: Serial port opened.
+2025-03-16 22:34:16,524: Attempting to close serial XBee connection.
+2025-03-16 22:34:16,524: Attempting to close serial XBee connection.
+2025-03-16 22:34:16,638: Serial port closed.
+2025-03-16 22:34:16,638: Serial port closed.
