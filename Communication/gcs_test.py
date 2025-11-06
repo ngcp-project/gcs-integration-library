@@ -36,7 +36,7 @@ COMMANDS = {
 
 # RabbitMQ setup
 def setup_rabbitmq():
-    amqp_url = os.getenv('AMQP_ADDR', 'amqp://guest:guest@localhost:5672/%2f')
+    amqp_url = os.getenv('AMQP_ADDR', 'amqp://admin:admin@localhost:5672/%2f')
     params = pika.URLParameters(amqp_url)
     connection = pika.BlockingConnection(params)
     channel = connection.channel()

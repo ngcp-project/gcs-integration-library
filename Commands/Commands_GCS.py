@@ -4,6 +4,9 @@ import pika
 import uuid
 import time
 import json
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from Types.Commands import Commands
 from Types.CommandsEnum import CommandsEnum
 from Types.Geolocation import Coordinate, Polygon
@@ -11,7 +14,7 @@ from Types.Geolocation import Coordinate, Polygon
 vehicles_list = ['eru', 'mra', 'fra', 'mea']
 class GCSRabbitMQ:
     def __init__(self, vehicleName):
-        self.connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
+        self.connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost',credentials= pika.PlainCredentials("admin","admin")))
         self.channel = self.connection.channel()
 
         result = self.channel.queue_declare(queue='', exclusive=True)
@@ -52,19 +55,19 @@ class GCSRabbitMQ:
 
 
 print(" [x] Start sending commands to Vehicles")
-coordinates_01 = Coordinate(latitude=35.35, longitude=60.35)
-coordinates_02 = Coordinate(latitude=40.35, longitude=50.35)
-coordinates_03 = Coordinate(latitude=44.35, longitude=55.35)
+coordinates_01 = Coordinate(lat=35.35, lon=60.35)
+coordinates_02 = Coordinate(lat=40.35, lon=50.35)
+coordinates_03 = Coordinate(lat=44.35, lon=55.35)
 search_area_coordinates = [coordinates_02, coordinates_03]
 search_area_list = Polygon(coordinates=search_area_coordinates)
 
-coordinates_04 = Coordinate(latitude=40.35, longitude=50.35)
-coordinates_05 = Coordinate(latitude=44.35, longitude=55.35)
+coordinates_04 = Coordinate(lat=40.35, lon=50.35)
+coordinates_05 = Coordinate(lat=44.35, lon=55.35)
 keep_in_coordinates = [coordinates_04, coordinates_05]
 keep_in_list = Polygon(coordinates=keep_in_coordinates)
 
-coordinates_06 = Coordinate(latitude=40.35, longitude=50.35)
-coordinates_07 = Coordinate(latitude=44.35, longitude=55.35)
+coordinates_06 = Coordinate(lat=40.35, lon=50.35)
+coordinates_07 = Coordinate(lat=44.35, lon=55.35)
 keep_out_coordinates = [coordinates_06, coordinates_07]
 keep_out_list = Polygon(coordinates=keep_out_coordinates)
 

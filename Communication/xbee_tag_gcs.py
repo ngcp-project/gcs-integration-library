@@ -3,6 +3,7 @@ import sys
 import threading
 import time
 from datetime import datetime
+import random
 
 sys.path.insert(1, "../")
 
@@ -20,6 +21,9 @@ TAG_COMMAND = 0x01
 TAG_TELEMETRY = 0x02
 TAG_ACK = 0x03
 TAG_PING = 0x04
+
+shared_telemetry = Telemetry()
+
 
 VEHICLES = {
     "ALL": {"MAC": "000000000000FFFF", "short": "0000"},
@@ -46,36 +50,76 @@ VEHICLE_STATUS = {
 
 
 logger = Logger(log_to_console=True)
-gcs_xbee = XBee(port=PORT, baudrate=115200, logger=logger)
-gcs_xbee.open()
+# gcs_xbee = XBee(port=PORT, baudrate=115200, logger=logger)
+# gcs_xbee.open()
 
 terminate_event = threading.Event()
 telemetry_publishers = {}
 
 
-# 
+ 
 def get_or_create_publisher(vehicle_name):
     if vehicle_name not in telemetry_publishers:
         telemetry_publishers[vehicle_name] = TelemetryRabbitMQ(vehicle_name.lower(), "localhost")
     return telemetry_publishers[vehicle_name]
 
+
+
+def testing():
+    while True:
+        vehicles = ["ERU","MRA","FRA","MEA"]
+        for vehicle in vehicles:
+            telemetry = Telemetry(
+                speed=round(random.uniform(0.0, 30.0), 2),
+                pitch=round(random.uniform(-180.0, 180.0), 2),
+                yaw=round(random.uniform(-123.0, 123.0), 2),
+                roll=round(random.uniform(-123.0, 123.0), 2),
+                altitude=round(random.uniform(0.0, 500.0), 2),
+                battery_life= 20,
+                last_updated=time.time(),
+                current_latitude=round(random.uniform(-90.0, 90.0), 6),
+                current_longitude=round(random.uniform(-180.0, 180.0), 6),
+                vehicle_status=random.randint(0, 2),
+                message_flag=random.randint(0, 2),
+                message_lat=round(random.uniform(-90.0, 90.0), 6),
+                message_lon=round(random.uniform(-180.0, 180.0), 6),
+                patient_status=random.randint(0, 2)
+            )
+            encoded_data = telemetry.encode()
+            logger.write(f"Encoded to {len(encoded_data)} bytes")
+            decoded_telemetry = Telemetry.decode(encoded_data)   
+            telemetry_dict = {
+                "vehicle_id": vehicle.lower(),
+                "signal_strength": random.randint(-100 , 40 ),
+                "pitch": decoded_telemetry.pitch,
+                "yaw": decoded_telemetry.yaw,
+                "roll": decoded_telemetry.roll,
+                "speed":  decoded_telemetry.speed,
+                "altitude":  decoded_telemetry.altitude,
+                "battery_life": int(decoded_telemetry.battery_life),
+                "current_position": {
+                    "latitude":  decoded_telemetry.current_latitude,
+                    "longitude":  decoded_telemetry.current_longitude,
+                },
+                "vehicle_status": VEHICLE_STATUS[decoded_telemetry.vehicle_status],
+                "request_coordinate":{
+                    "message_flag": decoded_telemetry.message_flag,
+                    "request_location":{
+                        "latitude":decoded_telemetry.message_lat,
+                        "longitude":decoded_telemetry.message_lon,
+                     }
+                },
+                "patient_secured":decoded_telemetry.patient_status,
+                            }
+            
+            publisher = get_or_create_publisher(vehicle.lower())
+            publisher.publish(telemetry_dict)
+            logger.write(f"test telemetry data for {vehicle}: {telemetry_dict}")
+            # logger.write(telemetry_dict)
+            time.sleep(1)
+
 def parse_and_export_telemetry(telemetry: Telemetry, vehicle_name: str, rssi: int):
-    # telemetry_dict = {
-    #     "speed": telemetry.speed,
-    #     "pitch": telemetry.pitch,
-    #     "yaw": telemetry.yaw,
-    #     "roll": telemetry.roll,
-    #     "alt": telemetry.altitude,
-    #     "battery_life": telemetry.battery_life,
-    #     "lastUpdated": telemetry.last_updated,
-    #     "current_latitude": telemetry.current_latitude,
-    #     "current_longitude": telemetry.current_longitude,
-    #     "vehicle_status": VEHICLE_STATUS[telemetry.vehicle_status],
-    #     "patient_status": telemetry.patient_status,
-    #     "message_flag": telemetry.message_flag,
-    #     "message_lat": telemetry.message_lat,
-    #     "message_lon": telemetry.message_lon,
-    
+
     telemetry_dict = {
         "vehicle_id": vehicle_name.lower(),
         "signal_strength": rssi,
@@ -100,6 +144,8 @@ def parse_and_export_telemetry(telemetry: Telemetry, vehicle_name: str, rssi: in
         },
         "patient_secured": telemetry.patient_status,
     }
+    
+
 
         # vehicle_id: vehicle_id.to_string(),
         # signal_strength: rand::random::<i32>() % 70 + 30,
@@ -124,20 +170,6 @@ def parse_and_export_telemetry(telemetry: Telemetry, vehicle_name: str, rssi: in
         #     patient_secured: Some(rand::random()),
         # },
 
-
-
-    # pub vehicle_id: String, // Added vehicle_id
-    # pub signal_strength: i32,
-    # pub pitch: f32,
-    # pub yaw: f32,
-    # pub roll: f32,
-    # pub speed: f32,
-    # pub altitude: f32,
-    # pub battery_life: f32, //f32
-    # pub current_position: Coordinate,
-    # pub vehicle_status: String,
-    # pub request_coordinate: RequestCoordinate,
-    # }
 
     try:
         publisher = get_or_create_publisher(vehicle_name)
@@ -258,21 +290,22 @@ def shutdown():
 
 def main():
     #command_test_thread = threading.Thread(target=command_test, daemon=True)
-    telemetry_thread = threading.Thread(target=listen_for_telemetry, daemon=True)
-    
+    #telemetry_thread = threading.Thread(target=listen_for_telemetry, daemon=True)
+    telemetry_testing = threading.Thread(target= testing, daemon = True)
+    telemetry_testing.start()
     
     # Start RabbitMQ Command Consumer
-    consumer = CommandRabbitMQConsumer(
-        on_command=handle_ui_command
-    )
+    # consumer = CommandRabbitMQConsumer(
+    #     on_command=handle_ui_command
+    # )
     
     
-    consumer_thread = threading.Thread(target=consumer.start, daemon=True)
-    consumer_thread.start()
+    # consumer_thread = threading.Thread(target=consumer.start, daemon=True)
+    # consumer_thread.start()
     
     
     #command_test_thread.start()
-    telemetry_thread.start()
+    #telemetry_thread.start()
 
     try:
         while True:
@@ -280,7 +313,7 @@ def main():
     except KeyboardInterrupt:
         logger.write("\n🛑 Shutdown requested by user.")
     finally:
-        consumer.stop()
+        # consumer.stop()
         shutdown()
 
 
